@@ -94,30 +94,30 @@ Cards:
 ## ACTION CARDS 
 - Each game choses 8 of these and provides full deck for each, player can buy them
 
-Cards:
-- Public Forum
-- Military Triumph
-- Public Bath
-- Theatrical Play
-- Gladiator Games
-- Chariot Races
-- Aqueduct
-- Roman Bridge
-- Roman Road
-- Courrier Service: Cursus publicus
-- Sewers
-- Newspapers: Acta Diurna
-- Bureaucracy
-- City Planning
-- Roman Law
-- Bread and circuses
-- Military Medicine
-- Legionary Training
-- Roman Citizenship
-- Basilica: Christian Temple
-- Temple of Jupiter
-- Temple of Mars
-- Saturnalia Festival
-- Vestalia Festival
-- Roman Welfare
-
+| Action Card             | Cost to Buy (Denarii, Provisions, Army) | Immediate Effect When Played                                  |
+|-------------------------|-----------------------------------------|---------------------------------------------------------------|
+| Public Forum            | 3, 1, 0                                 | Draw 2 additional cards immediately.                           |
+| Military Triumph        | 4, 0, 2                                 | Gain 1 temporary army card to use this turn.                   |
+| Public Bath             | 2, 2, 0                                 | Gain 1 Denarii and refresh 1 spent action card.                |
+| Theatrical Play         | 2, 0, 0                                 | Gain 1 Denarii and 1 provision immediately.                    |
+| Gladiator Games         | 3, 0, 1                                 | Discard 1 card to draw 3 cards immediately.                    |
+| Chariot Races           | 3, 1, 0                                 | Gain 2 Denarii or 2 provisions (player's choice) immediately.  |
+| Aqueduct                | 5, 3, 0                                 | Gain 3 provisions immediately.                                 |
+| Roman Bridge            | 4, 2, 1                                 | Gain 1 territory card immediately without paying its cost.     |
+| Roman Road              | 3, 2, 0                                 | Reduce the cost of the next action card you buy this turn by 2 Denarii. |
+| Courrier Service: Cursus publicus | 4, 0, 0                           | Play 1 additional action card immediately.                     |
+| Sewers                  | 3, 3, 0                                 | Gain 2 provisions immediately.                                 |
+| Newspapers: Acta Diurna | 2, 1, 0                                 | Look at the top 3 cards of the deck and draw 1 immediately.    |
+| Bureaucracy             | 5, 0, 0                                 | Draw 1 action card from the game's market immediately.         |
+| City Planning           | 6, 0, 1                                 | Gain 1 territory card immediately without paying its cost.     |
+| Roman Law               | 4, 2, 0                                 | Negate the effect of the next history card you draw this turn. |
+| Bread and circuses      | 3, 0, 1                                 | Immediately gain 3 provisions.                                |
+| Military Medicine       | 5, 1, 2                                 | Recover 1 army card from your discard pile immediately.        |
+| Legionary Training      | 4, 3, 1                                 | Gain 1 temporary army card to use this turn.                   |
+| Roman Citizenship       | 6, 0, 0                                 | Gain 2 Denarii immediately.                                    |
+| Basilica: Christian Temple | 5, 2, 0                               | Gain 1 Denarii and draw 1 card immediately.                    |
+| Temple of Jupiter       | 4, 1, 1                                 | Double the effect of the next card you play this turn.         |
+| Temple of Mars          | 5, 0, 3                                 | Gain 1 territory card immediately without paying its army requirement. |
+| Saturnalia Festival     | 2, 0, 0                                 | Gain 1 of each resource (Denarii, provision) immediately.      |
+| Vestalia Festival       | 2, 2, 0                                 | Gain 2 provisions immediately.                                |
+| Roman Welfare           | 3, 1, 0                                 | Gain 1 Denarii and 1 provision immediately.                    |
