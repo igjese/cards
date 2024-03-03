@@ -17,22 +17,6 @@ Cheapest possible, since the whole idea is to do this solo.
 - Starting deck is 1x Italy (territory), 2x Centuriae (army), 3x Grain (provisions), 5x Sestertii (money)
 - Player wins when acquiring all territory cards.
 
-## Territory cards
-- Territory cards are in 3 piles, with only top card being available/visible.
-
-| Territory        | Pile       | Cost ($) | Cost Provisions | Cost Army | Effect                                          |
-|------------------|------------|----------|-----------------|-----------|-------------------------------------------------|
-| Sicily           | Basic      | 2        | 1               | 1         | Add 1 provision.                                |
-| Sardinia         | Basic      | 2        | 1               | 1         | Add 1 Denari.                                   |
-| Hispania         | Basic      | 3        | 2               | 1         | Add 1 army.                                     |
-| Gaul             | Normal     | 5        | 3               | 2         | Add 2 provisions, 1 Denari.                     |
-| Egypt            | Normal     | 5        | 2               | 3         | Add 2 Denari.                                   |
-| Asia Minor       | Normal     | 4        | 3               | 2         | Add 1 army, 1 provision.                        |
-| Britannia        | Expensive  | 7        | 4               | 3         | Add 2 army, detract 1 provision each turn.      |
-| Dacia            | Expensive  | 8        | 4               | 4         | Add 3 Denari, detract 2 provisions each turn.   |
-| Germania         | Expensive  | 7        | 5               | 3         | Add 1 Denari, 1 army, detract 1 army each turn. |
-
-
 ## Tresure cards
 - There are three types of treasure: money, provisions and army. Each of tresure cards have their own pile.
 
@@ -47,6 +31,21 @@ Cheapest possible, since the whole idea is to do this solo.
 | Army        | Centuriae   | 1$ + 1 provisions | 1 army       | Basic military unit          |
 | Army        | Cohort      | 5$ + 3 provisions | 3 army       | Intermediate military unit   |
 | Army        | Legion      | 9$ + 5 provisions | 5 army       | Advanced military unit       |
+
+## Territory cards
+- Territory cards are in 3 piles, with only top card being available/visible.
+
+| Territory        | Pile       | Cost ($) | Cost Provisions | Cost Army | Effect                                          |
+|------------------|------------|----------|-----------------|-----------|-------------------------------------------------|
+| Sicily           | Basic      | 2        | 1               | 1         | Add 1 provision.                                |
+| Sardinia         | Basic      | 2        | 1               | 1         | Add 1 Denari.                                   |
+| Hispania         | Basic      | 3        | 2               | 1         | Add 1 army.                                     |
+| Gaul             | Normal     | 5        | 3               | 2         | Add 2 provisions, 1 Denari.                     |
+| Egypt            | Normal     | 5        | 2               | 3         | Add 2 Denari.                                   |
+| Asia Minor       | Normal     | 4        | 3               | 2         | Add 1 army, 1 provision.                        |
+| Britannia        | Expensive  | 7        | 4               | 3         | Add 2 army, detract 1 provision each turn.      |
+| Dacia            | Expensive  | 8        | 4               | 4         | Add 3 Denari, detract 2 provisions each turn.   |
+| Germania         | Expensive  | 7        | 5               | 3         | Add 1 Denari, 1 army, detract 1 army each turn. |
 
 ## History Cards
 - At the beginning of every turn, one history card is drawn.
