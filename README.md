@@ -35,17 +35,22 @@ Cheapest possible, since the whole idea is to do this solo.
 ## Territory cards
 - Territory cards are in 3 piles: Early, Mid and Expensive conquest - only top card of a deck is being available/visible.
 
-| Territory        | Pile       | Cost ($) | Cost Provisions | Cost Army | Effect                                          |
-|------------------|------------|----------|-----------------|-----------|-------------------------------------------------|
-| Sicily           | Basic      | 2        | 1               | 1         | Add 1 provision.                                |
-| Sardinia         | Basic      | 2        | 1               | 1         | Add 1 Denari.                                   |
-| Hispania         | Basic      | 3        | 2               | 1         | Add 1 army.                                     |
-| Gaul             | Normal     | 5        | 3               | 2         | Add 2 provisions, 1 Denari.                     |
-| Egypt            | Normal     | 5        | 2               | 3         | Add 2 Denari.                                   |
-| Asia Minor       | Normal     | 4        | 3               | 2         | Add 1 army, 1 provision.                        |
-| Britannia        | Expensive  | 7        | 4               | 3         | Add 2 army, detract 1 provision each turn.      |
-| Dacia            | Expensive  | 8        | 4               | 4         | Add 3 Denari, detract 2 provisions each turn.   |
-| Germania         | Expensive  | 7        | 5               | 3         | Add 1 Denari, 1 army, detract 1 army each turn. |
+| Territory         | Category          | Cost (Denarii, Provisions, Army)  | Effect When Played              | Reason                    |
+|-------------------|-------------------|-----------------------------------|---------------------------------|---------------------------|
+| Italy             | Base Territory    | N/A                               | Gain 1 of each resource.        | Starting point.           |
+| Sicily            | Early Conquest    | 2, 1, 0                           | Gain 1 provision each turn.     | Fertile land.             |
+| Sardinia          | Early Conquest    | 2, 1, 0                           | Gain 1 Denarii each turn.       | Wealthy mines.            |
+| Greece (Achaea)   | Early Conquest    | 3, 2, 1                           | Draw 1 additional card.         | Cultural influence.       |
+| North Africa      | Early Conquest    | 3, 1, 1                           | Gain 2 provisions each turn.    | Grain supply.             |
+| Hispania          | Mid Conquest      | 4, 2, 2                           | Gain 1 Denarii, 1 provision.    | Diverse resources.        |
+| Syria             | Mid Conquest      | 4, 3, 2                           | Gain 1 army card.               | Strategic position.       |
+| Gaul              | Mid Conquest      | 5, 2, 3                           | Gain 2 army cards.              | Conquered legions.        |
+| Ilyricum          | Mid Conquest      | 4, 3, 2                           | Gain 1 provision, 1 Denarii.    | Trade routes.             |
+| Egypt             | Mid Conquest      | 5, 3, 1                           | Gain 3 provisions each turn.    | Breadbasket.              |
+| Asia Minor        | Mid Conquest      | 5, 3, 2                           | Gain 2 Denarii each turn.       | Wealth accumulation.      |
+| Britannia         | Expensive Conquest| 6, 4, 3                           | Gain 1 army, 1 provision.       | Difficult terrain.        |
+| Dacia             | Expensive Conquest| 7, 4, 3                           | Gain 2 Denarii, 1 provision.    | Gold mines.               |
+| Germania          | Expensive Conquest| 7, 5, 4                           | Gain 2 army cards.              | Military challenge.       |
 
 ## History Cards
 - At the beginning of every turn, one history card is drawn.
