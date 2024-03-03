@@ -16,3 +16,16 @@ Cheapest possible, since the whole idea is to do this solo.
 - Use GPT to create visuals.
 - Use Godot to develop a product.
 
+## Supply cards
+
+| Supplies    | Card Name   | Cost $ | Cost Provisions | Value       | Notes                        |
+|-------------|-------------|--------|-----------------|-------------|------------------------------|
+| Money       | Sestertii   | 0      | -               | 1$          | Basic currency unit          |
+| Money       | Denarii     | 3      | -               | 2$          | Intermediate currency unit   |
+| Money       | Aurei       | 6      | -               | 3$          | High-value currency unit     |
+| Provisions  | Grain       | 2      | -               | 1 provision | Basic sustenance resource    |
+| Provisions  | Olive Oil   | 3      | -               | 2 provisions| Mid-level resource           |
+| Provisions  | Wine        | 4      | -               | 3 provisions| High-level resource          |
+| Might       | Centurion   | 1      | 1               | 1 might     | Basic military unit          |
+| Might       | Cohort      | 5      | 3               | 3 might     | Intermediate military unit   |
+| Might       | Legion      | 9      | 5               | 5 might     | Advanced military unit       |
