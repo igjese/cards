@@ -89,6 +89,8 @@ Cards:
 - Reforms of Diocletian
 - Council of Nicaea
 - Latin Language
+- Roman Decadence
+- Empire Decline
 
 ## ACTION CARDS 
 - Each game choses 8 of these and provides full deck for each, player can buy them
