@@ -50,6 +50,7 @@ Cheapest possible, since the whole idea is to do this solo.
 ## History Cards
 - At the beginning of every turn, one history card is drawn.
 - History cards can be events or figures from Roman history
+  
 | History Card               | Effect                                                  | Reason                  |
 |----------------------------|---------------------------------------------------------|-------------------------|
 | Province Uprising          | Lose 1 provision.                                       | Instability.            |
