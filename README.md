@@ -10,6 +10,7 @@ Goal is to create Solitaire Deck Building game that educates the player about Ro
 Cheapest possible, since the whole idea is to do this solo.
 - Use GPT to create visuals.
 - Use Godot to develop a product.
+- Keep as close to Dominion formula as we can.
 
 ## Gameplay
 - Player starts with 10 cards in a deck, each hand is 5 cards
