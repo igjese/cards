@@ -56,7 +56,6 @@ Cards:
 - Province Uprising                
 - Senate Session          
 - Barbarian Invasion      
-- Antonine Plague         
 - Pax Romana              
 - Julius Caesar           
 - Augustus                
