@@ -20,17 +20,17 @@ Cheapest possible, since the whole idea is to do this solo.
 ## Territory cards
 - Territory cards are in 3 piles, with only top card being available/visible.
 
-| Territory        | Pile       | Cost ($) | Cost Provisions | Cost Army | Effect                                          | Quantity |
-|------------------|------------|----------|-----------------|-----------|-------------------------------------------------|----------|
-| Sicily           | Basic      | 2        | 1               | 1         | Add 1 provision.                                | 3        |
-| Sardinia         | Basic      | 2        | 1               | 1         | Add 1 Denari.                                   | 3        |
-| Hispania         | Basic      | 3        | 2               | 1         | Add 1 army.                                     | 3        |
-| Gaul             | Normal     | 5        | 3               | 2         | Add 2 provisions, 1 Denari.                     | 2        |
-| Egypt            | Normal     | 5        | 2               | 3         | Add 2 Denari.                                   | 2        |
-| Asia Minor       | Normal     | 4        | 3               | 2         | Add 1 army, 1 provision.                        | 2        |
-| Britannia        | Expensive  | 7        | 4               | 3         | Add 2 army, detract 1 provision each turn.      | 1        |
-| Dacia            | Expensive  | 8        | 4               | 4         | Add 3 Denari, detract 2 provisions each turn.   | 1        |
-| Germania         | Expensive  | 7        | 5               | 3         | Add 1 Denari, 1 army, detract 1 army each turn. | 1        |
+| Territory        | Pile       | Cost ($) | Cost Provisions | Cost Army | Effect                                          |
+|------------------|------------|----------|-----------------|-----------|-------------------------------------------------|
+| Sicily           | Basic      | 2        | 1               | 1         | Add 1 provision.                                |
+| Sardinia         | Basic      | 2        | 1               | 1         | Add 1 Denari.                                   |
+| Hispania         | Basic      | 3        | 2               | 1         | Add 1 army.                                     |
+| Gaul             | Normal     | 5        | 3               | 2         | Add 2 provisions, 1 Denari.                     |
+| Egypt            | Normal     | 5        | 2               | 3         | Add 2 Denari.                                   |
+| Asia Minor       | Normal     | 4        | 3               | 2         | Add 1 army, 1 provision.                        |
+| Britannia        | Expensive  | 7        | 4               | 3         | Add 2 army, detract 1 provision each turn.      |
+| Dacia            | Expensive  | 8        | 4               | 4         | Add 3 Denari, detract 2 provisions each turn.   |
+| Germania         | Expensive  | 7        | 5               | 3         | Add 1 Denari, 1 army, detract 1 army each turn. |
 
 
 ## Tresure cards
