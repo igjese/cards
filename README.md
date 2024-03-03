@@ -33,8 +33,8 @@ Cheapest possible, since the whole idea is to do this solo.
 | Germania         | Expensive  | 7        | 5               | 3         | Add 1 Denari, 1 army, detract 1 army each turn. | 1        |
 
 
-## Supply cards
-- There are three types of supply: money, provisions and army. Each of supply cards have their own pile.
+## Tresure cards
+- There are three types of treasure: money, provisions and army. Each of tresure cards have their own pile.
 
 | Type        | Card Name   | Cost              | Provides     | Notes                        |
 |-------------|-------------|-------------------|--------------|------------------------------|
@@ -50,29 +50,72 @@ Cheapest possible, since the whole idea is to do this solo.
 
 ## History Cards
 - At the beginning of every turn, one history card is drawn.
-- History cards can be events or figures from Roman history, each with a unique immediate effect.
+- History cards can be events or figures from Roman history
 
-| History Card          | Effect                                                                      |
-|-----------------------|-----------------------------------------------------------------------------|
-| Good Harvest          | Gain +2 provisions this turn.                                               |
-| Uprising              | Spend 1 army to quell or discard 1 territory card.                          |
-| Senate Session        | Shuffle all territory piles and reveal the top card of each.                |
-| Trade Embargo         | Reduce Denari production by 1 this turn.                                    |
-| Barbarian Invasion    | Spend 2 army to defend or discard 1 territory card.                         |
-| Technological Advancement | Gain +1 Denari this turn.                                                |
-| Diplomatic Marriage   | Reduce the cost of acquiring a territory by 1 Denari and 1 provision this turn. |
-| Economic Boom         | Gain +1 Denari this turn.                                                   |
-| Plague                | Lose 2 provisions this turn.                                                |
-| Pax Romana            | Ignore all event effects this turn; gain 1 extra action or buy.             |
-| Julius Caesar         | Gain +2 army this turn for conquests.                                       |
-| Augustus              | Reduce the cost of all actions and purchases by 1 this turn.                |
-| Marcus Aurelius       | Choose and negate the effect of one event card this turn.                   |
-| Hadrian               | Add +1 army and +1 Denari for this turn.                                    |
-| Seneca                | Draw 1 extra card this turn.                                                |
-| Constantine the Great | Convert 1 resource of one type to another this turn.                        |
-| Trajan                | Gain +2 Denari this turn.                                                   |
-| Scipio Africanus      | Automatically win against one military challenge this turn.                 |
-| Cicero                | Gain +1 action this turn.                                                   |
-| Nero                  | Discard up to 2 cards from your hand and draw that many cards.              |
+Cards:
+- Province Uprising                
+- Senate Session          
+- Barbarian Invasion      
+- Antonine Plague         
+- Pax Romana              
+- Julius Caesar           
+- Augustus                
+- Marcus Aurelius         
+- Hadrian                 
+- Seneca                  
+- Constantine the Great   
+- Trajan                  
+- Scipio Africanus        
+- Cicero                  
+- Nero                    
+- Plague of Galen
+- Good Harvest
+- Magistrate Election
+- Caligula
+- Great Burning of Rome
+- Punic Wars
+- Pantheon 
+- Colosseum 
+- Julian Calendar
+- Roman Numerals
+- Rise of Christianity
+- Jupiter
+- Mars
+- Venus
+- Minerva
+- Neptune
+- First Triumvirate
+- The Year of Four Emperors
+- Reforms of Diocletian
+- Council of Nicaea
 
+## ACTION CARDS 
+- Each game choses 8 of these and provides full deck for each, player can buy them
+
+Cards:
+- Public Forum
+- Military Triumph
+- Public Bath
+- Theatrical Play
+- Gladiator Games
+- Chariot Races
+- Aqueduct
+- Roman Bridge
+- Roman Road
+- Courrier Service: Cursus publicus
+- Sewers
+- Newspapers: Acta Diurna
+- Bureaucracy
+- City Planning
+- Roman Law
+- Bread and circuses
+- Military Medicine
+- Legionary Training
+- Roman Citizenship
+- Basilica: Christian Temple
+- Temple of Jupiter
+- Temple of Mars
+- Saturnalia Festival
+- Vestalia Festival
+- Roman Welfare
 
