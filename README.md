@@ -33,7 +33,7 @@ Cheapest possible, since the whole idea is to do this solo.
 | Army        | Legion      | 9$ + 5 provisions | 5 army       | Advanced military unit       |
 
 ## Territory cards
-- Territory cards are in 3 piles, with only top card being available/visible.
+- Territory cards are in 3 piles: Early, Mid and Expensive conquest - only top card of a deck is being available/visible.
 
 | Territory        | Pile       | Cost ($) | Cost Provisions | Cost Army | Effect                                          |
 |------------------|------------|----------|-----------------|-----------|-------------------------------------------------|
@@ -50,45 +50,46 @@ Cheapest possible, since the whole idea is to do this solo.
 ## History Cards
 - At the beginning of every turn, one history card is drawn.
 - History cards can be events or figures from Roman history
+| History Card               | Effect                                                  | Reason                  |
+|----------------------------|---------------------------------------------------------|-------------------------|
+| Province Uprising          | Lose 1 provision.                                       | Instability.            |
+| Senate Session             | Gain 1 Denarii.                                         | Lobbying success.       |
+| Barbarian Invasion         | Discard 1 army card.                                    | Invasion defense.       |
+| Pax Romana                 | No negative events.                                     | Peaceful period.        |
+| Julius Caesar              | Draw 1 additional card.                                 | Leadership.             |
+| Augustus                   | Gain 1 territory card.                                  | Expansion.              |
+| Marcus Aurelius            | Gain 1 wisdom token.                                    | Stoicism.               |
+| Hadrian                    | Negate next territory loss.                             | Defense.                |
+| Seneca                     | Gain 1 provision.                                       | Resource optimization.  |
+| Constantine the Great      | Convert action card to resource card.                   | Transformation.         |
+| Trajan                     | Gain 1 Denarii and 1 provision.                         | Prosperity.             |
+| Scipio Africanus           | Gain 1 temporary army card.                             | Military genius.        |
+| Cicero                     | Draw 2 cards then discard 1.                            | Strategic thinking.     |
+| Nero                       | Discard 1 provision.                                    | Mismanagement.          |
+| Plague of Galen            | Lose 1 army card.                                       | Illness.                |
+| Good Harvest               | Gain 2 provisions.                                      | Bountiful yield.        |
+| Magistrate Election        | Add 1 card from discard to hand.                        | Political maneuver.     |
+| Caligula                   | Randomly discard 1 card.                                | Unpredictability.       |
+| Great Burning of Rome      | Lose 1 territory card.                                  | Devastation.            |
+| Punic Wars                 | Discard 1 army card.                                    | Conflict.               |
+| Pantheon                   | Draw 1 extra card of chosen type next turn.             | Divine favor.           |
+| Colosseum                  | Gain 1 Denarii.                                         | Entertainment.          |
+| Julian Calendar            | Reorganize top 3 cards of deck.                         | Administrative reform.  |
+| Roman Numerals             | Gain 1 Denarii.                                         | Efficiency.             |
+| Rise of Christianity       | Exchange 1 action card.                                 | Transformation.         |
+| Jupiter                    | Gain 1 temporary army strength.                         | Divine favor.           |
+| Mars                       | Gain 1 temporary army card.                             | War god.                |
+| Venus                      | Gain 1 provision.                                       | Fertility.              |
+| Minerva                    | Draw 1 card.                                            | Wisdom.                 |
+| Neptune                    | Negate next negative event.                             | Sea god protection.     |
+| First Triumvirate          | Choose 3 cards, keep 1.                                 | Political alliance.     |
+| The Year of Four Emperors  | Discard 2 cards, then draw 1.                           | Instability.            |
+| Reforms of Diocletian      | Organize hand and discard pile.                         | Administrative reform.  |
+| Council of Nicaea          | Play an action card twice.                              | Unification.            |
+| Latin Language             | Gain 1 Denarii.                                         | Cultural spread.        |
+| Roman Decadence            | Lose 1 provision.                                       | Moral decline.          |
+| Empire Decline             | Discard 1 territory card.                               | Control loss.           |
 
-Cards:
-- Province Uprising                
-- Senate Session          
-- Barbarian Invasion      
-- Pax Romana              
-- Julius Caesar           
-- Augustus                
-- Marcus Aurelius         
-- Hadrian                 
-- Seneca                  
-- Constantine the Great   
-- Trajan                  
-- Scipio Africanus        
-- Cicero                  
-- Nero                    
-- Plague of Galen
-- Good Harvest
-- Magistrate Election
-- Caligula
-- Great Burning of Rome
-- Punic Wars
-- Pantheon 
-- Colosseum 
-- Julian Calendar
-- Roman Numerals
-- Rise of Christianity
-- Jupiter
-- Mars
-- Venus
-- Minerva
-- Neptune
-- First Triumvirate
-- The Year of Four Emperors
-- Reforms of Diocletian
-- Council of Nicaea
-- Latin Language
-- Roman Decadence
-- Empire Decline
 
 ## ACTION CARDS 
 - Each game choses 8 of these and provides full deck for each, player can buy them
