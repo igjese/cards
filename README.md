@@ -4,7 +4,7 @@
 Goal is to create Solitaire Deck Building game that educates the player about Roman era. If successful, I can continue doing this into my retirement.
 
 - Gameplay: Aims to play like Dominion, but single player. 
-- Educational aspect: Each new game can focus on a single card (e.g. Julius Caesar, or Roman Legions) and provide interesting but accurate historical information.
+- Educational aspect: Each new game can highlight a single card (e.g. Julius Caesar, or Roman Legions) and provide interesting but accurate historical information. (intro screen, player needs to click "continue" to proceed)
 
 ## Implementation
 Cheapest possible, since the whole idea is to do this solo.
@@ -13,9 +13,13 @@ Cheapest possible, since the whole idea is to do this solo.
 - Keep as close to Dominion formula as we can.
 
 ## Gameplay
-- Player starts with 10 cards in a deck, each hand is 5 cards
-- Starting deck is 1x Italy (territory), 2x Centuriae (army), 3x Grain (provisions), 5x Sestertii (money)
-- Player wins when acquiring all territory cards.
+1. Player starts with 10 cards in a deck. Starting deck is 1x Italy (territory), 2x Centuriae (army), 3x Grain (provisions), 5x Sestertii (money)
+2. Each turn next history card is drawn, while player is dealt new hand of 5 cards
+3. Player has 1 action available and plays action cards
+4. Effects are accumulated (treasures etc)
+5. Player can buy one card (unless some effect specify differently)
+6. Game proceeds to next round
+7. Player wins when acquiring all territory cards.
 
 ## Tresure cards
 - There are three types of treasure: money, provisions and army. Each of tresure cards have their own pile.
