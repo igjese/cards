@@ -88,6 +88,7 @@ Cards:
 - The Year of Four Emperors
 - Reforms of Diocletian
 - Council of Nicaea
+- Latin Language
 
 ## ACTION CARDS 
 - Each game choses 8 of these and provides full deck for each, player can buy them
