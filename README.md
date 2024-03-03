@@ -15,6 +15,22 @@ Cheapest possible, since the whole idea is to do this solo.
 ## Gameplay
 - Player starts with 10 cards in a deck, each hand is 5 cards
 - Starting deck is 1x Italy (territory), 2x Centuriae (army), 3x Grain (provisions), 5x Sestertii (money)
+- Player wins when acquiring all territory cards.
+
+## Territory cards
+
+| Territory        | Pile       | Cost ($) | Cost Provisions | Cost Army | Effect                                          | Quantity |
+|------------------|------------|----------|-----------------|-----------|-------------------------------------------------|----------|
+| Sicily           | Basic      | 2        | 1               | 1         | Add 1 provision.                                | 3        |
+| Sardinia         | Basic      | 2        | 1               | 1         | Add 1 Denari.                                   | 3        |
+| Hispania         | Basic      | 3        | 2               | 1         | Add 1 army.                                     | 3        |
+| Gaul             | Normal     | 5        | 3               | 2         | Add 2 provisions, 1 Denari.                     | 2        |
+| Egypt            | Normal     | 5        | 2               | 3         | Add 2 Denari.                                   | 2        |
+| Asia Minor       | Normal     | 4        | 3               | 2         | Add 1 army, 1 provision.                        | 2        |
+| Britannia        | Expensive  | 7        | 4               | 3         | Add 2 army, detract 1 provision each turn.      | 1        |
+| Dacia            | Expensive  | 8        | 4               | 4         | Add 3 Denari, detract 2 provisions each turn.   | 1        |
+| Germania         | Expensive  | 7        | 5               | 3         | Add 1 Denari, 1 army, detract 1 army each turn. | 1        |
+
 
 ## Supply cards
 - There are three types of supply: money, provisions and army.
@@ -34,15 +50,15 @@ Cheapest possible, since the whole idea is to do this solo.
 ## Event cards
 - Every time when player draws one or more territory cards, he also draws an even card.
 
-| Event Card           | Simplified Effect                                        | Quantity |
-|----------------------|----------------------------------------------------------|----------|
-| Good Harvest         | Add 2 provisions to the territory card in hand.          | 2        |
-| Uprising             | Spend 1 Legion to keep the territory card in hand, or discard it. | 2        |
-| Senate Change Policy | Shuffle all territory piles and reveal the top card.     | 1        |
-| Trade Embargo        | Reduce Denari production by 1 for the territory card in hand. | 2        |
-| Barbarian Invasion   | Spend 2 Legions to keep the territory card in hand, or discard it. | 2        |
-| Technological Advancement | Add 1 Denari production to the territory card in hand. | 2        |
-| Diplomatic Marriage  | The territory card in hand costs 2 less Denari to acquire. | 1        |
-| Economic Boom        | Add 1 Denari to your total for this turn.                | 2        |
-| Plague               | Lose 2 provisions from your total for this turn.         | 2        |
-| Pax Romana           | No event effect this turn; gain 1 extra action or buy.   | 4        |
+| Event Card           | Simplified Effect                  | Quantity |
+|----------------------|------------------------------------|----------|
+| Good Harvest         | Add 2 provisions.                  | 2        |
+| Uprising             | Spend 1 army or discard territory. | 2        |
+| Senate Change Policy | Shuffle all territory piles        | 1        |
+| Trade Embargo        | Reduce Denari by 1.                | 2        |
+| Barbarian Invasion   | Spend 2 army or discard territory  | 2        |
+| Technology Advancement | Add 1 Denari .                   | 2        |
+| Diplomatic Marriage  | Any territory card costs 1 less provision and 1 less army to acquire. | 1        |
+| Economic Boom        | Add 1 Denari .                     | 2        |
+| Plague               | Lose 2 provisions.                 | 2        |
+| Pax Romana           | No events; gain 1 extra action.    | 4        |
