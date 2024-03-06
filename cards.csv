@@ -1,0 +1,87 @@
+Type,Card,Cost Money,Cost Provisions,Cost Army,Effect Money,Effect Provisions,Effect Army
+Money,Sestertii,0,0,0,1,0,0
+Money,Denarii,3,0,0,2,0,0
+Money,Aurei,6,0,0,3,0,0
+Provisions,Grain,2,0,0,0,1,0
+Provisions,Olive Oil,3,0,0,0,2,0
+Provisions,Wine,4,0,0,0,3,0
+Army,Centuriae,1,1,0,0,0,1
+Army,Cohort,3,2,0,0,0,2
+Army,Legion,5,3,0,0,0,3
+Base Territory,Italy,0,0,0,1,1,1
+Early Conquest,Sicily,2,1,2,1,1,0
+Early Conquest,Sardinia,2,1,2,0,1,1
+Early Conquest,Greece (Achaea),3,2,2,1,0,1
+Early Conquest,North Africa,2,1,2,0,2,0
+Mid Conquest,Hispania,3,4,3,2,0,1
+Mid Conquest,Syria,4,2,3,1,2,0
+Mid Conquest,Gaul,4,3,3,1,1,1
+Mid Conquest,Ilyricum,4,2,3,0,1,2
+Mid Conquest,Egypt,5,2,4,1,3,0
+Mid Conquest,Asia Minor,4,3,3,1,2,1
+Expensive Conquest,Britannia,7,4,5,1,-1,2
+Expensive Conquest,Dacia,8,4,6,3,-1,0
+Expensive Conquest,Germania,7,5,5,2,2,-1
+History,Province Uprising,0,0,0,0,0,-1
+History,Senate Session,0,0,0,0,0,-1
+History,Barbarian Invasion,0,0,0,0,0,-3
+History,Pax Romana,0,0,0,1,0,0
+History,Slave Revolt,0,0,0,0,-1,-1
+History,Julius Caesar,0,0,0,0,0,2
+History,Augustus,0,0,0,1,0,0
+History,Marcus Aurelius,0,0,0,0,0,0
+History,Hadrian,0,0,0,-1,1,0
+History,Seneca,0,0,0,0,1,0
+History,Constantine the Great,0,0,0,0,1,1
+History,Trajan,0,0,0,-1,0,2
+History,Scipio,0,0,0,0,0,1
+History,Cicero,0,0,0,0,1,0
+History,Nero,0,0,0,-1,-1,1
+History,Plague of Galen,0,0,0,-1,-2,-1
+History,Good Harvest,0,0,0,0,2,0
+History,Magistrate Election,0,0,0,0,0,0
+History,Caligula,0,0,0,-2,-1,0
+History,Great Burning of Rome,0,0,0,-2,-1,0
+History,Punic Wars,0,0,0,1,1,-1
+History,Pantheon,0,0,0,-1,1,0
+History,Colosseum,0,0,0,-1,1,0
+History,Julian Calendar,0,0,0,0,1,0
+History,Roman Numerals,0,0,0,1,0,0
+History,Rise of Christianity,0,0,0,0,0,-1
+History,Jupiter,0,0,0,1,0,1
+History,Mars,0,0,0,0,1,1
+History,Venus,0,0,0,0,1,0
+History,Minerva,0,0,0,1,0,0
+History,Neptune,0,0,0,0,0,1
+History,First Triumvirate,0,0,0,0,1,1
+History,The Year of Four Emperors,0,0,0,-1,-1,1
+History,Reforms of Diocletian,0,0,0,-1,1,1
+History,Council of Nicaea,0,0,0,0,1,-1
+History,Latin Language,0,0,0,0,1,
+History,Roman Decadence,0,0,0,-1,-1,
+History,Empire Decline,0,0,0,-1,0,-1
+Action,Public Forum,3,1,0,0,1,0
+Action,Military Triumph,4,0,2,0,0,1
+Action,Public Bath,2,2,0,0,1,0
+Action,Theatrical Play,2,0,0,1,0,0
+Action,Gladiator Games,3,0,1,0,2,0
+Action,Chariot Races,3,1,0,0,0,1
+Action,Aqueduct,5,3,0,0,2,0
+Action,Roman Bridge,4,2,1,1,2,0
+Action,Roman Road,3,2,0,1,1,1
+Action,Courrier Service: Cursus publicus,4,0,0,2,0,0
+Action,Sewers,3,3,0,0,2,0
+Action,Newspapers: Acta Diurna,2,1,0,0,1,1
+Action,Bureaucracy,5,0,0,2,0,0
+Action,City Planning,6,0,1,1,1,0
+Action,Roman Law,4,2,0,2,2,1
+Action,Bread and circuses,3,0,1,1,1,0
+Action,Military Medicine,5,1,2,0,0,1
+Action,Legionary Training,4,3,1,0,0,2
+Action,Roman Citizenship,6,0,0,1,0,1
+Action,Basilica: Christian Temple,5,2,0,1,1,0
+Action,Temple of Jupiter,4,1,1,1,1,1
+Action,Temple of Mars,5,0,3,0,1,2
+Action,Saturnalia Festival,2,0,0,1,1,0
+Action,Vestalia Festival,2,2,0,0,2,0
+Action,Roman Welfare,3,1,0,0,1,1

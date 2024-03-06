@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://hr756cx0syfv"]
+
+[ext_resource type="Script" path="res://card.gd" id="1_cbw46"]
+[ext_resource type="Texture2D" uid="uid://5kuve2qk2x6x" path="res://cards/caesar.png" id="2_1m88o"]
+[ext_resource type="Texture2D" uid="uid://bkhg7vxs4yqsd" path="res://frame4.png" id="2_e0s3v"]
+[ext_resource type="FontFile" uid="uid://c2crqvwp2kqvd" path="res://Font Awesome 6 Free-Solid-900.otf" id="2_ohxj3"]
+
+[node name="Card" type="Panel"]
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_cbw46")
+
+[node name="CardVisual" type="Sprite2D" parent="."]
+position = Vector2(49.875, 62.75)
+scale = Vector2(0.092041, 0.0678711)
+texture = ExtResource("2_1m88o")
+
+[node name="MainVisual" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 98.0
+offset_bottom = 98.0
+expand_mode = 1
+
+[node name="CardCost" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 84.0
+offset_right = 93.0
+offset_bottom = 96.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_ohxj3")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "a b c"
+
+[node name="CardEffect" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 31.0
+offset_right = 95.0
+offset_bottom = 79.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_ohxj3")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "-"
+
+[node name="CardFrame" type="Sprite2D" parent="."]
+texture = ExtResource("2_e0s3v")
+offset = Vector2(50, 50)
+
+[node name="CardTitle" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 20.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+scroll_active = false

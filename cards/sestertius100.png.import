@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxsu2gbxogq6q"
-path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
+uid="uid://b5322katwtt2i"
+path="res://.godot/imported/sestertius100.png-3446497bdd98836579c7e38429f1689f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"]
+source_file="res://cards/sestertius100.png"
+dest_files=["res://.godot/imported/sestertius100.png-3446497bdd98836579c7e38429f1689f.ctex"]
 
 [params]
 
