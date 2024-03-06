@@ -26,9 +26,9 @@ Cheapest possible, since the whole idea is to do this solo.
 
 | Type        | Card Name   | Cost              | Provides     | Notes                        |
 |-------------|-------------|-------------------|--------------|------------------------------|
-| Money       | Sestertium   | 0$                | 1$           | Basic currency unit          |
-| Money       | Denarium     | 3$                | 2$           | Intermediate currency unit   |
-| Money       | Aurei       | 6$                | 3$           | High-value currency unit     |
+| Money       | Sestertius  | 0$                | 1$           | Basic currency unit          |
+| Money       | Denarius    | 3$                | 2$           | Intermediate currency unit   |
+| Money       | Aureus      | 6$                | 3$           | High-value currency unit     |
 | Provisions  | Grain       | 2$                | 1 provision  | Basic sustenance resource    |
 | Provisions  | Olive Oil   | 3$                | 2 provisions | Mid-level resource           |
 | Provisions  | Wine        | 4$                | 3 provisions | High-level resource          |
