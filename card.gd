@@ -6,11 +6,13 @@ func set_title(title: String) -> void:
     if title_label:
         title_label.bbcode_text = "[b]" + title + "[/b]"
 
+
 # Function to set the card's cost
 func set_cost(text: String) -> void:
     var text_label = get_node("CardCost") as RichTextLabel
     if text_label:
         text_label.bbcode_text = text
+
 
 # Function to set the card's effect
 func set_effect(text: String) -> void:
@@ -18,14 +20,16 @@ func set_effect(text: String) -> void:
     if text_label:
         text_label.bbcode_text = text
 
+
 # Function to set the card's main visual
-func set_visual(image_path: String) -> void:
-    var sprite_node = get_node("MainVisual") as TextureRect
-    if sprite_node:
-        var texture = load(image_path) # Load the texture from the given path
-        if texture:
-            sprite_node.texture = texture
-        else:
-            print("Failed to load texture from path: ", image_path)
+func set_visual(card_name: String) -> void:
+    var normalized_name = card_name.replace(" ", "_").to_lower()
+    var image_path = "res://cards/" + normalized_name + "100.png"
+    var main_visual = get_node("MainVisual") as TextureRect
+    var texture = load(image_path) # Load the texture from the given path
+    if texture:
+        main_visual.texture = texture
     else:
-        print("Sprite node not found.")
+        print("Failed to load image %s, using default instead." % image_path)
+
+        

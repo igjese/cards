@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5kuve2qk2x6x"
-path="res://.godot/imported/caesar.png-6cdb2eca028c2ea5eca23499b2ff1fa1.ctex"
+uid="uid://dex3r40nu5350"
+path="res://.godot/imported/default100.png-b9a5ef8735a63467edf28c842c6d2646.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cards/caesar.png"
-dest_files=["res://.godot/imported/caesar.png-6cdb2eca028c2ea5eca23499b2ff1fa1.ctex"]
+source_file="res://cards/default100.png"
+dest_files=["res://.godot/imported/default100.png-b9a5ef8735a63467edf28c842c6d2646.ctex"]
 
 [params]
 

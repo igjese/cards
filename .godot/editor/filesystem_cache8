@@ -1,18 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709714168
-card.gd::GDScript::-1::1709713095::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1709714014::0::1::::<><>::res://card.gd<>uid://5kuve2qk2x6x::::res://cards/caesar.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
-cards.csv::::4173815288816067317::1709642661::1709642895::0::::<><>::
-default_env.tres::Environment::3535254983394503347::1709714014::0::1::::<><>::
+::res://::1709894646
+card.gd::GDScript::-1::1709890121::0::1::::<>Panel<>::
+card.tscn::PackedScene::528414477263538463::1709894231::0::1::::<><>::res://card.gd<>uid://dex3r40nu5350::::res://cards/default100.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
+cards.csv::::4173815288816067317::1709884729::1709642895::0::::<><>::
+default_env.tres::Environment::3535254983394503347::1709894231::0::1::::<><>::
 Font Awesome 6 Free-Solid-900.otf::FontFile::6673130800394779117::1709681289::1709681290::1::::<><>::
 frame4.png::CompressedTexture2D::3103182351091807159::1709679922::1709679922::1::::<><>::
 icon.png::CompressedTexture2D::8812027128366769566::1709536140::1709537716::1::::<><>::
 karte-720.png::CompressedTexture2D::5028525007727685489::1709683078::1709683082::1::::<><>::
-main.gd::GDScript::-1::1709713696::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1709714014::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
-README.md::TextFile::-1::1709535949::0::1::::<><>::
-::res://cards/::1709714168
+main.gd::GDScript::-1::1709891996::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1709894230::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
+README.md::TextFile::-1::1709729658::0::1::::<><>::
+::res://cards/::1709894646
 aureus100.png::CompressedTexture2D::3780477735618574018::1709714161::1709714168::1::::<><>::
-caesar.png::CompressedTexture2D::2127561180753440201::1709686769::1709711927::1::::<><>::
+default100.png::CompressedTexture2D::7489230110684516117::1709886311::1709886311::1::::<><>::
 denarius100.png::CompressedTexture2D::3344499055274690424::1709709685::1709711936::1::::<><>::
+julius_caesar100.png::CompressedTexture2D::1678949229189693472::1709886395::1709894646::1::::<><>::
 sestertius100.png::CompressedTexture2D::4551576671314816578::1709709741::1709711936::1::::<><>::

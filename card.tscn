@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://hr756cx0syfv"]
+[gd_scene load_steps=6 format=3 uid="uid://hr756cx0syfv"]
 
 [ext_resource type="Script" path="res://card.gd" id="1_cbw46"]
-[ext_resource type="Texture2D" uid="uid://5kuve2qk2x6x" path="res://cards/caesar.png" id="2_1m88o"]
+[ext_resource type="Texture2D" uid="uid://dex3r40nu5350" path="res://cards/default100.png" id="2_73fvn"]
 [ext_resource type="Texture2D" uid="uid://bkhg7vxs4yqsd" path="res://frame4.png" id="2_e0s3v"]
 [ext_resource type="FontFile" uid="uid://c2crqvwp2kqvd" path="res://Font Awesome 6 Free-Solid-900.otf" id="2_ohxj3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yp1jo"]
+load_path = "res://.godot/imported/caesar.png-6cdb2eca028c2ea5eca23499b2ff1fa1.ctex"
 
 [node name="Card" type="Panel"]
 offset_right = 100.0
@@ -13,7 +16,7 @@ script = ExtResource("1_cbw46")
 [node name="CardVisual" type="Sprite2D" parent="."]
 position = Vector2(49.875, 62.75)
 scale = Vector2(0.092041, 0.0678711)
-texture = ExtResource("2_1m88o")
+texture = SubResource("CompressedTexture2D_yp1jo")
 
 [node name="MainVisual" type="TextureRect" parent="."]
 layout_mode = 0
@@ -21,6 +24,7 @@ offset_left = 2.0
 offset_top = 28.0
 offset_right = 98.0
 offset_bottom = 98.0
+texture = ExtResource("2_73fvn")
 expand_mode = 1
 
 [node name="CardCost" type="RichTextLabel" parent="."]
