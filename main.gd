@@ -7,13 +7,25 @@ var cards_by_name = {}
 func _ready():
     load_cards_from_csv()
     
+    setup_card_visual_and_data($CardHistory, "Julius Caesar")
+    setup_card_visual_and_data($CardMoney1, "Sestertius")
+    setup_card_visual_and_data($CardMoney2, "Denarius")
+    setup_card_visual_and_data($CardMoney3, "Aureus")
+
+
+# Assumes cards_by_name is a dictionary where keys are card names
+# and values are dictionaries containing the card's data.
+func setup_card_visual_and_data(card: Control, card_name: String) -> void:
+    if not cards_by_name.has(card_name):
+        print("Card name not found: ", card_name)
+        return
+    
+    var card_data = cards_by_name[card_name]
+    
     var money_icon = "\uf51e"
     var provisions_icon = "\uf5d1"
     var army_icon = "\uf132"
-    
-    var card = $CardHistory
-    var card_name = "Julius Caesar"
-    var card_data = cards_by_name[card_name]
+
     var money_cost = "%s %d" % [money_icon, card_data.cost_money]
     var provisions_cost = "   %s %d" % [provisions_icon, card_data.cost_provisions] if card_data.cost_provisions != 0 else ""
     var army_cost = "   %s %d" % [army_icon, card_data.cost_army] if card_data.cost_army != 0 else ""
@@ -25,24 +37,8 @@ func _ready():
     card.set_effect("%s%s%s" % [money_effect, provisions_effect, army_effect])
     card.set_cost("%s%s%s" % [money_cost, provisions_cost, army_cost])
     card.set_visual(card_name)
-    
-    card = $CardMoney1
-    card.set_visual("Sestertius")
-    card.set_title("Sestertius")
-    card.set_cost("\uf51e 0")
-    card.set_effect("\uf51e 1")
-    
-    card = $CardMoney2
-    card.set_visual("denarius")
-    card.set_title("Denarius")
-    card.set_cost("\uf51e 3")
-    card.set_effect("\uf51e 2")
-    
-    card = $CardMoney3
-    card.set_visual("aureus")
-    card.set_title("Aureus")
-    card.set_cost("\uf51e 6")
-    card.set_effect("\uf51e 3")
+
+
 
 func load_cards_from_csv():
     var path = "res://cards.csv"

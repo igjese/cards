@@ -1,7 +1,7 @@
 Type,Card,Cost Money,Cost Provisions,Cost Army,Effect Money,Effect Provisions,Effect Army
-Money,Sestertii,0,0,0,1,0,0
-Money,Denarii,3,0,0,2,0,0
-Money,Aurei,6,0,0,3,0,0
+Money,Sestertius,0,0,0,1,0,0
+Money,Denarius,3,0,0,2,0,0
+Money,Aureus,6,0,0,3,0,0
 Provisions,Grain,2,0,0,0,1,0
 Provisions,Olive Oil,3,0,0,0,2,0
 Provisions,Wine,4,0,0,0,3,0
