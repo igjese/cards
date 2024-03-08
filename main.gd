@@ -7,15 +7,21 @@ var cards_by_name = {}
 func _ready():
     load_cards_from_csv()
     
-    setup_card_visual_and_data($CardHistory, "Julius Caesar")
-    setup_card_visual_and_data($CardMoney1, "Sestertius")
-    setup_card_visual_and_data($CardMoney2, "Denarius")
-    setup_card_visual_and_data($CardMoney3, "Aureus")
-
-
+    display_card($CardHistory, "Julius Caesar")
+    display_card($CardMoney1, "Sestertius")
+    display_card($CardMoney2, "Denarius")
+    display_card($CardMoney3, "Aureus")
+    display_card($CardProvisions1, "Grain")
+    display_card($CardProvisions2, "Olive Oil")
+    display_card($CardProvisions3, "Wine")
+    display_card($CardArmy1, "Centuriae")
+    display_card($CardArmy2, "Cohort")
+    display_card($CardArmy3, "Legion")
+    
+    
 # Assumes cards_by_name is a dictionary where keys are card names
 # and values are dictionaries containing the card's data.
-func setup_card_visual_and_data(card: Control, card_name: String) -> void:
+func display_card(card: Control, card_name: String) -> void:
     if not cards_by_name.has(card_name):
         print("Card name not found: ", card_name)
         return
