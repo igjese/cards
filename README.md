@@ -15,7 +15,55 @@ Cheapest possible, since the whole idea is to do this solo.
 - Use Godot to develop a product.
 - Keep as close to Dominion formula as we can.
 
+
 ## Gameplay
+
+Going in stages corresponding to historical periods, the first is founding of Rome and kingdom, ending with battle of Lake Regillus.
+
+For treasure cards: Maybe have only money for the first period, later adding army, and only in the last one adding provisions (as another type of progression from lean and simple into complex and vast).
+
+Example cards for the first period:
+
+| Title              | Reason                  |
+|--------------------|-------------------------|
+| Romulus            | Founding Father         |
+| Senate             | Civic Foundation        |
+| Etruscans          | Cultural Influence      |
+| Sabine Women       | Community Growth        |
+| Social Reforms     | Servius Tullius         |
+| Forum              | Public Space            |
+| Twelve Tables      | Foundation of Law       |
+| Magna Graecia      | Cultural Intersection   |
+| Roman Gods         | Divine Assistance       |
+| Romulus and Remus  | Legendary Founders      |
+| Castor and Pollux  | Divine Twins            |
+| Plebs              | Voice of the People     |
+| Patricians         | Noble Families          |
+| Roman Senate       | Legislative Authority   |
+| Roman Magistrates  | Executive Power         |
+| Plebeian Tribunes  | Protectors of the People|
+| Vestal Virgins     | Keepers of the Sacred Flame   |
+| River Tiber        | Geographic advantage    |
+| Trade Settlements  | Economic development    |
+| Military Outposts  | Defense                 |
+| Citizen Militia    | Civil defense           |
+| Roman Phalanxes    | Early Military          |
+| Cattle Market      | Economic activity       |
+| First Alliance     | Diplomacy               |
+| Temple of Jupiter  | Religious significance  |
+| Latin Language     | Cultural integration    |
+
+Victory cards (in succession once the first is "purchased") for the first period:
+
+| Title              | Subtitle                |
+|--------------------|-------------------------|
+| King's Exile       |     |
+| Elected Consuls    |     |
+| End of Kings       |     |
+
+## Old / Obsolete (just for reference or re-use)
+
+### Gameplay
 1. Player starts with 10 cards in a deck. Starting deck is 1x Italy (territory), 2x Centuriae (army), 3x Grain (provisions), 5x Sestertii (money)
 2. Each turn next history card is drawn, while player is dealt new hand of 5 cards
 3. Player has 1 action available and plays action cards
@@ -29,7 +77,7 @@ Cheapest possible, since the whole idea is to do this solo.
 - Loss aversion: maybe sholdn't lose territory, do some other penalty instead
 - Alternative: game goes in chronological stages, with separate History and Territory (maybe even Action?) cards for each stage.
 
-## Tresure cards
+### Tresure cards
 - There are three types of treasure: money, provisions and army. Each of tresure cards have their own pile.
 
 | Type        | Card Name   | Cost              | Provides     | Notes                        |
@@ -46,7 +94,7 @@ Cheapest possible, since the whole idea is to do this solo.
 
 - For first period we'll go with one type of treasure only (money)
 
-## Territory cards
+### Territory cards
 - Territory cards are in 3 piles: Early, Mid and Expensive conquest - only top card of a deck is being available/visible.
 
 | Territory         | Reason                    |
@@ -67,7 +115,7 @@ Cheapest possible, since the whole idea is to do this solo.
 | Germania          | Military challenge.       |
 
 
-## History Cards
+### History Cards
 - At the beginning of every turn, one history card is drawn.
 - History cards can be events or figures from Roman history
   
@@ -112,7 +160,7 @@ Cheapest possible, since the whole idea is to do this solo.
 | Empire Decline             | Control loss.           |
 
 
-## ACTION CARDS 
+### ACTION CARDS 
 - Each game choses 8 of these and provides full deck for each, player can buy them
 
 | Action Card             | Reason                  |
@@ -143,47 +191,3 @@ Cheapest possible, since the whole idea is to do this solo.
 | Vestalia Festival       | Religious celebration.  |
 | Roman Welfare           | Social support.         |
 
-## Alternative version
-
-Going in stages corresponding to historical periods, the first is founding of Rome and kingdom, ending with battle of Lake Regillus.
-
-For treasure cards: Maybe have only money for the first period, later adding army, and only in the last one adding provisions (as another type of progression from lean and simple into complex and vast).
-
-Example cards for the first period:
-
-| Title              | Reason                  |
-|--------------------|-------------------------|
-| Romulus            | Founding Father         |
-| Senate             | Civic Foundation        |
-| Etruscans          | Cultural Influence      |
-| Sabine Women       | Community Growth        |
-| Social Reforms     | Servius Tullius         |
-| Forum              | Public Space            |
-| Twelve Tables      | Foundation of Law       |
-| Magna Graecia      | Cultural Intersection   |
-| Roman Gods         | Divine Assistance       |
-| Romulus and Remus  | Legendary Founders      |
-| Castor and Pollux  | Divine Twins            |
-| Plebs              | Voice of the People     |
-| Patricians         | Noble Families          |
-| Roman Senate       | Legislative Authority   |
-| Roman Magistrates  | Executive Power         |
-| Plebeian Tribunes  | Protectors of the People|
-| Vestal Virgins     | Keepers of the Sacred Flame   |
-| River Tiber        | Geographic advantage    |
-| Trade Settlements  | Economic development    |
-| Military Outposts  | Defense                 |
-| Citizen Militia    | Civil defense           |
-| Roman Phalanxes    | Early Military          |
-| Cattle Market      | Economic activity       |
-| First Alliance     | Diplomacy               |
-| Temple of Jupiter  | Religious significance  |
-| Latin Language     | Cultural integration    |
-
-Victory cards (in succession once the first is "purchased") for the first period:
-
-| Title              | Subtitle                |
-|--------------------|-------------------------|
-| King's Exile       |     |
-| Elected Consuls    |     |
-| End of Kings       |     |
