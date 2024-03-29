@@ -28,50 +28,52 @@ Army:
 - Citizen Militia
 - Centuriae
 
-Example cards for the first period:
+Action (everyday) cards:
 - Grain Harvest
-- Roman Senate
-- Etruscan Neighbours
-- Public Forum
 - Roman Gods
 - Plebs
 - Patrician Clans
-- Roman Sewers
 - Early Roads
 - Agrarian Economy
 - Regional Trade
-- Vestal Virgins
 - River Tiber
-- Palatine Hill
 - Roman Magistrates
 - Latin Language
 - Saturnalia
 - Private Schools
-- Romulus
-- Sabine Women
-- Palatine Hill
-- King's Election
 - Military Outposts
 - Roman Phalanxes
+- Urban Prefect
+- Debt Bondage
+- Palatine Hill
+- Roman Senate
+- Public Forum
+
+Event (history) cards:
+- Romulus
+- Sabine Women
 - Curiate Assembly
 - Solar Calendar
-- Urban Prefect
-- Latin League
 - Port of Ostia
 - Circus Maximus
 - Servian Wall
 - Servian Reforms
 - Centuriate Assembly
-- Pontifex Maximus
-- Magna Graecia
-- Debt Bondage
-- Military Triumph
 - Temple of Jupiter
+- King's Election
+- Military Triumph
+- Pontifex Maximus
+- Seven Kings
+- Vestal Virgins
+- Roman Sewers
+- Etruscan Neighbours
+- Latin League
+- Magna Graecia
 
-Victory cards (in succession once the first is "purchased") for the first period:
+Victory cards:
 1. King's Exile     
 2. Elected Consuls 
-3. End of Kings 
+3. Battle of Lake Regillus 
 
 ### Ideas for Republic
 
