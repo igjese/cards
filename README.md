@@ -44,9 +44,9 @@ Player learning curve and progression:
 ## Gameplay
 
 Decks are:
-- 10 action card decks (chosen at random). Five cards available in each
+- 10 action card same-card decks (chosen at random). Five cards available in each
 - History deck, shuffled to be random. Ends with victory cards in precise order.
-- Treasure decks (differ for each stage)
+- Treasure same-card decks (differ for each stage)
 - Player's deck of 10 cards (7 basic money and 3 basic army)
 
 Game loop:
