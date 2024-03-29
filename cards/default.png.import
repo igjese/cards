@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7nq8c0xs1y0d"
-path="res://.godot/imported/cohort100.png-c7181cd7c8ab430f4726831bcc2e20d9.ctex"
+uid="uid://dvvs8bvvmd5rm"
+path="res://.godot/imported/default.png-479af4453ab17f769926a930b10c7155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cards/cohort100.png"
-dest_files=["res://.godot/imported/cohort100.png-c7181cd7c8ab430f4726831bcc2e20d9.ctex"]
+source_file="res://cards/default.png"
+dest_files=["res://.godot/imported/default.png-479af4453ab17f769926a930b10c7155.ctex"]
 
 [params]
 

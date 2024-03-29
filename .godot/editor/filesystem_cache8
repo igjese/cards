@@ -1,25 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711706397
+::res://::1711723114
 card.gd::GDScript::-1::1709890121::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1711662936::0::1::::<><>::res://card.gd<>uid://dex3r40nu5350::::res://cards/default100.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
-cards.csv::::-1::1710061646::1709642895::1::::<><>::
-default_env.tres::Environment::3535254983394503347::1711662936::0::1::::<><>::
+card.tscn::PackedScene::528414477263538463::1711722935::0::1::::<><>::res://card.gd<>uid://dex3r40nu5350::::res://cards/default100.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
+cards.csv::::-1::1711721034::1709642895::1::::<><>::
+default_env.tres::Environment::3535254983394503347::1711722935::0::1::::<><>::
 Font Awesome 6 Free-Solid-900.otf::FontFile::6673130800394779117::1709681289::1709681290::1::::<><>::
 frame4.png::CompressedTexture2D::3103182351091807159::1709679922::1709679922::1::::<><>::
 icon.png::CompressedTexture2D::8812027128366769566::1709536140::1709537716::1::::<><>::
 karte-720.png::CompressedTexture2D::5028525007727685489::1709683078::1709683082::1::::<><>::
-main.gd::GDScript::-1::1710060250::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1711662936::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
-README.md::TextFile::-1::1711009742::0::1::::<><>::
-::res://cards/::1709987458
-aureus100.png::CompressedTexture2D::3780477735618574018::1709714161::1709714168::1::::<><>::
-centuriae100.png::CompressedTexture2D::5489856275503848836::1709987457::1709987458::1::::<><>::
-cohort100.png::CompressedTexture2D::4660331138732969413::1709987457::1709987458::1::::<><>::
-default100.png::CompressedTexture2D::7489230110684516117::1709886311::1709886311::1::::<><>::
-denarius100.png::CompressedTexture2D::3344499055274690424::1709709685::1709711936::1::::<><>::
-grain100.png::CompressedTexture2D::6829505076022228010::1709907069::1709907139::1::::<><>::
-julius_caesar100.png::CompressedTexture2D::1678949229189693472::1709886395::1709894646::1::::<><>::
-legion100.png::CompressedTexture2D::5477303746871757463::1709987457::1709987458::1::::<><>::
-olive_oil100.png::CompressedTexture2D::5589164595417303895::1709906788::1709907134::1::::<><>::
-sestertius100.png::CompressedTexture2D::4551576671314816578::1709709741::1709711936::1::::<><>::
-wine100.png::CompressedTexture2D::2952582677714905726::1709913361::1709913403::1::::<><>::
+main.gd::GDScript::-1::1711721420::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1711722935::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
+README.md::TextFile::-1::1711718960::0::1::::<><>::
+README_old.md::TextFile::-1::1711716079::0::1::::<><>::
+::res://cards/::1711723637
+default.png::CompressedTexture2D::8677731623316472446::1711723576::1711723644::1::::<><>::

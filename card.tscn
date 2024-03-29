@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://hr756cx0syfv"]
 
 [ext_resource type="Script" path="res://card.gd" id="1_cbw46"]
-[ext_resource type="Texture2D" uid="uid://dex3r40nu5350" path="res://cards/default100.png" id="2_73fvn"]
+[ext_resource type="Texture2D" uid="uid://dvvs8bvvmd5rm" path="res://cards/default.png" id="2_6tvjx"]
 [ext_resource type="Texture2D" uid="uid://bkhg7vxs4yqsd" path="res://frame4.png" id="2_e0s3v"]
 [ext_resource type="FontFile" uid="uid://c2crqvwp2kqvd" path="res://Font Awesome 6 Free-Solid-900.otf" id="2_ohxj3"]
 
@@ -13,6 +13,7 @@ offset_bottom = 150.0
 script = ExtResource("1_cbw46")
 
 [node name="CardVisual" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(49.875, 62.75)
 scale = Vector2(0.092041, 0.0678711)
 texture = SubResource("CompressedTexture2D_yp1jo")
@@ -23,7 +24,7 @@ offset_left = 5.0
 offset_top = 44.0
 offset_right = 145.0
 offset_bottom = 145.0
-texture = ExtResource("2_73fvn")
+texture = ExtResource("2_6tvjx")
 expand_mode = 1
 
 [node name="CardEffect" type="RichTextLabel" parent="."]
@@ -59,11 +60,12 @@ offset = Vector2(50, 50)
 
 [node name="CardTitle" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 5.0
+offset_left = 5.0
+offset_top = 8.0
 offset_right = 145.0
-offset_bottom = 34.0
+offset_bottom = 27.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/bold_font_size = 12
 bbcode_enabled = true
+text = "[center]Card"
 scroll_active = false

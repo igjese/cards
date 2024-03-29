@@ -4,7 +4,7 @@ extends Panel
 func set_title(title: String) -> void:
     var title_label = get_node("CardTitle") as RichTextLabel
     if title_label:
-        title_label.bbcode_text = "[b]" + title + "[/b]"
+        title_label.bbcode_text = "[center]%s[/center]" % title
 
 
 # Function to set the card's cost
