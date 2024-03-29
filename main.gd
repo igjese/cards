@@ -3,20 +3,49 @@ extends Node2D
 var cards_raw = []
 var cards_by_name = {}
 
+var decks = {
+    "Money1": {"cards": [], "node": null},
+    "Money2": {"cards": [], "node": null},
+    "Army1": {"cards": [], "node": null},
+    "Army2": {"cards": [], "node": null},
+    "History": {"cards": [], "node": null},
+    "Victory": {"cards": [], "node": null},
+    "Action1": {"cards": [], "node": null},
+    "Action2": {"cards": [], "node": null},
+    "Action3": {"cards": [], "node": null},
+    "Action4": {"cards": [], "node": null},
+    "Action5": {"cards": [], "node": null},
+    "Action6": {"cards": [], "node": null},
+    "Action7": {"cards": [], "node": null},
+    "Action8": {"cards": [], "node": null},
+    "Action9": {"cards": [], "node": null},
+    "Action10": {"cards": [], "node": null},
+    "PlayerDeck": {"cards": [], "node": null},
+    "PlayerHand": {"cards": [], "node": null},
+    "PlayerDiscarded": {"cards": [], "node": null},
+    "Trash": {"cards": [], "node": null},
+    "CardsPlayed": {"cards": [], "node": null}
+}
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     load_cards_from_csv()
+    load_decks()
     
-    display_card($CardHistory, "Julius Caesar")
+    decks["Money1"]["node"] = $CardMoney1
+    decks["Money2"]["node"] = $CardMoney2
+    decks["Army1"]["node"] = $CardArmy1
+    decks["Army2"]["node"] = $CardArmy2
+    decks["History"]["node"] = $CardHistory
+
+    
+    display_card(decks["History"]["node"], "Julius Caesar")
     display_card($CardMoney1, "Sestertius")
     display_card($CardMoney2, "Denarius")
-    display_card($CardMoney3, "Aureus")
-    display_card($CardProvisions1, "Grain")
-    display_card($CardProvisions2, "Olive Oil")
-    display_card($CardProvisions3, "Wine")
     display_card($CardArmy1, "Centuriae")
     display_card($CardArmy2, "Cohort")
-    display_card($CardArmy3, "Legion")
+
     
     
 # Assumes cards_by_name is a dictionary where keys are card names
@@ -29,19 +58,16 @@ func display_card(card: Control, card_name: String) -> void:
     var card_data = cards_by_name[card_name]
     
     var money_icon = "\uf51e"
-    var provisions_icon = "\uf5d1"
     var army_icon = "\uf132"
 
     var money_cost = "%s %d" % [money_icon, card_data.cost_money]
-    var provisions_cost = "   %s %d" % [provisions_icon, card_data.cost_provisions] if card_data.cost_provisions != 0 else ""
     var army_cost = "   %s %d" % [army_icon, card_data.cost_army] if card_data.cost_army != 0 else ""
     var money_effect = "%s %d\n" % [money_icon, card_data.effect_money] if card_data.effect_money != 0 else ""
-    var provisions_effect = "%s %d\n" % [provisions_icon, card_data.effect_provisions] if card_data.effect_provisions != 0 else ""
     var army_effect = "%s %d\n" % [army_icon, card_data.effect_army] if card_data.effect_army != 0 else ""
     
     card.set_title(card_data.name)
-    card.set_effect("%s%s%s" % [money_effect, provisions_effect, army_effect])
-    card.set_cost("%s%s%s" % [money_cost, provisions_cost, army_cost])
+    card.set_effect("%s%s" % [money_effect, army_effect])
+    card.set_cost("%s%s" % [money_cost, army_cost])
     card.set_visual(card_name)
 
 
@@ -76,3 +102,12 @@ func load_cards_from_csv():
     file.close()
     
     print("Cards loaded: ", cards_raw)
+
+func load_decks():
+    for card in cards_raw:
+        var deck_key = card["type"]
+        if decks.has(deck_key):
+            decks[deck_key]["cards"].append(card)
+        else:
+            print("Deck key not found: ", deck_key)
+    print(decks)

@@ -6,11 +6,10 @@
 [ext_resource type="FontFile" uid="uid://c2crqvwp2kqvd" path="res://Font Awesome 6 Free-Solid-900.otf" id="2_ohxj3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yp1jo"]
-load_path = "res://.godot/imported/caesar.png-6cdb2eca028c2ea5eca23499b2ff1fa1.ctex"
 
 [node name="Card" type="Panel"]
-offset_right = 100.0
-offset_bottom = 100.0
+offset_right = 150.0
+offset_bottom = 150.0
 script = ExtResource("1_cbw46")
 
 [node name="CardVisual" type="Sprite2D" parent="."]
@@ -20,32 +19,19 @@ texture = SubResource("CompressedTexture2D_yp1jo")
 
 [node name="MainVisual" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 28.0
-offset_right = 98.0
-offset_bottom = 98.0
+offset_left = 5.0
+offset_top = 44.0
+offset_right = 145.0
+offset_bottom = 145.0
 texture = ExtResource("2_73fvn")
 expand_mode = 1
 
-[node name="CardCost" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 84.0
-offset_right = 93.0
-offset_bottom = 96.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("2_ohxj3")
-theme_override_font_sizes/normal_font_size = 10
-bbcode_enabled = true
-text = "a b c"
-
 [node name="CardEffect" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 31.0
-offset_right = 95.0
-offset_bottom = 79.0
+offset_left = 8.0
+offset_top = 47.0
+offset_right = 98.0
+offset_bottom = 120.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_ohxj3")
@@ -53,7 +39,21 @@ theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "-"
 
+[node name="CardCost" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 132.0
+offset_right = 93.0
+offset_bottom = 144.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_ohxj3")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "a b c"
+
 [node name="CardFrame" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_e0s3v")
 offset = Vector2(50, 50)
 
@@ -61,8 +61,8 @@ offset = Vector2(50, 50)
 layout_mode = 0
 offset_left = 6.0
 offset_top = 5.0
-offset_right = 95.0
-offset_bottom = 20.0
+offset_right = 145.0
+offset_bottom = 34.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/bold_font_size = 12
 bbcode_enabled = true
