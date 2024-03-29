@@ -33,9 +33,12 @@ Decks are:
 
 Game loop:
 1. Player draws five cards. When no cards are available, discarded cards are reshuffled and become new deck.
-2. He plays his actions (1 by default) which have various effects.
-3. At end of turn he must "buy" a top history card and can buy additional cards (1 by default). If he can't buy history cards then top card from deck (or discarded deck) is trashed.
-4. Player discards the cards.
+2. Player can play action cards from his hand (1 by default) with immediate effect.
+3. At end of turn he must "overcome" a top history card. If successful, top history card is trashed. If not then top card from player's deck (or discarded deck) is trashed.
+4. Player can buy action cards (1 by default).
+5. Player discards used cards.
+
+When all victory cards (last cards in history deck) has been "overcome", player wins this stage.
 
 ### Founding of Rome and Kingdom Period
 
