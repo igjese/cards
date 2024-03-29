@@ -20,48 +20,11 @@ Cheapest possible, since the whole idea is to do this solo.
 
 Going in stages corresponding to historical periods, the first is founding of Rome and kingdom, ending with battle of Lake Regillus.
 
-For treasure cards: Maybe have only money for the first period, later adding army, and only in the last one adding provisions (as another type of progression from lean and simple into complex and vast).
-
+Treasure:
+- money: Barter Goods, Aes Rude
+- army: Citizen Militia, Centuriae
+- 
 Example cards for the first period:
-
-| Title              | Reason                  |
-|--------------------|-------------------------|
-| Romulus            | Founding Father         |
-| Senate             | Civic Foundation        |
-| Etruscans          | Cultural Influence      |
-| Sabine Women       | Community Growth        |
-| Social Reforms     | Servius Tullius         |
-| Forum              | Public Space            |
-| Twelve Tables      | Foundation of Law       |
-| Magna Graecia      | Cultural Intersection   |
-| Roman Gods         | Divine Assistance       |
-| Romulus and Remus  | Legendary Founders      |
-| Castor and Pollux  | Divine Twins            |
-| Plebs              | Voice of the People     |
-| Patricians         | Noble Families          |
-| Roman Senate       | Legislative Authority   |
-| Roman Magistrates  | Executive Power         |
-| Plebeian Tribunes  | Protectors of the People|
-| Vestal Virgins     | Keepers of the Sacred Flame   |
-| River Tiber        | Geographic advantage    |
-| Trade Settlements  | Economic development    |
-| Military Outposts  | Defense                 |
-| Citizen Militia    | Civil defense           |
-| Roman Phalanxes    | Early Military          |
-| Cattle Market      | Economic activity       |
-| First Alliance     | Diplomacy               |
-| Temple of Jupiter  | Religious significance  |
-| Latin Language     | Cultural integration    |
-
-Victory cards (in succession once the first is "purchased") for the first period:
-
-| Title              | Subtitle                |
-|--------------------|-------------------------|
-| King's Exile       |     |
-| Elected Consuls    |     |
-| End of Kings       |     |
-
-More:
 - Romulus            
 - Sabine Women   
 - Palatine Hill
@@ -86,6 +49,12 @@ More:
 - Agrarian Economy
 - Debt Bondage
 - Military Triumph
+- Temple of Jupiter
+
+Victory cards (in succession once the first is "purchased") for the first period:
+1. King's Exile     
+2. Elected Consuls 
+3. End of Kings 
 
 ### Ideas for Republic
 
