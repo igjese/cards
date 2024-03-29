@@ -54,6 +54,7 @@ When all victory cards (last cards in history deck) has been "overcome", player 
 
 ### Stage 1: Kingdom
 
+Cards are:
 
 | Money        | Army            | Action cards      | History cards       | Victory cards           |
 |--------------|-----------------|-------------------|---------------------|-------------------------|
