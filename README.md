@@ -23,7 +23,7 @@ Going in stages corresponding to historical periods, the first is founding of Ro
 Treasure:
 - money: Barter Goods, Aes Rude
 - army: Citizen Militia, Centuriae
-- 
+
 Example cards for the first period:
 - Romulus            
 - Sabine Women   
