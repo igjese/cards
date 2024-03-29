@@ -36,6 +36,11 @@ Historical stages, each with their own decks, are:
 4. Early Empire
 5. Mid and late Empire
 
+Player learning curve and progression:
+1. Start simple: First stage should have only 2 cards for money, 2 for army and cards should have only basic effects 
+2. Increase strategic complexity in mid-stages: Introduce third card for money and army, introduce advanced effects
+3. Increase management overhead in late stages: Introduce provisions as third type of treasure cards, maybe introduce outlandish effects
+
 ## Gameplay
 
 Decks are:
