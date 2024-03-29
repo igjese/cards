@@ -23,7 +23,7 @@ Solitaire specific mechanics:
 - Trash player's cards when not able to overcome history/victory cards, to put mild pressure to finish the game
 
 Educational specific mechanics:
-- Split game in stages corresponding to historical periods
+- Game progresses in chronological stages corresponding to historical periods
 - Make cards for each stage reflect economy, culture, military, religion, everyday life for that stage
 - Have short (two paragraphs) "popular-history" text for each card when selected
 - Have "card of the day" show-cased when starting a game
