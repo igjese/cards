@@ -86,6 +86,14 @@ More:
 - Agrarian Economy
 - Debt Bondage
 
+### Ideas for Republic
+
+Victory sequence:
+Marius
+Sula
+Caesar Civil War
+Assasination of Caesar
+
 ## Old / Obsolete (just for reference or re-use)
 
 ### Gameplay
