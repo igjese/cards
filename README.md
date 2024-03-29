@@ -61,6 +61,30 @@ Victory cards (in succession once the first is "purchased") for the first period
 | Elected Consuls    |     |
 | End of Kings       |     |
 
+More:
+- Romulus            
+- Sabine Women   
+- Palatine Hill
+- King's Election
+- Military Outposts  
+- Roman Phalanxes   
+- Curiate Assembly
+- Solar Calendar
+- Urban Prefect
+- Latin League
+- Port of Ostia
+- Circus Maximus
+- Servian Wall
+- Servian Reforms   
+- Centuriate Assembly
+- Roman Gods         
+- Vestal Virgins        
+- Pontifex Maximus
+- Latin Language
+- Magna Graecia      
+- Regional Trade
+- Agrarian Economy
+
 ## Old / Obsolete (just for reference or re-use)
 
 ### Gameplay
