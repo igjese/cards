@@ -85,8 +85,11 @@ More:
 - Regional Trade
 - Agrarian Economy
 - Debt Bondage
+- Military Triumph
 
 ### Ideas for Republic
+
+Early Republic vs Late Republic
 
 Victory sequence:
 Marius
