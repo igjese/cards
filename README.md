@@ -11,6 +11,7 @@ Goal is to create Solitaire Deck Building game that educates the player about Ro
 
 ## Implementation
 Cheapest possible, since the whole idea is to do this solo.
+- Use pen-and-paper cards to prototype
 - Use GPT to create visuals.
 - Use Godot to develop a product.
 - Keep as close to Dominion formula as we can.
