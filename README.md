@@ -89,12 +89,28 @@ More:
 
 ### Ideas for Republic
 
-#### Early Republic
+#### Early and Mid Republic
 
+Consuls
 Latin Wars
 Pyrhic victory
 Macedonian wars
 Punic wars 
+Hanibal
+Scipio
+12 tables
+Navy
+Public Tribunes
+Slavery
+Sessesion of the Plebs
+Siege of Syracuse
+Dictators
+
+Sicilia
+Sardinia, Corsica (Mercenary Wars)
+Hispania
+Macedonia
+North Africa
 
 Victory Sequence:
 Carthaga
@@ -102,11 +118,55 @@ Corinth
 
 #### Late Republic
 
+Coins: Sestertius, Denarius, Aurus
+Triumvirates
+Servile Wars
+Cicero
+Pompei
+Crassus
+Caesar
+Sula's civil War
+Conquest of Gaul
+Cleopatra
+Mark Antony
+
 Victory sequence:
 Marius
 Sula
 Caesar Civil War
 Assasination of Caesar
+War of Actium - Oktavian Augustus
+
+#### Early Empire
+
+Illyricum
+Augustus
+Tiberus
+Calligula
+Conquest of Britan
+Vespasian
+Trajan
+Hadrian
+Hadrian's Wall
+Antonine Plague
+Mesopotamia and Assyria
+Year of Four Emperors
+Praetorian Guard
+Great Fire of Rome
+Nero
+
+#### Mid and Late Empire
+
+Diocletian
+Diocletian Reforms
+Rise of Christianity
+Constantine the Great
+Tetrarchy
+Barbarian Invasions
+Dacia
+Constantinople
+Alaric Sack of Rome
+Vandals Sack of Rome
 
 ## Old / Obsolete (just for reference or re-use)
 
