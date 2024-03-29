@@ -14,16 +14,22 @@ Cheapest possible, since the whole idea is to do this solo.
 - Use GPT to create visuals.
 - Use Godot to develop a product.
 - Keep as close to Dominion formula as we can.
+- Make it solitaire game.
 
+Solitaire specific mechanics:
+- Use additional "history" deck to provide random help and challenge during the game, both for education and replayability
+- Use victory cards as culmination and real challenge
+- Trash player's cards when not able to overcome history/victory cards, to put mild pressure to finish the game
 
-## Gameplay
-
+Educational specific mechanics:
 Going in stages corresponding to historical periods:
 1. Kingdom
 2. Early and mid Republic
 3. Late Republic
 4. Early Empire
 5. Mid and late Empire
+
+## Gameplay
 
 Decks are:
 - 10 action card decks (chosen at random). Five cards available in each
