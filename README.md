@@ -73,7 +73,30 @@ Event (history) cards:
 Victory cards:
 1. King's Exile     
 2. Elected Consuls 
-3. Battle of Lake Regillus 
+3. Battle of Lake Regillus
+
+| Money | Army | Action (everyday) cards | Event (history) cards | Victory cards |
+|-------|------|-------------------------|-----------------------|---------------|
+| Barter Goods | Citizen Militia | Grain Harvest | Romulus | King's Exile |
+| Aes Rude | Centuriae | Roman Gods | Sabine Women | Elected Consuls |
+|  |  | Plebs | Curiate Assembly | Battle of Lake Regillus |
+|  |  | Patrician Clans | Solar Calendar |  |
+|  |  | Early Roads | Port of Ostia |  |
+|  |  | Agrarian Economy | Circus Maximus |  |
+|  |  | Regional Trade | Servian Wall |  |
+|  |  | River Tiber | Servian Reforms |  |
+|  |  | Roman Magistrates | Centuriate Assembly |  |
+|  |  | Latin Language | Temple of Jupiter |  |
+|  |  | Saturnalia | King's Election |  |
+|  |  | Private Schools | Military Triumph |  |
+|  |  | Military Outposts | Pontifex Maximus |  |
+|  |  | Roman Phalanxes | Seven Kings |  |
+|  |  | Urban Prefect | Vestal Virgins |  |
+|  |  | Debt Bondage | Roman Sewers |  |
+|  |  | Palatine Hill | Etruscan Neighbours |  |
+|  |  | Roman Senate | Latin League |  |
+|  |  | Public Forum | Magna Graecia |  |
+
 
 ### Ideas for Republic
 
