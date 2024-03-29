@@ -20,82 +20,28 @@ Cheapest possible, since the whole idea is to do this solo.
 
 Going in stages corresponding to historical periods, the first is founding of Rome and kingdom, ending with battle of Lake Regillus.
 
-Money:
-- Barter Goods
-- Aes Rude
 
-Army: 
-- Citizen Militia
-- Centuriae
-
-Action (everyday) cards:
-- Grain Harvest
-- Roman Gods
-- Plebs
-- Patrician Clans
-- Early Roads
-- Agrarian Economy
-- Regional Trade
-- River Tiber
-- Roman Magistrates
-- Latin Language
-- Saturnalia
-- Private Schools
-- Military Outposts
-- Roman Phalanxes
-- Urban Prefect
-- Debt Bondage
-- Palatine Hill
-- Roman Senate
-- Public Forum
-
-Event (history) cards:
-- Romulus
-- Sabine Women
-- Curiate Assembly
-- Solar Calendar
-- Port of Ostia
-- Circus Maximus
-- Servian Wall
-- Servian Reforms
-- Centuriate Assembly
-- Temple of Jupiter
-- King's Election
-- Military Triumph
-- Pontifex Maximus
-- Seven Kings
-- Vestal Virgins
-- Roman Sewers
-- Etruscan Neighbours
-- Latin League
-- Magna Graecia
-
-Victory cards:
-1. King's Exile     
-2. Elected Consuls 
-3. Battle of Lake Regillus
-
-| Money | Army | Action (everyday) cards | Event (history) cards | Victory cards |
-|-------|------|-------------------------|-----------------------|---------------|
-| Barter Goods | Citizen Militia | Grain Harvest | Romulus | King's Exile |
-| Aes Rude | Centuriae | Roman Gods | Sabine Women | Elected Consuls |
-|  |  | Plebs | Curiate Assembly | Battle of Lake Regillus |
-|  |  | Patrician Clans | Solar Calendar |  |
-|  |  | Early Roads | Port of Ostia |  |
-|  |  | Agrarian Economy | Circus Maximus |  |
-|  |  | Regional Trade | Servian Wall |  |
-|  |  | River Tiber | Servian Reforms |  |
-|  |  | Roman Magistrates | Centuriate Assembly |  |
-|  |  | Latin Language | Temple of Jupiter |  |
-|  |  | Saturnalia | King's Election |  |
-|  |  | Private Schools | Military Triumph |  |
-|  |  | Military Outposts | Pontifex Maximus |  |
-|  |  | Roman Phalanxes | Seven Kings |  |
-|  |  | Urban Prefect | Vestal Virgins |  |
-|  |  | Debt Bondage | Roman Sewers |  |
-|  |  | Palatine Hill | Etruscan Neighbours |  |
-|  |  | Roman Senate | Latin League |  |
-|  |  | Public Forum | Magna Graecia |  |
+| Money        | Army            | Action cards      | History cards       | Victory cards           |
+|--------------|-----------------|-------------------|---------------------|-------------------------|
+| Barter Goods | Citizen Militia | Grain Harvest     | Romulus             | King's Exile            |
+| Aes Rude     | Centuriae       | Roman Gods        | Sabine Women        | Elected Consuls         |
+|              |                 | Plebs             | Curiate Assembly    | Battle of Lake Regillus |
+|              |                 | Patrician Clans   | Solar Calendar      |  |
+|              |                 | Early Roads       | Port of Ostia       |  |
+|              |                 | Agrarian Economy  | Circus Maximus      |  |
+|              |                 | Regional Trade    | Servian Wall        |  |
+|              |                 | River Tiber       | Servian Reforms     |  |
+|              |                 | Roman Magistrates | Centuriate Assembly |  |
+|              |                 | Latin Language    | Temple of Jupiter   |  |
+|              |                 | Saturnalia        | King's Election     |  |
+|              |                 | Private Schools   | Military Triumph    |  |
+|              |                 | Military Outposts | Pontifex Maximus    |  |
+|              |                 | Roman Phalanxes   | Seven Kings         |  |
+|              |                 | Urban Prefect     | Vestal Virgins      |  |
+|              |                 | Debt Bondage      | Roman Sewers        |  |
+|              |                 | Palatine Hill     | Etruscan Neighbours |  |
+|              |                 | Roman Senate      | Latin League        |  |
+|              |                 | Public Forum      | Magna Graecia       |  |
 
 
 ### Ideas for Republic
