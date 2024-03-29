@@ -20,9 +20,13 @@ Cheapest possible, since the whole idea is to do this solo.
 
 Going in stages corresponding to historical periods, the first is founding of Rome and kingdom, ending with battle of Lake Regillus.
 
-Treasure:
-- money: Barter Goods, Aes Rude
-- army: Citizen Militia, Centuriae
+Money:
+- Barter Goods
+- Aes Rude
+
+Army: 
+- Citizen Militia
+- Centuriae
 
 Example cards for the first period:
 - Grain Harvest
@@ -73,6 +77,9 @@ Victory cards (in succession once the first is "purchased") for the first period
 
 #### Early and Mid Republic
 
+Maniples
+Legions
+
 Consuls
 Latin Wars
 Pyrhic victory
@@ -99,6 +106,9 @@ Carthaga
 Corinth
 
 #### Late Republic
+
+Cohorts 
+Legions
 
 Coins: Sestertius, Denarius, Aurus
 Triumvirates
