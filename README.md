@@ -89,7 +89,18 @@ More:
 
 ### Ideas for Republic
 
-Early Republic vs Late Republic
+#### Early Republic
+
+Latin Wars
+Pyrhic victory
+Macedonian wars
+Punic wars 
+
+Victory Sequence:
+Carthaga
+Corinth
+
+#### Late Republic
 
 Victory sequence:
 Marius
