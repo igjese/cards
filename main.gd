@@ -111,3 +111,6 @@ func load_decks():
         else:
             print("Deck key not found: ", deck_key)
     print(decks)
+
+func _on_btn_exit_pressed():
+    get_tree().quit()
