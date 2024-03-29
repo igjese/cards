@@ -25,12 +25,30 @@ Treasure:
 - army: Citizen Militia, Centuriae
 
 Example cards for the first period:
-- Romulus            
-- Sabine Women   
+- Grain Harvest
+- Roman Senate
+- Etruscan Neighbours
+- Public Forum
+- Roman Gods
+- Plebs
+- Patrician Clans
+- Roman Sewers
+- Early Roads
+- Agrarian Economy
+- Regional Trade
+- Vestal Virgins
+- River Tiber
+- Palatine Hill
+- Roman Magistrates
+- Latin Language
+- Saturnalia
+- Private Schools
+- Romulus
+- Sabine Women
 - Palatine Hill
 - King's Election
-- Military Outposts  
-- Roman Phalanxes   
+- Military Outposts
+- Roman Phalanxes
 - Curiate Assembly
 - Solar Calendar
 - Urban Prefect
@@ -38,15 +56,10 @@ Example cards for the first period:
 - Port of Ostia
 - Circus Maximus
 - Servian Wall
-- Servian Reforms   
+- Servian Reforms
 - Centuriate Assembly
-- Roman Gods         
-- Vestal Virgins        
 - Pontifex Maximus
-- Latin Language
-- Magna Graecia      
-- Regional Trade
-- Agrarian Economy
+- Magna Graecia
 - Debt Bondage
 - Military Triumph
 - Temple of Jupiter
