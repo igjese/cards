@@ -18,7 +18,26 @@ Cheapest possible, since the whole idea is to do this solo.
 
 ## Gameplay
 
-Going in stages corresponding to historical periods, the first is founding of Rome and kingdom, ending with battle of Lake Regillus.
+Going in stages corresponding to historical periods:
+1. Kingdom
+2. Early and mid Republic
+3. Late Republic
+4. Early Empire
+5. Mid and late Empire
+
+Decks are:
+- 10 action card decks (chosen at random). Five cards available in each
+- History deck, shuffled to be random. Ends with victory cards in precise order.
+- Treasure decks (differ for each stage)
+- Player's deck of 10 cards (7 basic money and 3 basic army)
+
+Game loop:
+1. Player draws five cards. When no cards are available, discarded cards are reshuffled and become new deck.
+2. He plays his actions (1 by default) which have various effects.
+3. At end of turn he must "buy" a top history card and can buy additional cards (1 by default). If he can't buy history cards then top card from deck (or discarded deck) is trashed.
+4. Player discards the cards.
+
+### Founding of Rome and Kingdom Period
 
 
 | Money        | Army            | Action cards      | History cards       | Victory cards           |
