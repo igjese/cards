@@ -40,7 +40,7 @@ Game loop:
 
 When all victory cards (last cards in history deck) has been "overcome", player wins this stage.
 
-### Founding of Rome and Kingdom Period
+### Stage 1: Kingdom
 
 
 | Money        | Army            | Action cards      | History cards       | Victory cards           |
