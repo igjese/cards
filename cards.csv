@@ -1,68 +1,68 @@
-Type,Card,Cost Money,Cost Provisions,Cost Army,Effect Money,Effect Provisions,Effect Army
-Money1,Sestertius,0,0,0,1,0,0
-Money2,Denarius,3,0,0,2,0,0
-Army1,Centuriae,1,1,0,0,0,1
-Army2,Cohort,3,2,0,0,0,2
-History,Province Uprising,0,0,0,0,0,-1
-History,Senate Session,0,0,0,0,0,-1
-History,Barbarian Invasion,0,0,0,0,0,-3
-History,Pax Romana,0,0,0,1,0,0
-History,Slave Revolt,0,0,0,0,-1,-1
-History,Julius Caesar,0,0,0,0,0,2
-History,Augustus,0,0,0,1,0,0
-History,Marcus Aurelius,0,0,0,0,0,0
-History,Hadrian,0,0,0,-1,1,0
-History,Seneca,0,0,0,0,1,0
-History,Constantine the Great,0,0,0,0,1,1
-History,Trajan,0,0,0,-1,0,2
-History,Scipio,0,0,0,0,0,1
-History,Cicero,0,0,0,0,1,0
-History,Nero,0,0,0,-1,-1,1
-History,Plague of Galen,0,0,0,-1,-2,-1
-History,Good Harvest,0,0,0,0,2,0
-History,Magistrate Election,0,0,0,0,0,0
-History,Caligula,0,0,0,-2,-1,0
-History,Great Burning of Rome,0,0,0,-2,-1,0
-History,Punic Wars,0,0,0,1,1,-1
-History,Pantheon,0,0,0,-1,1,0
-History,Colosseum,0,0,0,-1,1,0
-History,Julian Calendar,0,0,0,0,1,0
-History,Roman Numerals,0,0,0,1,0,0
-History,Rise of Christianity,0,0,0,0,0,-1
-History,Jupiter,0,0,0,1,0,1
-History,Mars,0,0,0,0,1,1
-History,Venus,0,0,0,0,1,0
-History,Minerva,0,0,0,1,0,0
-History,Neptune,0,0,0,0,0,1
-History,First Triumvirate,0,0,0,0,1,1
-History,The Year of Four Emperors,0,0,0,-1,-1,1
-History,Reforms of Diocletian,0,0,0,-1,1,1
-History,Council of Nicaea,0,0,0,0,1,-1
-History,Latin Language,0,0,0,0,1,
-History,Roman Decadence,0,0,0,-1,-1,
-History,Empire Decline,0,0,0,-1,0,-1
-Action,Public Forum,3,1,0,0,1,0
-Action,Military Triumph,4,0,2,0,0,1
-Action,Public Bath,2,2,0,0,1,0
-Action,Theatrical Play,2,0,0,1,0,0
-Action,Gladiator Games,3,0,1,0,2,0
-Action,Chariot Races,3,1,0,0,0,1
-Action,Aqueduct,5,3,0,0,2,0
-Action,Roman Bridge,4,2,1,1,2,0
-Action,Roman Road,3,2,0,1,1,1
-Action,Courrier Service: Cursus publicus,4,0,0,2,0,0
-Action,Sewers,3,3,0,0,2,0
-Action,Newspapers: Acta Diurna,2,1,0,0,1,1
-Action,Bureaucracy,5,0,0,2,0,0
-Action,City Planning,6,0,1,1,1,0
-Action,Roman Law,4,2,0,2,2,1
-Action,Bread and circuses,3,0,1,1,1,0
-Action,Military Medicine,5,1,2,0,0,1
-Action,Legionary Training,4,3,1,0,0,2
-Action,Roman Citizenship,6,0,0,1,0,1
-Action,Basilica: Christian Temple,5,2,0,1,1,0
-Action,Temple of Jupiter,4,1,1,1,1,1
-Action,Temple of Mars,5,0,3,0,1,2
-Action,Saturnalia Festival,2,0,0,1,1,0
-Action,Vestalia Festival,2,2,0,0,2,0
-Action,Roman Welfare,3,1,0,0,1,1
+Type,Card,Cost Money,Cost Army,Effect Money,Effect Army
+Money1,Barter Goods,0,0,1,0
+Money2,Aes Rude,3,0,2,0
+Army1,Civilian Militia,2,0,0,1
+Army2,Centuriae,5,0,0,3
+History,Province Uprising,0,0,0,-1
+History,Senate Session,0,0,0,-1
+History,Barbarian Invasion,0,0,0,-3
+History,Pax Romana,0,0,1,0
+History,Slave Revolt,0,0,0,-1
+History,Julius Caesar,0,0,0,2
+History,Augustus,0,0,1,0
+History,Marcus Aurelius,0,0,0,0
+History,Hadrian,0,0,-1,0
+History,Seneca,0,0,0,0
+History,Constantine the Great,0,0,0,1
+History,Trajan,0,0,-1,2
+History,Scipio,0,0,0,1
+History,Cicero,0,0,0,0
+History,Nero,0,0,-1,1
+History,Plague of Galen,0,0,-1,-1
+History,Good Harvest,0,0,0,0
+History,Magistrate Election,0,0,0,0
+History,Caligula,0,0,-2,0
+History,Great Burning of Rome,0,0,-2,0
+History,Punic Wars,0,0,1,-1
+History,Pantheon,0,0,-1,0
+History,Colosseum,0,0,-1,0
+History,Julian Calendar,0,0,0,0
+History,Roman Numerals,0,0,1,0
+History,Rise of Christianity,0,0,0,-1
+History,Jupiter,0,0,1,1
+History,Mars,0,0,0,1
+History,Venus,0,0,0,0
+History,Minerva,0,0,1,0
+History,Neptune,0,0,0,1
+History,First Triumvirate,0,0,0,1
+History,The Year of Four Emperors,0,0,-1,1
+History,Reforms of Diocletian,0,0,-1,1
+History,Council of Nicaea,0,0,0,-1
+History,Latin Language,0,0,0,
+History,Roman Decadence,0,0,-1,
+History,Empire Decline,0,0,-1,-1
+Action,Public Forum,3,0,0,0
+Action,Military Triumph,4,2,0,1
+Action,Public Bath,2,0,0,0
+Action,Theatrical Play,2,0,1,0
+Action,Gladiator Games,3,1,0,0
+Action,Chariot Races,3,0,0,1
+Action,Aqueduct,5,0,0,0
+Action,Roman Bridge,4,1,1,0
+Action,Roman Road,3,0,1,1
+Action,Courrier Service: Cursus publicus,4,0,2,0
+Action,Sewers,3,0,0,0
+Action,Newspapers: Acta Diurna,2,0,0,1
+Action,Bureaucracy,5,0,2,0
+Action,City Planning,6,1,1,0
+Action,Roman Law,4,0,2,1
+Action,Bread and circuses,3,1,1,0
+Action,Military Medicine,5,2,0,1
+Action,Legionary Training,4,1,0,2
+Action,Roman Citizenship,6,0,1,1
+Action,Basilica: Christian Temple,5,0,1,0
+Action,Temple of Jupiter,4,1,1,1
+Action,Temple of Mars,5,3,0,2
+Action,Saturnalia Festival,2,0,1,0
+Action,Vestalia Festival,2,0,0,0
+Action,Roman Welfare,3,0,0,1

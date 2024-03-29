@@ -90,11 +90,9 @@ func load_cards_from_csv():
             "type": card_data[0],
             "name": card_data[1],
             "cost_money": int(card_data[2]),
-            "cost_provisions": int(card_data[3]),
-            "cost_army": int(card_data[4]),
-            "effect_money": int(card_data[5]),
-            "effect_provisions": int(card_data[6]),
-            "effect_army": int(card_data[7])
+            "cost_army": int(card_data[3]),
+            "effect_money": int(card_data[4]),
+            "effect_army": int(card_data[5])
         }
         cards_raw.append(card)
         cards_by_name[card["name"]] = card
