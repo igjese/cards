@@ -1,8 +1,8 @@
 Type,Card,Cost Money,Cost Army,Effect Money,Effect Army
 Money1,Barter Goods,0,0,1,0
 Money2,Aes Rude,3,0,2,0
-Army1,Civilian Militia,2,0,0,1
-Army2,Centuriae,5,0,0,3
+Army1,Civil Militia,2,0,0,1
+Army2,Centuria,5,0,0,3
 History,Province Uprising,0,0,0,-1
 History,Senate Session,0,0,0,-1
 History,Barbarian Invasion,0,0,0,-3

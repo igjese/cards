@@ -24,7 +24,7 @@ func set_effect(text: String) -> void:
 # Function to set the card's main visual
 func set_visual(card_name: String) -> void:
     var normalized_name = card_name.replace(" ", "_").to_lower()
-    var image_path = "res://cards/" + normalized_name + "100.png"
+    var image_path = "res://cards/" + normalized_name + ".png"
     var main_visual = get_node("MainVisual") as TextureRect
     var texture = load(image_path) # Load the texture from the given path
     if texture:

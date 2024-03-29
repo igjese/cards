@@ -43,8 +43,8 @@ func _ready():
     display_card(decks["History"]["node"], "Julius Caesar")
     display_card($CardMoney1, "Barter Goods")
     display_card($CardMoney2, "Aes Rude")
-    display_card($CardArmy1, "Civilian Militia")
-    display_card($CardArmy2, "Centuriae")
+    display_card($CardArmy1, "Civil Militia")
+    display_card($CardArmy2, "Centuria")
 
     
     
