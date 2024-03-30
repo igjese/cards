@@ -55,21 +55,15 @@ func empty_current_decks():
         decks[deck]["cards"].clear()
     
     
-func refresh_gui():
-    display_card($CardMoney1, "Barter Goods")
-    display_card($CardMoney2, "Aes Rude")
-    display_card($CardArmy1, "Civil Militia")
-    display_card($CardArmy2, "Centuria")
-    
-    refresh_deck("History")
+func refresh_gui():    
+    for deck in decks:
+        refresh_deck(deck)
     
 func refresh_deck(deck_name):
     var node = decks[deck_name]["node"]
-    var card = decks[deck_name]["cards"][0]
-    
-    print(node, card)
-    
-    display_card(node, card["name"])
+    if node:
+        var card = decks[deck_name]["cards"][0]
+        display_card(node, card["name"])
     
     
 func assign_decks_to_nodes():
@@ -123,6 +117,17 @@ func load_card_definitions_from_csv():
             "effect_army": int(card_data[4]),
             "discard": int(card_data[5]),
             "trash": int(card_data[6]),
+            "extra_buys": int(card_data[7]),
+            "draw": int(card_data[8]),
+            "extra_actions": int(card_data[9]),
+            "replace": int(card_data[10]),
+            "upgrade_2": int(card_data[11]),
+            "double_action": int(card_data[12]),
+            "take_4": int(card_data[13]),
+            "take_denarius": int(card_data[14]),
+            "trash_any": int(card_data[15]),
+            "take_5": int(card_data[16]),
+            "upgrade_money": int(card_data[17]),
         }
         cards_raw.append(card)
         cards_by_name[card["name"]] = card

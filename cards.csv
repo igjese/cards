@@ -1,43 +1,44 @@
-Type,Card,Cost Money,Effect Money,Effect Army,Discard,Trash
-Money1,Barter Goods,0,1,0,0,0
-Money2,Aes Rude,3,2,0,0,0
-Army1,Civil Militia,2,0,1,0,0
-Army2,Centuria,5,0,3,0,0
-History,Romulus,0,-1,0,1,0
-History,Sabine Women,0,-1,-1,0,0
-History,Curiate Assembly,0,1,0,0,0
-History,Solar Calendar,0,1,0,0,3
-History,Port of Ostia,0,0,-1,0,0
-History,Circus Maximus,0,1,0,0,3
-History,Servian Wall,0,-1,0,0,0
-History,Servian Reforms,0,1,0,0,0
-History,Centuriate Assembly,0,-1,0,0,0
-History,Temple of Jupiter,0,1,0,0,0
-History,King Election,0,1,0,0,3
-History,Military Triumph,0,-1,-1,0,0
-History,Pontifex Maximus,0,-1,0,1,0
-History,Seven Kings,0,-1,0,1,0
-History,Vestal Virgins,0,0,-1,0,0
-History,Roman Sewers,0,-1,0,0,0
-History,Etruscan Neighbours,0,0,-1,0,0
-History,Latin League,0,-1,-1,0,0
-History,Magna Graecia,0,1,0,0,3
-Action,Grain Harvest,3,0,0,,
-Action,Roman Gods,3,0,1,,
-Action,Plebs,5,0,0,,
-Action,Patrician Clans,4,1,0,,
-Action,Early Roads,3,1,1,,
-Action,Agrarian Economy,4,2,0,,
-Action,Regional Trade,3,0,0,,
-Action,River Tiber,2,0,1,,
-Action,Roman Magistrates,5,2,0,,
-Action,Latin Language,6,1,0,,
-Action,Saturnalia,4,2,1,,
-Action,Private Schools,3,1,0,,
-Action,Military Outposts,5,0,1,,
-Action,Roman Phalanxes,4,0,2,,
-Action,Urban Prefect,6,1,1,,
-Action,Debt Bondage,5,1,0,,
-Action,Palatine Hill,4,1,1,,
-Action,Roman Senate,5,0,2,,
-Action,Public Forum,2,1,0,,
+Type,Card,Cost Money,Effect Money,Effect Army,Discard,Trash,Extra Buys,Draw,Extra Actions,Replace,Upgrade 2,Double Action,Take 4,Take Denarius,Trash Any,Take 5,Uprade Money
+Money1,Barter Goods,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Money2,Aes Rude,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Army1,Civil Militia,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Army2,Centuria,5,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Romulus,0,-1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+History,Sabine Women,0,-1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Curiate Assembly,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Solar Calendar,0,1,0,0,3,0,0,0,0,0,0,0,0,0,0,0
+History,Port of Ostia,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Circus Maximus,0,1,0,0,3,0,0,0,0,0,0,0,0,0,0,0
+History,Servian Wall,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Servian Reforms,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Centuriate Assy.,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Temple of Jupiter,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,King Election,0,1,0,0,3,0,0,0,0,0,0,0,0,0,0,0
+History,Military Triumph,0,-1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Pontifex Maximus,0,-1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+History,Seven Kings,0,-1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+History,Vestal Virgins,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Roman Sewers,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Etruscans,0,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Latin League,0,-1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0
+History,Magna Graecia,0,1,0,0,3,0,0,0,0,0,0,0,0,0,0,0
+Action,Grain Harvest,3,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Action,Roman Gods,5,0,0,0,0,0,2,1,0,0,0,0,0,0,0,0
+Action,Plebeians,3,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Action,Patrician Clans,4,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Action,Early Roads,5,0,0,0,0,1,4,0,0,0,0,0,0,0,0,0
+Action,Agrarian Economy,5,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0
+Action,Regional Trade,5,2,0,0,0,1,0,2,0,0,0,0,0,0,0,0
+Action,River Tiber,4,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+Action,Roman Magistrates,3,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0
+Action,Latin Language,2,0,0,0,0,0,0,1,3,0,0,0,0,0,0,0
+Action,Saturnalia,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Action,Private Schools,4,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Action,Military Outposts,4,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Action,Roman Phalanx,6,0,2,0,0,0,1,1,0,0,0,0,0,0,0,0
+Action,Urban Prefect,2,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Action,Debt Bondage,3,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Action,Palatine Hill,6,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Action,Roman Senate,2,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0
+Action,Public Forum,4,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0
+Action,Mars,3,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0

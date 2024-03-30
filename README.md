@@ -83,6 +83,7 @@ Cards are:
 |              |                 | Palatine Hill     | Etruscan Neighbours |  |
 |              |                 | Roman Senate      | Latin League        |  |
 |              |                 | Public Forum      | Magna Graecia       |  |
+|              |                 | Mars              |  |  |
 
 More: Seven Hills, First Aquaduct
 

@@ -1,4 +1,5 @@
 res://default_env.tres
-res://main.tscn
 res://card.tscn
+res://main.tscn
 res://main.gd
+res://card.gd

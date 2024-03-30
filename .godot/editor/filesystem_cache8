@@ -1,19 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711806876
-card.gd::GDScript::-1::1711724638::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1711806794::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
-cards.csv::::-1::1711793606::1709642895::1::::<><>::
-default_env.tres::Environment::3535254983394503347::1711806794::0::1::::<><>::
+::res://::1711821135
+card.gd::GDScript::-1::1711820394::0::1::::<>Panel<>::
+card.tscn::PackedScene::528414477263538463::1711821052::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
+cards.csv::::-1::1711814820::1709642895::1::::<><>::
+default_env.tres::Environment::3535254983394503347::1711821053::0::1::::<><>::
 Font Awesome 6 Free-Solid-900.otf::FontFile::6673130800394779117::1709681289::1709681290::1::::<><>::
 frame4.png::CompressedTexture2D::3103182351091807159::1709679922::1709679922::1::::<><>::
 icon.png::CompressedTexture2D::8812027128366769566::1709536140::1709537716::1::::<><>::
 karte-720.png::CompressedTexture2D::5028525007727685489::1709683078::1709683082::1::::<><>::
-main.gd::GDScript::-1::1711806791::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1711786551::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
-README.md::TextFile::-1::1711805964::0::1::::<><>::
+main.gd::GDScript::-1::1711821021::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1711821053::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
+README.md::TextFile::-1::1711813068::0::1::::<><>::
 README_old.md::TextFile::-1::1711716754::0::1::::<><>::
-::res://cards/::1711806876
+::res://cards/::1711821135
 aes_rude.png::CompressedTexture2D::8428654054505454976::1711734212::1711734339::1::::<><>::
+agrarian_economy.png::CompressedTexture2D::6492133400693691499::1711810691::1711813076::1::::<><>::
 background.png::CompressedTexture2D::8284803030150241183::1711736333::1711736841::1::::<><>::
 barter_goods.png::CompressedTexture2D::5115838234803208479::1711734481::1711734595::1::::<><>::
 centuria.png::CompressedTexture2D::9196911178116787808::1711734256::1711734339::1::::<><>::
@@ -22,15 +23,25 @@ circus_maximus.png::CompressedTexture2D::9149133778022538683::1711746744::171177
 civil_militia.png::CompressedTexture2D::3664863936358022890::1711734256::1711734339::1::::<><>::
 curiate_assembly.png::CompressedTexture2D::3619038769703833386::1711746742::1711778591::1::::<><>::
 default.png::CompressedTexture2D::8677731623316472446::1711723576::1711723644::1::::<><>::
+early_roads.png::CompressedTexture2D::5110490178295343707::1711810689::1711813076::1::::<><>::
+grain_harvest.png::CompressedTexture2D::2978587518519132585::1711810687::1711813076::1::::<><>::
 king_election.png::CompressedTexture2D::5016551258587199582::1711746746::1711778591::1::::<><>::
+latin_language.png::CompressedTexture2D::7635715076406849267::1711818031::1711820089::1::::<><>::
 latin_league.png::CompressedTexture2D::2254691681381754760::1711750753::1711778591::1::::<><>::
 magna_graecia.png::CompressedTexture2D::3531587790394092635::1711750753::1711778591::1::::<><>::
 military_triumph.png::CompressedTexture2D::1222698246558108883::1711746746::1711778590::1::::<><>::
+patrician_clans.png::CompressedTexture2D::8028842448001631529::1711810690::1711813076::1::::<><>::
+plebeians.png::CompressedTexture2D::7364940144553033962::1711810689::1711821135::1::::<><>::
 pontifex_maximus.png::CompressedTexture2D::6903483551775152962::1711746746::1711778590::1::::<><>::
 port_of_ostia.png::CompressedTexture2D::7050024675603299888::1711746743::1711778590::1::::<><>::
+regional_trade.png::CompressedTexture2D::5839717160602228191::1711810691::1711813076::1::::<><>::
+river_tiber.png::CompressedTexture2D::2131853713528030348::1711821008::1711821049::1::::<><>::
+roman_gods.png::CompressedTexture2D::7299435791354641756::1711810688::1711813076::1::::<><>::
+roman_magistrates.png::CompressedTexture2D::7131260771167011537::1711810692::1711813076::1::::<><>::
 roman_sewers.png::CompressedTexture2D::6142716933074494794::1711749660::1711778590::1::::<><>::
 romulus.png::CompressedTexture2D::5470591921984933521::1711746742::1711778590::1::::<><>::
 sabine_women.png::CompressedTexture2D::7080123494258696475::1711746742::1711778590::1::::<><>::
+saturnalia.png::CompressedTexture2D::6058203299698054677::1711820004::1711820089::1::::<><>::
 servian_reforms.png::CompressedTexture2D::149833232380746031::1711746745::1711778590::1::::<><>::
 servian_wall.png::CompressedTexture2D::6823685938666334996::1711746744::1711778590::1::::<><>::
 seven_kings.png::CompressedTexture2D::7312597899656441361::1711750065::1711806876::1::::<><>::

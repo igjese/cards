@@ -18,7 +18,7 @@ func set_cost(text: String) -> void:
 func set_effect(text: String) -> void:
     var text_label = get_node("CardEffect") as RichTextLabel
     if text_label:
-        text_label.bbcode_text = text
+        if text: text_label.bbcode_text = text
 
 
 # Function to set the card's main visual
