@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6dvgbj8wnvyh"
-path="res://.godot/imported/centuriate_assembly.png-9d90eec45ef529e79b5742873932d598.ctex"
+uid="uid://bjsv74ie7rr25"
+path="res://.godot/imported/urban_prefect.png-0fa45335aae88fb7cfd8898b920874d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cards/centuriate_assembly.png"
-dest_files=["res://.godot/imported/centuriate_assembly.png-9d90eec45ef529e79b5742873932d598.ctex"]
+source_file="res://cards/urban_prefect.png"
+dest_files=["res://.godot/imported/urban_prefect.png-0fa45335aae88fb7cfd8898b920874d7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyq3qu22tydvf"
-path="res://.godot/imported/agrarian_economy.png-2c957d46ed4b1392bd32a34c9e01e775.ctex"
+uid="uid://cw5triccikdbf"
+path="res://.godot/imported/etruscan_peers.png-e8813be7dd59f90010691c8180ff02d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cards/agrarian_economy.png"
-dest_files=["res://.godot/imported/agrarian_economy.png-2c957d46ed4b1392bd32a34c9e01e775.ctex"]
+source_file="res://cards/etruscan_peers.png"
+dest_files=["res://.godot/imported/etruscan_peers.png-e8813be7dd59f90010691c8180ff02d8.ctex"]
 
 [params]
 

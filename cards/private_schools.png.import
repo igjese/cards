@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8uo28nvcodcr"
-path="res://.godot/imported/roman_magistrates.png-762ff5351c2629ace97138ade873927a.ctex"
+uid="uid://bhgtfc2nmxhu6"
+path="res://.godot/imported/private_schools.png-a87271717d03e1ea78d76ccf4d6e5435.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cards/roman_magistrates.png"
-dest_files=["res://.godot/imported/roman_magistrates.png-762ff5351c2629ace97138ade873927a.ctex"]
+source_file="res://cards/private_schools.png"
+dest_files=["res://.godot/imported/private_schools.png-a87271717d03e1ea78d76ccf4d6e5435.ctex"]
 
 [params]
 
