@@ -65,7 +65,7 @@ Cards are:
 | Money        | Army            | Action cards      | History cards       | Victory cards           |
 |--------------|-----------------|-------------------|---------------------|-------------------------|
 | Barter Goods | Citizen Militia | Grain Harvest     | Romulus             | King's Exile            |
-| Aes Rude     | Centuriae       | Roman Gods        | Sabine Women        | Elected Consuls         |
+| Aes Rude     | Centuria        | Roman Gods        | Sabine Women        | Elected Consuls         |
 |              |                 | Plebs             | Curiate Assembly    | Battle of Lake Regillus |
 |              |                 | Patrician Clans   | Solar Calendar      |  |
 |              |                 | Early Roads       | Port of Ostia       |  |
@@ -84,6 +84,7 @@ Cards are:
 |              |                 | Roman Senate      | Latin League        |  |
 |              |                 | Public Forum      | Magna Graecia       |  |
 
+More: Seven Hills, First Aquaduct
 
 ### Ideas for Republic
 
@@ -216,3 +217,4 @@ Roman Citizenship
 Basilica: Christian Temple
 Temple of Mars
 Roman Welfare
+Watchtowers

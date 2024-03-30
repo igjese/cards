@@ -61,13 +61,12 @@ func display_card(card: Control, card_name: String) -> void:
     var army_icon = "\uf132"
 
     var money_cost = "%s %d" % [money_icon, card_data.cost_money]
-    var army_cost = "   %s %d" % [army_icon, card_data.cost_army] if card_data.cost_army != 0 else ""
     var money_effect = "%s %d\n" % [money_icon, card_data.effect_money] if card_data.effect_money != 0 else ""
     var army_effect = "%s %d\n" % [army_icon, card_data.effect_army] if card_data.effect_army != 0 else ""
     
     card.set_title(card_data.name)
     card.set_effect("%s%s" % [money_effect, army_effect])
-    card.set_cost("%s%s" % [money_cost, army_cost])
+    card.set_cost("%s" % money_cost)
     card.set_visual(card_name)
 
 
@@ -90,9 +89,10 @@ func load_cards_from_csv():
             "type": card_data[0],
             "name": card_data[1],
             "cost_money": int(card_data[2]),
-            "cost_army": int(card_data[3]),
-            "effect_money": int(card_data[4]),
-            "effect_army": int(card_data[5])
+            "effect_money": int(card_data[3]),
+            "effect_army": int(card_data[4]),
+            "discard": int(card_data[5]),
+            "trash": int(card_data[6]),
         }
         cards_raw.append(card)
         cards_by_name[card["name"]] = card
