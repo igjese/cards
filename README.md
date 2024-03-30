@@ -62,11 +62,11 @@ When all victory cards (last cards in history deck) has been "overcome", player 
 
 Cards are:
 
-| Money        | Army            | Action cards      | History cards       | Victory cards           |
-|--------------|-----------------|-------------------|---------------------|-------------------------|
-| Barter Goods | Citizen Militia | Grain Harvest     | Romulus             | King's Exile            |
-| Aes Rude     | Centuria        | Roman Gods        | Sabine Women        | Elected Consuls         |
-|              |                 | Plebs             | Curiate Assembly    | Battle of Lake Regillus |
+| Money        | Army            | Action cards      | History cards       | Victory cards    |
+|--------------|-----------------|-------------------|---------------------|------------------|
+| Barter Goods | Citizen Militia | Grain Harvest     | Romulus             | Tyrant Exile     |
+| Aes Rude     | Centuria        | Roman Gods        | Sabine Women        | Dual Consuls     |
+|              |                 | Plebs             | Curiate Assembly    | Regillus Victory |
 |              |                 | Patrician Clans   | Solar Calendar      |  |
 |              |                 | Early Roads       | Port of Ostia       |  |
 |              |                 | Agrarian Economy  | Circus Maximus      |  |

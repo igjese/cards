@@ -42,3 +42,6 @@ Action,Palatine Hill,6,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
 Action,Roman Senate,2,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0
 Action,Public Forum,4,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0
 Action,Mars,3,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+Victory1,Tyrant Exile,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0
+Victory2,Dual Consuls,0,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0
+Victory3,Regillus Victory,0,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0
