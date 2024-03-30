@@ -1,18 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711778587
+::res://::1711806876
 card.gd::GDScript::-1::1711724638::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1711738205::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
-cards.csv::::-1::1711742584::1709642895::1::::<><>::
-default_env.tres::Environment::3535254983394503347::1711738205::0::1::::<><>::
+card.tscn::PackedScene::528414477263538463::1711806794::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
+cards.csv::::-1::1711793606::1709642895::1::::<><>::
+default_env.tres::Environment::3535254983394503347::1711806794::0::1::::<><>::
 Font Awesome 6 Free-Solid-900.otf::FontFile::6673130800394779117::1709681289::1709681290::1::::<><>::
 frame4.png::CompressedTexture2D::3103182351091807159::1709679922::1709679922::1::::<><>::
 icon.png::CompressedTexture2D::8812027128366769566::1709536140::1709537716::1::::<><>::
 karte-720.png::CompressedTexture2D::5028525007727685489::1709683078::1709683082::1::::<><>::
-main.gd::GDScript::-1::1711734549::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1711738205::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
-README.md::TextFile::-1::1711778575::0::1::::<><>::
+main.gd::GDScript::-1::1711806791::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1711786551::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
+README.md::TextFile::-1::1711805964::0::1::::<><>::
 README_old.md::TextFile::-1::1711716754::0::1::::<><>::
-::res://cards/::1711750765
+::res://cards/::1711806876
 aes_rude.png::CompressedTexture2D::8428654054505454976::1711734212::1711734339::1::::<><>::
 background.png::CompressedTexture2D::8284803030150241183::1711736333::1711736841::1::::<><>::
 barter_goods.png::CompressedTexture2D::5115838234803208479::1711734481::1711734595::1::::<><>::
@@ -33,7 +33,7 @@ romulus.png::CompressedTexture2D::5470591921984933521::1711746742::1711778590::1
 sabine_women.png::CompressedTexture2D::7080123494258696475::1711746742::1711778590::1::::<><>::
 servian_reforms.png::CompressedTexture2D::149833232380746031::1711746745::1711778590::1::::<><>::
 servian_wall.png::CompressedTexture2D::6823685938666334996::1711746744::1711778590::1::::<><>::
-seven_kings_of_rome.png::CompressedTexture2D::7312597899656441361::1711750065::1711778590::1::::<><>::
+seven_kings.png::CompressedTexture2D::7312597899656441361::1711750065::1711806876::1::::<><>::
 solar_calendar.png::CompressedTexture2D::2924908713385078627::1711746743::1711778590::1::::<><>::
 temple_of_jupiter.png::CompressedTexture2D::6588175815078526569::1711746745::1711778590::1::::<><>::
 vestal_virgins.png::CompressedTexture2D::5073972373734303611::1711750065::1711778590::1::::<><>::

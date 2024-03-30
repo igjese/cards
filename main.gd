@@ -61,6 +61,16 @@ func refresh_gui():
     display_card($CardArmy1, "Civil Militia")
     display_card($CardArmy2, "Centuria")
     
+    refresh_deck("History")
+    
+func refresh_deck(deck_name):
+    var node = decks[deck_name]["node"]
+    var card = decks[deck_name]["cards"][0]
+    
+    print(node, card)
+    
+    display_card(node, card["name"])
+    
     
 func assign_decks_to_nodes():
     for deck in decks:
@@ -137,6 +147,8 @@ func assign_cards_to_decks():
             all_actions.append(card)
         else:
             print("Deck key not found: ", deck_key)
+            
+    decks["History"]["cards"].shuffle()
             
     for deck in ["Action1", "Action2", "Action3", "Action4", "Action5", "Action6", "Action7", "Action8", "Action9", "Action10"]:
         var choice = randi() % all_actions.size()
