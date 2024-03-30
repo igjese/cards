@@ -218,4 +218,13 @@ offset_right = 619.0
 offset_bottom = 1059.0
 text = "Exit"
 
+[node name="BtnNewGame" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 961.0
+offset_right = 619.0
+offset_bottom = 1007.0
+text = "New Game"
+
 [connection signal="pressed" from="Control/BtnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="Control/BtnNewGame" to="." method="_on_btn_new_game_pressed"]

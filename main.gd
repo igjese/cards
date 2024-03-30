@@ -28,24 +28,45 @@ var decks = {
 }
 
 
-# Called when the node enters the scene tree for the first time.
+# INIT #########################
+
 func _ready():
-    load_cards_from_csv()
-    load_decks()
+    load_card_definitions_from_csv()
+    assign_decks_to_nodes()
+    new_game()
+
+
+# GAME LOGIC ###################
+
+func new_game():
+    prepare_decks()
+    refresh_gui()
     
+    
+# FUNCTIONS  ###################
+
+func prepare_decks():
+    empty_current_decks()
+    assign_cards_to_decks()
+    
+    
+func empty_current_decks():
+    pass
+    
+    
+func refresh_gui():
+    display_card($CardMoney1, "Barter Goods")
+    display_card($CardMoney2, "Aes Rude")
+    display_card($CardArmy1, "Civil Militia")
+    display_card($CardArmy2, "Centuria")
+    
+    
+func assign_decks_to_nodes():
     decks["Money1"]["node"] = $CardMoney1
     decks["Money2"]["node"] = $CardMoney2
     decks["Army1"]["node"] = $CardArmy1
     decks["Army2"]["node"] = $CardArmy2
     decks["History"]["node"] = $CardHistory
-
-    
-    display_card(decks["History"]["node"], "Julius Caesar")
-    display_card($CardMoney1, "Barter Goods")
-    display_card($CardMoney2, "Aes Rude")
-    display_card($CardArmy1, "Civil Militia")
-    display_card($CardArmy2, "Centuria")
-
     
     
 # Assumes cards_by_name is a dictionary where keys are card names
@@ -70,8 +91,7 @@ func display_card(card: Control, card_name: String) -> void:
     card.set_visual(card_name)
 
 
-
-func load_cards_from_csv():
+func load_card_definitions_from_csv():
     var path = "res://cards.csv"
     
     var file = FileAccess.open(path, FileAccess.READ)
@@ -101,7 +121,8 @@ func load_cards_from_csv():
     
     print("Cards loaded: ", cards_raw)
 
-func load_decks():
+
+func assign_cards_to_decks():
     for card in cards_raw:
         var deck_key = card["type"]
         if decks.has(deck_key):
@@ -110,5 +131,12 @@ func load_decks():
             print("Deck key not found: ", deck_key)
     print(decks)
 
+
+# SIGNALS #####################
+
 func _on_btn_exit_pressed():
     get_tree().quit()
+
+
+func _on_btn_new_game_pressed():
+    new_game() # Replace with function body.
