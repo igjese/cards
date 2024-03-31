@@ -27,6 +27,7 @@ var decks = {
     "CardsPlayed": {"cards": [], "node": null}
 }
 
+var player_hand = []
 
 # INIT #########################
 
@@ -51,9 +52,9 @@ func new_turn():
 func deal_new_hand():
     while decks["PlayerDeck"]["cards"].size() > 0 and decks["PlayerHand"]["cards"].size() < 5:
         decks["PlayerHand"]["cards"].append(decks["PlayerDeck"]["cards"].pop_front())
-    
-    print("PlayerHand - ", decks["PlayerHand"]["cards"],"\n")
-    print("PlayerDeck - ", decks["PlayerDeck"]["cards"],"\n")
+        
+    print_deck_cards("Player Hand", decks["PlayerHand"])
+    print_deck_cards("Player Deck", decks["PlayerDeck"])
     
 # FUNCTIONS  ###################
 
@@ -70,6 +71,34 @@ func empty_current_decks():
 func refresh_gui():    
     for deck in decks:
         refresh_deck(deck)
+    refresh_hand()
+    
+    
+func refresh_hand():
+    # Reset visibility and quantity of all hand nodes first
+    for placeholder in player_hand:
+        placeholder["node"].visible = false
+        placeholder["qty"] = 0
+
+    # Temporary dictionary to count card occurrences
+    var card_counts = {}
+    for card in decks["PlayerHand"]["cards"]:
+        var card_name = card["name"]
+        if card_name in card_counts:
+            card_counts[card_name] += 1
+        else:
+            card_counts[card_name] = 1
+
+    # Update UI based on card counts
+    var index = 0
+    for card_name in card_counts:
+        var node = player_hand[index]
+        node["card"] = cards_by_name[card_name]
+        node["qty"] = card_counts[card_name]
+        display_card(node["node"], card_name) # Assuming display_card can handle quantity
+        node["node"].visible = true
+        index += 1
+
     
 func refresh_deck(deck_name):
     var node = decks[deck_name]["node"]
@@ -81,6 +110,10 @@ func refresh_deck(deck_name):
 func assign_decks_to_nodes():
     for deck in decks:
         decks[deck]["node"] = get_node("Card" + deck)
+        
+    for i in range(14):
+        player_hand.append({"card": null, "qty": 0, "node": get_node("CardHand%d" % (i+1))})
+
         
 var cost_icons = {
     "cost_money": "\uf51e",
@@ -135,7 +168,6 @@ func cost_text(cost, value):
 func effect_text(effect, value):
     return effect_icons[effect] + str(value) + "\n"
     
-
 
 func load_card_definitions_from_csv():
     var path = "res://cards.csv"
