@@ -107,94 +107,88 @@ offset_right = 267.0
 offset_bottom = 650.0
 
 [node name="Hand1" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 57.0
-offset_top = 840.0
-offset_right = 207.0
-offset_bottom = 990.0
+offset_left = 228.0
+offset_top = 756.0
+offset_right = 378.0
+offset_bottom = 906.0
 
 [node name="Hand2" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 110.0
-offset_top = 830.0
-offset_right = 260.0
-offset_bottom = 980.0
+offset_left = 395.0
+offset_top = 756.0
+offset_right = 545.0
+offset_bottom = 906.0
 
 [node name="Hand3" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 158.0
-offset_top = 848.0
-offset_right = 308.0
-offset_bottom = 998.0
+offset_left = 562.0
+offset_top = 754.0
+offset_right = 712.0
+offset_bottom = 904.0
 
 [node name="Hand4" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 210.0
-offset_top = 827.0
-offset_right = 360.0
-offset_bottom = 977.0
+offset_left = 726.0
+offset_top = 752.0
+offset_right = 876.0
+offset_bottom = 902.0
 
 [node name="Hand5" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 270.0
-offset_top = 838.0
-offset_right = 420.0
-offset_bottom = 988.0
+offset_left = 889.0
+offset_top = 751.0
+offset_right = 1039.0
+offset_bottom = 901.0
 
 [node name="Hand6" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 320.0
-offset_top = 829.0
-offset_right = 470.0
-offset_bottom = 979.0
+offset_left = 1051.0
+offset_top = 752.0
+offset_right = 1201.0
+offset_bottom = 902.0
 
 [node name="Hand7" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 371.0
-offset_top = 835.0
-offset_right = 521.0
-offset_bottom = 985.0
+offset_left = 61.0
+offset_top = 757.0
+offset_right = 211.0
+offset_bottom = 907.0
 
 [node name="Hand8" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 422.0
-offset_top = 824.0
-offset_right = 572.0
-offset_bottom = 974.0
+offset_left = 92.0
+offset_top = 882.0
+offset_right = 242.0
+offset_bottom = 1032.0
 
 [node name="Hand9" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 471.0
-offset_top = 834.0
-offset_right = 621.0
-offset_bottom = 984.0
+offset_left = 257.0
+offset_top = 882.0
+offset_right = 407.0
+offset_bottom = 1032.0
 
 [node name="Hand10" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 527.0
-offset_top = 823.0
-offset_right = 677.0
-offset_bottom = 973.0
+offset_left = 424.0
+offset_top = 880.0
+offset_right = 574.0
+offset_bottom = 1030.0
 
 [node name="Hand11" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 580.0
-offset_top = 834.0
-offset_right = 730.0
-offset_bottom = 984.0
+offset_left = 592.0
+offset_top = 878.0
+offset_right = 742.0
+offset_bottom = 1028.0
 
 [node name="Hand12" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 633.0
-offset_top = 823.0
-offset_right = 783.0
-offset_bottom = 973.0
+offset_left = 758.0
+offset_top = 877.0
+offset_right = 908.0
+offset_bottom = 1027.0
 
 [node name="Hand13" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 688.0
-offset_top = 834.0
-offset_right = 838.0
-offset_bottom = 984.0
+offset_left = 923.0
+offset_top = 878.0
+offset_right = 1073.0
+offset_bottom = 1028.0
 
 [node name="Hand14" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 737.0
-offset_top = 824.0
-offset_right = 887.0
-offset_bottom = 974.0
-
-[node name="Hand15" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 793.0
-offset_top = 835.0
-offset_right = 943.0
-offset_bottom = 985.0
+offset_left = 1085.0
+offset_top = 878.0
+offset_right = 1235.0
+offset_bottom = 1028.0
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 1263.0
