@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://hr756cx0syfv"]
+[gd_scene load_steps=7 format=3 uid="uid://hr756cx0syfv"]
 
 [ext_resource type="Script" path="res://card.gd" id="1_cbw46"]
 [ext_resource type="Texture2D" uid="uid://dvvs8bvvmd5rm" path="res://cards/default.png" id="2_6tvjx"]
@@ -6,6 +6,14 @@
 [ext_resource type="FontFile" uid="uid://c2crqvwp2kqvd" path="res://Font Awesome 6 Free-Solid-900.otf" id="2_ohxj3"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yp1jo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t33l3"]
+bg_color = Color(0.887612, 0.395224, 0.26741, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 5
 
 [node name="Card" type="Panel"]
 offset_right = 150.0
@@ -70,3 +78,20 @@ theme_override_font_sizes/bold_font_size = 11
 bbcode_enabled = true
 text = "[center]Card"
 scroll_active = false
+
+[node name="CardQty" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -23.0
+offset_bottom = 26.0
+grow_horizontal = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_t33l3")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1

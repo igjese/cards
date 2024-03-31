@@ -107,102 +107,88 @@ offset_right = 267.0
 offset_bottom = 650.0
 
 [node name="CardHand1" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 228.0
-offset_top = 756.0
+offset_top = 750.0
 offset_right = 378.0
-offset_bottom = 906.0
+offset_bottom = 900.0
 
 [node name="CardHand2" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 395.0
-offset_top = 756.0
+offset_top = 750.0
 offset_right = 545.0
-offset_bottom = 906.0
+offset_bottom = 900.0
 
 [node name="CardHand3" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 562.0
-offset_top = 754.0
+offset_top = 750.0
 offset_right = 712.0
-offset_bottom = 904.0
+offset_bottom = 900.0
 
 [node name="CardHand4" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 726.0
-offset_top = 752.0
+offset_top = 750.0
 offset_right = 876.0
-offset_bottom = 902.0
+offset_bottom = 900.0
 
 [node name="CardHand5" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 889.0
-offset_top = 751.0
+offset_top = 750.0
 offset_right = 1039.0
-offset_bottom = 901.0
+offset_bottom = 900.0
 
 [node name="CardHand6" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 1051.0
-offset_top = 752.0
+offset_top = 750.0
 offset_right = 1201.0
-offset_bottom = 902.0
+offset_bottom = 900.0
 
 [node name="CardHand7" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 61.0
-offset_top = 757.0
+offset_top = 750.0
 offset_right = 211.0
-offset_bottom = 907.0
+offset_bottom = 900.0
 
 [node name="CardHand8" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 92.0
-offset_top = 882.0
+offset_top = 880.0
 offset_right = 242.0
-offset_bottom = 1032.0
+offset_bottom = 1030.0
 
 [node name="CardHand9" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 257.0
-offset_top = 882.0
+offset_top = 880.0
 offset_right = 407.0
-offset_bottom = 1032.0
+offset_bottom = 1030.0
 
 [node name="CardHand10" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 424.0
 offset_top = 880.0
 offset_right = 574.0
 offset_bottom = 1030.0
 
 [node name="CardHand11" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 592.0
-offset_top = 878.0
+offset_top = 880.0
 offset_right = 742.0
-offset_bottom = 1028.0
+offset_bottom = 1030.0
 
 [node name="CardHand12" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 758.0
-offset_top = 877.0
+offset_top = 880.0
 offset_right = 908.0
-offset_bottom = 1027.0
+offset_bottom = 1030.0
 
 [node name="CardHand13" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 923.0
-offset_top = 878.0
+offset_top = 880.0
 offset_right = 1073.0
-offset_bottom = 1028.0
+offset_bottom = 1030.0
 
 [node name="CardHand14" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
 offset_left = 1085.0
-offset_top = 878.0
+offset_top = 880.0
 offset_right = 1235.0
-offset_bottom = 1028.0
+offset_bottom = 1030.0
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 1263.0

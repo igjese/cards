@@ -96,6 +96,11 @@ func refresh_hand():
         node["card"] = cards_by_name[card_name]
         node["qty"] = card_counts[card_name]
         display_card(node["node"], card_name) # Assuming display_card can handle quantity
+        if node["qty"] > 1:
+            node["node"].get_node("CardQty").set_text(str(node["qty"]))
+            node["node"].get_node("CardQty").visible = true
+        else:
+            node["node"].get_node("CardQty").visible = false
         node["node"].visible = true
         index += 1
 
