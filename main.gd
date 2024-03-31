@@ -44,13 +44,16 @@ func new_game():
     
     
 func new_turn():
-    new_hand()
+    deal_new_hand()
     refresh_gui()
     
     
-func new_hand():
-    pass
+func deal_new_hand():
+    while decks["PlayerDeck"]["cards"].size() > 0 and decks["PlayerHand"]["cards"].size() < 5:
+        decks["PlayerHand"]["cards"].append(decks["PlayerDeck"]["cards"].pop_front())
     
+    print("PlayerHand - ", decks["PlayerHand"]["cards"],"\n")
+    print("PlayerDeck - ", decks["PlayerDeck"]["cards"],"\n")
     
 # FUNCTIONS  ###################
 
@@ -177,8 +180,14 @@ func load_card_definitions_from_csv():
 func assign_cards_to_decks():
     var all_actions = []
     var victory_cards = []
+    var money1 = null
+    var army1 = null
     for card in cards_raw:
         var deck_key = card["type"]
+        if deck_key == "Money1":
+            money1 = card
+        if deck_key == "Army1":
+            army1 = card
         if deck_key in ["Money1","Money2","Army1","Army2"]:
             for i in range(single_card_deck_qty):
                 decks[deck_key]["cards"].append(card)
@@ -201,6 +210,12 @@ func assign_cards_to_decks():
         for i in range(single_card_deck_qty):
             decks[deck]["cards"].append(all_actions[choice])
         all_actions.remove_at(choice)
+        
+    for i in range(7):
+        decks["PlayerDeck"]["cards"].append(money1)
+    for i in range(3):
+        decks["PlayerDeck"]["cards"].append(army1)
+    decks["PlayerDeck"]["cards"].shuffle()
     
     for deck_name in decks:
         print_deck_cards(deck_name, decks[deck_name])
