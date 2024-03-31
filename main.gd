@@ -69,8 +69,6 @@ func refresh_deck(deck_name):
 func assign_decks_to_nodes():
     for deck in decks:
         decks[deck]["node"] = get_node("Card" + deck)
-        
-    print("Decks - ", decks)
     
     
 # Assumes cards_by_name is a dictionary where keys are card names
@@ -133,14 +131,11 @@ func load_card_definitions_from_csv():
         cards_by_name[card["name"]] = card
 
     file.close()
-    
-    for key in cards_by_name:
-        print(key, cards_by_name[key])
-    #print("Cards loaded: ", cards_raw)
 
 
 func assign_cards_to_decks():
     var all_actions = []
+    var victory_cards = []
     for card in cards_raw:
         var deck_key = card["type"]
         if deck_key in ["Money1","Money2","Army1","Army2"]:
@@ -150,20 +145,33 @@ func assign_cards_to_decks():
             decks[deck_key]["cards"].append(card)
         elif deck_key == "Action":
             all_actions.append(card)
+        elif deck_key in ["Victory1","Victory2","Victory3"]:
+            victory_cards.append(card)
         else:
             print("Deck key not found: ", deck_key)
             
     decks["History"]["cards"].shuffle()
-            
+    decks["History"]["cards"].append(victory_cards[0])
+    decks["History"]["cards"].append(victory_cards[1])
+    decks["History"]["cards"].append(victory_cards[2])
+    
     for deck in ["Action1", "Action2", "Action3", "Action4", "Action5", "Action6", "Action7", "Action8", "Action9", "Action10"]:
         var choice = randi() % all_actions.size()
         for i in range(single_card_deck_qty):
             decks[deck]["cards"].append(all_actions[choice])
         all_actions.remove_at(choice)
     
-    for deck in decks:
-        print(deck, " - ", decks[deck]["cards"])
+    for deck_name in decks:
+        print_deck_cards(deck_name, decks[deck_name])
+        
+# UTILS #######################
 
+func print_deck_cards(deck_name,deck):
+    var txt = deck_name + " - "
+    for card in deck["cards"]:
+        txt = txt + card["name"] + ","
+    txt = txt.left(-1) + "\n"
+    print(txt)
 
 # SIGNALS #####################
 
