@@ -127,7 +127,7 @@ var cost_icons = {
 var effect_icons = {
     "effect_money": "\uf51e",
     "effect_army": "Army: ",
-    "discard": "Discard: ",
+    "discard": "Disc\\ard: ",
     "trash": "Tr\\ash: ",
     "extra_buys": "Buy: ",
     "draw": "Draw: ",
