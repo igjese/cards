@@ -69,6 +69,28 @@ func refresh_deck(deck_name):
 func assign_decks_to_nodes():
     for deck in decks:
         decks[deck]["node"] = get_node("Card" + deck)
+        
+var cost_icons = {
+    "cost_money": "\uf51e",
+}
+        
+var effect_icons = {
+    "effect_money": "\uf51e",
+    "effect_army": "Army: ",
+    "discard": "Discard: ",
+    "trash": "Tr\\ash: ",
+    "extra_buys": "Buy: ",
+    "draw": "Draw: ",
+    "extra_actions": "Actions: ",
+    "replace": "Replace: ",
+    "upgrade_2": "Upgra\\de: +2#",
+    "double_action": "Double Action#",
+    "take_4": "Take: \uf51e4#",
+    "take_denarius": "Take: \uf51e3#",
+    "trash_any": "Tr\\ash any: ",
+    "take_5": "Take: \uf51e5#",
+    "upgrade_money": "Upgra\\de \uf51e#",
+}
     
     
 # Assumes cards_by_name is a dictionary where keys are card names
@@ -77,20 +99,30 @@ func display_card(card: Control, card_name: String) -> void:
     if not cards_by_name.has(card_name):
         print("Card name not found: ", card_name)
         return
-    
+        
     var card_data = cards_by_name[card_name]
     
-    var money_icon = "\uf51e"
-    var army_icon = "\uf132"
-
-    var money_cost = "%s %d" % [money_icon, card_data.cost_money]
-    var money_effect = "%s %d\n" % [money_icon, card_data.effect_money] if card_data.effect_money != 0 else ""
-    var army_effect = "%s %d\n" % [army_icon, card_data.effect_army] if card_data.effect_army != 0 else ""
+    var cost_text = "%s%d" % [cost_icons["cost_money"], card_data["cost_money"]]
     
+    var effect_text = ""
+    for effect in effect_icons:
+        if card_data[effect] != 0:
+            effect_text = "%s%s%s\n" % [effect_text, effect_icons[effect], str(card_data[effect])]
+    effect_text = effect_text.split("#")[0]
+            
     card.set_title(card_data.name)
-    card.set_effect("%s%s" % [money_effect, army_effect])
-    card.set_cost("%s" % money_cost)
+    card.set_effect(effect_text)
+    card.set_cost(cost_text)
     card.set_visual(card_name)
+    
+    
+func cost_text(cost, value):
+    return cost_icons[cost] + str(value) + " "
+    
+
+func effect_text(effect, value):
+    return effect_icons[effect] + str(value) + "\n"
+    
 
 
 func load_card_definitions_from_csv():
