@@ -40,7 +40,16 @@ func _ready():
 
 func new_game():
     prepare_decks()
+    new_turn()
+    
+    
+func new_turn():
+    new_hand()
     refresh_gui()
+    
+    
+func new_hand():
+    pass
     
     
 # FUNCTIONS  ###################
