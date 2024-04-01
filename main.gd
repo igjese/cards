@@ -116,6 +116,16 @@ func refresh_gui():
     refresh_hand()
     refresh_status()
     refresh_hint()
+    refresh_history()
+    
+
+func refresh_history():
+    var history_label = get_node("GuiMain/History")
+    var random_index = randi() % cards_raw.size()
+    var random_card = cards_raw[random_index]
+    var history_text = "[b]%s: %s[/b]\n%s" % [random_card["name"],random_card["subtitle"], random_card["history_text"]]
+    history_label.text = history_text
+    
     
 func refresh_hint():
     var gui_hint = get_node("GuiHint")  # This gets the Control node named GuiHint
@@ -248,7 +258,7 @@ func load_card_definitions_from_csv():
         var line = file.get_line()
         if line == "":
             continue
-        var card_data = line.split(",")
+        var card_data = line.split(";")
         var card = {
             "type": card_data[0],
             "name": card_data[1],
