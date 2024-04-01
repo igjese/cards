@@ -34,11 +34,12 @@ var gui_main = null
 var gui_status = null
 
 enum phases { SETUP, ACTIONS, BUYS, CLEANUP }
-enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES}
+enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS}
 
 var hints = {
     steps.CHOOSE_ACTION_CARD: ["Play your action cards","I'm done"],
-    steps.PLAY_RESOURCES: ["Play your resource cards", "Play resources"]
+    steps.PLAY_RESOURCES: ["Play your resource cards", "Play resources"],
+    steps.BUY_CARDS: ["Pick cards to buy", "I'm done buying"]
 }
 
 class Game:
@@ -51,6 +52,7 @@ class Game:
     var buys = 1
     
 var game : Game = null
+
 
 # INIT #########################
 
@@ -89,8 +91,36 @@ func finish_actions():
     
     
 func play_resources():
-    pass
+    var cards_to_play = []
     
+    for card in decks["PlayerHand"]["cards"]:
+        if card["type"] in ["Money1","Money2","Army1","Army2"]:
+            cards_to_play.append(card)
+    
+    for card in cards_to_play:
+        decks["PlayerHand"]["cards"].erase(card)  # Remove card from player's hand
+        decks["CardsOnTable"]["cards"].append(card)  # Add card to the table
+        game.money += card["effect_money"]
+        game.army += card["effect_army"]
+        
+    game.current_step = steps.BUY_CARDS
+    refresh_gui()
+    
+func buy_card(node: Node):
+    var card = top_card(node)
+
+    if game.money >= card["cost_money"]:
+        game.money -= card["cost_money"]
+        for deck in decks:
+            if node == decks[deck]["node"]:
+                decks[deck]["cards"].erase(card)  
+                decks["Discarded"]["cards"].append(card)  
+
+        game.buys -= 1
+        refresh_gui()
+
+
+
     
 # FUNCTIONS  ###################
 
@@ -120,6 +150,7 @@ func refresh_gui():
     for deck in decks:
         refresh_deck(deck)
     refresh_cards(player_hand, "PlayerHand")
+    refresh_cards(table_cards, "CardsOnTable")
     refresh_status()
     refresh_hint()
     refresh_history()
@@ -232,7 +263,6 @@ func display_card_with_qty(node: Node, card_name: String, qty: int):
         qty_label.visible = false
     node.visible = true
 
-    
     
 # Assumes cards_by_name is a dictionary where keys are card names
 # and values are dictionaries containing the card's data.
@@ -378,7 +408,14 @@ func top_card(node):
     for deck in player_hand:
         if node ==  deck["node"]:
             return deck["card"]
+    for deck in table_cards:
+        if node ==  deck["node"]:
+            return deck["card"]
     return null
+    
+    
+func is_card_buyable(node: Node) -> bool:
+    return node.name.begins_with("CardMoney") or node.name.begins_with("CardArmy") or node.name.begins_with("CardAction")
     
     
 # SIGNALS #####################
@@ -392,17 +429,20 @@ func _on_btn_new_game_pressed():
     
     
 func on_deck_clicked(node):
-    var card = top_card(node)
-    match game.current_phase:
-        phases.ACTIONS: 
-            match game.current_step:
-                steps.CHOOSE_ACTION_CARD:
-                    # valid: action card, in player's hand
-                    if is_actioncard(card) and is_playerhand(node): 
-                        print("choose action card", card)
-                        pass
-                    else:
-                        print("not valid card action:%s playerhand:%s" % [is_actioncard(card), is_playerhand(node)])
+    var card : Dictionary = top_card(node)
+    match game.current_step:
+        steps.CHOOSE_ACTION_CARD:
+            # valid: action card, in player's hand
+            if is_actioncard(card) and is_playerhand(node): 
+                print("choose action card", card)
+                pass
+            else:
+                print("not valid card action:%s playerhand:%s" % [is_actioncard(card), is_playerhand(node)])
+        steps.BUY_CARDS:
+            # valid: card in buyable decks and costing less than money available
+            var cost = card["cost_money"]
+            if is_card_buyable(node) and cost <= game.money and game.buys > 0:
+                buy_card(node)
                         
 
 func _on_btn_hints_pressed():
