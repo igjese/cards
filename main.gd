@@ -86,6 +86,11 @@ func finish_actions():
     game.current_step = steps.PLAY_RESOURCES
     refresh_gui()
     
+    
+func play_resources():
+    pass
+    
+    
 # FUNCTIONS  ###################
 
 func init():
@@ -339,6 +344,28 @@ func print_deck_cards(deck_name,deck):
     txt = txt.left(-1) + "\n"
     print(txt)
 
+
+func is_actioncard(card):
+    return card["type"] == "Action"
+    
+    
+func is_playerhand(node):
+    for deck in player_hand:
+        if node ==  deck["node"]:
+            return true
+    return false
+    
+
+func top_card(node):
+    for deck in decks:
+        if node == decks[deck]["node"]:
+            return decks[deck]["cards"][0]
+    for deck in player_hand:
+        if node ==  deck["node"]:
+            return deck["card"]
+    return null
+    
+    
 # SIGNALS #####################
 
 func _on_btn_exit_pressed():
@@ -362,32 +389,10 @@ func on_deck_clicked(node):
                     else:
                         print("not valid card action:%s playerhand:%s" % [is_actioncard(card), is_playerhand(node)])
                         
-                        
-func is_actioncard(card):
-    return card["type"] == "Action"
-    
-    
-func is_playerhand(node):
-    for deck in player_hand:
-        if node ==  deck["node"]:
-            return true
-    return false
-    
-
-func top_card(node):
-    for deck in decks:
-        if node == decks[deck]["node"]:
-            return decks[deck]["cards"][0]
-    for deck in player_hand:
-        if node ==  deck["node"]:
-            return deck["card"]
-    return null
-    
-
-
-
 
 func _on_btn_hints_pressed():
     match game.current_step:
         steps.CHOOSE_ACTION_CARD:
             finish_actions()
+        steps.PLAY_RESOURCES:
+            play_resources()
