@@ -33,7 +33,12 @@ var gui_main = null
 var gui_status = null
 
 enum phases { SETUP, ACTIONS, BUYS, CLEANUP }
-enum steps { NONE, CHOOSE_ACTION_CARD }
+enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES}
+
+var hints = {
+    steps.CHOOSE_ACTION_CARD: ["Play your action cards","I'm done"],
+    steps.PLAY_RESOURCES: ["Play your resource cards", "Play resources"]
+}
 
 class Game:
     var current_phase = phases.SETUP
@@ -64,9 +69,9 @@ func new_turn():
     game.current_phase = phases.SETUP
     game.current_step = steps.NONE
     deal_new_hand()
-    refresh_gui()
     game.current_phase = phases.ACTIONS
     game.current_step = steps.CHOOSE_ACTION_CARD
+    refresh_gui()
     
     
 func deal_new_hand():
@@ -75,6 +80,11 @@ func deal_new_hand():
         
     print_deck_cards("Player Hand", decks["PlayerHand"])
     print_deck_cards("Player Deck", decks["PlayerDeck"])
+    
+    
+func finish_actions():
+    game.current_step = steps.PLAY_RESOURCES
+    refresh_gui()
     
 # FUNCTIONS  ###################
 
@@ -105,7 +115,18 @@ func refresh_gui():
         refresh_deck(deck)
     refresh_hand()
     refresh_status()
+    refresh_hint()
     
+func refresh_hint():
+    var gui_hint = get_node("GuiHint")  # This gets the Control node named GuiHint
+    
+    if hints.has(game.current_step):
+        gui_hint.get_node("Hint").text = hints[game.current_step][0]  # Update the text of the Hint RTLabel
+        gui_hint.get_node("BtnHints").text = hints[game.current_step][1]
+        gui_hint.visible = true  # Make sure the GuiHint and all its children are visible
+    else:
+        gui_hint.visible = false  # Hide the GuiHint node, which also hides all its children
+
     
 func refresh_status():
     var countPlayerDeck = decks["PlayerHand"]["cards"].size()
@@ -247,6 +268,8 @@ func load_card_definitions_from_csv():
             "trash_any": int(card_data[15]),
             "take_5": int(card_data[16]),
             "upgrade_money": int(card_data[17]),
+            "subtitle": card_data[18],
+            "history_text": card_data[19],
         }
         cards_raw.append(card)
         cards_by_name[card["name"]] = card
@@ -324,7 +347,8 @@ func on_deck_clicked(node):
                 steps.CHOOSE_ACTION_CARD:
                     # valid: action card, in player's hand
                     if is_actioncard(card) and is_playerhand(node): 
-                        print("choose action card")
+                        print("choose action card", card)
+                        pass
                     else:
                         print("not valid card action:%s playerhand:%s" % [is_actioncard(card), is_playerhand(node)])
                         
@@ -349,3 +373,11 @@ func top_card(node):
             return deck["card"]
     return null
     
+
+
+
+
+func _on_btn_hints_pressed():
+    match game.current_step:
+        steps.CHOOSE_ACTION_CARD:
+            finish_actions()

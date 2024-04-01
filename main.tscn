@@ -199,60 +199,70 @@ offset_right = 1235.0
 offset_bottom = 1030.0
 
 [node name="CardTable1" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 407.0
 offset_top = 425.0
 offset_right = 557.0
 offset_bottom = 575.0
 
 [node name="CardTable2" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 557.0
 offset_top = 425.0
 offset_right = 707.0
 offset_bottom = 575.0
 
 [node name="CardTable3" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 707.0
 offset_top = 425.0
 offset_right = 857.0
 offset_bottom = 575.0
 
 [node name="CardTable4" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 857.0
 offset_top = 425.0
 offset_right = 1007.0
 offset_bottom = 575.0
 
 [node name="CardTable5" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 1007.0
 offset_top = 425.0
 offset_right = 1157.0
 offset_bottom = 575.0
 
 [node name="CardTable6" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 407.0
 offset_top = 575.0
 offset_right = 557.0
 offset_bottom = 725.0
 
 [node name="CardTable7" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 557.0
 offset_top = 575.0
 offset_right = 707.0
 offset_bottom = 725.0
 
 [node name="CardTable8" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 707.0
 offset_top = 575.0
 offset_right = 857.0
 offset_bottom = 725.0
 
 [node name="CardTable9" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 857.0
 offset_top = 575.0
 offset_right = 1007.0
 offset_bottom = 725.0
 
 [node name="CardTable10" parent="." instance=ExtResource("1_3bn2l")]
+visible = false
 offset_left = 1007.0
 offset_top = 575.0
 offset_right = 1157.0
@@ -322,21 +332,31 @@ offset_bottom = 730.0
 
 [node name="Panel3" type="Panel" parent="GuiHint"]
 offset_left = -5.0
-offset_top = -4.0
+offset_top = -10.0
 offset_right = 116.0
-offset_bottom = 63.0
+offset_bottom = 64.0
 scale = Vector2(2.56208, 1.49076)
 theme_override_styles/panel = SubResource("StyleBoxFlat_tasj7")
 
 [node name="Hint" type="RichTextLabel" parent="GuiHint"]
 layout_mode = 0
 offset_left = 5.0
-offset_top = 5.0
+offset_top = -4.0
 offset_right = 296.0
-offset_bottom = 88.0
+offset_bottom = 64.0
 theme_override_colors/default_color = Color(0.937255, 0.894118, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
-text = "Hint"
+text = "Hint
+2nd row"
+
+[node name="BtnHints" type="Button" parent="GuiHint"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 63.0
+offset_right = 223.0
+offset_bottom = 94.0
+text = "OK"
 
 [connection signal="pressed" from="GuiMain/BtnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="GuiMain/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
+[connection signal="pressed" from="GuiHint/BtnHints" to="." method="_on_btn_hints_pressed"]
