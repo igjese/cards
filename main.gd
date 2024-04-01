@@ -29,11 +29,14 @@ var decks = {
 
 var player_hand = []
 
+var gui_main = null
+var gui_status = null
+
+
 # INIT #########################
 
 func _ready():
-    load_card_definitions_from_csv()
-    assign_decks_to_nodes()
+    init()
     new_game()
 
 
@@ -58,6 +61,17 @@ func deal_new_hand():
     
 # FUNCTIONS  ###################
 
+func init():
+    load_card_definitions_from_csv()
+    assign_decks_to_nodes()
+    assign_gui_nodes()
+    
+    
+func assign_gui_nodes():
+    gui_main = get_node("GuiMain")
+    gui_status = get_node("GuiStatus")
+
+
 func prepare_decks():
     empty_current_decks()
     assign_cards_to_decks()
@@ -72,6 +86,12 @@ func refresh_gui():
     for deck in decks:
         refresh_deck(deck)
     refresh_hand()
+    refresh_status()
+    
+    
+func refresh_status():
+    var status = "Turn 1 | Money 0 - Army 0 | Actions 1 - Buys1 | Deck 5 - Discarded 0"
+    gui_status.get_node("Status").set_text(status)
     
     
 func refresh_hand():
