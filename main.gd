@@ -65,12 +65,12 @@ func _ready():
 
 func new_game():
     prepare_decks()
+    game.turn = 1
     new_turn()
     
     
 func new_turn():
-    game.current_phase = phases.SETUP
-    game.current_step = steps.NONE
+    set_up()
     deal_new_hand()
     game.current_phase = phases.ACTIONS
     game.current_step = steps.CHOOSE_ACTION_CARD
@@ -119,6 +119,32 @@ func buy_card(node: Node):
         game.buys -= 1
         refresh_gui()
 
+
+func finish_buys():
+    game.current_phase = phases.CLEANUP
+    game.current_step = steps.NONE
+    clean_up()
+    
+    
+func clean_up():
+    while decks["PlayerHand"]["cards"].size() > 0:
+        var card = decks["PlayerHand"]["cards"].pop_front()
+        decks["PlayerDiscarded"]["cards"].append(card)
+    while decks["CardsOnTable"]["cards"].size() > 0:
+        var card = decks["CardsOnTable"]["cards"].pop_front()
+        decks["Discarded"]["cards"].append(card)
+    new_turn()
+    
+    
+func set_up():
+    game.current_phase = phases.SETUP
+    game.current_step = steps.NONE
+    game.money = 0
+    game.army = 0
+    game.actions = 1
+    game.buys = 1
+    game.turn += 1
+    refresh_gui()
 
 
     
@@ -451,3 +477,5 @@ func _on_btn_hints_pressed():
             finish_actions()
         steps.PLAY_RESOURCES:
             play_resources()
+        steps.BUY_CARDS:
+            finish_buys()
