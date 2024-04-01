@@ -78,12 +78,27 @@ func new_turn():
     
     
 func deal_new_hand():
+    # Check if the player's deck has enough cards to deal a new hand, reshuffle if necessary
+    if decks["PlayerDeck"]["cards"].size() < 5:
+        reshuffle_discarded_into_deck()
+        # After reshuffling, if still not enough cards (rare case, depends on game design), you might need additional logic
+
+    # Now deal up to 5 cards to the player's hand
     while decks["PlayerDeck"]["cards"].size() > 0 and decks["PlayerHand"]["cards"].size() < 5:
         decks["PlayerHand"]["cards"].append(decks["PlayerDeck"]["cards"].pop_front())
-        
+
     print_deck_cards("Player Hand", decks["PlayerHand"])
     print_deck_cards("Player Deck", decks["PlayerDeck"])
+
+func reshuffle_discarded_into_deck():
+    # Move all cards from the discarded pile back to the player's deck
+    while decks["Discarded"]["cards"].size() > 0:
+        var card = decks["Discarded"]["cards"].pop_front()
+        decks["PlayerDeck"]["cards"].append(card)
     
+    # Shuffle the player's deck to randomize the order of cards
+    decks["PlayerDeck"]["cards"].shuffle()
+
     
 func finish_actions():
     game.current_step = steps.PLAY_RESOURCES
@@ -129,7 +144,7 @@ func finish_buys():
 func clean_up():
     while decks["PlayerHand"]["cards"].size() > 0:
         var card = decks["PlayerHand"]["cards"].pop_front()
-        decks["PlayerDiscarded"]["cards"].append(card)
+        decks["Discarded"]["cards"].append(card)
     while decks["CardsOnTable"]["cards"].size() > 0:
         var card = decks["CardsOnTable"]["cards"].pop_front()
         decks["Discarded"]["cards"].append(card)
@@ -202,7 +217,7 @@ func refresh_hint():
 
     
 func refresh_status():
-    var countPlayerDeck = decks["PlayerHand"]["cards"].size()
+    var countPlayerDeck = decks["PlayerDeck"]["cards"].size()
     var countDiscarded = decks["Discarded"]["cards"].size()
     var status = "Turn %d | Money %d - Army %d | Actions %d - Buys %d | Deck %d - Discarded %d" % [game.turn, game.money, game.army, game.actions, game.buys, countPlayerDeck, countDiscarded]
     gui_status.get_node("Status").set_text(status)
