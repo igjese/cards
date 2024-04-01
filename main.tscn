@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=5 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
 [ext_resource type="Texture2D" uid="uid://cdv4cpp1h28qf" path="res://karte-720.png" id="2_v6s1k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tasj7"]
+bg_color = Color(0, 0, 0, 0.411765)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.937255, 0.894118, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 use_parent_material = true
@@ -101,10 +109,10 @@ offset_right = 1200.0
 offset_bottom = 400.0
 
 [node name="CardHistory" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 117.0
-offset_top = 500.0
-offset_right = 267.0
-offset_bottom = 650.0
+offset_left = 137.0
+offset_top = 460.0
+offset_right = 287.0
+offset_bottom = 610.0
 
 [node name="CardHand1" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 228.0
@@ -190,6 +198,66 @@ offset_top = 880.0
 offset_right = 1235.0
 offset_bottom = 1030.0
 
+[node name="CardTable1" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 407.0
+offset_top = 425.0
+offset_right = 557.0
+offset_bottom = 575.0
+
+[node name="CardTable2" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 557.0
+offset_top = 425.0
+offset_right = 707.0
+offset_bottom = 575.0
+
+[node name="CardTable3" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 707.0
+offset_top = 425.0
+offset_right = 857.0
+offset_bottom = 575.0
+
+[node name="CardTable4" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 857.0
+offset_top = 425.0
+offset_right = 1007.0
+offset_bottom = 575.0
+
+[node name="CardTable5" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 1007.0
+offset_top = 425.0
+offset_right = 1157.0
+offset_bottom = 575.0
+
+[node name="CardTable6" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 407.0
+offset_top = 575.0
+offset_right = 557.0
+offset_bottom = 725.0
+
+[node name="CardTable7" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 557.0
+offset_top = 575.0
+offset_right = 707.0
+offset_bottom = 725.0
+
+[node name="CardTable8" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 707.0
+offset_top = 575.0
+offset_right = 857.0
+offset_bottom = 725.0
+
+[node name="CardTable9" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 857.0
+offset_top = 575.0
+offset_right = 1007.0
+offset_bottom = 725.0
+
+[node name="CardTable10" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 1007.0
+offset_top = 575.0
+offset_right = 1157.0
+offset_bottom = 725.0
+
 [node name="Panel" type="Panel" parent="."]
 offset_left = 1263.0
 offset_right = 1519.0
@@ -237,12 +305,38 @@ offset_bottom = 1079.0
 
 [node name="Status" type="RichTextLabel" parent="GuiStatus"]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 50.0
 offset_top = 5.0
 offset_right = 1169.0
 offset_bottom = 42.0
 theme_override_font_sizes/normal_font_size = 24
 text = "Turn 1 - "
+
+[node name="GuiHint" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 77.0
+offset_top = 639.0
+offset_right = 376.0
+offset_bottom = 730.0
+
+[node name="Panel3" type="Panel" parent="GuiHint"]
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 116.0
+offset_bottom = 63.0
+scale = Vector2(2.56208, 1.49076)
+theme_override_styles/panel = SubResource("StyleBoxFlat_tasj7")
+
+[node name="Hint" type="RichTextLabel" parent="GuiHint"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 296.0
+offset_bottom = 88.0
+theme_override_colors/default_color = Color(0.937255, 0.894118, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Hint"
 
 [connection signal="pressed" from="GuiMain/BtnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="GuiMain/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
