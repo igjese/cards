@@ -24,10 +24,11 @@ var decks = {
     "PlayerHand": {"cards": [], "node": null},
     "Discarded": {"cards": [], "node": null},
     "Trash": {"cards": [], "node": null},
-    "CardsPlayed": {"cards": [], "node": null}
+    "CardsOnTable": {"cards": [], "node": null}
 }
 
 var player_hand = []
+var table_cards = []
 
 var gui_main = null
 var gui_status = null
@@ -118,7 +119,7 @@ func empty_current_decks():
 func refresh_gui():    
     for deck in decks:
         refresh_deck(deck)
-    refresh_hand()
+    refresh_cards(player_hand, "PlayerHand")
     refresh_status()
     refresh_hint()
     refresh_history()
@@ -150,35 +151,36 @@ func refresh_status():
     gui_status.get_node("Status").set_text(status)
     
     
-func refresh_hand():
-    # Reset visibility and quantity of all hand nodes first
-    for placeholder in player_hand:
-        placeholder["node"].visible = false
-        placeholder["qty"] = 0
+func refresh_cards(card_nodes: Array, deck_name: String):
+    # Reset visibility and quantity of all nodes
+    for node_info in card_nodes:
+        node_info["node"].visible = false
+        node_info["qty"] = 0
 
-    # Temporary dictionary to count card occurrences
+    # Count card occurrences
+    var card_counts = count_card_occurrences(decks[deck_name]["cards"])
+
+    # Update UI based on card counts
+    var index = 0
+    for card_name in card_counts:
+        if index >= card_nodes.size():
+            break
+        var node_info = card_nodes[index]
+        node_info["card"] = cards_by_name[card_name]
+        node_info["qty"] = card_counts[card_name]
+        display_card_with_qty(node_info["node"], card_name, node_info["qty"])
+        index += 1
+
+
+func count_card_occurrences(cards: Array) -> Dictionary:
     var card_counts = {}
-    for card in decks["PlayerHand"]["cards"]:
+    for card in cards:
         var card_name = card["name"]
         if card_name in card_counts:
             card_counts[card_name] += 1
         else:
             card_counts[card_name] = 1
-
-    # Update UI based on card counts
-    var index = 0
-    for card_name in card_counts:
-        var node = player_hand[index]
-        node["card"] = cards_by_name[card_name]
-        node["qty"] = card_counts[card_name]
-        display_card(node["node"], card_name) # Assuming display_card can handle quantity
-        if node["qty"] > 1:
-            node["node"].get_node("CardQty").set_text(str(node["qty"]))
-            node["node"].get_node("CardQty").visible = true
-        else:
-            node["node"].get_node("CardQty").visible = false
-        node["node"].visible = true
-        index += 1
+    return card_counts
 
     
 func refresh_deck(deck_name):
@@ -191,9 +193,10 @@ func refresh_deck(deck_name):
 func assign_decks_to_nodes():
     for deck in decks:
         decks[deck]["node"] = get_node("Card" + deck)
-        
     for i in range(14):
         player_hand.append({"card": null, "qty": 0, "node": get_node("CardHand%d" % (i+1))})
+    for i in range(10):
+        table_cards.append({"card": null, "qty": 0, "node": get_node("CardTable%d" % (i+1))})
 
         
 var cost_icons = {
@@ -217,6 +220,18 @@ var effect_icons = {
     "take_5": "Take: \uf51e5#",
     "upgrade_money": "Upgra\\de \uf51e#",
 }
+
+
+func display_card_with_qty(node: Node, card_name: String, qty: int):
+    display_card(node, card_name)  # Your existing logic to display the card
+    var qty_label = node.get_node("CardQty")  # Adjust path if necessary
+    if qty > 1:
+        qty_label.text = str(qty)
+        qty_label.visible = true
+    else:
+        qty_label.visible = false
+    node.visible = true
+
     
     
 # Assumes cards_by_name is a dictionary where keys are card names
