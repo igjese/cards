@@ -22,7 +22,7 @@ var decks = {
     "Action10": {"cards": [], "node": null},
     "PlayerDeck": {"cards": [], "node": null},
     "PlayerHand": {"cards": [], "node": null},
-    "PlayerDiscarded": {"cards": [], "node": null},
+    "Discarded": {"cards": [], "node": null},
     "Trash": {"cards": [], "node": null},
     "CardsPlayed": {"cards": [], "node": null}
 }
@@ -32,6 +32,19 @@ var player_hand = []
 var gui_main = null
 var gui_status = null
 
+enum phases { SETUP, ACTIONS, BUYS, CLEANUP }
+enum steps { NONE, CHOOSE_ACTION_CARD }
+
+class Game:
+    var current_phase = phases.SETUP
+    var current_step = steps.NONE
+    var turn = 1
+    var money = 0
+    var army = 0
+    var actions = 1
+    var buys = 1
+    
+var game : Game = null
 
 # INIT #########################
 
@@ -48,8 +61,12 @@ func new_game():
     
     
 func new_turn():
+    game.current_phase = phases.SETUP
+    game.current_step = steps.NONE
     deal_new_hand()
     refresh_gui()
+    game.current_phase = phases.ACTIONS
+    game.current_step = steps.CHOOSE_ACTION_CARD
     
     
 func deal_new_hand():
@@ -62,6 +79,7 @@ func deal_new_hand():
 # FUNCTIONS  ###################
 
 func init():
+    game = Game.new()
     load_card_definitions_from_csv()
     assign_decks_to_nodes()
     assign_gui_nodes()
@@ -90,7 +108,9 @@ func refresh_gui():
     
     
 func refresh_status():
-    var status = "Turn 1 | Money 0 - Army 0 | Actions 1 - Buys1 | Deck 5 - Discarded 0"
+    var countPlayerDeck = decks["PlayerHand"]["cards"].size()
+    var countDiscarded = decks["Discarded"]["cards"].size()
+    var status = "Turn %d | Money %d - Army %d | Actions %d - Buys %d | Deck %d - Discarded %d" % [game.turn, game.money, game.army, game.actions, game.buys, countPlayerDeck, countDiscarded]
     gui_status.get_node("Status").set_text(status)
     
     
@@ -294,3 +314,24 @@ func _on_btn_exit_pressed():
 
 func _on_btn_new_game_pressed():
     new_game() # Replace with function body.
+    
+    
+func on_deck_clicked(node):
+    print("click ", node)
+    for deck in decks:
+        if node == decks[deck]["node"]:
+            print("found in game decks")
+            var card = decks[deck]["cards"][0]
+            print(card.name)
+        
+    for deck in player_hand:
+        if node ==  deck["node"]:
+            print("found in player hand")
+            var card = deck["card"]
+            print(card.name)
+
+    match game.current_phase:
+        phases.ACTIONS: 
+            match game.current_step:
+                steps.CHOOSE_ACTION_CARD:
+                    print("choose action card")
