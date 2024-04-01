@@ -317,21 +317,35 @@ func _on_btn_new_game_pressed():
     
     
 func on_deck_clicked(node):
-    print("click ", node)
-    for deck in decks:
-        if node == decks[deck]["node"]:
-            print("found in game decks")
-            var card = decks[deck]["cards"][0]
-            print(card.name)
-        
-    for deck in player_hand:
-        if node ==  deck["node"]:
-            print("found in player hand")
-            var card = deck["card"]
-            print(card.name)
-
+    var card = top_card(node)
     match game.current_phase:
         phases.ACTIONS: 
             match game.current_step:
                 steps.CHOOSE_ACTION_CARD:
-                    print("choose action card")
+                    # valid: action card, in player's hand
+                    if is_actioncard(card) and is_playerhand(node): 
+                        print("choose action card")
+                    else:
+                        print("not valid card action:%s playerhand:%s" % [is_actioncard(card), is_playerhand(node)])
+                        
+                        
+func is_actioncard(card):
+    return card["type"] == "Action"
+    
+    
+func is_playerhand(node):
+    for deck in player_hand:
+        if node ==  deck["node"]:
+            return true
+    return false
+    
+
+func top_card(node):
+    for deck in decks:
+        if node == decks[deck]["node"]:
+            return decks[deck]["cards"][0]
+    for deck in player_hand:
+        if node ==  deck["node"]:
+            return deck["card"]
+    return null
+    
