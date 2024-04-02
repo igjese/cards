@@ -160,7 +160,27 @@ func set_up():
     game.buys = 1
     game.turn += 1
     refresh_gui()
+    
 
+func play_action_card(card):
+    if game.actions <= 0:
+        return
+        
+    decks["PlayerHand"]["cards"].erase(card)
+    decks["CardsOnTable"]["cards"].append(card)
+
+    if card["draw"] > 0:
+        draw_cards(card["draw"])
+    
+    game.actions -= 1
+    refresh_gui()
+    
+func draw_cards(number_of_cards : int):
+    for i in range(number_of_cards):
+        if decks["PlayerDeck"]["cards"].size() == 0:
+            reshuffle_discarded_into_deck()
+        var card = decks["PlayerDeck"]["cards"].pop_front()
+        decks["PlayerHand"]["cards"].append(card)
 
     
 # FUNCTIONS  ###################
@@ -475,10 +495,7 @@ func on_deck_clicked(node):
         steps.CHOOSE_ACTION_CARD:
             # valid: action card, in player's hand
             if is_actioncard(card) and is_playerhand(node): 
-                print("choose action card", card)
-                pass
-            else:
-                print("not valid card action:%s playerhand:%s" % [is_actioncard(card), is_playerhand(node)])
+                play_action_card(card)
         steps.BUY_CARDS:
             # valid: card in buyable decks and costing less than money available
             var cost = card["cost_money"]

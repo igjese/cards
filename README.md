@@ -1,4 +1,4 @@
-# "Chronicles: Roman Empire" - Game Design Document
+# "Chronicles: Rise of Rome" - Game Design Document
 
 ## Goal
 Goal is to create Solitaire Deck Building game that educates the player about Roman era. If successful, I can continue doing this into my retirement.
@@ -87,7 +87,7 @@ Cards are:
 
 More: Seven Hills, First Aquaduct
 
-### Ideas for Republic
+### Ideas for Republic and Empire
 
 #### Early and Mid Republic
 
