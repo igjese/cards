@@ -45,7 +45,7 @@ var hints = {
 class Game:
     var current_phase = phases.SETUP
     var current_step = steps.NONE
-    var turn = 1
+    var turn = 0
     var money = 0
     var army = 0
     var actions = 1
@@ -65,7 +65,7 @@ func _ready():
 
 func new_game():
     prepare_decks()
-    game.turn = 1
+    game.turn = 0
     new_turn()
     
     
