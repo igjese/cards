@@ -163,17 +163,15 @@ func set_up():
     
 
 func play_action_card(card):
-    if game.actions <= 0:
-        return
-        
-    decks["PlayerHand"]["cards"].erase(card)
-    decks["CardsOnTable"]["cards"].append(card)
+    if game.actions > 0:
+        decks["PlayerHand"]["cards"].erase(card)
+        decks["CardsOnTable"]["cards"].append(card)
 
-    if card["draw"] > 0:
-        draw_cards(card["draw"])
-    
-    game.actions -= 1
-    refresh_gui()
+        if card["draw"] > 0:
+            draw_cards(card["draw"])
+        
+        game.actions -= 1
+        refresh_gui()
     
 func draw_cards(number_of_cards : int):
     for i in range(number_of_cards):
