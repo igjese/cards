@@ -34,14 +34,15 @@ var gui_main = null
 var gui_status = null
 
 enum phases { SETUP, ACTIONS, BUYS, CLEANUP }
-enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH}
+enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE}
 
 var hints = {
     steps.NONE: ["", ""],
     steps.CHOOSE_ACTION_CARD: ["Play your action cards","I'm done"],
     steps.PLAY_RESOURCES: ["Play your resource cards", "Play resources"],
     steps.BUY_CARDS: ["Pick cards to buy", "I'm done buying"],
-    steps.TRASH: ["Pick cards to trash", "I'm done"]
+    steps.TRASH: ["Pick cards to trash", "I'm done"],
+    steps.TAKE: ["Take card up to 4/5", "Done"]
 }
 
 class Game:
@@ -53,6 +54,7 @@ class Game:
     var actions = 1
     var buys = 1
     var cards_to_select = 0
+    var max_cost = 0
     
 var game : Game = null
 
@@ -181,9 +183,23 @@ func play_action_card(card):
             game.cards_to_select = card["trash"]
         if card["take_money2"] > 0:
             take_money2()
+        if card["take_4"] > 0:
+            game.current_step = steps.TAKE
+            game.max_cost = 4
+        if card["take_5"] > 0:
+            game.current_step = steps.TAKE
+            game.max_cost = 5
             
         game.actions -= 1
         refresh_gui()
+        
+        
+func take_card(node):
+    for deck in decks:
+        if node == decks[deck]["node"]:
+            var card = decks[deck]["cards"].pop_front()
+            decks["Discarded"]["cards"].append(card)
+    refresh_gui()
         
         
 func take_money2():
@@ -209,6 +225,11 @@ func trash_card(deck):
     
     
 func finish_trash():
+    game.current_step = steps.CHOOSE_ACTION_CARD
+    refresh_gui()
+    
+    
+func finish_take():
     game.current_step = steps.CHOOSE_ACTION_CARD
     refresh_gui()
 
@@ -260,6 +281,8 @@ func refresh_hint():
     var hint_text = hints[game.current_step][0]
     if game.current_step == steps.TRASH:
         hint_text = "Pick up to %d cards to trash" % game.cards_to_select
+    if game.current_step == steps.TAKE:
+        hint_text = "Take any card up to %d" % game.max_cost
     
     if hints.has(game.current_step):
         gui_hint.get_node("Hint").text = hint_text  # Update the text of the Hint RTLabel
@@ -553,6 +576,11 @@ func on_deck_clicked(node):
             # valid: card is in player's hand and more cards can be selected
             if is_playerhand(node) and game.cards_to_select > 0:
                 trash_card(node)
+        steps.TAKE:
+            # valid: card is buyable and costing less than max_cost
+            var cost = card["cost_money"]
+            if is_card_buyable(node) and cost <= game.max_cost:
+                take_card(node)
                         
 
 func _on_btn_hints_pressed():
@@ -565,3 +593,5 @@ func _on_btn_hints_pressed():
             finish_buys()
         steps.TRASH:
             finish_trash()
+        steps.TAKE:
+            finish_take()
