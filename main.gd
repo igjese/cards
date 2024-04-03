@@ -37,6 +37,7 @@ enum phases { SETUP, ACTIONS, BUYS, CLEANUP }
 enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH}
 
 var hints = {
+    steps.NONE: ["", ""],
     steps.CHOOSE_ACTION_CARD: ["Play your action cards","I'm done"],
     steps.PLAY_RESOURCES: ["Play your resource cards", "Play resources"],
     steps.BUY_CARDS: ["Pick cards to buy", "I'm done buying"],
@@ -178,7 +179,6 @@ func play_action_card(card):
         if card["trash"] > 0:
             game.current_step = steps.TRASH
             game.cards_to_select = card["trash"]
-            get_node("GuiHint").get_node("Hint").text = "Pick up to %d cards to trash" % card["trash"]
         game.actions -= 1
         refresh_gui()
     
@@ -248,9 +248,12 @@ func refresh_history():
     
 func refresh_hint():
     var gui_hint = get_node("GuiHint")  # This gets the Control node named GuiHint
+    var hint_text = hints[game.current_step][0]
+    if game.current_step == steps.TRASH:
+        hint_text = "Pick up to %d cards to trash" % game.cards_to_select
     
     if hints.has(game.current_step):
-        gui_hint.get_node("Hint").text = hints[game.current_step][0]  # Update the text of the Hint RTLabel
+        gui_hint.get_node("Hint").text = hint_text  # Update the text of the Hint RTLabel
         gui_hint.get_node("BtnHints").text = hints[game.current_step][1]
         gui_hint.visible = true  # Make sure the GuiHint and all its children are visible
     else:
