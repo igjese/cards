@@ -1,18 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711951880
-card.gd::GDScript::-1::1711820394::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1711906471::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
-cards.csv::::-1::1711912451::1709642895::1::::<><>::
-default_env.tres::Environment::3535254983394503347::1711906471::0::1::::<><>::
+::res://::1712137969
+card.gd::GDScript::-1::1711967734::0::1::::<>Panel<>::
+card.tscn::PackedScene::528414477263538463::1712135272::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
+cards.csv::::-1::1711999111::1709642895::1::::<><>::
+default_env.tres::Environment::3535254983394503347::1712135282::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1712065013::0::1::::<><>::
 Font Awesome 6 Free-Solid-900.otf::FontFile::6673130800394779117::1709681289::1709681290::1::::<><>::
 frame4.png::CompressedTexture2D::3103182351091807159::1709679922::1709679922::1::::<><>::
 icon.png::CompressedTexture2D::8812027128366769566::1709536140::1709537716::1::::<><>::
 karte-720.png::CompressedTexture2D::5028525007727685489::1709683078::1709683082::1::::<><>::
-main.gd::GDScript::-1::1711905570::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1711906471::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
-README.md::TextFile::-1::1711835169::0::1::::<><>::
+main.gd::GDScript::-1::1712135267::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1712135281::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png
+README.md::TextFile::-1::1712039264::0::1::::<><>::
 README_old.md::TextFile::-1::1711716754::0::1::::<><>::
-::res://cards/::1711921466
+::res://cards/::1711951882
 aes_rude.png::CompressedTexture2D::8428654054505454976::1711734212::1711734339::1::::<><>::
 agriculture.png::CompressedTexture2D::6492133400693691499::1711810691::1711830288::1::::<><>::
 background.png::CompressedTexture2D::8284803030150241183::1711736333::1711736841::1::::<><>::

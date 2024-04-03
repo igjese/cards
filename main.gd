@@ -34,12 +34,13 @@ var gui_main = null
 var gui_status = null
 
 enum phases { SETUP, ACTIONS, BUYS, CLEANUP }
-enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS}
+enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH}
 
 var hints = {
     steps.CHOOSE_ACTION_CARD: ["Play your action cards","I'm done"],
     steps.PLAY_RESOURCES: ["Play your resource cards", "Play resources"],
-    steps.BUY_CARDS: ["Pick cards to buy", "I'm done buying"]
+    steps.BUY_CARDS: ["Pick cards to buy", "I'm done buying"],
+    steps.TRASH: ["Pick cards to trash", "I'm done"]
 }
 
 class Game:
@@ -50,6 +51,7 @@ class Game:
     var army = 0
     var actions = 1
     var buys = 1
+    var cards_to_select = 0
     
 var game : Game = null
 
@@ -167,15 +169,19 @@ func play_action_card(card):
         decks["PlayerHand"]["cards"].erase(card)
         decks["CardsOnTable"]["cards"].append(card)
 
-        game.actions += card["extra_actions"]
-        game.buys += card["extra_buys"]
-        game.army += card["effect_army"]
         game.money += card["effect_money"]
+        game.army += card["effect_army"]
+        game.buys += card["extra_buys"]
+        game.actions += card["extra_actions"]
         if card["draw"] > 0:
             draw_cards(card["draw"])
-
+        if card["trash"] > 0:
+            game.current_step = steps.TRASH
+            game.cards_to_select = card["trash"]
+            get_node("GuiHint").get_node("Hint").text = "Pick up to %d cards to trash" % card["trash"]
         game.actions -= 1
         refresh_gui()
+    
     
 func draw_cards(number_of_cards : int):
     for i in range(number_of_cards):
@@ -183,6 +189,19 @@ func draw_cards(number_of_cards : int):
             reshuffle_discarded_into_deck()
         var card = decks["PlayerDeck"]["cards"].pop_front()
         decks["PlayerHand"]["cards"].append(card)
+        
+        
+func trash_card(deck):
+    var card = top_card(deck)
+    decks["Trash"]["cards"].append(card)
+    decks["PlayerHand"]["cards"].erase(card)
+    game.cards_to_select -= 1
+    refresh_gui()
+    
+    
+func finish_trash():
+    game.current_step = steps.CHOOSE_ACTION_CARD
+    refresh_gui()
 
     
 # FUNCTIONS  ###################
@@ -241,7 +260,8 @@ func refresh_hint():
 func refresh_status():
     var countPlayerDeck = decks["PlayerDeck"]["cards"].size()
     var countDiscarded = decks["Discarded"]["cards"].size()
-    var status = "Turn %d | Money %d - Army %d | Actions %d - Buys %d | Deck %d - Discarded %d" % [game.turn, game.money, game.army, game.actions, game.buys, countPlayerDeck, countDiscarded]
+    var countTrash = decks["Trash"]["cards"].size()
+    var status = "Turn %d | Money %d - Army %d | Actions %d - Buys %d | Deck %d - Discarded %d - Trash %d" % [game.turn, game.money, game.army, game.actions, game.buys, countPlayerDeck, countDiscarded, countTrash]
     gui_status.get_node("Status").set_text(status)
     
     
@@ -447,6 +467,7 @@ func assign_cards_to_decks():
     
     for deck_name in decks:
         print_deck_cards(deck_name, decks[deck_name])
+    
         
 # UTILS #######################
 
@@ -512,6 +533,10 @@ func on_deck_clicked(node):
             var cost = card["cost_money"]
             if is_card_buyable(node) and cost <= game.money and game.buys > 0:
                 buy_card(node)
+        steps.TRASH:
+            # valid: card is in player's hand and more cards can be selected
+            if is_playerhand(node) and game.cards_to_select > 0:
+                trash_card(node)
                         
 
 func _on_btn_hints_pressed():
@@ -522,3 +547,5 @@ func _on_btn_hints_pressed():
             play_resources()
         steps.BUY_CARDS:
             finish_buys()
+        steps.TRASH:
+            finish_trash()

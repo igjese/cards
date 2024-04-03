@@ -362,6 +362,7 @@ offset_right = 376.0
 offset_bottom = 730.0
 
 [node name="Panel3" type="Panel" parent="GuiHint"]
+layout_mode = 0
 offset_left = -5.0
 offset_top = -10.0
 offset_right = 116.0
