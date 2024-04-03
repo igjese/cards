@@ -167,16 +167,13 @@ func play_action_card(card):
         decks["PlayerHand"]["cards"].erase(card)
         decks["CardsOnTable"]["cards"].append(card)
 
-        # Handle "draw" effect
+        game.actions += card["extra_actions"]
+        game.buys += card["extra_buys"]
+        game.army += card["effect_army"]
+        game.money += card["effect_money"]
         if card["draw"] > 0:
             draw_cards(card["draw"])
-        # Handle "extra actions" effect
-        if card["extra_actions"] >0:
-            game.actions += card["extra_actions"]
-        # Handle "extra buys" effect
-        if card["extra_buys"] >0:
-            game.buys += card["extra_buys"]
-            
+
         game.actions -= 1
         refresh_gui()
     
