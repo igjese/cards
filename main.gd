@@ -179,8 +179,17 @@ func play_action_card(card):
         if card["trash"] > 0:
             game.current_step = steps.TRASH
             game.cards_to_select = card["trash"]
+        if card["take_money2"] > 0:
+            take_money2()
+            
         game.actions -= 1
         refresh_gui()
+        
+        
+func take_money2():
+    if decks["Money2"]["cards"].size() > 0:
+        var card = decks["Money2"]["cards"].pop_front()
+        decks["Discarded"]["cards"].append(card)
     
     
 func draw_cards(number_of_cards : int):
@@ -332,7 +341,7 @@ var effect_icons = {
     "upgrade_2": "Upgra\\de: +2#",
     "double_action": "Double Action#",
     "take_4": "Take: \uf51e4#",
-    "take_denarius": "Take: \uf51e3#",
+    "take_money2": "Take Aes Rude#",
     "trash_any": "Tr\\ash any: ",
     "take_5": "Take: \uf51e5#",
     "upgrade_money": "Upgra\\de \uf51e#",
@@ -410,7 +419,7 @@ func load_card_definitions_from_csv():
             "upgrade_2": int(card_data[11]),
             "double_action": int(card_data[12]),
             "take_4": int(card_data[13]),
-            "take_denarius": int(card_data[14]),
+            "take_money2": int(card_data[14]),
             "trash_any": int(card_data[15]),
             "take_5": int(card_data[16]),
             "upgrade_money": int(card_data[17]),
