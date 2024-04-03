@@ -48,61 +48,61 @@ offset_top = 250.0
 offset_right = 200.0
 offset_bottom = 400.0
 
-[node name="CardAction1" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction6" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 450.0
 offset_top = 100.0
 offset_right = 600.0
 offset_bottom = 250.0
 
-[node name="CardAction2" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction7" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 600.0
 offset_top = 100.0
 offset_right = 750.0
 offset_bottom = 250.0
 
-[node name="CardAction3" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction8" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 750.0
 offset_top = 100.0
 offset_right = 900.0
 offset_bottom = 250.0
 
-[node name="CardAction4" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction9" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 900.0
 offset_top = 100.0
 offset_right = 1050.0
 offset_bottom = 250.0
 
-[node name="CardAction5" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction10" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 1050.0
 offset_top = 100.0
 offset_right = 1200.0
 offset_bottom = 250.0
 
-[node name="CardAction6" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction1" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 450.0
 offset_top = 250.0
 offset_right = 600.0
 offset_bottom = 400.0
 
-[node name="CardAction7" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction2" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 600.0
 offset_top = 250.0
 offset_right = 750.0
 offset_bottom = 400.0
 
-[node name="CardAction8" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction3" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 750.0
 offset_top = 250.0
 offset_right = 900.0
 offset_bottom = 400.0
 
-[node name="CardAction9" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction4" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 900.0
 offset_top = 250.0
 offset_right = 1050.0
 offset_bottom = 400.0
 
-[node name="CardAction10" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardAction5" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 1050.0
 offset_top = 250.0
 offset_right = 1200.0

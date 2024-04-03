@@ -431,11 +431,16 @@ func assign_cards_to_decks():
     decks["History"]["cards"].append(victory_cards[1])
     decks["History"]["cards"].append(victory_cards[2])
     
-    for deck in ["Action1", "Action2", "Action3", "Action4", "Action5", "Action6", "Action7", "Action8", "Action9", "Action10"]:
+    var selected_actions = []
+    while selected_actions.size() < 10:
         var choice = randi() % all_actions.size()
-        for i in range(single_card_deck_qty):
-            decks[deck]["cards"].append(all_actions[choice])
-        all_actions.remove_at(choice)
+        selected_actions.append(all_actions.pop_at(choice))
+    
+    selected_actions.sort_custom(sort_cards_by_cost)
+    
+    for i in range(10):
+        for j in range(single_card_deck_qty):
+            decks["Action" + str(i+1)]["cards"].append(selected_actions[i])
         
     for i in range(7):
         decks["PlayerDeck"]["cards"].append(money1)
@@ -483,6 +488,10 @@ func top_card(node):
 func is_card_buyable(node: Node) -> bool:
     return node.name.begins_with("CardMoney") or node.name.begins_with("CardArmy") or node.name.begins_with("CardAction")
     
+    
+func sort_cards_by_cost(a, b):
+    return a["cost_money"] < b["cost_money"]  # Ascending order
+
     
 # SIGNALS #####################
 
