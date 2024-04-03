@@ -311,9 +311,13 @@ func count_card_occurrences(cards: Array) -> Dictionary:
     
 func refresh_deck(deck_name):
     var node = decks[deck_name]["node"]
+    var deck = decks[deck_name]["cards"]
     if node:
-        var card = decks[deck_name]["cards"][0]
-        display_card(node, card["name"])
+        if deck.size() > 0:
+            var card = deck[0]
+            display_card_with_qty(node, card["name"],deck.size())
+        else:
+            node.visible = false
     
     
 func assign_decks_to_nodes():
