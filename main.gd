@@ -34,7 +34,7 @@ var gui_main = null
 var gui_status = null
 
 enum phases { SETUP, ACTIONS, BUYS, CLEANUP }
-enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE}
+enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION}
 
 var hints = {
     steps.NONE: ["", ""],
@@ -42,8 +42,11 @@ var hints = {
     steps.PLAY_RESOURCES: ["Play your resource cards", "Play resources"],
     steps.BUY_CARDS: ["Pick cards to buy", "I'm done buying"],
     steps.TRASH: ["Pick cards to trash", "I'm done"],
-    steps.TAKE: ["Take card up to 4/5", "Done"]
+    steps.TAKE: ["Take card up to 4/5", "Done"],
+    steps.DOUBLE_ACTION: ["Pick action to play twice." ,"Done"]
 }
+
+var double_action = null
 
 class Game:
     var current_phase = phases.SETUP
@@ -103,6 +106,14 @@ func reshuffle_discarded_into_deck():
     
     # Shuffle the player's deck to randomize the order of cards
     decks["PlayerDeck"]["cards"].shuffle()
+    
+    
+func post_action():
+    if double_action:
+        var card = double_action
+        double_action = null
+        game.actions += 1
+        play_action_card(card)
 
     
 func finish_actions():
@@ -159,6 +170,7 @@ func clean_up():
 func set_up():
     game.current_phase = phases.SETUP
     game.current_step = steps.NONE
+    double_action = null
     game.money = 0
     game.army = 0
     game.actions = 1
@@ -168,6 +180,7 @@ func set_up():
     
 
 func play_action_card(card):
+    var more_input = false
     if game.actions > 0:
         decks["PlayerHand"]["cards"].erase(card)
         decks["CardsOnTable"]["cards"].append(card)
@@ -181,17 +194,26 @@ func play_action_card(card):
         if card["trash"] > 0:
             game.current_step = steps.TRASH
             game.cards_to_select = card["trash"]
+            more_input = true
         if card["take_money2"] > 0:
             take_money2()
         if card["take_4"] > 0:
             game.current_step = steps.TAKE
             game.max_cost = 4
+            more_input = true
         if card["take_5"] > 0:
             game.current_step = steps.TAKE
             game.max_cost = 5
+            more_input = true
+        if card["double_action"] > 0:
+            game.current_step = steps.DOUBLE_ACTION
+            game.actions += 1
+            more_input = true
             
         game.actions -= 1
         refresh_gui()
+        if not more_input:
+            post_action()
         
         
 func take_card(node):
@@ -576,11 +598,21 @@ func on_deck_clicked(node):
             # valid: card is in player's hand and more cards can be selected
             if is_playerhand(node) and game.cards_to_select > 0:
                 trash_card(node)
+                if game.cards_to_select == 0:
+                    post_action()
         steps.TAKE:
             # valid: card is buyable and costing less than max_cost
             var cost = card["cost_money"]
             if is_card_buyable(node) and cost <= game.max_cost:
                 take_card(node)
+                post_action()
+        steps.DOUBLE_ACTION:
+            # valid: action card, in player's hand
+            if is_actioncard(card) and is_playerhand(node): 
+                double_action = card
+                game.current_step = steps.CHOOSE_ACTION_CARD
+                play_action_card(card)
+
                         
 
 func _on_btn_hints_pressed():
@@ -595,3 +627,5 @@ func _on_btn_hints_pressed():
             finish_trash()
         steps.TAKE:
             finish_take()
+        steps.DOUBLE_ACTION:
+            finish_actions()
