@@ -47,6 +47,7 @@ var hints = {
 }
 
 var double_action = null
+var double_action2 = false
 
 class Game:
     var current_phase = phases.SETUP
@@ -113,8 +114,9 @@ func post_action():
         var card = double_action
         double_action = null
         game.actions += 1
+        double_action2 = true
         play_action_card(card)
-
+        double_action2 = false
     
 func finish_actions():
     game.current_step = steps.PLAY_RESOURCES
@@ -182,8 +184,9 @@ func set_up():
 func play_action_card(card):
     var more_input = false
     if game.actions > 0:
-        decks["PlayerHand"]["cards"].erase(card)
-        decks["CardsOnTable"]["cards"].append(card)
+        if not double_action2:
+            decks["PlayerHand"]["cards"].erase(card)
+            decks["CardsOnTable"]["cards"].append(card)
 
         game.money += card["effect_money"]
         game.army += card["effect_army"]
