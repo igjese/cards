@@ -34,7 +34,7 @@ var gui_main = null
 var gui_status = null
 
 enum phases { SETUP, ACTIONS, BUYS, CLEANUP }
-enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION}
+enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION, REPLACE}
 
 var hints = {
     steps.NONE: ["", ""],
@@ -43,7 +43,8 @@ var hints = {
     steps.BUY_CARDS: ["Pick cards to buy", "I'm done buying"],
     steps.TRASH: ["Pick cards to trash", "I'm done"],
     steps.TAKE: ["Take card up to 4/5", "Done"],
-    steps.DOUBLE_ACTION: ["Pick action to play twice." ,"Done"]
+    steps.DOUBLE_ACTION: ["Pick action to play twice." ,"Done"],
+    steps.REPLACE: ["Pick cards to replace", "Done replacing"]
 }
 
 var double_action = null
@@ -212,6 +213,10 @@ func play_action_card(card):
             game.current_step = steps.DOUBLE_ACTION
             game.actions += 1
             more_input = true
+        if card["replace"] > 0:
+            game.current_step = steps.REPLACE
+            game.cards_to_select = card["replace"]
+            more_input = true
             
         game.actions -= 1
         refresh_gui()
@@ -248,13 +253,15 @@ func trash_card(deck):
     game.cards_to_select -= 1
     refresh_gui()
     
-    
-func finish_trash():
-    game.current_step = steps.CHOOSE_ACTION_CARD
+func replace_card(deck):
+    var card = top_card(deck)
+    decks["Discarded"]["cards"].append(card)
+    decks["PlayerHand"]["cards"].erase(card)
+    game.cards_to_select -= 1
+    draw_cards(1)
     refresh_gui()
     
-    
-func finish_take():
+func finish_current_action():
     game.current_step = steps.CHOOSE_ACTION_CARD
     refresh_gui()
 
@@ -308,7 +315,8 @@ func refresh_hint():
         hint_text = "Pick up to %d cards to trash" % game.cards_to_select
     if game.current_step == steps.TAKE:
         hint_text = "Take any card up to %d" % game.max_cost
-    
+    if game.current_step == steps.REPLACE:
+        hint_text = "Pick up to %d cards to replace" % game.cards_to_select
     if hints.has(game.current_step):
         gui_hint.get_node("Hint").text = hint_text  # Update the text of the Hint RTLabel
         gui_hint.get_node("BtnHints").text = hints[game.current_step][1]
@@ -615,7 +623,12 @@ func on_deck_clicked(node):
                 double_action = card
                 game.current_step = steps.CHOOSE_ACTION_CARD
                 play_action_card(card)
-
+        steps.REPLACE:
+            # valid: card is in player's hand and more cards can be selected
+            if is_playerhand(node) and game.cards_to_select > 0:
+                replace_card(node)
+                if game.cards_to_select == 0:
+                    post_action()
                         
 
 func _on_btn_hints_pressed():
@@ -627,8 +640,10 @@ func _on_btn_hints_pressed():
         steps.BUY_CARDS:
             finish_buys()
         steps.TRASH:
-            finish_trash()
+            finish_current_action()
         steps.TAKE:
-            finish_take()
+            finish_current_action()
         steps.DOUBLE_ACTION:
             finish_actions()
+        steps.REPLACE:
+            finish_current_action()
