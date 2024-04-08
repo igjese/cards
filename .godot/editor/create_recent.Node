@@ -1,7 +1,7 @@
 Panel
-TextureRect
 RichTextLabel
+TextureRect
+Control
 Button
 Label
-Control
 Sprite2D

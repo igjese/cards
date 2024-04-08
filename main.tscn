@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=9 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
 [ext_resource type="Texture2D" uid="uid://cdv4cpp1h28qf" path="res://karte-720.png" id="2_v6s1k"]
 [ext_resource type="Texture2D" uid="uid://d3l55qqyb7lpb" path="res://cards/circus_maximus.png" id="4_fhk1j"]
+[ext_resource type="Texture2D" uid="uid://cej4t3y57b8qp" path="res://cards/vestal_virgins.png" id="5_uhjvt"]
+[ext_resource type="Texture2D" uid="uid://cwtm5tf51j8bj" path="res://big-frame.png" id="6_aqbqj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf7k2"]
 border_width_left = 1
@@ -318,7 +320,7 @@ theme_override_font_sizes/bold_italics_font_size = 0
 theme_override_font_sizes/mono_font_size = 0
 bbcode_enabled = true
 text = "[b]Chronicles: Rise of Rome[/b]
-[i]Deck Building Solitaire Game[/i]"
+[i]Deck Building Historical Solitaire[/i]"
 fit_content = true
 
 [node name="History" type="RichTextLabel" parent="GuiMain"]
@@ -413,6 +415,55 @@ offset_top = 63.0
 offset_right = 223.0
 offset_bottom = 94.0
 text = "OK"
+
+[node name="BigCard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Panel" type="Panel" parent="BigCard"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="MainVisual" type="TextureRect" parent="BigCard"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 358.0
+offset_right = 804.0
+offset_bottom = 576.0
+texture = ExtResource("5_uhjvt")
+
+[node name="Frame" type="TextureRect" parent="BigCard"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 274.0
+offset_right = 812.0
+offset_bottom = 799.0
+texture = ExtResource("6_aqbqj")
+
+[node name="Title" type="RichTextLabel" parent="BigCard"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 291.0
+offset_right = 796.0
+offset_bottom = 340.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "[center]Card[/center]"
+
+[node name="EffectsText" type="RichTextLabel" parent="BigCard"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 593.0
+offset_right = 794.0
+offset_bottom = 780.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Lorem ipsum dolor sit amet"
 
 [connection signal="pressed" from="GuiMain/BtnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="GuiMain/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
