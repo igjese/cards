@@ -53,6 +53,8 @@ var hints = {
 var double_action = null
 var double_action2 = false
 
+var zoomed_card = false
+
 class Game:
     var current_phase = phases.SETUP
     var current_step = steps.NONE
@@ -377,7 +379,12 @@ func refresh_gui():
     refresh_status()
     refresh_hint()
     refresh_history()
+    refresh_zoom()
     
+    
+func refresh_zoom():
+    get_node("BigCard").visible = zoomed_card
+
 
 func refresh_history():
     if game.showcase_card:
@@ -736,6 +743,7 @@ func on_deck_clicked(node):
 func on_deck_right_clicked(node):
     var card : Dictionary = top_card(node)
     game.showcase_card = card
+    zoomed_card = true
     refresh_gui()
 
 
@@ -749,5 +757,9 @@ func _on_btn_hints_pressed():
             finish_buys()
         steps.TRASH, steps.TAKE, steps.REPLACE:
             finish_current_action()
-            
+     
 
+func _on_big_card_gui_input(event):
+    if event is InputEventMouseButton and event.pressed:
+        zoomed_card = false
+        refresh_gui()

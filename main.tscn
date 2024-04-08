@@ -426,28 +426,29 @@ offset_bottom = 1080.0
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 1
 
 [node name="MainVisual" type="TextureRect" parent="BigCard"]
 layout_mode = 0
-offset_left = 504.0
+offset_left = 694.0
 offset_top = 358.0
-offset_right = 804.0
+offset_right = 994.0
 offset_bottom = 576.0
 texture = ExtResource("5_uhjvt")
 
 [node name="Frame" type="TextureRect" parent="BigCard"]
 layout_mode = 0
-offset_left = 496.0
+offset_left = 686.0
 offset_top = 274.0
-offset_right = 812.0
+offset_right = 1002.0
 offset_bottom = 799.0
 texture = ExtResource("6_aqbqj")
 
 [node name="Title" type="RichTextLabel" parent="BigCard"]
 layout_mode = 0
-offset_left = 510.0
+offset_left = 700.0
 offset_top = 291.0
-offset_right = 796.0
+offset_right = 986.0
 offset_bottom = 340.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 28
@@ -457,9 +458,9 @@ text = "[center]Card[/center]"
 
 [node name="EffectsText" type="RichTextLabel" parent="BigCard"]
 layout_mode = 0
-offset_left = 512.0
+offset_left = 702.0
 offset_top = 593.0
-offset_right = 794.0
+offset_right = 984.0
 offset_bottom = 780.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
@@ -468,3 +469,4 @@ text = "Lorem ipsum dolor sit amet"
 [connection signal="pressed" from="GuiMain/BtnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="GuiMain/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
 [connection signal="pressed" from="GuiHint/BtnHints" to="." method="_on_btn_hints_pressed"]
+[connection signal="gui_input" from="BigCard" to="." method="_on_big_card_gui_input"]
