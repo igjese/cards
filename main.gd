@@ -383,6 +383,15 @@ func refresh_gui():
     
     
 func refresh_zoom():
+    if game.showcase_card:
+        var card_label = get_node("BigCard/Title")
+        card_label.text = "[center]%s[/center]" % game.showcase_card["name"]
+        
+        var normalized_name = game.showcase_card["name"].replace(" ", "_").to_lower()
+        var image_path = "res://cards/" + normalized_name + ".png"
+        var card_visual = get_node("BigCard/MainVisual") as TextureRect
+        card_visual.texture = load(image_path)
+    
     get_node("BigCard").visible = zoomed_card
 
 
