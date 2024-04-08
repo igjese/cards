@@ -45,7 +45,7 @@ var hints = {
     steps.TAKE: ["Take card up to 4/5", "Done"],
     steps.DOUBLE_ACTION: ["Pick action to play twice." ,"Done"],
     steps.REPLACE: ["Pick cards to replace", "Done replacing"],
-    steps.UPGRADE_CARD: ["Pick card to upgrade", "Done"]
+    steps.UPGRADE_CARD: ["Pick card to upgrade", "Done"],
 }
 
 var double_action = null
@@ -224,12 +224,26 @@ func play_action_card(card):
             game.current_step = steps.UPGRADE_CARD
             game.cards_to_select = card["upgrade_2"]
             more_input = true
+        if card["upgrade_money"] > 0:
+            upgrade_money()
             
         game.actions -= 1
         refresh_gui()
         if not more_input:
             post_action()
         
+        
+func upgrade_money():
+    if has_money1_in_hand() and is_money2_available():
+        for card in decks["PlayerHand"]["cards"]:
+            if card["type"] == "Money1":
+                decks["Trash"]["cards"].append(card)
+                decks["PlayerHand"]["cards"].erase(card)
+                break
+        var money2_card = decks["Money2"]["cards"].pop_front()  # Take the top "Money2" card
+        decks["PlayerHand"]["cards"].append(money2_card)  # Add "Money2" card to discarded pile
+        refresh_gui()  # Update the game state to reflect these changes
+
         
 func take_card(node):
     for deck in decks:
@@ -561,6 +575,17 @@ func assign_cards_to_decks():
     
         
 # UTILS #######################
+
+func has_money1_in_hand() -> bool:
+    for card in decks["PlayerHand"]["cards"]:
+        if card["type"] == "Money1":
+            return true
+    return false
+
+
+func is_money2_available() -> bool:
+    return decks["Money2"]["cards"].size() > 0
+
 
 func print_deck_cards(deck_name,deck):
     var txt = deck_name + " - "
