@@ -33,8 +33,8 @@ var table_cards = []
 var gui_main = null
 var gui_status = null
 
-enum phases { SETUP, HISTORY, ACTIONS, BUYS, CLEANUP }
-enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION, REPLACE, UPGRADE_CARD, DISCARD}
+enum phases { SETUP, HISTORY, ACTIONS, BUYS, CLEANUP, VICTORY }
+enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION, REPLACE, UPGRADE_CARD, DISCARD, VICTORY}
 
 var hints = {
     steps.NONE: ["", ""],
@@ -46,7 +46,8 @@ var hints = {
     steps.DOUBLE_ACTION: ["Pick action to play twice." ,"Done"],
     steps.REPLACE: ["Pick cards to replace", "Done replacing"],
     steps.UPGRADE_CARD: ["Pick card to upgrade", "Done"],
-    steps.DISCARD: ["Pick card to discard", "Done discarding"]
+    steps.DISCARD: ["Pick card to discard", "Done discarding"],
+    steps.VICTORY: ["Victory! Rome is now a republic!", "Play Next Level"]
 }
 
 var double_action = null
@@ -170,6 +171,13 @@ func finish_buys():
     
     
 func clean_up():
+    while decks["PlayerHand"]["cards"].size() > 0:
+        var card = decks["PlayerHand"]["cards"].pop_front()
+        decks["Discarded"]["cards"].append(card)
+    while decks["CardsOnTable"]["cards"].size() > 0:
+        var card = decks["CardsOnTable"]["cards"].pop_front()
+        decks["Discarded"]["cards"].append(card)
+        
     var challenge = decks["History"]["cards"][0]
     if game.money >= 0 and game.army >= 0:
         decks["Trash"]["cards"].append(challenge)
@@ -180,14 +188,13 @@ func clean_up():
             reshuffle_discarded_into_deck()
         var card_to_trash = decks["PlayerDeck"]["cards"].pop_front()  # Take the top card from the player's deck
         decks["Trash"]["cards"].append(card_to_trash)  # And move it to the Trash
-        
-    while decks["PlayerHand"]["cards"].size() > 0:
-        var card = decks["PlayerHand"]["cards"].pop_front()
-        decks["Discarded"]["cards"].append(card)
-    while decks["CardsOnTable"]["cards"].size() > 0:
-        var card = decks["CardsOnTable"]["cards"].pop_front()
-        decks["Discarded"]["cards"].append(card)
-    new_turn()
+
+    if decks["History"]["cards"].size() > 0:
+        new_turn()
+    else:
+        game.current_phase = phases.VICTORY
+        game.current_step = steps.VICTORY
+        refresh_gui()
     
     
 func set_up():
