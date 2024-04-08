@@ -417,6 +417,7 @@ offset_right = 296.0
 offset_bottom = 64.0
 theme_override_colors/default_color = Color(0.937255, 0.894118, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
 text = "Hint
 2nd row"
 
@@ -429,6 +430,7 @@ offset_bottom = 94.0
 text = "OK"
 
 [node name="BigCard" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0

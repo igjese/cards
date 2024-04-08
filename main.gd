@@ -460,14 +460,18 @@ func refresh_history():
 func refresh_hint():
     var gui_hint = get_node("GuiHint")  # This gets the Control node named GuiHint
     var hint_text = hints[game.current_step][0]
+    if game.current_step == steps.CHOOSE_ACTION_CARD:
+        hint_text = "Play up to %d action cards" % game.actions
+    if game.current_step == steps.BUY_CARDS:
+        hint_text = "Buy up to %d cards" % game.buys
     if game.current_step == steps.TRASH:
         hint_text = "Pick up to %d cards to trash" % game.cards_to_select
     if game.current_step == steps.TAKE:
-        hint_text = "Take any card up to %d" % game.max_cost
+        hint_text = "Take any card up to cost %d" % game.max_cost
     if game.current_step == steps.REPLACE:
         hint_text = "Pick up to %d cards to replace" % game.cards_to_select
     if hints.has(game.current_step):
-        gui_hint.get_node("Hint").text = hint_text  # Update the text of the Hint RTLabel
+        gui_hint.get_node("Hint").text = "[center]%s[/center]" % hint_text  # Update the text of the Hint RTLabel
         gui_hint.get_node("BtnHints").text = hints[game.current_step][1]
         gui_hint.visible = true  # Make sure the GuiHint and all its children are visible
     else:
