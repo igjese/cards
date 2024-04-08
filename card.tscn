@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://hr756cx0syfv"]
+[gd_scene load_steps=8 format=3 uid="uid://hr756cx0syfv"]
 
 [ext_resource type="Script" path="res://card.gd" id="1_cbw46"]
 [ext_resource type="Texture2D" uid="uid://dvvs8bvvmd5rm" path="res://cards/default.png" id="2_6tvjx"]
@@ -14,6 +14,18 @@ corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ij0fl"]
+bg_color = Color(0.960784, 0.811765, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="Card" type="Panel"]
 offset_right = 150.0
@@ -49,7 +61,6 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_ohxj3")
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
-text = "-"
 
 [node name="CardCost" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -84,7 +95,6 @@ text = "[center]Card"
 scroll_active = false
 
 [node name="CardQty" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -96,6 +106,20 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_t33l3")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardCost2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 121.0
+offset_right = 32.0
+offset_bottom = 149.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ij0fl")
 text = "9"
 horizontal_alignment = 1
 vertical_alignment = 1

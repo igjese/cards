@@ -554,7 +554,7 @@ func display_card(card: Control, card_name: String) -> void:
         
     var card_data = cards_by_name[card_name]
     
-    var cost_text = "%s%d" % [cost_icons["cost_money"], card_data["cost_money"]]
+    var cost_text = str(card_data["cost_money"]) if card_data["type"] != "History" else "-"
     
     var effect_text = ""
     for effect in effect_icons:
@@ -563,7 +563,7 @@ func display_card(card: Control, card_name: String) -> void:
     effect_text = effect_text.split("#")[0]
             
     card.set_title(card_data.name)
-    card.set_effect(effect_text)
+    card.set_effect("")
     card.set_cost(cost_text)
     card.set_visual(card_name)
     

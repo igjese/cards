@@ -9,10 +9,13 @@ func set_title(title: String) -> void:
 
 # Function to set the card's cost
 func set_cost(text: String) -> void:
+    '''
     var text_label = get_node("CardCost") as RichTextLabel
     if text_label:
         text_label.bbcode_text = text
-
+    '''
+    var cost_label = get_node("CardCost2") as Label
+    cost_label.text = text
 
 # Function to set the card's effect
 func set_effect(text: String) -> void:
