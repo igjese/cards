@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=10 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
@@ -21,6 +21,18 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.937255, 0.894118, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lsse"]
+bg_color = Color(1, 0.843137, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.854902, 0.568627, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Node2D" type="Node2D"]
 use_parent_material = true
@@ -465,6 +477,20 @@ offset_bottom = 780.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
 text = "Lorem ipsum dolor sit amet"
+
+[node name="Cost" type="Label" parent="BigCard"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 761.0
+offset_right = 737.0
+offset_bottom = 797.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_0lsse")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="GuiMain/BtnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="GuiMain/BtnNewGame" to="." method="_on_btn_new_game_pressed"]

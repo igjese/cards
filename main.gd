@@ -421,6 +421,9 @@ func refresh_zoom():
         effect_text = effect_text.split("#")[0]
         var card_effect = get_node("BigCard/EffectsText")
         card_effect.bbcode_text = effect_text
+        
+        var card_cost = get_node("BigCard/Cost") as Label
+        card_cost.text = str(card_data["cost_money"])
     
     get_node("BigCard").visible = zoomed_card
 
