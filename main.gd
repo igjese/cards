@@ -34,7 +34,7 @@ var gui_main = null
 var gui_status = null
 
 enum phases { SETUP, ACTIONS, BUYS, CLEANUP }
-enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION, REPLACE, UPGRADE_CARD, UPGRADE_CARD_2}
+enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION, REPLACE, UPGRADE_CARD}
 
 var hints = {
     steps.NONE: ["", ""],
@@ -101,6 +101,7 @@ func deal_new_hand():
     print_deck_cards("Player Hand", decks["PlayerHand"])
     print_deck_cards("Player Deck", decks["PlayerDeck"])
 
+
 func reshuffle_discarded_into_deck():
     # Move all cards from the discarded pile back to the player's deck
     while decks["Discarded"]["cards"].size() > 0:
@@ -119,6 +120,7 @@ func post_action():
         double_action2 = true
         play_action_card(card)
         double_action2 = false
+    
     
 func finish_actions():
     game.current_step = steps.PLAY_RESOURCES
@@ -140,6 +142,7 @@ func play_resources():
         
     game.current_step = steps.BUY_CARDS
     refresh_gui()
+    
     
 func buy_card(node: Node):
     var card = top_card(node)
@@ -298,6 +301,7 @@ func upgrade_card(deck):
     game.cards_to_select = 1
     game.max_cost = card.cost_money + 2
     refresh_gui()
+    
     
 # FUNCTIONS  ###################
 
@@ -679,17 +683,12 @@ func on_deck_clicked(node):
 
 func _on_btn_hints_pressed():
     match game.current_step:
-        steps.CHOOSE_ACTION_CARD:
+        steps.CHOOSE_ACTION_CARD, steps.DOUBLE_ACTION:
             finish_actions()
         steps.PLAY_RESOURCES:
             play_resources()
         steps.BUY_CARDS:
             finish_buys()
-        steps.TRASH:
+        steps.TRASH, steps.TAKE, steps.REPLACE:
             finish_current_action()
-        steps.TAKE:
-            finish_current_action()
-        steps.DOUBLE_ACTION:
-            finish_actions()
-        steps.REPLACE:
-            finish_current_action()
+
