@@ -435,7 +435,6 @@ var effect_icons = {
     "double_action": "Double Action#",
     "take_4": "Take: \uf51e4#",
     "take_money2": "Take Aes Rude#",
-    "trash_any": "Tr\\ash any: ",
     "take_5": "Take: \uf51e5#",
     "upgrade_money": "Upgra\\de \uf51e#",
 }
@@ -513,11 +512,10 @@ func load_card_definitions_from_csv():
             "double_action": int(card_data[12]),
             "take_4": int(card_data[13]),
             "take_money2": int(card_data[14]),
-            "trash_any": int(card_data[15]),
-            "take_5": int(card_data[16]),
-            "upgrade_money": int(card_data[17]),
-            "subtitle": card_data[18],
-            "history_text": card_data[19],
+            "take_5": int(card_data[15]),
+            "upgrade_money": int(card_data[16]),
+            "subtitle": card_data[17],
+            "history_text": card_data[18],
         }
         cards_raw.append(card)
         cards_by_name[card["name"]] = card
