@@ -1,8 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=7 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
 [ext_resource type="Texture2D" uid="uid://cdv4cpp1h28qf" path="res://karte-720.png" id="2_v6s1k"]
+[ext_resource type="Texture2D" uid="uid://d3l55qqyb7lpb" path="res://cards/circus_maximus.png" id="4_fhk1j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf7k2"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.929412, 0.941176, 0.870588, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tasj7"]
 bg_color = Color(0, 0, 0, 0.411765)
@@ -315,9 +323,10 @@ fit_content = true
 
 [node name="History" type="RichTextLabel" parent="GuiMain"]
 layout_mode = 0
-offset_top = 125.0
+offset_left = 4.0
+offset_top = 343.0
 offset_right = 609.0
-offset_bottom = 233.0
+offset_bottom = 918.0
 theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 24
@@ -328,6 +337,22 @@ bbcode_enabled = true
 text = "[b]Card: Subtitle[/b]
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 fit_content = true
+
+[node name="Border" type="Panel" parent="GuiMain"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 107.0
+offset_right = 306.0
+offset_bottom = 327.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jf7k2")
+
+[node name="HistoryImg" type="TextureRect" parent="GuiMain"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 108.0
+offset_right = 305.0
+offset_bottom = 326.0
+texture = ExtResource("4_fhk1j")
 
 [node name="Panel2" type="Panel" parent="."]
 offset_left = 2.0

@@ -1,7 +1,7 @@
+Panel
+TextureRect
 RichTextLabel
 Button
 Label
 Control
-TextureRect
-Panel
 Sprite2D

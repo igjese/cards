@@ -382,9 +382,14 @@ func refresh_gui():
 func refresh_history():
     if game.showcase_card:
         var history_label = get_node("GuiMain/History")
-        var history_text = "[b]%s: %s[/b]\n%s" % [game.showcase_card["name"],game.showcase_card["subtitle"], game.showcase_card["history_text"]]
+        var history_text = "[b]%s[/b]\n[i]%s[/i]\n%s" % [game.showcase_card["name"],game.showcase_card["subtitle"], game.showcase_card["history_text"]]
         history_label.text = history_text
-    
+        
+        var normalized_name = game.showcase_card["name"].replace(" ", "_").to_lower()
+        var image_path = "res://cards/" + normalized_name + ".png"
+        var history_visual = get_node("GuiMain/HistoryImg") as TextureRect
+        history_visual.texture = load(image_path)
+        
     
 func refresh_hint():
     var gui_hint = get_node("GuiHint")  # This gets the Control node named GuiHint
