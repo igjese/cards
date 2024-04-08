@@ -50,6 +50,27 @@ var hints = {
     steps.VICTORY: ["Victory! Rome is now a republic!", "Play Next Level"]
 }
 
+var cost_icons = {
+    "cost_money": "\uf51e",
+}
+        
+var effect_icons = {
+    "effect_money": "\uf51e",
+    "effect_army": "Army: ",
+    "discard": "Disc\\ard: ",
+    "trash": "Tr\\ash: ",
+    "extra_buys": "Buy: ",
+    "draw": "Draw: ",
+    "extra_actions": "Actions: ",
+    "replace": "Replace: ",
+    "upgrade_2": "Upgra\\de: +2#",
+    "double_action": "Double Action#",
+    "take_4": "Take: \uf51e4#",
+    "take_money2": "Take Aes Rude#",
+    "take_5": "Take: \uf51e5#",
+    "upgrade_money": "Upgra\\de \uf51e#",
+}
+
 var double_action = null
 var double_action2 = false
 
@@ -391,6 +412,15 @@ func refresh_zoom():
         var image_path = "res://cards/" + normalized_name + ".png"
         var card_visual = get_node("BigCard/MainVisual") as TextureRect
         card_visual.texture = load(image_path)
+        
+        var card_data = cards_by_name[game.showcase_card["name"]]
+        var effect_text = ""
+        for effect in effect_icons:
+            if card_data[effect] != 0:
+                effect_text = "%s%s%s\n" % [effect_text, effect_icons[effect], str(card_data[effect])]
+        effect_text = effect_text.split("#")[0]
+        var card_effect = get_node("BigCard/EffectsText")
+        card_effect.bbcode_text = effect_text
     
     get_node("BigCard").visible = zoomed_card
 
@@ -482,28 +512,6 @@ func assign_decks_to_nodes():
         player_hand.append({"card": null, "qty": 0, "node": get_node("CardHand%d" % (i+1))})
     for i in range(10):
         table_cards.append({"card": null, "qty": 0, "node": get_node("CardTable%d" % (i+1))})
-
-        
-var cost_icons = {
-    "cost_money": "\uf51e",
-}
-        
-var effect_icons = {
-    "effect_money": "\uf51e",
-    "effect_army": "Army: ",
-    "discard": "Disc\\ard: ",
-    "trash": "Tr\\ash: ",
-    "extra_buys": "Buy: ",
-    "draw": "Draw: ",
-    "extra_actions": "Actions: ",
-    "replace": "Replace: ",
-    "upgrade_2": "Upgra\\de: +2#",
-    "double_action": "Double Action#",
-    "take_4": "Take: \uf51e4#",
-    "take_money2": "Take Aes Rude#",
-    "take_5": "Take: \uf51e5#",
-    "upgrade_money": "Upgra\\de \uf51e#",
-}
 
 
 func display_card_with_qty(node: Node, card_name: String, qty: int):
