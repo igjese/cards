@@ -170,6 +170,17 @@ func finish_buys():
     
     
 func clean_up():
+    var challenge = decks["History"]["cards"][0]
+    if game.money >= 0 and game.army >= 0:
+        decks["Trash"]["cards"].append(challenge)
+        decks["History"]["cards"].pop_front()
+    else:
+        # Challenge failed, trash top card from PlayerDeck as punishment
+        if decks["PlayerDeck"]["cards"].size() <= 0:
+            reshuffle_discarded_into_deck()
+        var card_to_trash = decks["PlayerDeck"]["cards"].pop_front()  # Take the top card from the player's deck
+        decks["Trash"]["cards"].append(card_to_trash)  # And move it to the Trash
+        
     while decks["PlayerHand"]["cards"].size() > 0:
         var card = decks["PlayerHand"]["cards"].pop_front()
         decks["Discarded"]["cards"].append(card)
