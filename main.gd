@@ -414,16 +414,33 @@ func refresh_zoom():
         card_visual.texture = load(image_path)
         
         var card_data = cards_by_name[game.showcase_card["name"]]
+        
+        var effects = {
+            "effect_money": "Money %+d" % card_data["effect_money"],
+            "effect_army": "Army %+d" % card_data["effect_army"],
+            "discard": "Discard %d card%s" % [card_data["discard"], "s" if card_data["discard"] > 1 else ""],
+            "trash": "Trash up to %d card%s" % [card_data["trash"], "s" if card_data["trash"] > 1 else ""],
+            "extra_buys": "Extra %d buy%s" % [card_data["extra_buys"], "s" if card_data["extra_buys"] > 1 else ""],
+            "draw": "Draw %d card%s" % [card_data["draw"], "s" if card_data["draw"] > 1 else ""],
+            "extra_actions": "Extra %d action%s" % [card_data["extra_actions"], "s" if card_data["extra_actions"] > 1 else ""],
+            "replace": "Discard up to %d card%s and replace them from your deck" % [card_data["replace"], "s" if card_data["replace"] > 1 else ""],
+            "upgrade_2": "Trash a card and take another instead, costing max 2 money more",
+            "double_action": "For next card play an action for doubled effects",
+            "take_4": "Take a card costing max 4 money",
+            "take_money2": "Take Aes Rude card",
+            "take_5": "Take a card costing max 5 money",
+            "upgrade_money": "Trash a money card and take bigger denomination money card instead",
+        }
+        
         var effect_text = ""
-        for effect in effect_icons:
+        for effect in effects:
             if card_data[effect] != 0:
-                effect_text = "%s%s%s\n" % [effect_text, effect_icons[effect], str(card_data[effect])]
-        effect_text = effect_text.split("#")[0]
+                effect_text = "%s%s. " % [effect_text, effects[effect]]
         var card_effect = get_node("BigCard/EffectsText")
         card_effect.bbcode_text = effect_text
         
         var card_cost = get_node("BigCard/Cost") as Label
-        card_cost.text = str(card_data["cost_money"])
+        card_cost.text = str(card_data["cost_money"]) if card_data["type"] != "History" else "-"
     
     get_node("BigCard").visible = zoomed_card
 
