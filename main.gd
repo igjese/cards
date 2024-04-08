@@ -63,6 +63,7 @@ class Game:
     var buys = 1
     var cards_to_select = 0
     var max_cost = 0
+    var showcase_card = null
     
 var game : Game = null
 
@@ -86,6 +87,7 @@ func new_turn():
     set_up()
     deal_new_hand()
     game.current_phase = phases.HISTORY
+    game.showcase_card = top_card(decks["History"]["node"])
     play_action_card(top_card(decks["History"]["node"]))
     refresh_gui()
     
@@ -378,11 +380,10 @@ func refresh_gui():
     
 
 func refresh_history():
-    var history_label = get_node("GuiMain/History")
-    var random_index = randi() % cards_raw.size()
-    var random_card = cards_raw[random_index]
-    var history_text = "[b]%s: %s[/b]\n%s" % [random_card["name"],random_card["subtitle"], random_card["history_text"]]
-    history_label.text = history_text
+    if game.showcase_card:
+        var history_label = get_node("GuiMain/History")
+        var history_text = "[b]%s: %s[/b]\n%s" % [game.showcase_card["name"],game.showcase_card["subtitle"], game.showcase_card["history_text"]]
+        history_label.text = history_text
     
     
 func refresh_hint():
@@ -681,6 +682,8 @@ func _on_btn_new_game_pressed():
     
 func on_deck_clicked(node):
     var card : Dictionary = top_card(node)
+    game.showcase_card = card
+    refresh_gui()
     match game.current_step:
         steps.CHOOSE_ACTION_CARD:
             # valid: action card, in player's hand
@@ -724,6 +727,11 @@ func on_deck_clicked(node):
             if is_playerhand(node) and game.cards_to_select > 0:
                 discard(node)     
                 
+                
+func on_deck_right_clicked(node):
+    var card : Dictionary = top_card(node)
+    game.showcase_card = card
+    refresh_gui()
 
 
 func _on_btn_hints_pressed():

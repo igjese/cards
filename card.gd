@@ -40,4 +40,6 @@ func _on_gui_input(event):
         if event.button_index == MOUSE_BUTTON_LEFT:
             if event.pressed:
                 get_parent().on_deck_clicked(self)
-
+        if event.button_index == MOUSE_BUTTON_RIGHT:
+            if event.pressed:
+                get_parent().on_deck_right_clicked(self)
