@@ -373,6 +373,7 @@ func discard(deck):
 func init():
     game = Game.new()
     load_card_definitions_from_csv()
+    load_history_texts_from_md()
     assign_decks_to_nodes()
     assign_gui_nodes()
     
@@ -465,7 +466,7 @@ func refresh_zoom():
 func refresh_history():
     if game.showcase_card:
         var history_label = get_node("GuiMain/History")
-        var history_text = "[b]%s[/b]\n%s" % [game.showcase_card["name"], game.showcase_card["history_text"].replace("#","\n\n")]
+        var history_text = "[b]%s[/b]\n%s" % [game.showcase_card["name"], game.showcase_card["history_text"]]
         history_label.text = history_text
         
         var normalized_name = game.showcase_card["name"].replace(" ", "_").to_lower()
@@ -631,15 +632,33 @@ func load_card_definitions_from_csv():
             "take_4": int(card_data[13]),
             "take_money2": int(card_data[14]),
             "take_5": int(card_data[15]),
-            "upgrade_money": int(card_data[16]),
-            "subtitle": card_data[17],
-            "history_text": card_data[18],
+            "upgrade_money": int(card_data[16])
         }
         cards_raw.append(card)
         cards_by_name[card["name"]] = card
 
     file.close()
+    
+    
+func load_history_texts_from_md():
+    var path = "res://history.md"
+    var file = FileAccess.open(path, FileAccess.READ)
+    if !file:
+        print("Failed to open file: ", path)
+        return
 
+    var content = file.get_as_text()
+    file.close()
+
+    var lines = content.split("\n")
+    var current_card_name = ""
+    for line in lines:
+        if line.begins_with("### "):  # New card heading
+            current_card_name = line.substr(3).strip_edges()  # Remove '### ' prefix and non-printable chars at both sides
+            cards_by_name[current_card_name]["history_text"] = ""
+        elif current_card_name != "" and not line.begins_with("#"):
+            # Append paragraph text to the current card's history, add newline for paragraph separation
+            cards_by_name[current_card_name]["history_text"] += line.strip_edges() + "\n"
 
 func assign_cards_to_decks():
     var all_actions = []
