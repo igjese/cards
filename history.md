@@ -78,7 +78,11 @@ In the centuries to come, Port of Ostia will gradually transition to a bustling 
 
 ### Circus Maximus
 
-As Rome's largest stadium, the Circus Maximus could hold over 150,000 spectators, serving as a venue for chariot races and public festivals. This grand arena reflects the Roman commitment to public entertainment and the monumental scale of their architectural ambitions.
+Religion and entertainment were deeply connected in Roman society. Circus Maximus, a venue for chariot races, was built in a low-lying area between the Palatine and Aventine Hills, a natural valley floor perfect for early racing events.
+
+The valley housed shrines dedicated to earth and grain deities, potentially predating the formal development of the racing track itself. Several temples overlooked the Circus Maximus, including temples dedicated to spring and moon goddesses, among others.  
+
+Evolving from the landscape, then getting wooden seatings first for upper classes and later for common people as well, Circus Maximus will eventually become magnificent structure holding more than 150.000 spectators for the next millenia.
 
 ### Servian Wall
 
