@@ -86,11 +86,19 @@ Evolving from the landscape, then getting wooden seatings first for upper classe
 
 ### Servian Wall
 
-Constructed in the 6th century BC, the Servian Wall was Rome's defensive barrier against invasions, symbolizing the city's expansion and need for security. This fortification represents a critical phase in Rome's urban development and military architecture.
+First city wall is traditionally attributed to King Servius Tullius (6th century BCE). While literary sources suggest a defensive barrier existed at that time, archaeological evidence points to actual construction in 4th century BCE, after Gaul's sack of Rome during the Republic.
+
+Constructed primarily of volcanic tuff, a readily available and durable material, the Servian Wall stretched for an impressive 11 kilometers (6.8 miles) and it encompassed all seven hills of Rome. It served as Rome's primary defense for centuries.
+
+It reached heights of up to 10 meters (33 feet) in some sections, while its base possessed substantial width. Earthen embankments were built along weaker sections, and some sections incorporated a deep ditch (fossa) in front of the wall. The wall was also outfitted with war machines like catapults, adding another layer of protection.
 
 ### Servian Reforms
 
-Attributed to King Servius Tullius, these reforms restructured Roman military and social organization based on wealth, not birth, democratizing military service and political participation. They laid the foundation for the Republic's class dynamics and civic structure.
+The Servian Reforms, traditionally attributed to King Servius Tullius (6th century BCE), fundamentally transformed Roman society by introducing a new system of citizenship based on wealth instead of lineage and reorganizing the military, laying the foundation for the Roman social and military structure for centuries.
+
+Reforms introduced a census, that categorized citizens into five social classes based on their wealth, determining not only social status but also tax and military obligations and voting rights in newly established Centuriate Assembly. This ensured that those with the most resources had a greater say in government decisions.
+
+The Servian reforms also reorganized the Roman army into legions, comprised of units (centuries) levied from each class. The wealthiest citizens, equipped by their own means, formed the heavy infantry, while those of lesser means served as lighter troops or provided support services, ensuring a well-equipped and organized military force.
 
 ### Centuriate
 
