@@ -392,7 +392,8 @@ func empty_current_decks():
         decks[deck]["cards"].clear()
     
     
-func refresh_gui():    
+func refresh_gui():   
+    check_step() 
     for deck in decks:
         refresh_deck(deck)
     refresh_cards(player_hand, "PlayerHand")
@@ -402,6 +403,22 @@ func refresh_gui():
     refresh_history()
     refresh_zoom()
     
+    
+func check_step():
+    if game.current_step == steps.CHOOSE_ACTION_CARD:
+        if game.actions <= 0 or no_action_cards_in_hand():
+            finish_actions()
+    if game.current_step == steps.BUY_CARDS:
+        if game.buys <= 0:
+            finish_buys()
+    
+    
+func no_action_cards_in_hand():
+    for card in decks["PlayerHand"]["cards"]:
+        if card["type"] == "Action":
+            return false
+    return true
+        
     
 func refresh_zoom():
     if game.showcase_card:
@@ -459,11 +476,13 @@ func refresh_history():
     
 func refresh_hint():
     var gui_hint = get_node("GuiHint")  # This gets the Control node named GuiHint
+    gui_hint.get_node("Army").text = str(game.army)
+    gui_hint.get_node("Money").text = str(game.money)
     var hint_text = hints[game.current_step][0]
     if game.current_step == steps.CHOOSE_ACTION_CARD:
         hint_text = "Play up to %d action cards" % game.actions
     if game.current_step == steps.BUY_CARDS:
-        hint_text = "Buy up to %d cards" % game.buys
+        hint_text = "Buy up to %d cards. Money available: %d" % [game.buys, game.money]
     if game.current_step == steps.TRASH:
         hint_text = "Pick up to %d cards to trash" % game.cards_to_select
     if game.current_step == steps.TAKE:
@@ -510,11 +529,12 @@ func refresh_cards(card_nodes: Array, deck_name: String):
 func count_card_occurrences(cards: Array) -> Dictionary:
     var card_counts = {}
     for card in cards:
-        var card_name = card["name"]
-        if card_name in card_counts:
-            card_counts[card_name] += 1
-        else:
-            card_counts[card_name] = 1
+        if card:
+            var card_name = card["name"]
+            if card_name in card_counts:
+                card_counts[card_name] += 1
+            else:
+                card_counts[card_name] = 1
     return card_counts
 
     
@@ -558,7 +578,7 @@ func display_card(card: Control, card_name: String) -> void:
         
     var card_data = cards_by_name[card_name]
     
-    var cost_text = str(card_data["cost_money"]) if card_data["type"] != "History" else "-"
+    var cost_text = str(card_data["cost_money"]) if card_data["type"] in ["Action","Money1","Money2","Army1","Army2"] else "-"
     
     var effect_text = ""
     for effect in effect_icons:
