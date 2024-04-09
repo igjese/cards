@@ -54,15 +54,27 @@ Yet, the women intervened, throwing themselves between the combatants and famous
 
 ### Curiate Assembly
 
-The Curiate Assembly, Rome's earliest legislative body, was composed of male citizens divided into curiae. With powers to enact laws, declare war, and ratify the selection of kings and magistrates, it played a vital role in the governance and legal foundation of the Roman Kingdom.
+The Curiate Assembly (Comitia Curiata) was a cornerstone of Roman government during the era of the Kings (753 to 509 BCE). Organized by ethnic units called "curiae," believed to be originally thirty in number, the Curiate Assembly wielded significant power.
+
+It was composed of male citizens, possibly limited to patricians, the aristocratic families of Rome. The Assembly's vote was required to ratify the selection of kings and magistrates, and to approve laws proposed by the king and the Senate.
+
+These laws, known as leges curiatae, covered a wide range of matters, including criminal justice, property rights, and religious observances. Additionally, the Curiate Assembly held some judicial authority, trying certain offenses, especially those related to breaches of religious law.
 
 ### Solar Calendar
 
-Under Numa Pompilius's reforms, Rome transitioned from a lunar to a solar calendar, aligning agricultural practices with the seasons and facilitating the organization of religious and civic events. This change marks a significant advancement in Roman administrative and societal organization.
+The early Roman Kingdom employed a lunar calendar of roughly 10 months, with an imprecise 'winter' period possibly due to its lack of significance for agriculture. According to legend, it was instituted by Romulus.
+
+Yet, such lunar calendar presented a significant challenge for an agricultural society like early Rome.  The discrepancy between the lunar and solar cycles resulted in a calendar that gradually drifted out of sync with the seasons. 
+
+A shift towards a calendar better aligned with the Solar year emerged, with Numa Pompilius adding months of January and February, and Lucius Tarquinius Priscus placing January at the beginning of the year. Regardless of its exact form, Roman calendar remained a work in progress.
 
 ### Port of Ostia
 
-The establishment of the Port of Ostia in the 7th century BC as Rome's sea port, at the Tiber's mouth, highlights its role as a crucial trade and defense hub. Facilitating commerce and cultural exchange across the Mediterranean, it was instrumental in Rome's economic growth and integration into the wider ancient world.
+Ostia, possibly Rome's first colony, was located directly on the Mediterranean coast at the mouth of the Tiber River. It's founding is attributed to the king Ancus Marcius, for defensive purposes and salt production.
+
+This fort, probably a military outpost since 7th century BCE, likely marked the beginning of Rome's maritime colonies, highlighting the city's growing awareness of the strategic importance of the Tiber's mouth and Mediteranean trade.
+
+In the centuries to come, Port of Ostia will gradually transition to a bustling commercial center, driven by Rome's expanding population and its growing reliance on imports, particularly grain, from across the Mediterranean.  
 
 ### Circus Maximus
 
