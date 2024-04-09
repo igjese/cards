@@ -356,7 +356,7 @@ theme_override_font_sizes/bold_italics_font_size = 0
 theme_override_font_sizes/mono_font_size = 0
 bbcode_enabled = true
 text = "[b]Chronicles: Rise of Rome[/b]
-[i]Deck Building Historical Solitaire[/i]"
+[i]Deck Building Solitaire Game[/i]"
 fit_content = true
 
 [node name="History" type="RichTextLabel" parent="GuiMain"]
@@ -364,7 +364,7 @@ layout_mode = 0
 offset_left = 4.0
 offset_top = 343.0
 offset_right = 609.0
-offset_bottom = 918.0
+offset_bottom = 939.0
 theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 24

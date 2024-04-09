@@ -465,7 +465,7 @@ func refresh_zoom():
 func refresh_history():
     if game.showcase_card:
         var history_label = get_node("GuiMain/History")
-        var history_text = "[b]%s[/b]\n[i]%s[/i]\n%s" % [game.showcase_card["name"],game.showcase_card["subtitle"], game.showcase_card["history_text"]]
+        var history_text = "[b]%s[/b]\n%s" % [game.showcase_card["name"], game.showcase_card["history_text"].replace("#","\n\n")]
         history_label.text = history_text
         
         var normalized_name = game.showcase_card["name"].replace(" ", "_").to_lower()
