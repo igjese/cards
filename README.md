@@ -190,7 +190,6 @@ Colosseum
 Julian Calendar
 Roman Numerals
 Jupiter
-Mars
 Venus
 Minerva
 Neptune
@@ -219,3 +218,4 @@ Basilica: Christian Temple
 Temple of Mars
 Roman Welfare
 Watchtowers
+Client Patron Relationships

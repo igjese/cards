@@ -4,29 +4,53 @@
 
 ### Barter Goods
 
-In the Roman Kingdom's economy, centered on agriculture and pastoralism, bartering dominated. Goods such as grain, livestock, and textiles were exchanged directly, bypassing the need for currency. This barter system allowed for the straightforward trade of local resources, enhancing community cohesion and economic interdependence.
+During the Roman Kingdom (753 BC - 509 BC), a system of barter served as the primary means of exchange. Essential goods like grain were exchanged directly for tools or woven cloth. This practice likely fostered a sense of cooperation within the nascent Roman community.
+
+Barter wasn't limited to necessities. Skilled artisans could exchange their labor for desired goods. For instance, a carpenter might build furniture in exchange for a tailor's new tunic. Even livestock, such as sheep or goats, could be used for barter, offering flexibility in acquiring necessities and desired items.
+
+However, barter was sometimes impractical, larger transactions cumbersome, and determining the fair value of goods could be difficult. These limitations eventually led to the development of more formalized exchange systems, including the use of unworked bronze ingots (Aes Rude) as a precursor to true coinage.
 
 ### Aes Rude
 
-Aes Rude, unworked lumps of bronze, served as one of Rome's earliest forms of currency. These bronze pieces, used prior to the invention of coinage, were weighed for transactions. Their use represents a pivotal moment in the Roman economy's shift from barter to a more sophisticated monetary system.
+During the Roman Kingdom, aes rude emerged as a rudimentary form of exchange. These were unworked lumps or ingots of bronze, lacking any standardized shape or denomination. While not true coinage, aes rude represented a transitional phase towards a more formalized system.
+
+The use of aes rude offered a more portable and divisible unit of value compared to cumbersome barter goods like grain or livestock. Additionally, the inherent value of bronze offered a more consistent measure compared to bartering disparate items.
+
+Still, the lack of standardized weight and size made determining precise value challenging, while the bulky nature of aes rude remained impractical for smaller transactions.  So later, Aes Signatum was developed, the first true Roman stamped bronze ingot, marking a significant step towards the coinage system that would become a cornerstone of the Roman economy.
 
 ### Civil Militia
 
-The Roman Kingdom lacked a permanent standing army, relying instead on a civilian militia mobilized during times of war. Men of eligible age were expected to serve, equipped at their own expense, embodying early Roman values of community duty, loyalty, and courage.
+During the early Roman Kingdom, the primary military force wasn't a professional standing army, but a citizen militia. This system relied on the male citizenry to serve in the military when called upon.  These citizen-soldiers, typically farmers and landowners, were expected to equip themselves with basic arms and armor.
+
+The militia system fostered civic duty and self-reliance, also providing a ready available manpool when military force was needed. It reflected the martial nature of early Roman society. Military service was not just an obligation, but a source of honor and prestige.
+
+However, campaigns disrupted farming and limited training hindered militia's effectiveness. These limitations, coupled with Rome's growing ambitions, would eventually lead to the development of a more professional Roman army during the Republic.
 
 ### Centuria
 
-The centuria, comprising 100 men, served dual roles in early Roman society as both a military formation and a political voting block. Central to the Roman military and the Comitia Centuriata, it illustrated the integration of military service with civic privileges and responsibilities.
+The Centuria served as the basic tactical unit of the early Rome. According to legend, Romulus expected each of the three original Roman tribes to provide ten centuriae (military units of approximately 100 men) of infantry. These consisted of citizen-soldiers, typically farmers and landowners.
+
+Later reforms, traditionally attributed to King Servius Tullius, introduced the adoption of Greek-style hoplite equipment. This led to dominant heavy infantry fighting in phalanx formation. The number of centuriae was doubled as part of these reforms.
+
+Citizen-soldiers were further divided by wealth, which determined the equipment they could afford. Wealthier citizens held higher military status and responsibilities. This wealth-based division extended into newly formed Centuriate Assembly, where Centuriae served as voting units, thus intertwining military service with political influence.
 
 ## History Cards
 
 ### Romulus
 
-Romulus, mythically conceived by Mars and Rhea Silvia, founded Rome, imbuing the city with its core institutions, such as the Senate. His tale, filled with ambition, conflict, and resolution, exemplifies the virtues of leadership and foresight, cementing his legacy in Roman culture and governance.
+In Roman mythology, twins Romulus and Remus were abandoned as infants on the banks of the Tiber River by order of their uncle, usurper of the city of Alba Longa.  Legend has it they were raised by a she-wolf and later returned to restore their grandfather to the throne.
+
+Romulus and Remus then left to establish their own city, but disagreed on the location, leading to a dispute and Remus's death. Romulus then founded the city of Rome on the Palatine Hill in 753 BC.
+
+Early accounts depict Romulus as a strong leader who established many of Rome's core institutions, including the Senate and the Curiate Assembly. He is also credited with establishing religious practices and military forces that would form the foundation of the Roman Kingdom. Still, historical facts remain a subject of debate.
 
 ### Sabine Women
 
-The legend of the Sabine Women, abducted by Rome's founding men, highlights their crucial role in halting conflict between the Romans and Sabines, leading to a peaceful merger. This event underscores themes of unity and the foundational role of women in Rome's early social fabric.
+As a new settlement, Rome primarily attracted men seeking a fresh start, who were incidentally not viewed favorably as marriage prospects by neighboring tribes. Faced with a lack of women necessary to establish families and ensure Rome's long-term survival, Romulus devised a plan.
+
+He invited neighboring peoples to a festival. At a prearranged signal, the Romans seized their women, sparking outrage and war. In several battles that followed, the well-prepared Romans emerged victorious. However, the Sabines proved more challenging, nearly capturing Rome itself.
+
+Yet, the women intervened, throwing themselves between the combatants and famously crying out that they shouldn't lose both fathers and husbands on the same day. This led to a truce, ultimately resulting in the unification and joint ruling of Romulus and the Sabine king, with the Sabines settling on the Capitoline Hill.
 
 ### Curiate Assembly
 

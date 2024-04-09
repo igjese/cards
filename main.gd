@@ -466,7 +466,7 @@ func refresh_zoom():
 func refresh_history():
     if game.showcase_card:
         var history_label = get_node("GuiMain/History")
-        var history_text = "[b]%s[/b]\n%s" % [game.showcase_card["name"], game.showcase_card["history_text"]]
+        var history_text = "[b]%s[/b]%s" % [game.showcase_card["name"], game.showcase_card["history_text"]]
         history_label.text = history_text
         
         var normalized_name = game.showcase_card["name"].replace(" ", "_").to_lower()
@@ -659,6 +659,7 @@ func load_history_texts_from_md():
         elif current_card_name != "" and not line.begins_with("#"):
             # Append paragraph text to the current card's history, add newline for paragraph separation
             cards_by_name[current_card_name]["history_text"] += line.strip_edges() + "\n"
+
 
 func assign_cards_to_decks():
     var all_actions = []
