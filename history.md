@@ -170,7 +170,7 @@ A powerful civilization, the Etruscans, flourished north of Rome in a region cal
 
 Trade with the Etruscans and their cultural influence were very important for early Rome. The Romans adopted Etruscan methods in urban planning and construction techniques. Several Roman kings were believed to be Etruscans. Moreover, Roman religion incorporated many Etruscan deities and rituals. However, the relationship between Etruscans and Romans wasn't solely cultural. 
 
-Etruscan city-states sometimes formed alliances with Rome, particularly against common enemies like the Gauls.  However, there were also periods of intense military struggle for dominance. The Romans engaged in protracted wars against Etruscan cities like Fidenae and Veii. Over time, through a combination of warfare, alliances, and cultural integration, the Etruscans were gradually assimilated into the Roman world.
+Etruscan city-states sometimes formed alliances with Rome, particularly against common enemies like the Gauls.  However, there were also periods of conflict. The Romans engaged in protracted wars against Etruscan cities like Fidenae and Veii. Over time, through a combination of warfare, alliances, and cultural integration, the Etruscans were gradually assimilated into the Roman world.
 
 ### Latin League
 
