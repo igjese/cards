@@ -182,7 +182,7 @@ While dominant early on, the increasing power of Rome gradually eroded the leagu
 
 ### Magna Graecia
 
-Magna Graecia wasn't a single unified entity, but rather a collection of independent Greek city-states (poleis) scattered along the southern coast of Italy and Sicily, flourished from the 8th to 5th centuries BCE not only due to its fertile land but also because of its strategic location.  
+Magna Graecia wasn't a single unified entity, but rather a collection of independent Greek city-states (poleis) scattered along the southern coast of Italy and Sicily, which flourished from the 8th to 5th centuries BCE not only due to its fertile land but also because of its strategic location.  
 
 Prominent cities like Syracuse, Tarentum, and Sybaris became centers of trade, agriculture, and cultural activity. Greek colonists established trade routes connecting them to the Etruscan cities in central Italy, the Phoenician centers in the Mediterranean, and their own kin in mainland Greece. This commercial activity facilitated the exchange of goods, ideas, and cultural influences.
 
