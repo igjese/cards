@@ -150,23 +150,43 @@ The final king, Tarquinius Superbus, is portrayed as a tyrant whose reign ultima
 
 ### Vestal Virgins
 
-The Vestal Virgins, dedicated to the goddess Vesta, were charged with maintaining her sacred fire, symbolizing Rome's hearth and home. Their service, emphasizing purity and devotion, was essential to the city's spiritual well-being and religious observance.
+In ancient Rome, the Vestal Virgins were priestesses that tended the eternal flame of Vesta, goddess of the hearth, home, and family. Dating back to the 7th century BC, this cult of Vesta and its dedicated priestesses played a significant role in Roman religion for a millenium.
+
+Small girls from prominent families were meticulously chosen for this duty by the Pontifex Maximus. Once chosen, they embarked on a thirty-year service dedicated to chastity and devotion to Vesta. Only six priestesses served at a time.
+
+Vestal Virgins enjoyed a privileged status within Roman society. They held positions of high respect and were considered untouchable. However, their lives were also highly restricted, and any transgression could lead to harsh punishment, including execution. The Vestal Virgins remained a cornerstone of Roman religion until the rise of Christianity in the 4th century AD.
 
 ### Roman Sewers
 
-The Cloaca Maxima, among the earliest sewage systems, exemplified Roman engineering expertise, draining marshes and removing waste. This infrastructure project was vital for Rome's public health, urban sanitation, and the management of water resources.
+The Cloaca Maxima was one of the world's earliest sewage systems. The construction of the Cloaca Maxima is attributed to King Tarquinius Priscus around 600 BCE, who employed Etruscan workers and plebeians for the task. The initial purpose was to transform the swampy area near the Roman Forum into solid building ground.
+
+It expanded upon a network of existing drainage ditches, by lining an existing streambed with stone. Eventually, this open channel evolved into a vaulted system constructed from volcanic stone.
+
+Over time, the sewer was expanded and renovated, with sections covered and transformed into a robust underground system. The use of gutters and conduits ensured efficient water flow, while vaulted structures with flat panels or rocks provided stability. The sewer continued to be well-maintained throughout eras and even functions to some degree today.
 
 ### Etruscan Peers
 
-The Etruscans, precursors to Roman civilization, significantly influenced Rome's early development in religion, art, and governance. This cultural and political interchange was crucial in shaping Rome's identity and foundational structures.
+A powerful civilization, the Etruscans, flourished north of Rome in a region called Etruria. They spoke a non-Indo-European language, completely distinct from Latin or other Italic languages.
+
+Trade with the Etruscans and their cultural influence were very important for early Rome. The Romans adopted Etruscan methods in urban planning and construction techniques. Several Roman kings were believed to be Etruscans. Moreover, Roman religion incorporated many Etruscan deities and rituals. However, the relationship between Etruscans and Romans wasn't solely cultural. 
+
+Etruscan city-states sometimes formed alliances with Rome, particularly against common enemies like the Gauls.  However, there were also periods of intense military struggle for dominance. The Romans engaged in protracted wars against Etruscan cities like Fidenae and Veii. Over time, through a combination of warfare, alliances, and cultural integration, the Etruscans were gradually assimilated into the Roman world.
 
 ### Latin League
 
-The Latin League, a coalition of Latin cities including Rome, united for mutual defense and shared interests against common threats. This alliance underscores the importance of regional cooperation in Rome's strategic military and political maneuvers.
+The Latin League was a relatively loose alliance of communities within the Latium region, bound together by shared ancestry and language (Latin), and common pantheon of deities. According to some accounts, the city of Alba Longa held leadership within the league. 
+
+The relationship between the Latin League and Rome was one of mixed cooperation and conflict. Throughout the Roman Kingdom period, numerous disputes and wars erupted between Rome and individual Latin cities, and occasionally with the entire league.  
+
+While dominant early on, the increasing power of Rome gradually eroded the league's autonomy, and later during Roman Republic, it will eventually be absorbed into the Roman sphere of influence.
 
 ### Magna Graecia
 
-Magna Graecia, denoting Greek-colonized southern Italy, served as a critical conduit for transmitting Greek cultural, philosophical, and technological innovations to Rome. This interaction enriched Roman society and laid the groundwork for Rome's cultural and intellectual achievements.
+Magna Graecia wasn't a single unified entity, but rather a collection of independent Greek city-states (poleis) scattered along the southern coast of Italy and Sicily, flourished from the 8th to 5th centuries BCE not only due to its fertile land but also because of its strategic location.  
+
+Prominent cities like Syracuse, Tarentum, and Sybaris became centers of trade, agriculture, and cultural activity. Greek colonists established trade routes connecting them to the Etruscan cities in central Italy, the Phoenician centers in the Mediterranean, and their own kin in mainland Greece. This commercial activity facilitated the exchange of goods, ideas, and cultural influences.
+
+Artistic styles and intellectual traditions, as well as the adoption of the Greek alphabet by Etruscans and Romans, highlights the profound impact and lasting legacy of Magna Graecia on the development of Roman civilization.
 
 ## Action Cards
 
