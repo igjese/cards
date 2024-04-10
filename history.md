@@ -102,27 +102,51 @@ The Servian reforms also reorganized the Roman army into legions, comprised of u
 
 ### Centuriate
 
-Emerging from the Servian Reforms, the Centuriate Assembly redefined Roman citizenship, organizing citizens into military units for electoral purposes. It became central to electing magistrates, enacting legislation, and making key decisions on war, highlighting the evolving democratic processes in Rome.
+The Centuriate Assembly (Comitia Centuriata) was a unique voting system, established in 6th century BCE by King Servius Tulius, and responsible for electing officials, passing laws and declaring war. For the first time, both patricians (upper class) and plebians (commoners) could participate.
+
+Voting power was based on wealth and military service. Citizens were divided into five wealth-based classes, each further subdivided into 'centuries' (voting units). Wealthier classes had more centuries, granting them greater influence.
+
+These centuries mirrored the Roman army structure. Centuries were not only voting units but also military units from which soldiers were levied. Wealthier citizens were responsible for their own weapons and equipment, ensuring strong and well-equipped military.
 
 ### Temple of Jupiter
 
-The Temple of Jupiter Optimus Maximus, on the Capitoline Hill, was Ancient Rome's most significant temple. Dedicated to the supreme deity, it served as a focal point for Roman religion and a symbol of the state's aspirations and divine approval.
+Jupiter was the king of Roman gods, wielding power over thunder, lightning, and the sky. His association with rain and fertility made him a central figure in Roman religion. The Temple of Jupiter Optimus Maximus ("Jupiter Best and Greatest") stands as the most significant religious structure of the Roman Kingdom.
+
+It's location atop the Capitoline Hill became a sacred space for interpreting the will of the gods through bird observation. Temple also served for significant civic events, such as military triumphs or important pronouncements seeking divine approval. 
+
+While dedicated at first year of the Republic in 509 BCE, it's construction began almost a century earlier, under Etruscan King Tarquinius Priscus. Initially, temple had a single large chamber for the Jupiter statue and terracotta decorations adorning the roof, while elaborate modifications were added later, such as triple chamber for Jupiter, Juno and Minerva.
 
 ### King Election
 
-In early Rome, the election of kings involved seeking divine approval through augury and securing the consent of the Senate and the people. This process illustrates the complex interplay between theocratic elements and emergent democratic ideals in Roman governance.
+Early Rome was an elective monarchy, ruled by a series of elected leaders. Tradition places the legendary Romulus as the very first king, but the historical record truly begins with his successors. The seventh and last king was Lucius Tarquinius Superbus, who usurped power and ruled as a tyrant, leading to his overthrow and the birth of the Roman Republic.
+
+When king died, Rome entered an interregnum. The Senate assumed control and initiated the search for a successor. Appointed Senator, the interrex, held a five-day term solely dedicated to nominating a candidate for king. By observing birds, priests sought the gods' approval, after which nominee needed to be confirmed by both the Senate and the Curiate Assembly, a citizen representative body.
+
+The Roman king acted as a military, civic and religious leader. He commanded the army in war and defense, his decrees held the power of law, and he functioned as the supreme judge in legal matters.
 
 ### Military Triumph
 
-Awarded to victorious generals, the Roman triumph was a magnificent procession celebrating military success. Generals, allowed to enter Rome with their troops, displayed the spoils of war, reinforcing Rome's martial prowess and honoring individual achievements.
+A victorious military leader could be granted a 'Triumph' by the Senate. During the regal era it was most commonly king himself. It was a carefully orchestrated ceremony that aimed to boost the victor's reputation, reaffirm the power and prestige of Rome, and to appease the gods.
+
+The returning commander rode into the city on a chariot, adorned with a laurel crown. He was draped in the toga picta, an all-purple, gold-embroidered garment signifying his temporary, quasi-divine status. The procession itself paraded captives and the spoils of war before cheering crowds, showcasing the consequences of defying Roman military might.
+
+The culmination of the triumph occurred at the temple of Jupiter Optimus Maximus on the Capitoline Hill.  Here, the victor offered sacrifices to the king of the Roman gods, ensuring divine favor for Rome's continued success. Public games and festivities followed, funded by the spoils of war.
 
 ### Pontifex Maximus
 
-As the chief priest, the Pontifex Maximus oversaw Rome's religious rites and calendar, representing the highest religious authority. This position underscored the integration of religious duties with state governance, reflecting the central role of religion in public and political life.
+Pontifex Maximus, the highest priest of the College of Pontiffs (Collegium Pontificum), oversaw Rome's religious life. According to legend, the first Pontifex Maximus was Numa Pompilius, the wise and pious second king of Rome, who established many of the city's religious institutions.
+
+This prestigious position wasn't simply a position of religious authority - it wielded significant influence in Roman society. The Pontifex Maximus supervised the public religious ceremonies of the Roman state and interpreted religious omens, to discern the will of the gods and guide the course of action in critical situations. 
+
+Additionally, the Pontifex Maximus maintained the official calendar, marking religious festivals and determining auspicious days for public affairs. Moreover, he was the custodian of Rome's sacred records, which chronicled important events and religious pronouncements. He also possessed the power to veto certain actions deemed religiously unfavorable. 
 
 ### Seven Kings
 
-Rome's legendary seven kings, from Romulus to Tarquin the Proud, were instrumental in shaping the city's early institutions, culture, and societal norms. Each king's contributions were critical to Rome's foundational development and its enduring legacy.
+The Roman Kingdom, spanning from 753 to 509 BC, was ruled by a succession of seven kings, who transformed a small settlement into a formidable city-state. They established key Roman institutions and expanded Roman territory through warfare and diplomacy. The traditional narrative credits the city's founding to the legendary first king, Romulus. Following his death, a series of elected kings ruled Rome.   
+
+Each king left his mark on the developing Roman state. Numa Pompilius established many religious institutions. Tullus Hostilius was known for his military prowess. Ancus Marcius expanded Roman territory. Tarquinius Priscus is credited with major construction projects, including Circus Maximus and the Temple of Jupiter. Servius Tullius implemented social and military reforms. 
+
+The final king, Tarquinius Superbus, is portrayed as a tyrant whose reign ultimately led to the overthrow of the monarchy and the establishment of the Roman Republic.
 
 ### Vestal Virgins
 

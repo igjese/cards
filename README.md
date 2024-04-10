@@ -85,7 +85,9 @@ Cards are:
 |              |                 | Public Forum      | Magna Graecia       |  |
 |              |                 | Mars              |  |  |
 
-More: Seven Hills, First Aquaduct
+More: Seven Hills, First Aquaduct, Origins (Troy, Alba Longa)
+
+Maybe: Divide history cards into two periods, so they are not completely random - then second period cards could be more challenging for example
 
 ### Ideas for Republic and Empire
 
@@ -108,6 +110,7 @@ Slavery
 Sessesion of the Plebs
 Siege of Syracuse
 Dictators
+Annales maximi
 
 Sicilia
 Sardinia, Corsica (Mercenary Wars)
