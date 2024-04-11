@@ -192,23 +192,43 @@ Artistic styles and intellectual traditions, as well as the adoption of the Gree
 
 ### Grain Harvest
 
-The grain harvest was pivotal to Rome's survival and stability, providing the staple diet for its population. This agricultural cycle not only fed the city but also influenced Rome's economic policies and social stability.
+Early Rome was primarily an agrarian society, with grain crops like wheat, barley, and emmer (an ancestor of durum wheat) forming the staple diet of its citizens.  This dependence on grain for subsistence necessitated a strong focus on cultivation and storage practices.  
+
+Roman farmers, known as paterfamilias, cultivated small plots of land using rudimentary tools and techniques. The success of the grain harvest was far from guaranteed, and Rome wouldn't develop a sophisticated grain trade or advanced irrigation systems until later eras. 
+
+These uncertainties contributed to the development of religious practices and rituals aimed at appeasing the whims of the gods, such as Ceres, the goddess of grain and harvest. Moreover, the importance of reliable food production may have contributed to the rise of a landed elite who controlled significant portions of arable land.
 
 ### Roman Gods
 
-Rome's diverse pantheon, from Jupiter, Mars, Venus, to Minerva, governed every aspect of life and the cosmos, deeply intertwining with state functions and daily existence. These deities represented the societal values, fears, and aspirations of the Roman people.
+Unlike the philosophically rich theologies of Greece, early Roman religion was characterized by a practical and utilitarian approach.  Gods and goddesses were not mere objects of worship, but powerful entities whose influence permeated every aspect of life.  
+
+Farmers prayed to Ceres for bountiful harvests, warriors invoked Mars for victory in battle, and families sought the blessings of Juno for the well-being of their households. At the heart of this pantheon sat Jupiter, god of sky, thunder and justice. As king of the gods, he reigned over divine council, traditionally depicted as twelve deities, and over numerous lesser gods. His wife and queen Juno, presided over women, marriage, and childbirth.
+
+While Etruscan influence played a significant role during the Kingdom era, the impact of Greek gods and myths would come to characterize Roman religion in the Republic and Empire.
 
 ### Plebeians
 
-The plebeians, encompassing Rome's working and lower classes, played a fundamental role despite initial political exclusion. Their collective struggles for rights and reforms led to significant societal changes, gradually transforming Rome's political landscape.
+Early Roman society was a hierarchy, with patricians – the descendants of the city's founders – occupying the highest classes.  Plebeians, on the other hand, comprised a diverse group of free citizens, including farmers, artisans, shopkeepers, and laborers.  
+
+Unlike the patricians, who enjoyed political and social privileges, plebeians were largely excluded from positions of power during the Kingdom era. They were excluded from the patrician-dominated Senate and could not hold the highest political offices.  
+
+This lack of political participation, despite providing labor in the fields, artisan goods and services, as well as manpower for the defense of the city, led to increasing social tension that would eventually lead to significant social and political reforms in the Roman Republic.
 
 ### Patrician Clans
 
-The patricians, Rome's aristocratic families, claimed descent from the city's earliest senators, holding sway over its political, religious, and social spheres. Their privileged status underscored the social hierarchies and dynamics of early Roman society.
+Roman society was hierarchical, with patrician families at the top, claiming descent from the city's founders. Myth recounts that Romulus, upon establishing the city, selected the first 100 senators – men who would become the foundation of the patrician class.  
+
+Unlike later Roman society, which emphasized citizenship, the Kingdom era focused on lineage. Patrician status wasn't just a title, it signified membership in a privileged social and political class. During the kingdom period, patricians held exclusive access to the Senate, provided the highest magistrates, and held a significant sway over religious offices. 
+
+This control over key institutions allowed patricians to shape laws, lead the military, and interpret religious practices, effectively controlling all aspects of Roman life. Such concentration of power led to social tensions, that will eventually lead to demands for reform and a shift in power dynamics.
 
 ### Seven Hills
 
-Rome, traditionally founded on the Palatine Hill in 753 BC, expanded to include strategic and religious sites like the Capitoline Hill. During the Kingdom period, it grew to encompass the Seven Hills, draining marshes to combat malaria and create public spaces like the Roman Forum. This expansion laid Rome's foundational structure, establishing early boundaries and the urban layout pivotal to its historical development.
+Roman mythology attributes the founding of the city to Romulus and Remus, twin brothers who disagreed on the location for their settlement. Romulus ultimately chose the Palatine Hill, laying the foundation for the future city. 
+
+The Seven Hills offered several strategic advantages that contributed to the early success of Rome.  Their elevated positions provided natural defensible position, and avoided occasional flooding from the Tiber River. Moreover, Tiber provided fresh water, fertile land and access to easy trade routes.
+
+As the city grew, each of the Seven Hills assumed distinct functions. The Palatine Hill housed patrician residences and eventually the imperial palace in later eras. The Capitoline Hill became the religious center, with the Temple of Jupiter Optimus Maximus, the king of the gods, serving as a symbol of Roman power and piety.
 
 ### Agriculture
 

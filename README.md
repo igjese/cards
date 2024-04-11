@@ -85,7 +85,7 @@ Cards are:
 |              |                 | Public Forum      | Magna Graecia       |  |
 |              |                 | Mars              |  |  |
 
-More: Seven Hills, First Aquaduct, Origins (Troy, Alba Longa)
+More: Seven Hills, First Aquaduct, Origins (Troy, Alba Longa), Pater Familias
 
 Maybe: Divide history cards into two periods, so they are not completely random - then second period cards could be more challenging for example
 
