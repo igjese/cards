@@ -461,6 +461,7 @@ func refresh_zoom():
         card_cost.text = str(card_data["cost_money"]) if card_data["type"] != "History" else "-"
     
     get_node("BigCard").visible = zoomed_card
+    get_node("GuiMain/Panel").visible = not zoomed_card
 
 
 func refresh_history():
