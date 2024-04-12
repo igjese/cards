@@ -462,7 +462,8 @@ func refresh_zoom():
     
     get_node("BigCard").visible = zoomed_card
     get_node("GuiMain/Panel").visible = not zoomed_card
-
+    get_node("GuiMain/LineSeparator").visible = zoomed_card
+    
 
 func refresh_history():
     if game.showcase_card:

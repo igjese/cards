@@ -552,6 +552,12 @@ offset_right = 305.0
 offset_bottom = 326.0
 texture = ExtResource("4_fhk1j")
 
+[node name="LineSeparator" type="Line2D" parent="GuiMain"]
+visible = false
+points = PackedVector2Array(-17, 777, -17, 351)
+width = 3.0
+default_color = Color(0.929412, 0.941176, 0.870588, 1)
+
 [connection signal="pressed" from="GuiHint/BtnHints" to="." method="_on_btn_hints_pressed"]
 [connection signal="gui_input" from="BigCard" to="." method="_on_big_card_gui_input"]
 [connection signal="pressed" from="GuiMain/BtnExit" to="." method="_on_btn_exit_pressed"]
