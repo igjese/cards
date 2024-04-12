@@ -17,10 +17,10 @@ border_color = Color(0.937255, 0.894118, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw5ef"]
 bg_color = Color(0.960784, 0.811765, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 14
 corner_radius_top_right = 14
@@ -29,10 +29,10 @@ corner_radius_bottom_left = 14
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01snb"]
 bg_color = Color(0.658824, 0.145098, 0.133333, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 14
 corner_radius_top_right = 14
@@ -381,8 +381,9 @@ offset_left = 19.0
 offset_top = 63.0
 offset_right = 49.0
 offset_bottom = 93.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_rw5ef")
 text = "9"
