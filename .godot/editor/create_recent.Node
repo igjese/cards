@@ -1,8 +1,9 @@
+LineEdit
+Control
 Line2D
 Label
 Panel
 RichTextLabel
 TextureRect
-Control
 Button
 Sprite2D

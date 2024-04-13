@@ -1,19 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712958442
+::res://::1712987586
 big-frame.png::CompressedTexture2D::6357002289546268951::1712572362::1712572401::1::::<><>::
 card.gd::GDScript::-1::1712585781::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1712953665::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
+card.tscn::PackedScene::528414477263538463::1712963023::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
 cards.csv::::-1::1712666879::1709642895::1::::<><>::
-default_env.tres::Environment::3535254983394503347::1712953666::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1712065013::0::1::::<><>::
+default_env.tres::Environment::3535254983394503347::1712963024::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1712959487::0::1::::<><>::
 Font Awesome 6 Free-Solid-900.otf::FontFile::6673130800394779117::1709681289::1709681290::1::::<><>::
 frame4.png::CompressedTexture2D::3103182351091807159::1709679922::1709679922::1::::<><>::
 history.md::TextFile::-1::1712952020::0::1::::<><>::
 icon-default.png::CompressedTexture2D::4979239282887764350::1709536140::1712958445::1::::<><>::
 icon.png::CompressedTexture2D::8812027128366769566::1712957133::1712958447::1::::<><>::
 karte-720.png::CompressedTexture2D::5028525007727685489::1709683078::1709683082::1::::<><>::
-main.gd::GDScript::-1::1712680597::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1712953666::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://big-frame.png
+main.gd::GDScript::-1::1712961141::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1712963024::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://big-frame.png
 README.md::TextFile::-1::1712768281::0::1::::<><>::
 README_old.md::TextFile::-1::1711716754::0::1::::<><>::
 ::res://cards/::1711951882

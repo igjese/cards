@@ -307,6 +307,7 @@ func take_card(node):
             var card = decks[deck]["cards"].pop_front()
             decks["Discarded"]["cards"].append(card)
             game.cards_to_select -= 1
+            game.current_step = steps.CHOOSE_ACTION_CARD
     refresh_gui()
         
         
@@ -314,6 +315,7 @@ func take_money2():
     if decks["Money2"]["cards"].size() > 0:
         var card = decks["Money2"]["cards"].pop_front()
         decks["Discarded"]["cards"].append(card)
+        game.current_step = steps.CHOOSE_ACTION_CARD
     
     
 func draw_cards(number_of_cards : int):
@@ -710,7 +712,16 @@ func assign_cards_to_decks():
     
     for deck_name in decks:
         print_deck_cards(deck_name, decks[deck_name])
-    
+        
+        
+func cheat_give_card(card_name):
+    var card = cards_by_name[card_name]
+    if card:
+        decks["PlayerHand"]["cards"].append(card)
+        game.current_phase = phases.ACTIONS
+        game.current_step = steps.CHOOSE_ACTION_CARD
+    else:
+        print("Card not found ", card_name)
         
 # UTILS #######################
 
@@ -763,6 +774,10 @@ func is_card_buyable(node: Node) -> bool:
     
 func sort_cards_by_cost(a, b):
     return a["cost_money"] < b["cost_money"]  # Ascending order
+    
+    
+func toggle_cheat_console():
+    get_node("GuiCheats").visible = not get_node("GuiCheats").visible
 
     
 # SIGNALS #####################
@@ -846,3 +861,36 @@ func _on_big_card_gui_input(event):
     if event is InputEventMouseButton and event.pressed:
         zoomed_card = false
         refresh_gui()
+
+
+func _input(event):
+    if Input.is_action_just_pressed("toggle_cheat_console"):
+        toggle_cheat_console()
+
+
+func _on_line_edit_text_submitted(new_text):
+    var parts = new_text.split(" ")
+    if parts.size() == 0:
+        return
+        
+    var command = parts[0]
+
+    match command:
+        "money":
+            if parts.size() > 1:
+                var amount = int(parts[1])
+                game.money += amount  # Assuming you have a singleton or a global accessible game object
+                print("Money adjusted by", amount)
+        "actions":
+            if parts.size() > 1:
+                var amount = int(parts[1])
+                game.actions += amount
+                print("Actions adjusted by", amount)
+        "give":
+            if parts.size() > 1:
+                cheat_give_card(new_text.replace("give ", ""))
+        _:
+            print("Unknown command")
+    
+    refresh_gui()
+

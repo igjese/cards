@@ -559,7 +559,22 @@ points = PackedVector2Array(-17, 777, -17, 351)
 width = 3.0
 default_color = Color(0.929412, 0.941176, 0.870588, 1)
 
+[node name="GuiCheats" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 18.0
+offset_right = 1055.0
+offset_bottom = 69.0
+
+[node name="LineEdit" type="LineEdit" parent="GuiCheats"]
+layout_mode = 0
+offset_right = 802.0
+offset_bottom = 31.0
+
 [connection signal="pressed" from="GuiHint/BtnHints" to="." method="_on_btn_hints_pressed"]
 [connection signal="gui_input" from="BigCard" to="." method="_on_big_card_gui_input"]
 [connection signal="pressed" from="GuiMain/BtnExit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="GuiMain/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
+[connection signal="text_submitted" from="GuiCheats/LineEdit" to="." method="_on_line_edit_text_submitted"]
