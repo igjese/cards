@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://hr756cx0syfv"]
+[gd_scene load_steps=11 format=3 uid="uid://hr756cx0syfv"]
 
 [ext_resource type="Script" path="res://card.gd" id="1_cbw46"]
 [ext_resource type="Texture2D" uid="uid://dvvs8bvvmd5rm" path="res://cards/default.png" id="2_6tvjx"]
 [ext_resource type="Texture2D" uid="uid://bkhg7vxs4yqsd" path="res://frame4.png" id="2_e0s3v"]
 [ext_resource type="FontFile" uid="uid://c2crqvwp2kqvd" path="res://Font Awesome 6 Free-Solid-900.otf" id="2_ohxj3"]
+[ext_resource type="Texture2D" uid="uid://bsj7bxupy5ay" path="res://glow.png" id="2_swwsu"]
+[ext_resource type="Script" path="res://Glow.gd" id="3_uflnf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pj3b"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -35,6 +37,12 @@ offset_right = 150.0
 offset_bottom = 150.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6pj3b")
 script = ExtResource("1_cbw46")
+
+[node name="Glow" type="Sprite2D" parent="."]
+position = Vector2(75.5, 74.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_swwsu")
+script = ExtResource("3_uflnf")
 
 [node name="CardVisual" type="Sprite2D" parent="."]
 visible = false

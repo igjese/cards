@@ -1,3 +1,4 @@
+Sprite2D
 LineEdit
 Control
 Line2D
@@ -6,4 +7,3 @@ Panel
 RichTextLabel
 TextureRect
 Button
-Sprite2D
