@@ -536,6 +536,7 @@ func refresh_cards(card_nodes: Array, deck_name: String):
         index += 1
         
     glow_valid_actions()
+    glow_valid_buys()
     
 
 func glow_valid_actions():
@@ -546,6 +547,18 @@ func glow_valid_actions():
             if card_slot["card"]:
                 if is_actioncard(card_slot["card"]):
                     card_slot["node"].get_node("Glow").visible = true  
+                    
+                    
+func glow_valid_buys():
+    for card_slot in decks:
+        if decks[card_slot]["node"]:
+            decks[card_slot]["node"].get_node("Glow").visible = false
+    if game.current_step == steps.BUY_CARDS:
+        for card_slot in decks:
+            if decks[card_slot]["node"]:
+                var card = top_card(decks[card_slot]["node"])
+                if is_card_buyable(decks[card_slot]["node"]) and card["cost_money"] <= game.money:
+                    decks[card_slot]["node"].get_node("Glow").visible = true
 
 
 func count_card_occurrences(cards: Array) -> Dictionary:
