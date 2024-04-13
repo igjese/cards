@@ -534,6 +534,18 @@ func refresh_cards(card_nodes: Array, deck_name: String):
         node_info["qty"] = card_counts[card_name]
         display_card_with_qty(node_info["node"], card_name, node_info["qty"])
         index += 1
+        
+    glow_valid_actions()
+    
+
+func glow_valid_actions():
+    for card_slot in player_hand:  
+        card_slot["node"].get_node("Glow").visible = false  
+    if game.current_step == steps.CHOOSE_ACTION_CARD:
+        for card_slot in player_hand:  
+            if card_slot["card"]:
+                if is_actioncard(card_slot["card"]):
+                    card_slot["node"].get_node("Glow").visible = true  
 
 
 func count_card_occurrences(cards: Array) -> Dictionary:

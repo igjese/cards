@@ -39,8 +39,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6pj3b")
 script = ExtResource("1_cbw46")
 
 [node name="Glow" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(75.5, 74.5)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.53, 0.53)
 texture = ExtResource("2_swwsu")
 script = ExtResource("3_uflnf")
 
