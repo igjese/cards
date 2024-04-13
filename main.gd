@@ -307,7 +307,8 @@ func take_card(node):
             var card = decks[deck]["cards"].pop_front()
             decks["Discarded"]["cards"].append(card)
             game.cards_to_select -= 1
-            game.current_step = steps.CHOOSE_ACTION_CARD
+            if game.cards_to_select == 0:
+                finish_current_action()
     refresh_gui()
         
         
@@ -315,7 +316,7 @@ func take_money2():
     if decks["Money2"]["cards"].size() > 0:
         var card = decks["Money2"]["cards"].pop_front()
         decks["Discarded"]["cards"].append(card)
-        game.current_step = steps.CHOOSE_ACTION_CARD
+        finish_current_action()
     
     
 func draw_cards(number_of_cards : int):
@@ -331,6 +332,8 @@ func trash_card(deck):
     decks["Trash"]["cards"].append(card)
     decks["PlayerHand"]["cards"].erase(card)
     game.cards_to_select -= 1
+    if game.cards_to_select == 0:
+        finish_current_action()
     refresh_gui()
     
     
@@ -340,6 +343,8 @@ func replace_card(deck):
     decks["PlayerHand"]["cards"].erase(card)
     game.cards_to_select -= 1
     draw_cards(1)
+    if game.cards_to_select == 0:
+        finish_current_action()
     refresh_gui()
     
     
@@ -778,7 +783,8 @@ func sort_cards_by_cost(a, b):
     
 func toggle_cheat_console():
     get_node("GuiCheats").visible = not get_node("GuiCheats").visible
-
+    if get_node("GuiCheats").visible:
+            get_node("GuiCheats/LineEdit").grab_focus()  
     
 # SIGNALS #####################
 
