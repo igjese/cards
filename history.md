@@ -96,7 +96,7 @@ It reached heights of up to 10 meters (33 feet) in some sections, while its base
 
 The Servian Reforms, traditionally attributed to King Servius Tullius (6th century BCE), fundamentally transformed Roman society by introducing a new system of citizenship based on wealth instead of lineage and reorganizing the military, laying the foundation for the Roman social and military structure for centuries.
 
-Reforms introduced a census, that categorized citizens into five social classes based on their wealth, determining not only social status but also tax and military obligations and voting rights in newly established Centuriate Assembly. This ensured that those with the most resources had a greater say in government decisions.
+Reforms introduced a census, that categorized citizens into five social classes based on their wealth, determining not only social status but also tax and military obligations and voting rights in newly established Centuriate Assembly.
 
 The Servian reforms also reorganized the Roman army into legions, comprised of units (centuries) levied from each class. The wealthiest citizens, equipped by their own means, formed the heavy infantry, while those of lesser means served as lighter troops or provided support services, ensuring a well-equipped and organized military force.
 
@@ -120,7 +120,7 @@ While dedicated at first year of the Republic in 509 BCE, it's construction bega
 
 Early Rome was an elective monarchy, ruled by a series of elected leaders. Tradition places the legendary Romulus as the very first king, but the historical record truly begins with his successors. The seventh and last king was Lucius Tarquinius Superbus, who usurped power and ruled as a tyrant, leading to his overthrow and the birth of the Roman Republic.
 
-When king died, Rome entered an interregnum. The Senate assumed control and initiated the search for a successor. Appointed Senator, the interrex, held a five-day term solely dedicated to nominating a candidate for king. By observing birds, priests sought the gods' approval, after which nominee needed to be confirmed by both the Senate and the Curiate Assembly, a citizen representative body.
+When king died, the Senate assumed control and appointed a Senator, the interrex, for a five-day term solely dedicated to nominating a candidate for king. By observing birds, priests sought the gods' approval, after which nominee needed to be confirmed by both the Senate and the Curiate Assembly, a citizen representative body.
 
 The Roman king acted as a military, civic and religious leader. He commanded the army in war and defense, his decrees held the power of law, and he functioned as the supreme judge in legal matters.
 
@@ -136,9 +136,9 @@ The culmination of the triumph occurred at the temple of Jupiter Optimus Maximus
 
 Pontifex Maximus, the highest priest of the College of Pontiffs (Collegium Pontificum), oversaw Rome's religious life. According to legend, the first Pontifex Maximus was Numa Pompilius, the wise and pious second king of Rome, who established many of the city's religious institutions.
 
-This prestigious position wasn't simply a position of religious authority - it wielded significant influence in Roman society. The Pontifex Maximus supervised the public religious ceremonies of the Roman state and interpreted religious omens, to discern the will of the gods and guide the course of action in critical situations. 
+This prestigious position wasn't simply a position of religious authority - it wielded significant influence in Roman society. The Pontifex Maximus supervised the public religious ceremonies of the Roman state and interpreted religious omens, to discern the will of the gods in critical situations. 
 
-Additionally, the Pontifex Maximus maintained the official calendar, marking religious festivals and determining auspicious days for public affairs. Moreover, he was the custodian of Rome's sacred records, which chronicled important events and religious pronouncements. He also possessed the power to veto certain actions deemed religiously unfavorable. 
+Additionally, the Pontifex Maximus maintained the official calendar, marking religious festivals and determining days for public affairs. He was the custodian of Rome's records, which chronicled important events and religious pronouncements. He also possessed the power to veto certain actions deemed religiously unfavorable. 
 
 ### Seven Kings
 
@@ -170,7 +170,7 @@ A powerful civilization, the Etruscans, flourished north of Rome in a region cal
 
 Trade with the Etruscans and their cultural influence were very important for early Rome. The Romans adopted Etruscan methods in urban planning and construction techniques. Several Roman kings were believed to be Etruscans. Moreover, Roman religion incorporated many Etruscan deities and rituals. However, the relationship between Etruscans and Romans wasn't solely cultural. 
 
-Etruscan city-states sometimes formed alliances with Rome, particularly against common enemies like the Gauls.  However, there were also periods of conflict. The Romans engaged in protracted wars against Etruscan cities like Fidenae and Veii. Over time, through a combination of warfare, alliances, and cultural integration, the Etruscans were gradually assimilated into the Roman world.
+Relationship between Rome and Etruscan city-states was complex, shifting between alliances against common foes like Gauls and periods of conflict, like protracted wars against cities like Fidenae nd Veii. Over time, a combination of warfare, alliances, and cultural integration, the Etruscans were gradually assimilated into the Roman world.
 
 ### Latin League
 
@@ -276,7 +276,7 @@ Religion was central to Roman life, and festivals were vibrant expressions of th
 
 One such festival was Saturnalia, celebrated on December 17th, which playfully reversed the social order. Masters and slaves feasted together, gambling and merriment replaced labor. People exchanged gifts, decorated their homes, and indulged in feasting, drinking, and games. 
 
-Festivals varied greatly in their organization, funding, and activities. Some, like the lavish Ludi Romani games, were heavily funded by the state and featured spectacular chariot races, theatrical performances, and animal hunts. Others, like the Caristia, were more personal, with families coming together to make offerings and visit the tombs of their deceased ancestors.
+Festivals varied in their organization and activities. Some, like the lavish Ludi Romani games, were heavily funded by the state and featured chariot races, theatrical performances, and animal hunts. Others, like the Caristia, were more personal, with families coming together to visit the tombs of their deceased ancestors.
 
 ### Private Schools
 
@@ -290,7 +290,7 @@ Although such private schools existed, established and funded by some wealthy fa
 
 While the Roman Republic and Empire are renowned for their vast territories, expansion during the Kingdom era (753-509 BCE) was modest. Rome established military outposts that weren't sprawling settlements like later colonies, but rather strategically placed outposts with a primarily defensive function.
 
-These early 'colonies' solidified Roman control over their expanding territory. They functioned as watchtowers and sentry points, alerting Rome of potential incursions. They were strategically positioned near valuable resources like mines or trade routes. Acting as relay stations, they transmitted messages and orders between the central authority and further-out regions.
+These early 'colonies' secured Roman control over their expanding territory. They were strategically positioned near valuable resources like mines or trade routes, alerting Rome of potential incursions. Acting as relay stations, they transmitted messages and orders between the central authority and further-out regions.
 
 Settlers, who were not professional soldiers, were responsible for patrolling, maintaining fortifications, and at least partially support themselves. The makeup have varied, likely including veterans with families (offered incentives, such as land) or volunteers seeking adventure or a fresh start.
 
