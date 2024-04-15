@@ -1,4 +1,4 @@
-# Texts for Cards - Kingdom Period
+# Card Texts - Kingdom Period
 
 ## Resources
 
