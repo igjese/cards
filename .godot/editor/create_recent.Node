@@ -1,9 +1,13 @@
+Control
+AudioStreamPlayer
+AudioStreamPlayer2D
+GridContainer
+RichTextLabel
+ColorRect
 Sprite2D
 LineEdit
-Control
 Line2D
 Label
 Panel
-RichTextLabel
 TextureRect
 Button

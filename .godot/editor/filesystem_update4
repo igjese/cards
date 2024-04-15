@@ -1,5 +1,5 @@
 res://default_env.tres
-res://card.tscn
 res://main.tscn
 res://main.gd
-res://Glow.gd
+res://card.tscn
+res://card.gd

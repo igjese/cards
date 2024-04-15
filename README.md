@@ -49,7 +49,7 @@ Decks are:
 - Treasure same-card decks (differ for each stage)
 - Player's deck of 10 cards (7 basic money and 3 basic army)
 
-Game loop:
+Game flow:
 1. Player draws five cards. When no cards are available, discarded cards are reshuffled and become new deck.
 2. Player can play action cards from his hand (1 by default) with immediate effect.
 3. At end of turn he must "overcome" a top history card. If successful, top history card is trashed. If not then top card from player's deck (or discarded deck) is trashed.
@@ -58,7 +58,96 @@ Game loop:
 
 When all victory cards (last cards in history deck) has been "overcome", player wins this stage.
 
-### Stage 1: Kingdom
+## Game Loops, Cues and Feedback
+
+###  New game: tips
+
+On screen tips when starting the game, uncovering one by one (other parts of the screen are hidden/blacked out):
+1. buy resources - and actions (deals these decks, audio effect)
+2. to improve your deck (deals players hand, audio effect)
+3. and overcome all events until victory (deals history deck, audio)
+
+### Progress - overall
+Cues: 
+- progress counter x/N on the history deck (current history card / total num of history cards)
+- game phase indicator for early history / late history / victory sequence (eg. screen border green, than yellow, then red)
+
+### Progress - current turn
+
+Cues:
+- history card should be indicating whether it has been overcome or not. E.g. red exclamation/warning icon jumping and wiggling, turns into green checkbox with audio cue
+- there should be clear indicator how many money/army more you need
+
+### What to do
+
+Cue: Hint text that wiggles (or something) whenever it changes, with audio cue
+
+### Playable actions
+
+Cues:
+- valid action cards should glow green when player should pick actions to play
+- it should be clear how many actions player CAN play
+
+### Buyable cards
+
+Cues:
+- valid buyable card should glow green when player should pick cards to buy 
+- it should be clear how much money player has available
+- it should be clear how many cards player CAN buy
+
+### Player drawing a card / Dealing cards
+
+Cues:
+- sound of dealing a card
+- animation: card going into its slot
+
+### Play action card
+
+Feedback:
+- animation, card moves in its slot
+- sound for card moving
+- Effects activated one by one: money, army, action, buy (sound + badge wiggling or popping)
+
+### New history card
+
+Feedback:
+- animation: card animation
+- challenge sound
+- effects activated (sound + badge animation)
+
+### More
+- Trash card
+- Discard card
+- Buy a card
+- Overcomming a challenge
+- New Turn
+
+## Unlocks
+
+Possible unlocks:
+- More levels
+- Cards: more powerful actions, special actions you "spend" once per game (more money/ army/ anything)
+- joker cards
+- more history cards
+
+How to unlock them:
+- win level
+- play level N times (eg. 1,2,3,5,8,13)
+- win with N extra money/army (total from all turns)
+- win with 0 failed challenges
+
+
+
+## Levels
+
+Five levels:
+1. Kingdom
+2. Early/mid republic
+3. Late republic
+4. Early empire
+5. mid/late empire
+
+### Level 1: Kingdom
 
 Cards are:
 

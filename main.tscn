@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=14 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://d3l55qqyb7lpb" path="res://cards/circus_maximus.png" id="4_fhk1j"]
 [ext_resource type="Texture2D" uid="uid://cej4t3y57b8qp" path="res://cards/vestal_virgins.png" id="5_uhjvt"]
 [ext_resource type="Texture2D" uid="uid://cwtm5tf51j8bj" path="res://big-frame.png" id="6_aqbqj"]
+[ext_resource type="AudioStream" uid="uid://qv27o858jm7s" path="res://sounds/take.wav" id="7_obd3t"]
+[ext_resource type="AudioStream" uid="uid://d1gtqtvq6aq4i" path="res://sounds/take_short.wav" id="8_475vp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tasj7"]
 bg_color = Color(0, 0, 0, 0.411765)
@@ -62,7 +64,7 @@ border_color = Color(0.929412, 0.941176, 0.870588, 1)
 use_parent_material = true
 script = ExtResource("1_emee8")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
 size_flags_horizontal = 3
@@ -70,89 +72,116 @@ size_flags_vertical = 3
 texture = ExtResource("2_v6s1k")
 expand_mode = 2
 
-[node name="CardMoney2" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 200.0
-offset_top = 100.0
-offset_right = 350.0
-offset_bottom = 250.0
+[node name="GuiIntro" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
-[node name="CardMoney1" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 200.0
-offset_top = 250.0
-offset_right = 350.0
-offset_bottom = 400.0
+[node name="StartDimmer" type="ColorRect" parent="GuiIntro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133333, 0.133333, 0.133333, 1)
 
-[node name="CardArmy2" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 50.0
-offset_top = 100.0
-offset_right = 200.0
-offset_bottom = 250.0
+[node name="IntroResources" type="RichTextLabel" parent="GuiIntro"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 410.0
+offset_right = 798.0
+offset_bottom = 506.0
+theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "Buy resources."
 
-[node name="CardArmy1" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 50.0
-offset_top = 250.0
-offset_right = 200.0
-offset_bottom = 400.0
+[node name="IntroActions" type="RichTextLabel" parent="GuiIntro"]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 410.0
+offset_right = 1066.0
+offset_bottom = 501.0
+theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "Buy actions."
 
-[node name="CardAction6" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 450.0
-offset_top = 100.0
-offset_right = 600.0
-offset_bottom = 250.0
+[node name="IntroHand" type="RichTextLabel" parent="GuiIntro"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 771.0
+offset_right = 1123.0
+offset_bottom = 866.0
+theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "Improve your deck."
 
-[node name="CardAction7" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 600.0
-offset_top = 100.0
-offset_right = 750.0
-offset_bottom = 250.0
+[node name="SlotsResources" type="GridContainer" parent="."]
+offset_left = 69.0
+offset_top = 101.0
+offset_right = 380.0
+offset_bottom = 411.0
+theme_override_constants/h_separation = 151
+theme_override_constants/v_separation = 151
+columns = 2
 
-[node name="CardAction8" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 750.0
-offset_top = 100.0
-offset_right = 900.0
-offset_bottom = 250.0
+[node name="CardArmy2" parent="SlotsResources" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardAction9" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 900.0
-offset_top = 100.0
-offset_right = 1050.0
-offset_bottom = 250.0
+[node name="CardMoney2" parent="SlotsResources" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardAction10" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 1050.0
-offset_top = 100.0
-offset_right = 1200.0
-offset_bottom = 250.0
+[node name="CardArmy1" parent="SlotsResources" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardAction1" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 450.0
-offset_top = 250.0
-offset_right = 600.0
-offset_bottom = 400.0
+[node name="CardMoney1" parent="SlotsResources" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardAction2" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 600.0
-offset_top = 250.0
-offset_right = 750.0
-offset_bottom = 400.0
+[node name="SlotsActions" type="GridContainer" parent="."]
+offset_left = 472.0
+offset_top = 105.0
+offset_right = 1235.0
+offset_bottom = 422.0
+theme_override_constants/h_separation = 151
+theme_override_constants/v_separation = 151
+columns = 5
 
-[node name="CardAction3" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 750.0
-offset_top = 250.0
-offset_right = 900.0
-offset_bottom = 400.0
+[node name="CardAction6" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardAction4" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 900.0
-offset_top = 250.0
-offset_right = 1050.0
-offset_bottom = 400.0
+[node name="CardAction7" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardAction5" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 1050.0
-offset_top = 250.0
-offset_right = 1200.0
-offset_bottom = 400.0
+[node name="CardAction8" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
+
+[node name="CardAction9" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
+
+[node name="CardAction10" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
+
+[node name="CardAction1" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
+
+[node name="CardAction2" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
+
+[node name="CardAction3" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
+
+[node name="CardAction4" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
+
+[node name="CardAction5" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
 [node name="CardHistory" parent="." instance=ExtResource("1_3bn2l")]
 offset_left = 137.0
@@ -160,166 +189,96 @@ offset_top = 460.0
 offset_right = 287.0
 offset_bottom = 610.0
 
-[node name="CardHand1" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 228.0
-offset_top = 750.0
-offset_right = 378.0
-offset_bottom = 900.0
+[node name="SlotsHand" type="GridContainer" parent="."]
+offset_left = 202.0
+offset_top = 751.0
+offset_right = 1268.0
+offset_bottom = 1024.0
+theme_override_constants/h_separation = 151
+theme_override_constants/v_separation = 120
+columns = 7
 
-[node name="CardHand2" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 395.0
-offset_top = 750.0
-offset_right = 545.0
-offset_bottom = 900.0
+[node name="CardHand1" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand3" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 562.0
-offset_top = 750.0
-offset_right = 712.0
-offset_bottom = 900.0
+[node name="CardHand2" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand4" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 726.0
-offset_top = 750.0
-offset_right = 876.0
-offset_bottom = 900.0
+[node name="CardHand3" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand5" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 889.0
-offset_top = 750.0
-offset_right = 1039.0
-offset_bottom = 900.0
+[node name="CardHand4" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand6" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 1051.0
-offset_top = 750.0
-offset_right = 1201.0
-offset_bottom = 900.0
+[node name="CardHand5" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand7" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 61.0
-offset_top = 750.0
-offset_right = 211.0
-offset_bottom = 900.0
+[node name="CardHand6" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand8" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 92.0
-offset_top = 880.0
-offset_right = 242.0
-offset_bottom = 1030.0
+[node name="CardHand7" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand9" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 257.0
-offset_top = 880.0
-offset_right = 407.0
-offset_bottom = 1030.0
+[node name="CardHand8" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand10" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 424.0
-offset_top = 880.0
-offset_right = 574.0
-offset_bottom = 1030.0
+[node name="CardHand9" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand11" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 592.0
-offset_top = 880.0
-offset_right = 742.0
-offset_bottom = 1030.0
+[node name="CardHand10" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand12" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 758.0
-offset_top = 880.0
-offset_right = 908.0
-offset_bottom = 1030.0
+[node name="CardHand11" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand13" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 923.0
-offset_top = 880.0
-offset_right = 1073.0
-offset_bottom = 1030.0
+[node name="CardHand12" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardHand14" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 1085.0
-offset_top = 880.0
-offset_right = 1235.0
-offset_bottom = 1030.0
+[node name="CardHand13" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardTable1" parent="." instance=ExtResource("1_3bn2l")]
+[node name="CardHand14" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
+
+[node name="SlotsTable" type="GridContainer" parent="."]
 visible = false
-offset_left = 407.0
-offset_top = 425.0
-offset_right = 557.0
-offset_bottom = 575.0
+offset_left = 435.0
+offset_top = 429.0
+offset_right = 1209.0
+offset_bottom = 742.0
+theme_override_constants/h_separation = 151
+theme_override_constants/v_separation = 151
+columns = 5
 
-[node name="CardTable2" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
-offset_left = 557.0
-offset_top = 425.0
-offset_right = 707.0
-offset_bottom = 575.0
+[node name="CardTable1" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardTable3" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
-offset_left = 707.0
-offset_top = 425.0
-offset_right = 857.0
-offset_bottom = 575.0
+[node name="CardTable2" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardTable4" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
-offset_left = 857.0
-offset_top = 425.0
-offset_right = 1007.0
-offset_bottom = 575.0
+[node name="CardTable3" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardTable5" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
-offset_left = 1007.0
-offset_top = 425.0
-offset_right = 1157.0
-offset_bottom = 575.0
+[node name="CardTable4" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardTable6" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
-offset_left = 407.0
-offset_top = 575.0
-offset_right = 557.0
-offset_bottom = 725.0
+[node name="CardTable5" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardTable7" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
-offset_left = 557.0
-offset_top = 575.0
-offset_right = 707.0
-offset_bottom = 725.0
+[node name="CardTable6" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardTable8" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
-offset_left = 707.0
-offset_top = 575.0
-offset_right = 857.0
-offset_bottom = 725.0
+[node name="CardTable7" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardTable9" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
-offset_left = 857.0
-offset_top = 575.0
-offset_right = 1007.0
-offset_bottom = 725.0
+[node name="CardTable8" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="CardTable10" parent="." instance=ExtResource("1_3bn2l")]
-visible = false
-offset_left = 1007.0
-offset_top = 575.0
-offset_right = 1157.0
-offset_bottom = 725.0
+[node name="CardTable9" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
-[node name="Panel2" type="Panel" parent="."]
-offset_left = 2.0
-offset_top = 1032.0
-offset_right = 495.0
-offset_bottom = 1064.0
-scale = Vector2(2.56208, 1.49076)
+[node name="CardTable10" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+layout_mode = 2
 
 [node name="GuiStatus" type="Control" parent="."]
 layout_mode = 3
@@ -338,7 +297,16 @@ offset_bottom = 42.0
 theme_override_font_sizes/normal_font_size = 24
 text = "Turn 1 - "
 
+[node name="Panel2" type="Panel" parent="GuiStatus"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -1.0
+offset_right = 449.0
+offset_bottom = 31.0
+scale = Vector2(2.56208, 1.49076)
+
 [node name="GuiHint" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 77.0
@@ -503,7 +471,7 @@ offset_left = -4.0
 offset_top = 961.0
 offset_right = 619.0
 offset_bottom = 1007.0
-text = "New Game"
+text = "Restart Game"
 
 [node name="GameTitle" type="RichTextLabel" parent="GuiMain"]
 layout_mode = 0
@@ -572,6 +540,12 @@ offset_bottom = 69.0
 layout_mode = 0
 offset_right = 802.0
 offset_bottom = 31.0
+
+[node name="SoundTake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_obd3t")
+
+[node name="SoundTakeShort" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_475vp")
 
 [connection signal="pressed" from="GuiHint/BtnHints" to="." method="_on_btn_hints_pressed"]
 [connection signal="gui_input" from="BigCard" to="." method="_on_big_card_gui_input"]

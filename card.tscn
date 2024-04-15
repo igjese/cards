@@ -38,20 +38,28 @@ offset_bottom = 150.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6pj3b")
 script = ExtResource("1_cbw46")
 
-[node name="Glow" type="Sprite2D" parent="."]
+[node name="View" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Glow" type="Sprite2D" parent="View"]
 visible = false
 position = Vector2(75.5, 74.5)
 scale = Vector2(0.53, 0.53)
 texture = ExtResource("2_swwsu")
 script = ExtResource("3_uflnf")
 
-[node name="CardVisual" type="Sprite2D" parent="."]
+[node name="CardVisual" type="Sprite2D" parent="View"]
 visible = false
 position = Vector2(49.875, 62.75)
 scale = Vector2(0.092041, 0.0678711)
 texture = SubResource("CompressedTexture2D_yp1jo")
 
-[node name="MainVisual" type="TextureRect" parent="."]
+[node name="MainVisual" type="TextureRect" parent="View"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 44.0
@@ -61,7 +69,7 @@ mouse_filter = 2
 texture = ExtResource("2_6tvjx")
 expand_mode = 1
 
-[node name="CardEffect" type="RichTextLabel" parent="."]
+[node name="CardEffect" type="RichTextLabel" parent="View"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 47.0
@@ -75,7 +83,7 @@ theme_override_fonts/normal_font = ExtResource("2_ohxj3")
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 
-[node name="CardCost" type="RichTextLabel" parent="."]
+[node name="CardCost" type="RichTextLabel" parent="View"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 132.0
@@ -89,12 +97,12 @@ theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "a b c"
 
-[node name="CardFrame" type="Sprite2D" parent="."]
+[node name="CardFrame" type="Sprite2D" parent="View"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_e0s3v")
 offset = Vector2(50, 50)
 
-[node name="CardTitle" type="RichTextLabel" parent="."]
+[node name="CardTitle" type="RichTextLabel" parent="View"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 8.0
@@ -107,14 +115,11 @@ bbcode_enabled = true
 text = "[center]Card"
 scroll_active = false
 
-[node name="CardQty" type="Label" parent="."]
+[node name="CardQty" type="Label" parent="View"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -23.0
+offset_left = 127.0
+offset_right = 150.0
 offset_bottom = 26.0
-grow_horizontal = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 18
@@ -123,12 +128,12 @@ text = "9"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CardCost2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 121.0
-offset_right = 34.0
-offset_bottom = 151.0
+[node name="CardCost2" type="Label" parent="View"]
+layout_mode = 1
+offset_left = 7.0
+offset_top = 120.0
+offset_right = 37.0
+offset_bottom = 150.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2

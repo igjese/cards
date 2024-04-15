@@ -1,21 +1,22 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712993469
+::res://::1713191160
 big-frame.png::CompressedTexture2D::6357002289546268951::1712572362::1712572401::1::::<><>::
-card.gd::GDScript::-1::1712585781::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1712991711::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf
+card.gd::GDScript::-1::1713184203::0::1::::<>Panel<>::
+card.tscn::PackedScene::528414477263538463::1713191157::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf<>uid://bsj7bxupy5ay::::res://glow.png<>res://Glow.gd
 cards.csv::::-1::1712666879::1709642895::1::::<><>::
-default_env.tres::Environment::3535254983394503347::1712991713::0::1::::<><>::
+default_env.tres::Environment::3535254983394503347::1713191160::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1712959487::0::1::::<><>::
 Font Awesome 6 Free-Solid-900.otf::FontFile::6673130800394779117::1709681289::1709681290::1::::<><>::
 frame4.png::CompressedTexture2D::3103182351091807159::1709679922::1709679922::1::::<><>::
+Glow.gd::GDScript::-1::1712995351::0::1::::<>Sprite2D<>::
 glow.png::CompressedTexture2D::107951330534546432::1712993458::1712993475::1::::<><>::
-history.md::TextFile::-1::1712952020::0::1::::<><>::
+history.md::TextFile::-1::1712998376::0::1::::<><>::
 icon-default.png::CompressedTexture2D::4979239282887764350::1709536140::1712958445::1::::<><>::
 icon.png::CompressedTexture2D::8812027128366769566::1712957133::1712958447::1::::<><>::
 karte-720.png::CompressedTexture2D::5028525007727685489::1709683078::1709683082::1::::<><>::
-main.gd::GDScript::-1::1712991708::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1712991712::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://big-frame.png
-README.md::TextFile::-1::1712768281::0::1::::<><>::
+main.gd::GDScript::-1::1713190755::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1713191159::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://big-frame.png<>uid://qv27o858jm7s::::res://sounds/take.wav
+README.md::TextFile::-1::1713125651::0::1::::<><>::
 README_old.md::TextFile::-1::1711716754::0::1::::<><>::
 ::res://cards/::1711951882
 aes_rude.png::CompressedTexture2D::8428654054505454976::1711734212::1711734339::1::::<><>::
@@ -67,3 +68,8 @@ temple_of_jupiter.png::CompressedTexture2D::6588175815078526569::1711746745::171
 tyrant_exile.png::CompressedTexture2D::106510851822570084::1711835365::1711836231::1::::<><>::
 urban_prefect.png::CompressedTexture2D::3056612814022303616::1711830112::1711830145::1::::<><>::
 vestal_virgins.png::CompressedTexture2D::5073972373734303611::1711750065::1711778590::1::::<><>::
+::res://sounds/::1713191549
+deal.wav::AudioStreamWAV::6254326339581035427::1713166450::1713166842::1::::<><>::
+sounds.txt::TextFile::-1::1713166590::0::1::::<><>::
+take.wav::AudioStreamWAV::1168070722966402906::1713190996::1713191140::1::::<><>::
+take_short.wav::AudioStreamWAV::8997741478910503122::1713191549::1713191590::1::::<><>::
