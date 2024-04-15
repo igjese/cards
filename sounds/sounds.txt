@@ -1,21 +1,5 @@
-ok, now I want that starting a game introduces basic concepts to player, in animated "steps" like this:
-1. resource cards are being dealt, while sound effect is being played, and text is displayed under them "Buy resources"
-2. action cards are being dealt, with sound effect, and text is added " and actions..."
-3. player's hand is being dealt, with sound effect, and new text is added "... to improve your deck"
-
-how do I do that? overall approach and step1 details should be quite enough for the moment
 
 
-What I'm thinking:
+https://freesound.org/people/Hybrid_V/sounds/319590/
 
-I have enum with states START1,START2,START3
-
-new_game should set state to START1 and call deal_resources()
-
-deal_resources() should prepare array of cards to be dealt, call deal_card() for each, and when all are dealt move state to START2
-
-deal_card() should show animation and play sound, when done call refresh_all()
-
-refresh_all() should hide/show elements based on state
-
-something like that?
+https://freesound.org/people/dersuperanton/sounds/434472/

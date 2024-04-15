@@ -1,13 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=17 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
 [ext_resource type="Texture2D" uid="uid://cdv4cpp1h28qf" path="res://karte-720.png" id="2_v6s1k"]
+[ext_resource type="Texture2D" uid="uid://bsj7bxupy5ay" path="res://glow.png" id="3_c5sne"]
 [ext_resource type="Texture2D" uid="uid://d3l55qqyb7lpb" path="res://cards/circus_maximus.png" id="4_fhk1j"]
+[ext_resource type="Script" path="res://Glow.gd" id="4_v8w0h"]
 [ext_resource type="Texture2D" uid="uid://cej4t3y57b8qp" path="res://cards/vestal_virgins.png" id="5_uhjvt"]
 [ext_resource type="Texture2D" uid="uid://cwtm5tf51j8bj" path="res://big-frame.png" id="6_aqbqj"]
 [ext_resource type="AudioStream" uid="uid://qv27o858jm7s" path="res://sounds/take.wav" id="7_obd3t"]
 [ext_resource type="AudioStream" uid="uid://d1gtqtvq6aq4i" path="res://sounds/take_short.wav" id="8_475vp"]
+[ext_resource type="AudioStream" uid="uid://cs6h2tb325o41" path="res://sounds/clang.wav" id="8_o11d2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tasj7"]
 bg_color = Color(0, 0, 0, 0.411765)
@@ -122,6 +125,41 @@ theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 60
 bbcode_enabled = true
 text = "Improve your deck."
+
+[node name="IntroHistory" type="RichTextLabel" parent="GuiIntro"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 493.0
+offset_right = 981.0
+offset_bottom = 588.0
+theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "Overcome challenges!"
+
+[node name="IntroStartGame" type="Control" parent="GuiIntro"]
+anchors_preset = 0
+offset_left = 1065.0
+offset_top = 494.0
+offset_right = 1477.0
+offset_bottom = 583.0
+
+[node name="Glow" type="Sprite2D" parent="GuiIntro/IntroStartGame"]
+position = Vector2(206, 42.5)
+scale = Vector2(1.41401, 0.398089)
+texture = ExtResource("3_c5sne")
+script = ExtResource("4_v8w0h")
+
+[node name="BtnStartGame" type="Button" parent="GuiIntro/IntroStartGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 55
+text = "Start Game"
 
 [node name="SlotsResources" type="GridContainer" parent="."]
 offset_left = 69.0
@@ -543,6 +581,9 @@ offset_bottom = 31.0
 
 [node name="SoundTake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_obd3t")
+
+[node name="SoundClang" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_o11d2")
 
 [node name="SoundTakeShort" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_475vp")

@@ -34,7 +34,7 @@ var gui_main = null
 var gui_status = null
 
 enum phases { INTRO, SETUP, HISTORY, ACTIONS, BUYS, CLEANUP, VICTORY }
-enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION, REPLACE, UPGRADE_CARD, DISCARD, VICTORY, INTRO1, INTRO2, INTRO3}
+enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION, REPLACE, UPGRADE_CARD, DISCARD, VICTORY, INTRO1, INTRO2, INTRO3, INTRO4, INTRO5}
 
 var hints = {
     steps.NONE: ["", ""],
@@ -121,7 +121,35 @@ func restart_game():
     game.current_step = steps.INTRO3
     await get_tree().create_timer(1).timeout 
     await prepare_hand()
-    #prepare_history()
+    
+    game.current_step = steps.INTRO4
+    await get_tree().create_timer(1).timeout 
+    await prepare_history()
+    
+    game.current_step = steps.INTRO5
+    await get_tree().create_timer(1).timeout 
+    $SoundClang.play()
+    refresh_all()
+    
+    
+func prepare_history():
+    var victory_cards = []
+    for card in cards_raw:
+        var deck_key = card["type"]
+        if deck_key == "History":
+            decks[deck_key]["cards"].append(card)
+        elif deck_key in ["Victory1","Victory2","Victory3"]:
+            victory_cards.append(card)
+            
+    decks["History"]["cards"].shuffle()
+    decks["History"]["cards"].append(victory_cards[0])
+    decks["History"]["cards"].append(victory_cards[1])
+    decks["History"]["cards"].append(victory_cards[2])
+    
+    $SoundTake.pitch_scale = randf_range(0.95, 1.05)
+    $SoundTake.play()
+    await get_tree().create_timer(0.5).timeout 
+    refresh_all()
     
 
 func prepare_hand():
@@ -149,7 +177,6 @@ func deal_hand():
     
     
 func refresh_all():
-    get_node("CardHistory").visible = false
     get_node("SlotsTable").visible = false
     get_node("GuiHint").visible = false
     get_node("GuiMain").visible = false
@@ -159,7 +186,22 @@ func refresh_all():
     refresh_resources()
     refresh_actions()
     refresh_cards(player_hand, "PlayerHand")
+    refresh_challenges()
     
+    
+func refresh_challenges():
+    var node = decks["History"]["node"]
+    if game.current_step not in [steps.INTRO1, steps.INTRO2, steps.INTRO3]:
+        var deck = decks["History"]["cards"]
+        if deck.size() > 0:
+            var card = deck[0]
+            display_card_with_qty(node, card["name"],deck.size())
+            node.visible = true
+        else:
+            node.visible = false
+    else:
+        node.visible = false
+
     
 func deal_actions():
     var all_actions = []
@@ -195,10 +237,13 @@ func refresh_actions():
     
     
 func refresh_intro():
+    get_node("GuiIntro/IntroResources").visible = false
+    get_node("GuiIntro/IntroActions").visible = false
+    get_node("GuiIntro/IntroHand").visible = false
+    get_node("GuiIntro/IntroHistory").visible = false
+    get_node("GuiIntro/IntroStartGame").visible = false
+    
     if game.current_phase == phases.INTRO:
-        get_node("GuiIntro/IntroResources").visible = false
-        get_node("GuiIntro/IntroActions").visible = false
-        get_node("GuiIntro/IntroHand").visible = false
         get_node("GuiIntro").visible = true
         match game.current_step:
             steps.INTRO1:
@@ -210,6 +255,11 @@ func refresh_intro():
                 get_node("GuiIntro/IntroResources").visible = true
                 get_node("GuiIntro/IntroActions").visible = true
                 get_node("GuiIntro/IntroHand").visible = true
+            steps.INTRO4:
+                get_node("GuiIntro/IntroHistory").visible = true
+            steps.INTRO5:
+                get_node("GuiIntro/IntroHistory").visible = true
+                get_node("GuiIntro/IntroStartGame").visible = true
     else:
         get_node("GuiIntro").visible = false
     

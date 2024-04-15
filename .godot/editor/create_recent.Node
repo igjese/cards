@@ -1,10 +1,10 @@
 Control
+Sprite2D
 AudioStreamPlayer
 AudioStreamPlayer2D
 GridContainer
 RichTextLabel
 ColorRect
-Sprite2D
 LineEdit
 Line2D
 Label
