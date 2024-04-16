@@ -219,6 +219,8 @@ func refresh_challenges():
         if deck.size() > 0:
             var card = deck[0]
             display_card_with_qty(node, card["name"],deck.size())
+            node.get_node("View/Glow").modulate = Color(1,0,0,1)
+            node.get_node("View/Glow").visible = true  
             node.visible = true
         else:
             node.visible = false
