@@ -33,8 +33,8 @@ var table_cards = []
 var gui_main = null
 var gui_status = null
 
-enum phases { INTRO, SETUP, HISTORY, ACTIONS, BUYS, CLEANUP, VICTORY }
-enum steps { NONE, CHOOSE_ACTION_CARD , PLAY_RESOURCES, BUY_CARDS, TRASH, TAKE, DOUBLE_ACTION, REPLACE, UPGRADE_CARD, DISCARD, VICTORY, INTRO1, INTRO2, INTRO3, INTRO4, INTRO5}
+var steps = Game.steps
+var phases = Game.phases
 
 var hints = {
     steps.NONE: ["", ""],
@@ -75,20 +75,8 @@ var double_action = null
 var double_action2 = false
 
 var zoomed_card = false
-
-class Game:
-    var current_phase = phases.INTRO
-    var current_step = steps.INTRO1
-    var turn = 0
-    var money = 0
-    var army = 0
-    var actions = 1
-    var buys = 1
-    var cards_to_select = 0
-    var max_cost = 0
-    var showcase_card = null
     
-var game : Game = null
+var game = Game
 
 
 # INIT #########################
@@ -201,7 +189,7 @@ func refresh_all():
         get_node("GuiMain").visible = false
         get_node("GuiStatus").visible = false
         
-        refresh_intro()
+        $GuiIntro.refresh_intro()
         refresh_resources()
         refresh_actions()
         refresh_cards(player_hand, "PlayerHand")
@@ -261,32 +249,7 @@ func refresh_actions():
             node.get_node("View").visible = false
     
     
-func refresh_intro():
-    get_node("GuiIntro/IntroResources").visible = false
-    get_node("GuiIntro/IntroActions").visible = false
-    get_node("GuiIntro/IntroHand").visible = false
-    get_node("GuiIntro/IntroHistory").visible = false
-    get_node("GuiIntro/IntroStartGame").visible = false
-    
-    if game.current_phase == phases.INTRO:
-        get_node("GuiIntro").visible = true
-        match game.current_step:
-            steps.INTRO1:
-                get_node("GuiIntro/IntroResources").visible = true
-            steps.INTRO2:
-                get_node("GuiIntro/IntroResources").visible = true
-                get_node("GuiIntro/IntroActions").visible = true
-            steps.INTRO3:
-                get_node("GuiIntro/IntroResources").visible = true
-                get_node("GuiIntro/IntroActions").visible = true
-                get_node("GuiIntro/IntroHand").visible = true
-            steps.INTRO4:
-                get_node("GuiIntro/IntroHistory").visible = true
-            steps.INTRO5:
-                get_node("GuiIntro/IntroHistory").visible = true
-                get_node("GuiIntro/IntroStartGame").visible = true
-    else:
-        get_node("GuiIntro").visible = false
+
     
     
 func refresh_resources():
@@ -620,7 +583,6 @@ func discard(deck):
 # FUNCTIONS  ###################
 
 func init():
-    game = Game.new()
     load_card_definitions_from_csv()
     load_history_texts_from_md()
     assign_decks_to_nodes()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=23 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
 [ext_resource type="Texture2D" uid="uid://cdv4cpp1h28qf" path="res://visuals/karte-720.png" id="2_v6s1k"]
+[ext_resource type="Script" path="res://GuiIntro.gd" id="3_4esxl"]
 [ext_resource type="Script" path="res://IntroDimmer.gd" id="3_dfnqq"]
 [ext_resource type="Texture2D" uid="uid://d3l55qqyb7lpb" path="res://cards/circus_maximus.png" id="4_fhk1j"]
 [ext_resource type="Texture2D" uid="uid://8lcklr3vdfsn" path="res://visuals/glow-white.png" id="4_nhc5f"]
@@ -86,6 +87,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+script = ExtResource("3_4esxl")
 
 [node name="IntroDimmer" type="ColorRect" parent="GuiIntro"]
 layout_mode = 1

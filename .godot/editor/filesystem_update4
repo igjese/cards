@@ -4,3 +4,5 @@ res://main.tscn
 res://IntroDimmer.gd
 res://main.gd
 res://sounds/sounds.txt
+res://GuiIntro.gd
+res://Game.gd
