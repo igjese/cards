@@ -786,6 +786,7 @@ func glow_valid_actions():
         for card_slot in player_hand:  
             if card_slot["card"]:
                 if is_actioncard(card_slot["card"]):
+                    card_slot["node"].get_node("View/Glow").modulate = Color(0,1,0,1)
                     card_slot["node"].get_node("View/Glow").visible = true  
                     
                     
@@ -798,6 +799,7 @@ func glow_valid_buys():
             if decks[card_slot]["node"]:
                 var card = top_card(decks[card_slot]["node"])
                 if is_card_buyable(decks[card_slot]["node"]) and card["cost_money"] <= game.money:
+                    card_slot["node"].get_node("View/Glow").modulate = Color(0,1,0,1)
                     decks[card_slot]["node"].get_node("View/Glow").visible = true
 
 

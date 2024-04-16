@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdv4cpp1h28qf"
-path="res://.godot/imported/karte-720.png-d579338c9055c62e864826174811b738.ctex"
+uid="uid://cwtm5tf51j8bj"
+path="res://.godot/imported/big-frame.png-90702aa41d092f6d074f4ca114cd7557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karte-720.png"
-dest_files=["res://.godot/imported/karte-720.png-d579338c9055c62e864826174811b738.ctex"]
+source_file="res://visuals/big-frame.png"
+dest_files=["res://.godot/imported/big-frame.png-90702aa41d092f6d074f4ca114cd7557.ctex"]
 
 [params]
 

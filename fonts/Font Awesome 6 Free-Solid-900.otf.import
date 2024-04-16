@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c2crqvwp2kqvd"
-path="res://.godot/imported/Font Awesome 6 Free-Solid-900.otf-c20290c97432fc40ef139fb896114396.fontdata"
+path="res://.godot/imported/Font Awesome 6 Free-Solid-900.otf-2adbe023d75eded3b35e778bd3d04730.fontdata"
 
 [deps]
 
-source_file="res://Font Awesome 6 Free-Solid-900.otf"
-dest_files=["res://.godot/imported/Font Awesome 6 Free-Solid-900.otf-c20290c97432fc40ef139fb896114396.fontdata"]
+source_file="res://fonts/Font Awesome 6 Free-Solid-900.otf"
+dest_files=["res://.godot/imported/Font Awesome 6 Free-Solid-900.otf-2adbe023d75eded3b35e778bd3d04730.fontdata"]
 
 [params]
 

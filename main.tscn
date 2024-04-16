@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
-[ext_resource type="Texture2D" uid="uid://cdv4cpp1h28qf" path="res://karte-720.png" id="2_v6s1k"]
-[ext_resource type="Texture2D" uid="uid://bsj7bxupy5ay" path="res://glow.png" id="3_c5sne"]
+[ext_resource type="Texture2D" uid="uid://cdv4cpp1h28qf" path="res://visuals/karte-720.png" id="2_v6s1k"]
 [ext_resource type="Script" path="res://IntroDimmer.gd" id="3_dfnqq"]
 [ext_resource type="Texture2D" uid="uid://d3l55qqyb7lpb" path="res://cards/circus_maximus.png" id="4_fhk1j"]
+[ext_resource type="Texture2D" uid="uid://8lcklr3vdfsn" path="res://visuals/glow-white.png" id="4_nhc5f"]
 [ext_resource type="Script" path="res://Glow.gd" id="4_v8w0h"]
 [ext_resource type="Texture2D" uid="uid://cej4t3y57b8qp" path="res://cards/vestal_virgins.png" id="5_uhjvt"]
-[ext_resource type="Texture2D" uid="uid://cwtm5tf51j8bj" path="res://big-frame.png" id="6_aqbqj"]
+[ext_resource type="Texture2D" uid="uid://cwtm5tf51j8bj" path="res://visuals/big-frame.png" id="6_aqbqj"]
 [ext_resource type="AudioStream" uid="uid://qv27o858jm7s" path="res://sounds/take.wav" id="7_obd3t"]
 [ext_resource type="AudioStream" uid="uid://d1gtqtvq6aq4i" path="res://sounds/take_short.wav" id="8_475vp"]
 [ext_resource type="AudioStream" uid="uid://cs6h2tb325o41" path="res://sounds/clang.wav" id="8_o11d2"]
@@ -81,6 +81,7 @@ texture = ExtResource("2_v6s1k")
 expand_mode = 2
 
 [node name="GuiIntro" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
@@ -152,9 +153,10 @@ offset_right = 1477.0
 offset_bottom = 583.0
 
 [node name="Glow" type="Sprite2D" parent="GuiIntro/IntroStartGame"]
+modulate = Color(0, 1, 0, 1)
 position = Vector2(206, 42.5)
 scale = Vector2(1.41401, 0.398089)
-texture = ExtResource("3_c5sne")
+texture = ExtResource("4_nhc5f")
 script = ExtResource("4_v8w0h")
 
 [node name="BtnStartGame" type="Button" parent="GuiIntro/IntroStartGame"]
