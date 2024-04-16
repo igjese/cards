@@ -95,19 +95,35 @@ var game : Game = null
 
 func _ready():
     init()
+    print_scene_tree(get_tree().get_root())
     new_game()
 
 
 # GAME LOGIC ###################
 
 func new_game():
-    restart_game()
+    start_intro()
     #prepare_decks()
     game.turn = 0
     #new_turn()
     
     
-func restart_game():
+func start_playing():
+    game.current_phase = phases.SETUP
+    game.current_step = steps.NONE
+    double_action = null
+    game.money = 0
+    game.army = 0
+    game.actions = 1
+    game.buys = 1
+    game.turn += 1
+    refresh_all()
+    game.current_phase = phases.HISTORY
+    game.showcase_card = top_card(decks["History"]["node"])
+    play_action_card(top_card(decks["History"]["node"]))
+    refresh_all()
+    
+func start_intro():
     game.current_phase = phases.INTRO
     game.current_step = steps.INTRO1
     refresh_all()
@@ -146,8 +162,10 @@ func prepare_history():
     decks["History"]["cards"].append(victory_cards[1])
     decks["History"]["cards"].append(victory_cards[2])
     
-    $SoundTake.pitch_scale = randf_range(0.95, 1.05)
-    $SoundTake.play()
+
+    $SoundDealSoft.play()
+    await get_tree().create_timer(0.9).timeout 
+    $SoundTurn.play()
     await get_tree().create_timer(0.5).timeout 
     refresh_all()
     
@@ -177,17 +195,22 @@ func deal_hand():
     
     
 func refresh_all():
-    get_node("SlotsTable").visible = false
-    get_node("GuiHint").visible = false
-    get_node("GuiMain").visible = false
-    get_node("GuiStatus").visible = false
-    
-    refresh_intro()
-    refresh_resources()
-    refresh_actions()
-    refresh_cards(player_hand, "PlayerHand")
-    refresh_challenges()
-    
+    if game.current_phase == phases.INTRO:
+        get_node("SlotsTable").visible = false
+        get_node("GuiHint").visible = false
+        get_node("GuiMain").visible = false
+        get_node("GuiStatus").visible = false
+        
+        refresh_intro()
+        refresh_resources()
+        refresh_actions()
+        refresh_cards(player_hand, "PlayerHand")
+        refresh_challenges()
+    else:
+        get_node("GuiIntro").visible = false
+        get_node("GuiMain").visible = true
+        get_node("GuiStatus").visible = true
+        refresh_gui()
     
 func refresh_challenges():
     var node = decks["History"]["node"]
@@ -219,7 +242,7 @@ func deal_actions():
     for i in range(10):
         for j in range(5):
             deal_card(selected_actions[i], decks["Action" + str(i+1)])
-            await get_tree().create_timer(0.15).timeout # Wait for 100ms 
+            await get_tree().create_timer(0.12).timeout # Wait for 100ms 
             refresh_all()
 
 
@@ -298,14 +321,14 @@ func deal_resources():
     for i in range(20):  # Process 20 cards
         var card = resource_cards.pop_front()
         deal_card(card, decks[card["type"]])
-        await get_tree().create_timer(0.12).timeout # Wait for 100ms 
+        await get_tree().create_timer(0.1).timeout # Wait for 100ms 
         refresh_all()
         
         
 func deal_card(card, slot):
     slot["cards"].append(card)
-    $SoundTakeShort.pitch_scale = randf_range(0.95, 1.05)
-    $SoundTakeShort.play()
+    $SoundPlace.pitch_scale = randf_range(0.95, 1.05)
+    $SoundPlace.play()
     
 
 func get_slot_for_type(card_type):
@@ -1027,6 +1050,21 @@ func toggle_cheat_console():
     get_node("GuiCheats").visible = not get_node("GuiCheats").visible
     if get_node("GuiCheats").visible:
             get_node("GuiCheats/LineEdit").grab_focus()  
+            
+            
+func print_scene_tree(node: Node, indent: int = 0):
+    # Generate indentation string
+    var indents = "    ".repeat(indent)
+    # Print current node's information
+    if node is Panel and node.script and node.script.resource_path == "res://card.gd":
+        print("%s- %s [Card Scene Instance]" % [indents, node.name])
+    else:
+        # Print the node normally
+        print("%s- %s (%s)" % [indents, node.name, node.get_class()])
+        # Recurse for each child
+        for child in node.get_children():
+            print_scene_tree(child, indent + 1)
+
     
 # SIGNALS #####################
 
@@ -1142,3 +1180,9 @@ func _on_line_edit_text_submitted(new_text):
     
     refresh_gui()
 
+
+
+func _on_btn_start_game_pressed():
+    $GuiIntro/IntroDimmer.start_fade() 
+    await get_tree().create_timer(1.0).timeout  # Wait for 1 second
+    start_playing()

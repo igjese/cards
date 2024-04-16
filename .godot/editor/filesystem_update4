@@ -1,5 +1,6 @@
 res://default_env.tres
-res://main.tscn
-res://main.gd
 res://card.tscn
-res://card.gd
+res://main.tscn
+res://IntroDimmer.gd
+res://main.gd
+res://sounds/sounds.txt

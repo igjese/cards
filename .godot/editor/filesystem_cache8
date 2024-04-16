@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713195003
+::res://::1713261409
 big-frame.png::CompressedTexture2D::6357002289546268951::1712572362::1712572401::1::::<><>::
 card.gd::GDScript::-1::1713184203::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1713194838::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf<>uid://bsj7bxupy5ay::::res://glow.png<>res://Glow.gd
+card.tscn::PackedScene::528414477263538463::1713261408::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://frame4.png<>uid://c2crqvwp2kqvd::::res://Font Awesome 6 Free-Solid-900.otf<>uid://bsj7bxupy5ay::::res://glow.png<>res://Glow.gd
 cards.csv::::-1::1712666879::1709642895::1::::<><>::
-default_env.tres::Environment::3535254983394503347::1713195003::0::1::::<><>::
+default_env.tres::Environment::3535254983394503347::1713261409::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1712959487::0::1::::<><>::
 Font Awesome 6 Free-Solid-900.otf::FontFile::6673130800394779117::1709681289::1709681290::1::::<><>::
 frame4.png::CompressedTexture2D::3103182351091807159::1709679922::1709679922::1::::<><>::
@@ -13,9 +13,10 @@ glow.png::CompressedTexture2D::107951330534546432::1712993458::1712993475::1::::
 history.md::TextFile::-1::1713193330::0::1::::<><>::
 icon-default.png::CompressedTexture2D::4979239282887764350::1709536140::1712958445::1::::<><>::
 icon.png::CompressedTexture2D::8812027128366769566::1712957133::1712958447::1::::<><>::
+IntroDimmer.gd::GDScript::-1::1713261190::0::1::::<>ColorRect<>::
 karte-720.png::CompressedTexture2D::5028525007727685489::1709683078::1709683082::1::::<><>::
-main.gd::GDScript::-1::1713195003::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1713195003::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://big-frame.png<>uid://qv27o858jm7s::::res://sounds/take.wav<>uid://d1gtqtvq6aq4i::::res://sounds/take_short.wav
+main.gd::GDScript::-1::1713261408::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1713261409::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://karte-720.png<>uid://bsj7bxupy5ay::::res://glow.png<>res://IntroDimmer.gd<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>res://Glow.gd<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://big-frame.png<>uid://qv27o858jm7s::::res://sounds/take.wav<>uid://d1gtqtvq6aq4i::::res://sounds/take_short.wav<>uid://cs6h2tb325o41::::res://sounds/clang.wav<>uid://bxu2mnd7rdggp::::res://sounds/turn.mp3<>uid://cvdv3uin5i70r::::res://sounds/deal.wav<>uid://cfr1yfeulwwhh::::res://sounds/deal_soft.mp3
 README.md::TextFile::-1::1713125651::0::1::::<><>::
 README_old.md::TextFile::-1::1711716754::0::1::::<><>::
 ::res://cards/::1711951882
@@ -68,9 +69,12 @@ temple_of_jupiter.png::CompressedTexture2D::6588175815078526569::1711746745::171
 tyrant_exile.png::CompressedTexture2D::106510851822570084::1711835365::1711836231::1::::<><>::
 urban_prefect.png::CompressedTexture2D::3056612814022303616::1711830112::1711830145::1::::<><>::
 vestal_virgins.png::CompressedTexture2D::5073972373734303611::1711750065::1711778590::1::::<><>::
-::res://sounds/::1713195548
+::res://sounds/::1713261563
 clang.wav::AudioStreamWAV::6100710499429361932::1713195470::1713195552::1::::<><>::
 deal.wav::AudioStreamWAV::6254326339581035427::1713166450::1713166842::1::::<><>::
-sounds.txt::TextFile::-1::1713166590::0::1::::<><>::
+deal_soft.mp3::AudioStreamMP3::5160501777981292717::1713261273::1713261369::1::::<><>::
+place.mp3::AudioStreamMP3::2081107801648636672::1713261563::1713261563::1::::<><>::
+sounds.txt::TextFile::-1::1713261190::0::1::::<><>::
 take.wav::AudioStreamWAV::1168070722966402906::1713190996::1713191140::1::::<><>::
 take_short.wav::AudioStreamWAV::8997741478910503122::1713191549::1713191590::1::::<><>::
+turn.mp3::AudioStreamMP3::4043713119695336155::1713261320::1713261321::1::::<><>::
