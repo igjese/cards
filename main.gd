@@ -131,7 +131,7 @@ func start_intro():
     await prepare_history()
     
     game.current_step = steps.INTRO5
-    await get_tree().create_timer(1).timeout 
+    await get_tree().create_timer(1.5).timeout 
     $SoundClang.play()
     refresh_all()
     
@@ -1149,6 +1149,6 @@ func _on_line_edit_text_submitted(new_text):
 
 
 func _on_btn_start_game_pressed():
-    $GuiIntro/IntroDimmer.start_fade() 
+    $GuiIntro.fade_intro() 
     await get_tree().create_timer(1.0).timeout  # Wait for 1 second
     start_playing()

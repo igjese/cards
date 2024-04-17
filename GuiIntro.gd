@@ -3,14 +3,28 @@ extends Control
 var phases = Game.phases
 var steps = Game.steps
 
-# Called when the node enters the scene tree for the first time.
+enum FadeState { IDLE, FADING, FADED }
+var fade_state = FadeState.IDLE
+var fade_speed = 0.5  # Speed of the fade (in alpha units per second)
+
+var intro_dimmer = null
+
+
 func _ready():
-    pass # Replace with function body.
+    intro_dimmer = $IntroDimmer
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func fade_intro():
+    fade_state = FadeState.FADING
+
+
 func _process(delta):
-    pass
+    if fade_state == FadeState.FADING:
+        intro_dimmer.modulate.a -= delta * fade_speed
+        intro_dimmer.modulate.a = clamp(intro_dimmer.modulate.a, 0, 1)
+        if intro_dimmer.modulate.a == 0:
+            fade_state = FadeState.FADED
+
 
 func refresh_intro():
     get_node("IntroResources").visible = false

@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=22 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
 [ext_resource type="Texture2D" uid="uid://cdv4cpp1h28qf" path="res://visuals/karte-720.png" id="2_v6s1k"]
 [ext_resource type="Script" path="res://GuiIntro.gd" id="3_4esxl"]
-[ext_resource type="Script" path="res://IntroDimmer.gd" id="3_dfnqq"]
 [ext_resource type="Texture2D" uid="uid://d3l55qqyb7lpb" path="res://cards/circus_maximus.png" id="4_fhk1j"]
 [ext_resource type="Texture2D" uid="uid://8lcklr3vdfsn" path="res://visuals/glow-white.png" id="4_nhc5f"]
 [ext_resource type="Script" path="res://Glow.gd" id="4_v8w0h"]
@@ -97,7 +96,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.133333, 0.133333, 0.133333, 1)
-script = ExtResource("3_dfnqq")
 
 [node name="IntroResources" type="RichTextLabel" parent="GuiIntro"]
 layout_mode = 0
