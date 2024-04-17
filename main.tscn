@@ -180,6 +180,12 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 55
 text = "Start Game"
 
+[node name="DeckHistory" type="Node2D" parent="."]
+position = Vector2(137, 460)
+
+[node name="DeckHistoryOffscreen" type="Node2D" parent="."]
+position = Vector2(-200, 460)
+
 [node name="SlotsResources" type="GridContainer" parent="."]
 offset_left = 69.0
 offset_top = 101.0

@@ -4,6 +4,8 @@ var cards_raw = []
 var cards_by_name = {}
 var single_card_deck_qty = 5
 
+var card_back = preload("res://cards/back.png")
+
 var decks = {
     "Money1": {"cards": [], "node": null},
     "Money2": {"cards": [], "node": null},
@@ -171,7 +173,7 @@ func prepare_history():
     decks["History"]["cards"].append(victory_cards[1])
     decks["History"]["cards"].append(victory_cards[2])
     
-
+    start_card_flights()
     $SoundDealSoft.play()
     await get_tree().create_timer(0.9).timeout 
     $SoundTurn.play()
@@ -587,7 +589,32 @@ func init():
     load_history_texts_from_md()
     assign_decks_to_nodes()
     assign_gui_nodes()
+    create_card_sprites()
     
+    
+func create_card_sprites():
+    for i in range(12): # Assuming you want a dozen cards
+        var card = Sprite2D.new()
+        card.texture = card_back
+        card.scale = Vector2(0.25, 0.25)  
+        $DeckHistoryOffscreen.add_child(card)
+    
+var flight_speed = 500.0
+
+func _process(_delta):
+    for card in $DeckHistoryOffscreen.get_children():
+        if card.has_meta("target_position"):
+            card.global_position = card.global_position.lerp(card.get_meta("target_position"), 0.15)
+            if card.global_position.distance_to(card.get_meta("target_position")) < 5:  # 5 is a tolerance 
+                card.global_position = card.get_meta("target_position") 
+                card.remove_meta("target_position")
+        
+            
+func start_card_flights():
+    for card in $DeckHistoryOffscreen.get_children():
+        card.set_meta("target_position", $DeckHistory.global_position + Vector2(75,75))  
+        await get_tree().create_timer(0.05).timeout  # Wait for the delay
+
     
 func assign_gui_nodes():
     gui_main = get_node("GuiMain")
