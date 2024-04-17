@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=24 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://8lcklr3vdfsn" path="res://visuals/glow-white.png" id="4_nhc5f"]
 [ext_resource type="Script" path="res://Glow.gd" id="4_v8w0h"]
 [ext_resource type="Texture2D" uid="uid://cej4t3y57b8qp" path="res://cards/vestal_virgins.png" id="5_uhjvt"]
+[ext_resource type="Texture2D" uid="uid://dxsu2gbxogq6q" path="res://visuals/icon.png" id="6_078s0"]
 [ext_resource type="Texture2D" uid="uid://cwtm5tf51j8bj" path="res://visuals/big-frame.png" id="6_aqbqj"]
 [ext_resource type="AudioStream" uid="uid://qv27o858jm7s" path="res://sounds/take.wav" id="7_obd3t"]
 [ext_resource type="AudioStream" uid="uid://d1gtqtvq6aq4i" path="res://sounds/take_short.wav" id="8_475vp"]
@@ -97,17 +98,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.133333, 0.133333, 0.133333, 1)
 
-[node name="IntroResources" type="RichTextLabel" parent="GuiIntro"]
+[node name="IntroMain" type="RichTextLabel" parent="GuiIntro"]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 410.0
-offset_right = 500.0
-offset_bottom = 506.0
+offset_left = 349.0
+offset_top = 449.0
+offset_right = 1363.0
+offset_bottom = 608.0
 theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
-theme_override_font_sizes/normal_font_size = 60
-theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
-text = "Buy resources."
+text = "[center]Buy resources[/center]"
 
 [node name="IntroResourceCards" type="RichTextLabel" parent="GuiIntro"]
 layout_mode = 0
@@ -147,58 +147,22 @@ text = "[center]Your Hand[/center]"
 
 [node name="IntroChallengeCard" type="RichTextLabel" parent="GuiIntro"]
 layout_mode = 0
-offset_left = 266.0
-offset_top = 553.0
-offset_right = 651.0
-offset_bottom = 623.0
+offset_left = 20.0
+offset_top = 612.0
+offset_right = 405.0
+offset_bottom = 682.0
 theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
 theme_override_font_sizes/normal_font_size = 44
 theme_override_font_sizes/bold_font_size = 42
 bbcode_enabled = true
-text = "[center]Challenge Card[/center]"
-
-[node name="IntroActions" type="RichTextLabel" parent="GuiIntro"]
-layout_mode = 0
-offset_left = 655.0
-offset_top = 410.0
-offset_right = 1066.0
-offset_bottom = 501.0
-theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
-theme_override_font_sizes/normal_font_size = 60
-theme_override_font_sizes/bold_font_size = 60
-bbcode_enabled = true
-text = "Buy actions."
-
-[node name="IntroHand" type="RichTextLabel" parent="GuiIntro"]
-layout_mode = 0
-offset_left = 531.0
-offset_top = 771.0
-offset_right = 1123.0
-offset_bottom = 866.0
-theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
-theme_override_font_sizes/normal_font_size = 60
-theme_override_font_sizes/bold_font_size = 60
-bbcode_enabled = true
-text = "Improve your deck."
-
-[node name="IntroHistory" type="RichTextLabel" parent="GuiIntro"]
-layout_mode = 0
-offset_left = 305.0
-offset_top = 476.0
-offset_right = 980.0
-offset_bottom = 571.0
-theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
-theme_override_font_sizes/normal_font_size = 60
-theme_override_font_sizes/bold_font_size = 60
-bbcode_enabled = true
-text = "Overcome challenges!"
+text = "[center]Challenge[/center]"
 
 [node name="IntroStartGame" type="Control" parent="GuiIntro"]
 anchors_preset = 0
-offset_left = 1065.0
-offset_top = 494.0
-offset_right = 1477.0
-offset_bottom = 583.0
+offset_left = 1040.0
+offset_top = 482.0
+offset_right = 1452.0
+offset_bottom = 571.0
 
 [node name="Glow" type="Sprite2D" parent="GuiIntro/IntroStartGame"]
 modulate = Color(0, 1, 0, 1)
@@ -216,6 +180,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 55
 text = "Start Game"
+
+[node name="Logo" type="Sprite2D" parent="GuiIntro"]
+position = Vector2(1566, 252)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_078s0")
 
 [node name="SlotsResources" type="GridContainer" parent="."]
 offset_left = 69.0

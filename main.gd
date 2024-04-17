@@ -114,21 +114,42 @@ func start_playing():
 func start_intro():
     game.current_phase = phases.INTRO
     game.current_step = steps.INTRO1
+    $GuiIntro/IntroMain.bbcode_text = "[center]Buy resources[/center]"
+    $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     refresh_all()
     await get_tree().create_timer(0.3).timeout 
     await deal_resources()
     
+    $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
+    $GuiIntro.resource_cards_fade = $GuiIntro.fades.FADEIN
+    await get_tree().create_timer(2).timeout
+    
     game.current_step = steps.INTRO2
-    await get_tree().create_timer(1).timeout
+    $GuiIntro/IntroMain.bbcode_text = "[center]Buy action cards[/center]"
+    $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     await deal_actions()
+
+    $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
+    $GuiIntro.action_cards_fade = $GuiIntro.fades.FADEIN
+    await get_tree().create_timer(2).timeout
     
     game.current_step = steps.INTRO3
-    await get_tree().create_timer(1).timeout 
+    $GuiIntro/IntroMain.bbcode_text = "[center]Improve your deck[/center]"
+    $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     await prepare_hand()
+
+    $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
+    $GuiIntro.your_hand_fade = $GuiIntro.fades.FADEIN
+    await get_tree().create_timer(2).timeout
     
     game.current_step = steps.INTRO4
-    await get_tree().create_timer(1).timeout 
+    $GuiIntro/IntroMain.bbcode_text = "[center]Overcome challenges[/center]"
+    $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     await prepare_history()
+    
+    $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
+    $GuiIntro.challenge_card_fade = $GuiIntro.fades.FADEIN
+    await get_tree().create_timer(2).timeout
     
     game.current_step = steps.INTRO5
     await get_tree().create_timer(1.5).timeout 
@@ -1128,6 +1149,6 @@ func _on_line_edit_text_submitted(new_text):
 
 
 func _on_btn_start_game_pressed():
-    $GuiIntro.fade_intro() 
-    await get_tree().create_timer(1.0).timeout  # Wait for 1 second
+    $GuiIntro.intro_fade = $GuiIntro.fades.FADEOUT 
+    await get_tree().create_timer(1).timeout  # Wait for 1 second
     start_playing()
