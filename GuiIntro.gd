@@ -25,34 +25,27 @@ func _ready():
 
 func _process(delta):
     if intro_fade == fades.FADEOUT:
-        self.modulate.a -= delta * fade_speed
-        if self.modulate.a <= 0:
-            intro_fade = fades.HIDDEN
-        
+        intro_fade = fade_in(self, intro_fade, -delta * fade_speed * 2)
     if main_fade == fades.FADEIN:
-        $IntroMain.modulate.a += delta * fade_speed
-        if $IntroMain.modulate.a >= 1:
-            main_fade = fades.VISIBLE
+        main_fade = fade_in($IntroMain, main_fade, delta * fade_speed)
     if main_fade == fades.FADEOUT:
-        $IntroMain.modulate.a -= delta * fade_speed
-        if $IntroMain.modulate.a <= 0:
-            main_fade = fades.HIDDEN
+        main_fade = fade_in($IntroMain, main_fade, -delta * fade_speed)
     if resource_cards_fade == fades.FADEIN:
-        $IntroResourceCards.modulate.a += delta * fade_speed
-        if $IntroResourceCards.modulate.a >= 1:
-            resource_cards_fade = fades.VISIBLE
+        resource_cards_fade = fade_in($IntroResourceCards, resource_cards_fade, delta * fade_speed)
     if action_cards_fade == fades.FADEIN:
-        $IntroActionCards.modulate.a += delta * fade_speed
-        if $IntroActionCards.modulate.a >= 1:
-            action_cards_fade = fades.VISIBLE
+        action_cards_fade = fade_in($IntroActionCards, action_cards_fade, delta * fade_speed)
     if your_hand_fade == fades.FADEIN:
-        $IntroYourHand.modulate.a += delta * fade_speed
-        if $IntroYourHand.modulate.a >= 1:
-            your_hand_fade = fades.VISIBLE
+        your_hand_fade = fade_in($IntroYourHand, your_hand_fade, delta * fade_speed)
     if challenge_card_fade == fades.FADEIN:
-        $IntroChallengeCard.modulate.a += delta * fade_speed
-        if $IntroChallengeCard.modulate.a >= 1:
-            challenge_card_fade = fades.VISIBLE
+        challenge_card_fade = fade_in($IntroChallengeCard, challenge_card_fade, delta * fade_speed)
+            
+func fade_in(node, fade_state, ammount):
+    node.modulate.a += ammount
+    if node.modulate.a >= 1:
+        return fades.VISIBLE
+    elif node.modulate.a <= 0:
+        return fades.HIDDEN
+    return fade_state
             
 func refresh_intro():
     if Game.current_phase == phases.INTRO:
