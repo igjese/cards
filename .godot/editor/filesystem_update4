@@ -6,3 +6,4 @@ res://main.gd
 res://sounds/sounds.txt
 res://GuiIntro.gd
 res://Game.gd
+res://sounds/audio_deal_randomizer.tres

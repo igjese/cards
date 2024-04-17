@@ -230,10 +230,7 @@ func deal_actions():
     selected_actions.sort_custom(sort_cards_by_cost)
     
     for i in range(10):
-        for j in range(5):
-            deal_card(selected_actions[i], decks["Action" + str(i+1)])
-            await get_tree().create_timer(0.12).timeout # Wait for 100ms 
-            refresh_all()
+        await deal_five(decks["Action" + str(i+1)], selected_actions[i])
 
 
 func refresh_actions():
@@ -265,35 +262,17 @@ func refresh_resources():
     
         
 func deal_resources():
-    var resource_cards = []
     for card in cards_raw:
-        if card["type"] =="Army1":
-            for i in range(5):
-                resource_cards.append(card) 
-    for card in cards_raw:
-        if card["type"] =="Money1":
-            for i in range(5):
-                resource_cards.append(card) 
-    for card in cards_raw:
-        if card["type"] =="Army2":
-            for i in range(5):
-                resource_cards.append(card) 
-    for card in cards_raw:
-        if card["type"] =="Money2":
-            for i in range(5):
-                resource_cards.append(card) 
+        if card["type"] in ["Army1","Money1","Army2","Money2"]:
+            await deal_five(decks[card["type"]],card)
                 
-    for i in range(20):  # Process 20 cards
-        var card = resource_cards.pop_front()
-        deal_card(card, decks[card["type"]])
-        await get_tree().create_timer(0.1).timeout # Wait for 100ms 
+func deal_five(slot, card):
+    await get_tree().create_timer(0.25).timeout # Wait for 100ms 
+    $SoundDeal5.play()
+    for i in range(5):
+        slot["cards"].append(card)
+        await get_tree().create_timer(0.25).timeout # Wait for 100ms 
         refresh_all()
-        
-        
-func deal_card(card, slot):
-    slot["cards"].append(card)
-    $SoundPlace.pitch_scale = randf_range(0.95, 1.05)
-    $SoundPlace.play()
     
 
 func get_slot_for_type(card_type):

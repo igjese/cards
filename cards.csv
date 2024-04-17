@@ -1,8 +1,8 @@
 Type;Card;Cost Money;Effect Money;Effect Army;Discard;Trash;Extra Buys;Draw;Extra Actions;Replace;Upgrade 2;Double Action;Take 4;Take Money2;Take 5;Upgrade Money
-Money1;Barter Goods;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0
-Money2;Aes Rude;3;2;0;0;0;0;0;0;0;0;0;0;0;0;0
 Army1;Civil Militia;2;0;1;0;0;0;0;0;0;0;0;0;0;0;0
+Money1;Barter Goods;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0
 Army2;Centuria;5;0;3;0;0;0;0;0;0;0;0;0;0;0;0
+Money2;Aes Rude;3;2;0;0;0;0;0;0;0;0;0;0;0;0;0
 History;Romulus;0;-1;0;1;0;0;0;0;0;0;0;0;0;0;0
 History;Sabine Women;0;-1;-1;0;0;0;0;0;0;0;0;0;0;0;0
 History;Curiate Assembly;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0

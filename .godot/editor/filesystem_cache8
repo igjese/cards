@@ -1,17 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713269980
+::res://::1713343772
 card.gd::GDScript::-1::1713184203::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1713269705::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://visuals/frame4.png<>uid://c2crqvwp2kqvd::::res://fonts/Font Awesome 6 Free-Solid-900.otf<>uid://bsj7bxupy5ay::::res://visuals/glow.png<>res://Glow.gd
+card.tscn::PackedScene::528414477263538463::1713343771::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://visuals/frame4.png<>uid://c2crqvwp2kqvd::::res://fonts/Font Awesome 6 Free-Solid-900.otf<>uid://8lcklr3vdfsn::::res://visuals/glow-white.png<>res://Glow.gd
 cards.csv::::-1::1712666879::1709642895::1::::<><>::
-default_env.tres::Environment::3535254983394503347::1713269707::0::1::::<><>::
+default_env.tres::Environment::3535254983394503347::1713343772::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1712959487::0::1::::<><>::
 Glow.gd::GDScript::-1::1712995351::0::1::::<>Sprite2D<>::
 history.md::TextFile::-1::1713193330::0::1::::<><>::
-IntroDimmer.gd::GDScript::-1::1713261716::0::1::::<>ColorRect<>::
-main.gd::GDScript::-1::1713263007::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1713269706::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://visuals/karte-720.png<>uid://bsj7bxupy5ay::::res://visuals/glow.png<>res://IntroDimmer.gd<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>res://Glow.gd<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://visuals/big-frame.png<>uid://qv27o858jm7s::::res://sounds/take.wav<>uid://d1gtqtvq6aq4i::::res://sounds/take_short.wav<>uid://cs6h2tb325o41::::res://sounds/clang.wav<>uid://bxu2mnd7rdggp::::res://sounds/turn.mp3<>uid://4wdsn50dfq3q::::res://sounds/place.mp3<>uid://cvdv3uin5i70r::::res://sounds/deal.wav<>uid://cfr1yfeulwwhh::::res://sounds/deal_soft.mp3
+main.gd::GDScript::-1::1713291742::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1713343772::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://visuals/karte-720.png<>res://GuiIntro.gd<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>uid://8lcklr3vdfsn::::res://visuals/glow-white.png<>res://Glow.gd<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://visuals/big-frame.png<>uid://qv27o858jm7s::::res://sounds/take.wav<>uid://d1gtqtvq6aq4i::::res://sounds/take_short.wav<>uid://cs6h2tb325o41::::res://sounds/clang.wav<>uid://bxu2mnd7rdggp::::res://sounds/turn.mp3<>uid://4wdsn50dfq3q::::res://sounds/place.mp3<>uid://cvdv3uin5i70r::::res://sounds/deal.wav<>uid://cfr1yfeulwwhh::::res://sounds/deal_soft.mp3
 README.md::TextFile::-1::1713125651::0::1::::<><>::
 README_old.md::TextFile::-1::1711716754::0::1::::<><>::
+GuiIntro.gd::GDScript::-1::1713291938::0::1::::<>Control<>::
+Game.gd::GDScript::-1::1713289712::0::1::::<>Node<>::
 ::res://cards/::1711951882
 aes_rude.png::CompressedTexture2D::8428654054505454976::1711734212::1711734339::1::::<><>::
 agriculture.png::CompressedTexture2D::6492133400693691499::1711810691::1711830288::1::::<><>::
@@ -64,8 +65,18 @@ urban_prefect.png::CompressedTexture2D::3056612814022303616::1711830112::1711830
 vestal_virgins.png::CompressedTexture2D::5073972373734303611::1711750065::1711778590::1::::<><>::
 ::res://fonts/::1713264032
 Font Awesome 6 Free-Solid-900.otf::FontFile::6673130800394779117::1709681289::1713264032::1::::<><>::
-::res://sounds/::1713261563
+::res://sounds/::1713345408
 clang.wav::AudioStreamWAV::6100710499429361932::1713195470::1713195552::1::::<><>::
+deal5_1.wav::AudioStreamWAV::8368806079842571851::1713345101::1713345716::1::::<><>::
+deal5_2.wav::AudioStreamWAV::9068309104801290515::1713345143::1713345716::1::::<><>::
+deal5_3.wav::AudioStreamWAV::4770178991056058::1713345159::1713345716::1::::<><>::
+deal5_4.wav::AudioStreamWAV::5729910769793339610::1713345191::1713345717::1::::<><>::
+deal5_5.wav::AudioStreamWAV::8496662464295399761::1713345216::1713345717::1::::<><>::
+deal5_6.wav::AudioStreamWAV::5301489717860965977::1713345235::1713345716::1::::<><>::
+deal5_7.wav::AudioStreamWAV::1454039820701514738::1713345247::1713345717::1::::<><>::
+deal5_8.wav::AudioStreamWAV::2504846420378026121::1713345286::1713345717::1::::<><>::
+deal5_9.wav::AudioStreamWAV::5674052425912528873::1713345303::1713345717::1::::<><>::
+deal5_10.wav::AudioStreamWAV::8837457717821509479::1713345319::1713345717::1::::<><>::
 deal.wav::AudioStreamWAV::6254326339581035427::1713166450::1713166842::1::::<><>::
 deal_soft.mp3::AudioStreamMP3::5160501777981292717::1713261273::1713261369::1::::<><>::
 place.mp3::AudioStreamMP3::2081107801648636672::1713261563::1713261563::1::::<><>::
