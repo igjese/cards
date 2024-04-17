@@ -115,7 +115,6 @@ func start_playing():
     
 func start_intro():
     game.current_phase = phases.INTRO
-    game.current_step = steps.INTRO1
     $GuiIntro/IntroMain.bbcode_text = "[center]Buy resources[/center]"
     $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     refresh_all()
@@ -126,7 +125,6 @@ func start_intro():
     $GuiIntro.resource_cards_fade = $GuiIntro.fades.FADEIN
     await get_tree().create_timer(2).timeout
     
-    game.current_step = steps.INTRO2
     $GuiIntro/IntroMain.bbcode_text = "[center]Buy action cards[/center]"
     $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     await deal_actions()
@@ -135,7 +133,6 @@ func start_intro():
     $GuiIntro.action_cards_fade = $GuiIntro.fades.FADEIN
     await get_tree().create_timer(2).timeout
     
-    game.current_step = steps.INTRO3
     $GuiIntro/IntroMain.bbcode_text = "[center]Improve your deck[/center]"
     $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     await prepare_hand()
@@ -153,7 +150,7 @@ func start_intro():
     $GuiIntro.challenge_card_fade = $GuiIntro.fades.FADEIN
     await get_tree().create_timer(2.5).timeout
     
-    game.current_step = steps.INTRO5
+    $GuiIntro/IntroStartGame.visible = true
     $SoundClang.play()
     refresh_all()
     

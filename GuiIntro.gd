@@ -50,7 +50,5 @@ func fade_in(node, fade_state, ammount):
 func refresh_intro():
     if Game.current_phase == phases.INTRO:
         self.visible = true
-        if Game.current_step == steps.INTRO5:
-            $IntroStartGame.visible = true
     else:
         self.visible = false
