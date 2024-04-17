@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=23 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://8lcklr3vdfsn" path="res://visuals/glow-white.png" id="4_nhc5f"]
 [ext_resource type="Script" path="res://Glow.gd" id="4_v8w0h"]
 [ext_resource type="Texture2D" uid="uid://cej4t3y57b8qp" path="res://cards/vestal_virgins.png" id="5_uhjvt"]
-[ext_resource type="Texture2D" uid="uid://dxsu2gbxogq6q" path="res://visuals/icon.png" id="6_078s0"]
 [ext_resource type="Texture2D" uid="uid://cwtm5tf51j8bj" path="res://visuals/big-frame.png" id="6_aqbqj"]
 [ext_resource type="AudioStream" uid="uid://qv27o858jm7s" path="res://sounds/take.wav" id="7_obd3t"]
 [ext_resource type="AudioStream" uid="uid://d1gtqtvq6aq4i" path="res://sounds/take_short.wav" id="8_475vp"]
@@ -180,11 +179,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 55
 text = "Start Game"
-
-[node name="Logo" type="Sprite2D" parent="GuiIntro"]
-position = Vector2(1566, 252)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_078s0")
 
 [node name="SlotsResources" type="GridContainer" parent="."]
 offset_left = 69.0
