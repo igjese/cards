@@ -32,6 +32,10 @@ func refresh_intro():
     get_node("IntroHand").visible = false
     get_node("IntroHistory").visible = false
     get_node("IntroStartGame").visible = false
+    get_node("IntroResourceCards").visible = false
+    get_node("IntroActionCards").visible = false
+    get_node("IntroYourHand").visible = false
+    get_node("IntroChallengeCard").visible = false
     
     if Game.current_phase == phases.INTRO:
         self.visible = true
@@ -39,16 +43,22 @@ func refresh_intro():
             steps.INTRO1:
                 get_node("IntroResources").visible = true
             steps.INTRO2:
-                get_node("IntroResources").visible = true
+                get_node("IntroResourceCards").visible = true
                 get_node("IntroActions").visible = true
             steps.INTRO3:
-                get_node("IntroResources").visible = true
-                get_node("IntroActions").visible = true
+                get_node("IntroResourceCards").visible = true
                 get_node("IntroHand").visible = true
+                get_node("IntroActionCards").visible = true
             steps.INTRO4:
                 get_node("IntroHistory").visible = true
+                get_node("IntroResourceCards").visible = true
+                get_node("IntroActionCards").visible = true
+                get_node("IntroYourHand").visible = true
             steps.INTRO5:
-                get_node("IntroHistory").visible = true
+                get_node("IntroChallengeCard").visible = true
                 get_node("IntroStartGame").visible = true
+                get_node("IntroResourceCards").visible = true
+                get_node("IntroActionCards").visible = true
+                get_node("IntroYourHand").visible = true
     else:
         self.visible = false

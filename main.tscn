@@ -82,7 +82,6 @@ texture = ExtResource("2_v6s1k")
 expand_mode = 2
 
 [node name="GuiIntro" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
@@ -102,13 +101,61 @@ color = Color(0.133333, 0.133333, 0.133333, 1)
 layout_mode = 0
 offset_left = 49.0
 offset_top = 410.0
-offset_right = 798.0
+offset_right = 500.0
 offset_bottom = 506.0
 theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
 theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 60
 bbcode_enabled = true
 text = "Buy resources."
+
+[node name="IntroResourceCards" type="RichTextLabel" parent="GuiIntro"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 45.0
+offset_right = 413.0
+offset_bottom = 115.0
+theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]Resource Cards[/center]"
+
+[node name="IntroActionCards" type="RichTextLabel" parent="GuiIntro"]
+layout_mode = 0
+offset_left = 659.0
+offset_top = 45.0
+offset_right = 1044.0
+offset_bottom = 115.0
+theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]Action Cards[/center]"
+
+[node name="IntroYourHand" type="RichTextLabel" parent="GuiIntro"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 903.0
+offset_right = 545.0
+offset_bottom = 973.0
+theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]Your Hand[/center]"
+
+[node name="IntroChallengeCard" type="RichTextLabel" parent="GuiIntro"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 553.0
+offset_right = 651.0
+offset_bottom = 623.0
+theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[center]Challenge Card[/center]"
 
 [node name="IntroActions" type="RichTextLabel" parent="GuiIntro"]
 layout_mode = 0
@@ -136,10 +183,10 @@ text = "Improve your deck."
 
 [node name="IntroHistory" type="RichTextLabel" parent="GuiIntro"]
 layout_mode = 0
-offset_left = 306.0
-offset_top = 493.0
-offset_right = 981.0
-offset_bottom = 588.0
+offset_left = 305.0
+offset_top = 476.0
+offset_right = 980.0
+offset_bottom = 571.0
 theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
 theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 60
