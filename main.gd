@@ -151,10 +151,9 @@ func start_intro():
     
     $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
     $GuiIntro.challenge_card_fade = $GuiIntro.fades.FADEIN
-    await get_tree().create_timer(2).timeout
+    await get_tree().create_timer(2.5).timeout
     
     game.current_step = steps.INTRO5
-    await get_tree().create_timer(1.5).timeout 
     $SoundClang.play()
     refresh_all()
     
@@ -175,7 +174,7 @@ func prepare_history():
     
     start_card_flights()
     $SoundDealSoft.play()
-    await get_tree().create_timer(0.9).timeout 
+    await get_tree().create_timer(1).timeout 
     $SoundTurn.play()
     await get_tree().create_timer(0.5).timeout 
     refresh_all()
