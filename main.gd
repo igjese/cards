@@ -148,7 +148,7 @@ func start_intro():
     
     $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
     $GuiIntro.challenge_card_fade = $GuiIntro.fades.FADEIN
-    await get_tree().create_timer(2.5).timeout
+    await get_tree().create_timer(3).timeout
     
     $GuiIntro/IntroStartGame.visible = true
     $SoundClang.play()
@@ -860,6 +860,11 @@ func display_card(card: Control, card_name: String) -> void:
     card.set_effect("")
     card.set_cost(cost_text)
     card.set_visual(card_name)
+    
+    if card_data["type"] in ["History","Victory1","Victory2","Victory3"]:
+        card.get_node("View/CardCost2").visible = false
+    else:
+        card.get_node("View/CardCost2").visible = true
     
     
 func cost_text(cost, value):
