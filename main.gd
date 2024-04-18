@@ -152,6 +152,7 @@ func start_intro():
     
     $GuiIntro/IntroStartGame.visible = true
     $SoundClang.play()
+    await get_tree().create_timer(0.5).timeout
     refresh_all()
     
     
@@ -393,8 +394,8 @@ func play_resources():
     for card in cards_to_play:
         decks["PlayerHand"]["cards"].erase(card)  # Remove card from player's hand
         decks["CardsOnTable"]["cards"].append(card)  # Add card to the table
-        game.money += card["effect_money"]
-        game.army += card["effect_army"]
+        await update_money_and_army(card["effect_money"], card["effect_army"])
+
         
     game.current_step = steps.BUY_CARDS
     refresh_gui()
@@ -458,16 +459,42 @@ func set_up():
     game.turn += 1
     refresh_all()
     
-
+    
+func update_money_and_army(money, army):
+        if money != 0:
+            await get_tree().create_timer(0.3).timeout 
+            if money > 0:
+                $SoundCoin.play()
+            if money < 0:
+                $SoundPunch.play()
+            var tween = create_tween()
+            var delay = 0.4
+            $GuiStatus/Money.pivot_offset = $GuiStatus/Money.size / 2
+            tween.tween_property($GuiStatus/Money, "scale", Vector2(1.5, 1.5), delay/2).set_ease(Tween.EASE_IN)
+            tween.tween_property($GuiStatus/Money, "scale", Vector2(1, 1), delay/2).set_ease(Tween.EASE_OUT)
+            game.money += money
+        if army != 0:
+            await get_tree().create_timer(0.3).timeout 
+            if army > 0:
+                $SoundCoin.play()
+            if army < 0:
+                $SoundPunch.play()
+            var tween = create_tween()
+            var delay = 0.4
+            $GuiStatus/Army.pivot_offset = $GuiStatus/Army.size / 2
+            tween.tween_property($GuiStatus/Army, "scale", Vector2(1.5, 1.5), delay/2).set_ease(Tween.EASE_IN)
+            tween.tween_property($GuiStatus/Army, "scale", Vector2(1, 1), delay/2).set_ease(Tween.EASE_OUT)
+            game.army += army
+        refresh_all()
+        
+        
 func play_action_card(card):
     var more_input = false
     if game.actions > 0 or game.current_phase == phases.HISTORY:
         if not double_action2 and game.current_phase != phases.HISTORY:
             decks["PlayerHand"]["cards"].erase(card)
             decks["CardsOnTable"]["cards"].append(card)
-
-        game.money += card["effect_money"]
-        game.army += card["effect_army"]
+        update_money_and_army(card["effect_money"], card["effect_army"])
         game.buys += card["extra_buys"]
         game.actions += card["extra_actions"]
         if card["draw"] > 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=26 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://cfr1yfeulwwhh" path="res://sounds/deal_soft.mp3" id="13_cr1fw"]
 [ext_resource type="AudioStream" uid="uid://1bp5l2jbikv8" path="res://sounds/audio_deal_randomizer.tres" id="14_flurf"]
 [ext_resource type="AudioStream" uid="uid://dwoy1fx5uf0vj" path="res://sounds/hit.wav" id="17_fgx0b"]
+[ext_resource type="AudioStream" uid="uid://1kp8r0y65bil" path="res://sounds/coin.wav" id="18_m00md"]
+[ext_resource type="AudioStream" uid="uid://bqhax6s4vy5el" path="res://sounds/punch.wav" id="19_hqwbv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw5ef"]
 bg_color = Color(0.960784, 0.811765, 0, 1)
@@ -667,6 +669,12 @@ stream = ExtResource("8_o11d2")
 
 [node name="SoundHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_fgx0b")
+
+[node name="SoundCoin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_m00md")
+
+[node name="SoundPunch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_hqwbv")
 
 [node name="SoundTakeShort" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_475vp")
