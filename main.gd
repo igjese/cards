@@ -110,7 +110,7 @@ func start_playing():
     refresh_all()
     game.current_phase = phases.HISTORY
     game.showcase_card = top_card(decks["History"]["node"])
-    play_action_card(top_card(decks["History"]["node"]))
+    play_challenge()
     refresh_all()
     
 func start_intro():
@@ -318,10 +318,25 @@ func get_slot_for_type(card_type):
 func new_turn():
     set_up()
     deal_new_hand()
-    game.current_phase = phases.HISTORY
-    game.showcase_card = top_card(decks["History"]["node"])
-    play_action_card(top_card(decks["History"]["node"]))
+    play_challenge()
     refresh_gui()
+    
+
+func play_challenge():
+    game.current_phase = phases.HISTORY
+    var node = decks["History"]["node"]
+    var card = top_card(node)
+    game.showcase_card = card
+    
+    var delay = 0.3
+    node.pivot_offset = node.size / 2
+    var tween = create_tween()
+    tween.tween_property(node, "scale", Vector2(1.5, 1.5), delay *3/5).set_ease(Tween.EASE_OUT)
+    tween.tween_property(node, "scale", Vector2(1, 1), delay *2/5).set_ease(Tween.EASE_IN)
+    await get_tree().create_timer(delay/2).timeout 
+    $SoundHit.play()
+    await get_tree().create_timer(delay/2).timeout 
+    play_action_card(card)
     
     
 func deal_new_hand():
@@ -731,8 +746,6 @@ func refresh_history():
     
 func refresh_hint():
     var gui_hint = get_node("GuiHint")  # This gets the Control node named GuiHint
-    gui_hint.get_node("Army").text = str(game.army)
-    gui_hint.get_node("Money").text = str(game.money)
     var hint_text = hints[game.current_step][0]
     if game.current_step == steps.CHOOSE_ACTION_CARD:
         hint_text = "Play up to %d action cards" % game.actions
@@ -753,6 +766,9 @@ func refresh_hint():
 
     
 func refresh_status():
+    gui_status.get_node("Army").text = str(game.army)
+    gui_status.get_node("Money").text = str(game.money)
+    
     var countPlayerDeck = decks["PlayerDeck"]["cards"].size()
     var countDiscarded = decks["Discarded"]["cards"].size()
     var countTrash = decks["Trash"]["cards"].size()

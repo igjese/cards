@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=24 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
@@ -17,6 +17,31 @@
 [ext_resource type="AudioStream" uid="uid://cvdv3uin5i70r" path="res://sounds/deal.wav" id="11_nanoc"]
 [ext_resource type="AudioStream" uid="uid://cfr1yfeulwwhh" path="res://sounds/deal_soft.mp3" id="13_cr1fw"]
 [ext_resource type="AudioStream" uid="uid://1bp5l2jbikv8" path="res://sounds/audio_deal_randomizer.tres" id="14_flurf"]
+[ext_resource type="AudioStream" uid="uid://dwoy1fx5uf0vj" path="res://sounds/hit.wav" id="17_fgx0b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw5ef"]
+bg_color = Color(0.960784, 0.811765, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01snb"]
+bg_color = Color(0.658824, 0.145098, 0.133333, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tasj7"]
 bg_color = Color(0, 0, 0, 0.411765)
@@ -25,30 +50,6 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.937255, 0.894118, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw5ef"]
-bg_color = Color(0.960784, 0.811765, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01snb"]
-bg_color = Color(0.658824, 0.145098, 0.133333, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lsse"]
 bg_color = Color(0.960784, 0.811765, 0, 1)
@@ -407,6 +408,35 @@ offset_bottom = 42.0
 theme_override_font_sizes/normal_font_size = 24
 text = "Turn 1 - "
 
+[node name="Money" type="Label" parent="GuiStatus"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -566.0
+offset_right = 61.0
+offset_bottom = -506.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_rw5ef")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Army" type="Label" parent="GuiStatus"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -492.0
+offset_right = 61.0
+offset_bottom = -432.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_01snb")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="GuiHint" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -444,35 +474,6 @@ offset_top = 63.0
 offset_right = 223.0
 offset_bottom = 94.0
 text = "OK"
-
-[node name="Money" type="Label" parent="GuiHint"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 63.0
-offset_right = 49.0
-offset_bottom = 93.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_rw5ef")
-text = "9"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Army" type="Label" parent="GuiHint"]
-layout_mode = 0
-offset_left = 243.0
-offset_top = 63.0
-offset_right = 273.0
-offset_bottom = 93.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_01snb")
-text = "9"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="BigCard" type="Control" parent="."]
 visible = false
@@ -663,6 +664,9 @@ stream = ExtResource("13_cr1fw")
 
 [node name="SoundClang" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_o11d2")
+
+[node name="SoundHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_fgx0b")
 
 [node name="SoundTakeShort" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_475vp")
