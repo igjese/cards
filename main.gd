@@ -234,11 +234,11 @@ func refresh_challenges():
             display_card_with_qty(node, card["name"],deck.size())
             node.get_node("View/Glow").modulate = Color(1,0,0,1)
             node.get_node("View/Glow").visible = true  
-            node.visible = true
+            node.get_node("View").visible = true
         else:
-            node.visible = false
+            node.get_node("View").visible = false
     else:
-        node.visible = false
+        node.get_node("View").visible = false
 
     
 func deal_actions():
@@ -819,7 +819,7 @@ func refresh_deck(deck_name):
             var card = deck[0]
             display_card_with_qty(node, card["name"],deck.size())
         else:
-            node.visible = false
+            node.get_node("View").visible = false
             
     
 func assign_decks_to_nodes():
