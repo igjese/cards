@@ -172,8 +172,14 @@ func prepare_history():
     start_card_flights()
     $SoundDealSoft.play()
     await get_tree().create_timer(1).timeout 
+    $CardHistory/View/Back.visible = true
+    $CardHistory/View.visible = true
+    $CardHistory.visible = true
+    refresh_all()
+    $CardHistory.flip_card()
     $SoundTurn.play()
-    await get_tree().create_timer(0.5).timeout 
+    await get_tree().create_timer(1).timeout 
+    $DeckHistory.visible = false
     refresh_all()
     
 
