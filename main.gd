@@ -527,9 +527,12 @@ func play_action_card(card):
     var more_input = false
     if game.actions > 0 or game.current_phase == phases.HISTORY:
         if not double_action2 and game.current_phase != phases.HISTORY:
+            var start = find_start(card)
             decks["PlayerHand"]["cards"].erase(card)
+            await fly_card_to_table(card, start)
             decks["CardsOnTable"]["cards"].append(card)
-        update_money_and_army(card["effect_money"], card["effect_army"])
+            refresh_gui()
+        await update_money_and_army(card["effect_money"], card["effect_army"])
         game.buys += card["extra_buys"]
         game.actions += card["extra_actions"]
         if card["draw"] > 0:
