@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://268sn82oihby"]
+[gd_scene load_steps=28 format=3 uid="uid://268sn82oihby"]
 
 [ext_resource type="PackedScene" uid="uid://hr756cx0syfv" path="res://card.tscn" id="1_3bn2l"]
 [ext_resource type="Script" path="res://main.gd" id="1_emee8"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://qv27o858jm7s" path="res://sounds/take.wav" id="7_obd3t"]
 [ext_resource type="AudioStream" uid="uid://d1gtqtvq6aq4i" path="res://sounds/take_short.wav" id="8_475vp"]
 [ext_resource type="AudioStream" uid="uid://cs6h2tb325o41" path="res://sounds/clang.wav" id="8_o11d2"]
+[ext_resource type="Texture2D" uid="uid://dfmjifvts571j" path="res://visuals/laurel.png" id="10_faavu"]
 [ext_resource type="AudioStream" uid="uid://bxu2mnd7rdggp" path="res://sounds/turn.mp3" id="11_13xg6"]
 [ext_resource type="AudioStream" uid="uid://4wdsn50dfq3q" path="res://sounds/place.mp3" id="11_hrrej"]
 [ext_resource type="AudioStream" uid="uid://cvdv3uin5i70r" path="res://sounds/deal.wav" id="11_nanoc"]
@@ -20,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://dwoy1fx5uf0vj" path="res://sounds/hit.wav" id="17_fgx0b"]
 [ext_resource type="AudioStream" uid="uid://1kp8r0y65bil" path="res://sounds/coin.wav" id="18_m00md"]
 [ext_resource type="AudioStream" uid="uid://bqhax6s4vy5el" path="res://sounds/punch.wav" id="19_hqwbv"]
+[ext_resource type="AudioStream" uid="uid://dxl6j7rdyc21m" path="res://sounds/trumpets.wav" id="20_1kqq6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw5ef"]
 bg_color = Color(0.960784, 0.811765, 0, 1)
@@ -651,6 +653,12 @@ offset_top = 1117.0
 offset_right = 358.0
 offset_bottom = 1267.0
 
+[node name="Laurel" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(212, 557)
+scale = Vector2(0.157324, 0.153789)
+texture = ExtResource("10_faavu")
+
 [node name="SoundTake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_obd3t")
 
@@ -680,6 +688,9 @@ stream = ExtResource("18_m00md")
 
 [node name="SoundPunch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_hqwbv")
+
+[node name="SoundTrumpets" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_1kqq6")
 
 [node name="SoundTakeShort" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_475vp")
