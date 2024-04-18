@@ -48,10 +48,12 @@ func _hide_back_and_reveal_card():
 # SIGNALS ###########
 
 func _on_gui_input(event):
-    if event is InputEventMouseButton:
-        if event.button_index == MOUSE_BUTTON_LEFT:
-            if event.pressed:
-                get_parent().on_deck_clicked(self)
-        if event.button_index == MOUSE_BUTTON_RIGHT:
-            if event.pressed:
-                get_parent().on_deck_right_clicked(self)
+    if Game.current_phase != Game.phases.INTRO and get_node("View").visible:
+        var main_scene = get_tree().root.get_node("Main")
+        if event is InputEventMouseButton:
+            if event.button_index == MOUSE_BUTTON_LEFT:
+                if event.pressed:
+                    main_scene.on_deck_clicked(self)
+            if event.button_index == MOUSE_BUTTON_RIGHT:
+                if event.pressed:
+                    main_scene.on_deck_right_clicked(self)

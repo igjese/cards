@@ -371,8 +371,9 @@ func play_resources():
     var cards_to_play = []
     
     for card in decks["PlayerHand"]["cards"]:
-        if card["type"] in ["Money1","Money2","Army1","Army2"]:
-            cards_to_play.append(card)
+        if card:
+            if card["type"] in ["Money1","Money2","Army1","Army2"]:
+                cards_to_play.append(card)
     
     for card in cards_to_play:
         decks["PlayerHand"]["cards"].erase(card)  # Remove card from player's hand
@@ -428,7 +429,7 @@ func clean_up():
     else:
         game.current_phase = phases.VICTORY
         game.current_step = steps.VICTORY
-        refresh_gui()
+        refresh_all()
     
     
 func set_up():
@@ -440,7 +441,7 @@ func set_up():
     game.actions = 1
     game.buys = 1
     game.turn += 1
-    refresh_gui()
+    refresh_all()
     
 
 func play_action_card(card):
@@ -638,6 +639,7 @@ func refresh_gui():
     for deck in decks:
         refresh_deck(deck)
     refresh_cards(player_hand, "PlayerHand")
+    $SlotsTable.visible = true
     refresh_cards(table_cards, "CardsOnTable")
     refresh_status()
     refresh_hint()
@@ -656,8 +658,9 @@ func check_step():
     
 func no_action_cards_in_hand():
     for card in decks["PlayerHand"]["cards"]:
-        if card["type"] == "Action":
-            return false
+        if card:
+            if card["type"] == "Action":
+                return false
     return true
         
     
@@ -789,10 +792,10 @@ func glow_valid_buys():
             decks[card_slot]["node"].get_node("View/Glow").visible = false
     if game.current_step == steps.BUY_CARDS:
         for card_slot in decks:
-            if decks[card_slot]["node"]:
+            if decks[card_slot]["node"] and decks[card_slot]["cards"].size() > 0:
                 var card = top_card(decks[card_slot]["node"])
                 if is_card_buyable(decks[card_slot]["node"]) and card["cost_money"] <= game.money:
-                    card_slot["node"].get_node("View/Glow").modulate = Color(0,1,0,1)
+                    decks[card_slot]["node"].get_node("View/Glow").modulate = Color(0,1,0,1)
                     decks[card_slot]["node"].get_node("View/Glow").visible = true
 
 
@@ -817,11 +820,14 @@ func refresh_deck(deck_name):
             display_card_with_qty(node, card["name"],deck.size())
         else:
             node.visible = false
-    
+            
     
 func assign_decks_to_nodes():
-    for deck in decks:
-        decks[deck]["node"] = get_node("Card" + deck)
+    decks["History"]["node"] = get_node("CardHistory")
+    for deck in ["Money1","Money2","Army1","Army2"]:
+        decks[deck]["node"] = get_node("SlotsResources/Card" + deck)
+    for deck in ["Action1","Action2","Action3","Action4","Action5","Action6","Action7","Action8","Action9","Action10"]:
+        decks[deck]["node"] = get_node("SlotsActions/Card" + deck)
     for i in range(14):
         player_hand.append({"card": null, "qty": 0, "node": get_node("SlotsHand/CardHand%d" % (i+1))})
     for i in range(10):
@@ -1027,7 +1033,7 @@ func is_playerhand(node):
 
 func top_card(node):
     for deck in decks:
-        if node == decks[deck]["node"]:
+        if node == decks[deck]["node"] and decks[deck]["cards"].size() > 0:
             return decks[deck]["cards"][0]
     for deck in player_hand:
         if node ==  deck["node"]:
@@ -1079,7 +1085,7 @@ func _on_btn_new_game_pressed():
 func on_deck_clicked(node):
     var card : Dictionary = top_card(node)
     game.showcase_card = card
-    refresh_gui()
+    refresh_all()
     match game.current_step:
         steps.CHOOSE_ACTION_CARD:
             # valid: action card, in player's hand
@@ -1128,7 +1134,7 @@ func on_deck_right_clicked(node):
     var card : Dictionary = top_card(node)
     game.showcase_card = card
     zoomed_card = true
-    refresh_gui()
+    refresh_all()
 
 
 func _on_btn_hints_pressed():
@@ -1146,7 +1152,7 @@ func _on_btn_hints_pressed():
 func _on_big_card_gui_input(event):
     if event is InputEventMouseButton and event.pressed:
         zoomed_card = false
-        refresh_gui()
+        refresh_all()
 
 
 func _input(event):

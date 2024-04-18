@@ -69,7 +69,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.929412, 0.941176, 0.870588, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 use_parent_material = true
 script = ExtResource("1_emee8")
 
@@ -191,20 +191,25 @@ offset_left = 69.0
 offset_top = 101.0
 offset_right = 380.0
 offset_bottom = 411.0
-theme_override_constants/h_separation = 151
-theme_override_constants/v_separation = 151
+mouse_filter = 0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
 columns = 2
 
 [node name="CardArmy2" parent="SlotsResources" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardMoney2" parent="SlotsResources" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardArmy1" parent="SlotsResources" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardMoney1" parent="SlotsResources" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="SlotsActions" type="GridContainer" parent="."]
@@ -212,38 +217,48 @@ offset_left = 472.0
 offset_top = 105.0
 offset_right = 1235.0
 offset_bottom = 422.0
-theme_override_constants/h_separation = 151
-theme_override_constants/v_separation = 151
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
 columns = 5
 
 [node name="CardAction6" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardAction7" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardAction8" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardAction9" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardAction10" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardAction1" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardAction2" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardAction3" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardAction4" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardAction5" parent="SlotsActions" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHistory" parent="." instance=ExtResource("1_3bn2l")]
@@ -257,50 +272,64 @@ offset_left = 202.0
 offset_top = 751.0
 offset_right = 1268.0
 offset_bottom = 1024.0
-theme_override_constants/h_separation = 151
-theme_override_constants/v_separation = 120
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = -30
 columns = 7
 
 [node name="CardHand1" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand2" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand3" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand4" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand5" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand6" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand7" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand8" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand9" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand10" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand11" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand12" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand13" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardHand14" parent="SlotsHand" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="SlotsTable" type="GridContainer" parent="."]
@@ -309,38 +338,48 @@ offset_left = 435.0
 offset_top = 429.0
 offset_right = 1209.0
 offset_bottom = 742.0
-theme_override_constants/h_separation = 151
-theme_override_constants/v_separation = 151
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
 columns = 5
 
 [node name="CardTable1" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardTable2" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardTable3" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardTable4" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardTable5" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardTable6" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardTable7" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardTable8" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardTable9" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="CardTable10" parent="SlotsTable" instance=ExtResource("1_3bn2l")]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="GuiStatus" type="Control" parent="."]
