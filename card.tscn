@@ -51,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Glow" type="Sprite2D" parent="View"]
 visible = false
@@ -124,9 +125,9 @@ scroll_active = false
 
 [node name="CardQty" type="Label" parent="View"]
 layout_mode = 1
-offset_left = 118.0
+offset_left = 113.0
 offset_top = 120.0
-offset_right = 148.0
+offset_right = 143.0
 offset_bottom = 150.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

@@ -351,6 +351,14 @@ offset_top = 1033.0
 offset_right = 1222.0
 offset_bottom = 1079.0
 
+[node name="Panel2" type="Panel" parent="GuiStatus"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -1.0
+offset_right = 449.0
+offset_bottom = 31.0
+scale = Vector2(2.56208, 1.49076)
+
 [node name="Status" type="RichTextLabel" parent="GuiStatus"]
 layout_mode = 0
 offset_left = 50.0
@@ -359,14 +367,6 @@ offset_right = 1169.0
 offset_bottom = 42.0
 theme_override_font_sizes/normal_font_size = 24
 text = "Turn 1 - "
-
-[node name="Panel2" type="Panel" parent="GuiStatus"]
-layout_mode = 0
-offset_left = -44.0
-offset_top = -1.0
-offset_right = 449.0
-offset_bottom = 31.0
-scale = Vector2(2.56208, 1.49076)
 
 [node name="GuiHint" type="Control" parent="."]
 visible = false
