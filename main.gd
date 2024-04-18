@@ -459,6 +459,10 @@ func clean_up():
     while decks["CardsOnTable"]["cards"].size() > 0:
         var card = decks["CardsOnTable"]["cards"].pop_front()
         decks["Discarded"]["cards"].append(card)
+    for slot in player_hand:
+        slot["card"] = null
+    for slot in table_cards:
+        slot["card"] = null
         
     var challenge = decks["History"]["cards"][0]
     if game.money >= 0 and game.army >= 0:
