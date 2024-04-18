@@ -392,15 +392,46 @@ func play_resources():
                 cards_to_play.append(card)
     
     for card in cards_to_play:
+        var start = find_start(card)
         decks["PlayerHand"]["cards"].erase(card)  # Remove card from player's hand
+        await fly_card_to_table(card, start)
         decks["CardsOnTable"]["cards"].append(card)  # Add card to the table
+        refresh_gui()
         await update_money_and_army(card["effect_money"], card["effect_army"])
 
-        
     game.current_step = steps.BUY_CARDS
     refresh_gui()
+
+
+func find_start(card):
+    var start : Control = null
+    for slot in player_hand:
+        if slot["card"]:
+            if slot["card"]["name"] == card["name"]:
+                start = slot["node"]
+    return start
     
     
+func fly_card_to_table(card, start):
+    var target : Control = null
+    var free_slots = []
+    for slot in table_cards:
+        if slot["card"]:
+            if slot["card"]["name"] == card["name"]:
+                target = slot["node"]
+        else:
+            free_slots.append(slot)
+    if not target:
+        target = free_slots[0]["node"]
+
+    $CardDummy.visible = true
+    display_card($CardDummy, card["name"])
+    refresh_gui()
+    var tween = create_tween()
+    tween.tween_property($CardDummy, "global_position", target.global_position, 0.3).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
+    await get_tree().create_timer(0.3).timeout 
+    $CardDummy.visible = false
+        
 func buy_card(node: Node):
     var card = top_card(node)
 

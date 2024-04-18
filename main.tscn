@@ -336,7 +336,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
 [node name="SlotsTable" type="GridContainer" parent="."]
-visible = false
 offset_left = 435.0
 offset_top = 429.0
 offset_right = 1209.0
@@ -645,6 +644,12 @@ offset_bottom = 69.0
 layout_mode = 0
 offset_right = 802.0
 offset_bottom = 31.0
+
+[node name="CardDummy" parent="." instance=ExtResource("1_3bn2l")]
+offset_left = 208.0
+offset_top = 1117.0
+offset_right = 358.0
+offset_bottom = 1267.0
 
 [node name="SoundTake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_obd3t")
