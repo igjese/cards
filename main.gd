@@ -645,7 +645,16 @@ func refresh_gui():
     refresh_hint()
     refresh_history()
     refresh_zoom()
+    check_challenge()
     
+    
+func check_challenge():
+    var glow = decks["History"]["node"].get_node("View/Glow")
+    if game.money < 0 or game.army < 0:
+        glow.modulate = Color(1,0,0,1)
+        glow.visible = true  
+    else:
+        glow.visible = false  
     
 func check_step():
     if game.current_step == steps.CHOOSE_ACTION_CARD:
