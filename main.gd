@@ -356,13 +356,22 @@ func deal_new_hand():
         
         
 func put_card_into_hand(card):
-    var node = find_slot_for_card(card)
+    var node = find_slot_for_card(card, player_hand)
     for slot in player_hand:
         if slot["node"] == node:
             slot["card"] = card
             slot["qty"] += 1
     decks["PlayerHand"]["cards"].append(card)
 
+
+func put_card_on_table(card):
+    var node = find_slot_for_card(card, table_cards)
+    for slot in table_cards:
+        if slot["node"] == node:
+            slot["card"] = card
+            slot["qty"] += 1
+    decks["CardsOnTable"]["cards"].append(card)
+    
 
 func reshuffle_discarded_into_deck():
     # Move all cards from the discarded pile back to the player's deck
@@ -402,10 +411,10 @@ func play_resources():
                 cards_to_play.append(card)
     
     for card in cards_to_play:
-        var start = find_slot_for_card(card)
+        var start = find_slot_for_card(card, player_hand)
         decks["PlayerHand"]["cards"].erase(card)  # Remove card from player's hand
         await fly_card_to_table(card, start)
-        decks["CardsOnTable"]["cards"].append(card)  # Add card to the table
+        put_card_on_table(card)  # Add card to the table
         refresh_gui()
         await update_money_and_army(card["effect_money"], card["effect_army"])
 
@@ -413,10 +422,10 @@ func play_resources():
     refresh_gui()
 
 
-func find_slot_for_card(card):
+func find_slot_for_card(card, deck):
     var start : Control = null
     var free_slots = []
-    for slot in player_hand:
+    for slot in deck:
         if slot["card"]:
             if slot["card"]["name"] == card["name"]:
                 start = slot["node"]
@@ -428,18 +437,8 @@ func find_slot_for_card(card):
     
     
 func fly_card_to_table(card, start):
-    var target : Control = null
-    var free_slots = []
-    for slot in table_cards:
-        if slot["card"]:
-            if slot["card"]["name"] == card["name"]:
-                target = slot["node"]
-        else:
-            free_slots.append(slot)
-    if not target:
-        target = free_slots[0]["node"]
-    
-    fly_card(card,start,target)
+    var target = find_slot_for_card(card,table_cards)
+    await fly_card(card,start,target)
 
 
 func fly_card(card,start,target):
@@ -447,8 +446,8 @@ func fly_card(card,start,target):
     display_card($CardDummy, card["name"])
     refresh_gui()
     var tween = create_tween()
-    tween.tween_property($CardDummy, "global_position", target.global_position, 0.3).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
-    await get_tree().create_timer(0.3).timeout 
+    tween.tween_property($CardDummy, "global_position", target.global_position, 0.2).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
+    await get_tree().create_timer(0.2).timeout 
     $CardDummy.visible = false
     refresh_gui()
         
@@ -565,10 +564,10 @@ func play_action_card(card):
     var more_input = false
     if game.actions > 0 or game.current_phase == phases.HISTORY:
         if not double_action2 and game.current_phase != phases.HISTORY:
-            var start = find_slot_for_card(card)
+            var start = find_slot_for_card(card, player_hand)
             decks["PlayerHand"]["cards"].erase(card)
             await fly_card_to_table(card, start)
-            decks["CardsOnTable"]["cards"].append(card)
+            put_card_on_table(card)
             refresh_gui()
         await update_money_and_army(card["effect_money"], card["effect_army"])
         game.buys += card["extra_buys"]
@@ -658,7 +657,7 @@ func draw_cards(number_of_cards : int):
 func trash_card(deck):
     var card = top_card(deck)
     decks["Trash"]["cards"].append(card)
-    fly_card(card, find_slot_for_card(card), $OffscreenBottom)
+    fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
     game.cards_to_select -= 1
@@ -698,7 +697,7 @@ func upgrade_card(deck):
 func discard(deck):
     var card = top_card(deck)
     decks["Discarded"]["cards"].append(card)
-    fly_card(card, find_slot_for_card(card), $OffscreenBottom)
+    fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
     game.cards_to_select -= 1
