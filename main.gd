@@ -202,7 +202,8 @@ func deal_hand():
         reshuffle_discarded_into_deck()
 
     while decks["PlayerHand"]["cards"].size() < 5:
-        decks["PlayerHand"]["cards"].append(decks["PlayerDeck"]["cards"].pop_front())
+        var card = decks["PlayerDeck"]["cards"].pop_front()
+        put_card_into_hand(card)
         $SoundTake.pitch_scale = randf_range(0.95, 1.05)
         $SoundTake.play()
         await get_tree().create_timer(0.5).timeout 
@@ -355,6 +356,11 @@ func deal_new_hand():
         
         
 func put_card_into_hand(card):
+    var node = find_slot_for_card(card)
+    for slot in player_hand:
+        if slot["node"] == node:
+            slot["card"] = card
+            slot["qty"] += 1
     decks["PlayerHand"]["cards"].append(card)
 
 
@@ -396,7 +402,7 @@ func play_resources():
                 cards_to_play.append(card)
     
     for card in cards_to_play:
-        var start = find_start(card)
+        var start = find_slot_for_card(card)
         decks["PlayerHand"]["cards"].erase(card)  # Remove card from player's hand
         await fly_card_to_table(card, start)
         decks["CardsOnTable"]["cards"].append(card)  # Add card to the table
@@ -407,12 +413,17 @@ func play_resources():
     refresh_gui()
 
 
-func find_start(card):
+func find_slot_for_card(card):
     var start : Control = null
+    var free_slots = []
     for slot in player_hand:
         if slot["card"]:
             if slot["card"]["name"] == card["name"]:
                 start = slot["node"]
+        else:
+            free_slots.append(slot["node"])
+    if not start:
+        start = free_slots[0]
     return start
     
     
@@ -471,8 +482,10 @@ func clean_up():
         decks["Discarded"]["cards"].append(card)
     for slot in player_hand:
         slot["card"] = null
+        slot["qty"] = 0
     for slot in table_cards:
         slot["card"] = null
+        slot["qty"] = 0
         
     var challenge = decks["History"]["cards"][0]
     if game.money >= 0 and game.army >= 0:
@@ -552,7 +565,7 @@ func play_action_card(card):
     var more_input = false
     if game.actions > 0 or game.current_phase == phases.HISTORY:
         if not double_action2 and game.current_phase != phases.HISTORY:
-            var start = find_start(card)
+            var start = find_slot_for_card(card)
             decks["PlayerHand"]["cards"].erase(card)
             await fly_card_to_table(card, start)
             decks["CardsOnTable"]["cards"].append(card)
@@ -645,7 +658,7 @@ func draw_cards(number_of_cards : int):
 func trash_card(deck):
     var card = top_card(deck)
     decks["Trash"]["cards"].append(card)
-    fly_card(card, find_start(card), $OffscreenBottom)
+    fly_card(card, find_slot_for_card(card), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
     game.cards_to_select -= 1
@@ -685,7 +698,7 @@ func upgrade_card(deck):
 func discard(deck):
     var card = top_card(deck)
     decks["Discarded"]["cards"].append(card)
-    fly_card(card, find_start(card), $OffscreenBottom)
+    fly_card(card, find_slot_for_card(card), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
     game.cards_to_select -= 1
@@ -873,25 +886,19 @@ func refresh_status():
     
     
 func refresh_cards(card_nodes: Array, deck_name: String):
-    # Reset visibility and quantity of all nodes
-    for node_info in card_nodes:
-        node_info["node"].get_node("View").visible = false
-        node_info["qty"] = 0
-
-    # Count card occurrences
     var card_counts = count_card_occurrences(decks[deck_name]["cards"])
-
-    # Update UI based on card counts
-    var index = 0
-    for card_name in card_counts:
-        if index >= card_nodes.size():
-            break
-        var node_info = card_nodes[index]
-        node_info["card"] = cards_by_name[card_name]
-        node_info["qty"] = card_counts[card_name]
-        display_card_with_qty(node_info["node"], card_name, node_info["qty"])
-        index += 1
-        
+    #if decks["PlayerHand"]["cards"].size() > 0: breakpoint
+    for node_info in card_nodes:
+        var card = node_info["card"] 
+        if card:
+            if card["name"] in card_counts:
+                node_info["qty"] = card_counts[card["name"]]
+                node_info["node"].get_node("View").visible = true
+                display_card_with_qty(node_info["node"], card["name"], node_info["qty"])
+            else:
+                node_info["card"] = null
+        else:
+            node_info["node"].get_node("View").visible = false
     glow_valid_actions()
     glow_valid_buys()
     
