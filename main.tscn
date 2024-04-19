@@ -188,10 +188,10 @@ text = "Start Game"
 [node name="DeckHistory" type="Node2D" parent="."]
 position = Vector2(137, 460)
 
-[node name="DeckHistoryOffscreen" type="Node2D" parent="."]
+[node name="OffscreenLeft" type="Node2D" parent="."]
 position = Vector2(-200, 460)
 
-[node name="DeckDiscardedOffscreen" type="Node2D" parent="."]
+[node name="OffscreenBottom" type="Node2D" parent="."]
 position = Vector2(764, 1131)
 
 [node name="SlotsResources" type="GridContainer" parent="."]

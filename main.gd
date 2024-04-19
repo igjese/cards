@@ -448,7 +448,7 @@ func buy_card(node: Node):
             if node == decks[deck]["node"]:
                 decks[deck]["cards"].erase(card)  
                 refresh_gui()
-                fly_card(card, node, $DeckDiscardedOffscreen)
+                fly_card(card, node, $OffscreenBottom)
                 decks["Discarded"]["cards"].append(card)  
         game.buys -= 1
         refresh_gui()
@@ -681,7 +681,7 @@ func upgrade_card(deck):
 func discard(deck):
     var card = top_card(deck)
     decks["Discarded"]["cards"].append(card)
-    fly_card(card, find_start(card), $DeckDiscardedOffscreen)
+    fly_card(card, find_start(card), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
     game.cards_to_select -= 1
@@ -705,12 +705,12 @@ func create_card_sprites():
         var card = Sprite2D.new()
         card.texture = card_back
         card.scale = Vector2(0.25, 0.25)  
-        $DeckHistoryOffscreen.add_child(card)
+        $OffscreenLeft.add_child(card)
     
 var flight_speed = 500.0
 
 func _process(_delta):
-    for card in $DeckHistoryOffscreen.get_children():
+    for card in $OffscreenLeft.get_children():
         if card.has_meta("target_position"):
             card.global_position = card.global_position.lerp(card.get_meta("target_position"), 0.15)
             if card.global_position.distance_to(card.get_meta("target_position")) < 5:  # 5 is a tolerance 
@@ -719,7 +719,7 @@ func _process(_delta):
         
             
 func start_card_flights():
-    for card in $DeckHistoryOffscreen.get_children():
+    for card in $OffscreenLeft.get_children():
         card.set_meta("target_position", $DeckHistory.global_position + Vector2(75,75))  
         await get_tree().create_timer(0.05).timeout  # Wait for the delay
 
