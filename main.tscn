@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://dwoy1fx5uf0vj" path="res://sounds/hit.wav" id="17_fgx0b"]
 [ext_resource type="AudioStream" uid="uid://1kp8r0y65bil" path="res://sounds/coin.wav" id="18_m00md"]
 [ext_resource type="AudioStream" uid="uid://bqhax6s4vy5el" path="res://sounds/punch.wav" id="19_hqwbv"]
-[ext_resource type="AudioStream" uid="uid://dxl6j7rdyc21m" path="res://sounds/trumpets.wav" id="20_1kqq6"]
+[ext_resource type="AudioStream" uid="uid://b2fdtwedu3706" path="res://sounds/success.wav" id="21_n23fj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rw5ef"]
 bg_color = Color(0.960784, 0.811765, 0, 1)
@@ -189,6 +189,9 @@ text = "Start Game"
 position = Vector2(137, 460)
 
 [node name="DeckHistoryOffscreen" type="Node2D" parent="."]
+position = Vector2(-200, 460)
+
+[node name="DeckDiscardedOffscreen" type="Node2D" parent="."]
 position = Vector2(-200, 460)
 
 [node name="SlotsResources" type="GridContainer" parent="."]
@@ -386,6 +389,11 @@ layout_mode = 2
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
+[node name="Laurel" type="Sprite2D" parent="."]
+position = Vector2(77, 496)
+scale = Vector2(0.145508, 0.14502)
+texture = ExtResource("10_faavu")
+
 [node name="GuiStatus" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -414,9 +422,9 @@ text = "Turn 1 - "
 [node name="Money" type="Label" parent="GuiStatus"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = -566.0
+offset_top = -569.0
 offset_right = 61.0
-offset_bottom = -506.0
+offset_bottom = -509.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
@@ -429,9 +437,9 @@ vertical_alignment = 1
 [node name="Army" type="Label" parent="GuiStatus"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = -492.0
+offset_top = -489.0
 offset_right = 61.0
-offset_bottom = -432.0
+offset_bottom = -429.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 30
@@ -653,12 +661,6 @@ offset_top = 1117.0
 offset_right = 358.0
 offset_bottom = 1267.0
 
-[node name="Laurel" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(212, 557)
-scale = Vector2(0.157324, 0.153789)
-texture = ExtResource("10_faavu")
-
 [node name="SoundTake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_obd3t")
 
@@ -690,7 +692,7 @@ stream = ExtResource("18_m00md")
 stream = ExtResource("19_hqwbv")
 
 [node name="SoundTrumpets" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_1kqq6")
+stream = ExtResource("21_n23fj")
 
 [node name="SoundTakeShort" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_475vp")

@@ -107,6 +107,7 @@ func start_playing():
     game.actions = 1
     game.buys = 1
     game.turn += 1
+    game.challenge_overcome = false
     refresh_all()
     game.current_phase = phases.HISTORY
     game.showcase_card = top_card(decks["History"]["node"])
@@ -227,6 +228,7 @@ func refresh_all():
         refresh_gui()
     
 func refresh_challenges():
+    $Laurel.visible = false
     var node = decks["History"]["node"]
     if game.current_step not in [steps.INTRO1, steps.INTRO2, steps.INTRO3]:
         var deck = decks["History"]["cards"]
@@ -423,7 +425,11 @@ func fly_card_to_table(card, start):
             free_slots.append(slot)
     if not target:
         target = free_slots[0]["node"]
+    
+    fly_card(card,start,target)
 
+
+func fly_card(card,start,target):
     $CardDummy.visible = true
     display_card($CardDummy, card["name"])
     refresh_gui()
@@ -492,6 +498,8 @@ func set_up():
     game.actions = 1
     game.buys = 1
     game.turn += 1
+    game.challenge_overcome = false
+    $Laurel.visible = false
     refresh_all()
     
     
@@ -520,8 +528,21 @@ func update_money_and_army(money, army):
             tween.tween_property($GuiStatus/Army, "scale", Vector2(1.5, 1.5), delay/2).set_ease(Tween.EASE_IN)
             tween.tween_property($GuiStatus/Army, "scale", Vector2(1, 1), delay/2).set_ease(Tween.EASE_OUT)
             game.army += army
+        test_challenge()
         refresh_all()
         
+
+func test_challenge():
+    if not game.challenge_overcome:
+        if game.money >= 0 and game.army >= 0:
+            game.challenge_overcome = true
+            var tween = create_tween()
+            $SoundTrumpets.play()
+            $Laurel.modulate.a = 0
+            $Laurel.visible = true
+            tween.tween_property($Laurel, "modulate:a", 1, 0.6).from(0)
+            await get_tree().create_timer(0.6).timeout 
+            $Laurel.modulate.a = 1
         
 func play_action_card(card):
     var more_input = false
@@ -733,9 +754,11 @@ func check_challenge():
     if game.money < 0 or game.army < 0:
         glow.modulate = Color(1,0,0,1)
         glow.visible = true  
+        $Laurel.visible = false
     else:
         glow.visible = false  
-    
+        
+        
 func check_step():
     if game.current_step == steps.CHOOSE_ACTION_CARD:
         if game.actions <= 0 or no_action_cards_in_hand():

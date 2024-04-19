@@ -15,5 +15,6 @@ var buys = 1
 var cards_to_select = 0
 var max_cost = 0
 var showcase_card = null
+var challenge_overcome = false
 
 
