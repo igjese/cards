@@ -192,7 +192,7 @@ position = Vector2(137, 460)
 position = Vector2(-200, 460)
 
 [node name="DeckDiscardedOffscreen" type="Node2D" parent="."]
-position = Vector2(1265, 1160)
+position = Vector2(764, 1131)
 
 [node name="SlotsResources" type="GridContainer" parent="."]
 offset_left = 69.0

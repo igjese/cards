@@ -437,6 +437,7 @@ func fly_card(card,start,target):
     tween.tween_property($CardDummy, "global_position", target.global_position, 0.3).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
     await get_tree().create_timer(0.3).timeout 
     $CardDummy.visible = false
+    refresh_gui()
         
 func buy_card(node: Node):
     var card = top_card(node)
@@ -680,7 +681,9 @@ func upgrade_card(deck):
 func discard(deck):
     var card = top_card(deck)
     decks["Discarded"]["cards"].append(card)
+    fly_card(card, find_start(card), $DeckDiscardedOffscreen)
     decks["PlayerHand"]["cards"].erase(card)
+    refresh_gui()
     game.cards_to_select -= 1
     if game.cards_to_select == 0:
         post_action()
