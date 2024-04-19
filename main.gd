@@ -350,10 +350,12 @@ func deal_new_hand():
 
     # Now deal up to 5 cards to the player's hand
     while decks["PlayerDeck"]["cards"].size() > 0 and decks["PlayerHand"]["cards"].size() < 5:
-        decks["PlayerHand"]["cards"].append(decks["PlayerDeck"]["cards"].pop_front())
-
-    print_deck_cards("Player Hand", decks["PlayerHand"])
-    print_deck_cards("Player Deck", decks["PlayerDeck"])
+        var card = decks["PlayerDeck"]["cards"].pop_front()
+        put_card_into_hand(card)
+        
+        
+func put_card_into_hand(card):
+    decks["PlayerHand"]["cards"].append(card)
 
 
 func reshuffle_discarded_into_deck():
@@ -637,7 +639,7 @@ func draw_cards(number_of_cards : int):
         if decks["PlayerDeck"]["cards"].size() == 0:
             reshuffle_discarded_into_deck()
         var card = decks["PlayerDeck"]["cards"].pop_front()
-        decks["PlayerHand"]["cards"].append(card)
+        put_card_into_hand(card)
         
         
 func trash_card(deck):
