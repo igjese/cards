@@ -446,8 +446,9 @@ func buy_card(node: Node):
         for deck in decks:
             if node == decks[deck]["node"]:
                 decks[deck]["cards"].erase(card)  
+                refresh_gui()
+                fly_card(card, node, $DeckDiscardedOffscreen)
                 decks["Discarded"]["cards"].append(card)  
-
         game.buys -= 1
         refresh_gui()
 
