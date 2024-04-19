@@ -643,7 +643,9 @@ func draw_cards(number_of_cards : int):
 func trash_card(deck):
     var card = top_card(deck)
     decks["Trash"]["cards"].append(card)
+    fly_card(card, find_start(card), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
+    refresh_gui()
     game.cards_to_select -= 1
     if game.cards_to_select == 0:
         finish_current_action()
