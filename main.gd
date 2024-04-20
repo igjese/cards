@@ -344,18 +344,6 @@ func play_challenge():
     $SoundHit.play()
     await get_tree().create_timer(delay/2).timeout 
     play_action_card(card)
-    
-    
-func deal_new_hand():
-    # Check if the player's deck has enough cards to deal a new hand, reshuffle if necessary
-    if decks["PlayerDeck"]["cards"].size() < 5:
-        reshuffle_discarded_into_deck()
-        # After reshuffling, if still not enough cards (rare case, depends on game design), you might need additional logic
-
-    # Now deal up to 5 cards to the player's hand
-    while decks["PlayerDeck"]["cards"].size() > 0 and decks["PlayerHand"]["cards"].size() < 5:
-        var card = decks["PlayerDeck"]["cards"].pop_front()
-        await draw_card(card)
         
         
 func put_card_into_hand(card):
