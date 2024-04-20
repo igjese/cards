@@ -207,10 +207,13 @@ func deal_hand():
         refresh_all()
         
 func draw_card(card):
-    put_card_into_hand(card)
     $SoundTake.pitch_scale = randf_range(0.95, 1.05)
     $SoundTake.play()
-    await get_tree().create_timer(0.5).timeout 
+    var slot = find_slot_for_card(card, player_hand)
+    await fly_card(card,$OffscreenBottomLeft, slot)
+    put_card_into_hand(card)
+    refresh_gui()
+    await get_tree().create_timer(0.3).timeout 
     
     
 func refresh_all():
@@ -756,11 +759,12 @@ func refresh_gui():
     refresh_cards(player_hand, "PlayerHand")
     $SlotsTable.visible = true
     refresh_cards(table_cards, "CardsOnTable")
-    refresh_status()
-    refresh_hint()
-    refresh_history()
-    refresh_zoom()
-    check_challenge()
+    if not Game.current_phase == Game.phases.INTRO:
+        refresh_status()
+        refresh_hint()
+        refresh_history()
+        refresh_zoom()
+        check_challenge()
     
     
 func check_challenge():

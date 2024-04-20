@@ -194,6 +194,9 @@ position = Vector2(-200, 460)
 [node name="OffscreenBottom" type="Node2D" parent="."]
 position = Vector2(764, 1131)
 
+[node name="OffscreenBottomLeft" type="Node2D" parent="."]
+position = Vector2(154, 1137)
+
 [node name="SlotsResources" type="GridContainer" parent="."]
 offset_left = 69.0
 offset_top = 101.0
@@ -656,10 +659,10 @@ offset_right = 802.0
 offset_bottom = 31.0
 
 [node name="CardDummy" parent="." instance=ExtResource("1_3bn2l")]
-offset_left = 208.0
-offset_top = 1117.0
-offset_right = 358.0
-offset_bottom = 1267.0
+offset_left = 952.0
+offset_top = 1111.0
+offset_right = 1102.0
+offset_bottom = 1261.0
 
 [node name="SoundTake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_obd3t")
