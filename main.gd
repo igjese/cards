@@ -203,11 +203,14 @@ func deal_hand():
 
     while decks["PlayerHand"]["cards"].size() < 5:
         var card = decks["PlayerDeck"]["cards"].pop_front()
-        put_card_into_hand(card)
-        $SoundTake.pitch_scale = randf_range(0.95, 1.05)
-        $SoundTake.play()
-        await get_tree().create_timer(0.5).timeout 
+        await draw_card(card)
         refresh_all()
+        
+func draw_card(card):
+    put_card_into_hand(card)
+    $SoundTake.pitch_scale = randf_range(0.95, 1.05)
+    $SoundTake.play()
+    await get_tree().create_timer(0.5).timeout 
     
     
 func refresh_all():
@@ -321,7 +324,7 @@ func get_slot_for_type(card_type):
 
 func new_turn():
     set_up()
-    deal_new_hand()
+    await deal_hand()
     play_challenge()
     refresh_gui()
     
@@ -352,7 +355,7 @@ func deal_new_hand():
     # Now deal up to 5 cards to the player's hand
     while decks["PlayerDeck"]["cards"].size() > 0 and decks["PlayerHand"]["cards"].size() < 5:
         var card = decks["PlayerDeck"]["cards"].pop_front()
-        put_card_into_hand(card)
+        await draw_card(card)
         
         
 func put_card_into_hand(card):
@@ -404,7 +407,6 @@ func finish_actions():
     
 func play_resources():
     var cards_to_play = []
-    
     for card in decks["PlayerHand"]["cards"]:
         if card:
             if card["type"] in ["Money1","Money2","Army1","Army2"]:
@@ -413,6 +415,7 @@ func play_resources():
     for card in cards_to_play:
         var start = find_slot_for_card(card, player_hand)
         decks["PlayerHand"]["cards"].erase(card)  # Remove card from player's hand
+        refresh_gui()
         await fly_card_to_table(card, start)
         put_card_on_table(card)  # Add card to the table
         refresh_gui()
@@ -573,7 +576,7 @@ func play_action_card(card):
         game.buys += card["extra_buys"]
         game.actions += card["extra_actions"]
         if card["draw"] > 0:
-            draw_cards(card["draw"])
+            await draw_cards(card["draw"])
         if card["trash"] > 0:
             game.current_step = steps.TRASH
             game.cards_to_select = card["trash"]
@@ -651,7 +654,7 @@ func draw_cards(number_of_cards : int):
         if decks["PlayerDeck"]["cards"].size() == 0:
             reshuffle_discarded_into_deck()
         var card = decks["PlayerDeck"]["cards"].pop_front()
-        put_card_into_hand(card)
+        await draw_card(card)
         
         
 func trash_card(deck):
@@ -669,9 +672,12 @@ func trash_card(deck):
 func replace_card(deck):
     var card = top_card(deck)
     decks["Discarded"]["cards"].append(card)
+    fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
+    refresh_gui()
+    await get_tree().create_timer(0.3).timeout
     game.cards_to_select -= 1
-    draw_cards(1)
+    await draw_cards(1)
     if game.cards_to_select == 0:
         finish_current_action()
     refresh_gui()
