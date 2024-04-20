@@ -421,13 +421,13 @@ func fly_card_to_table(card, start):
     await fly_card(card,start,target)
 
 
-func fly_card(card,start,target):
+func fly_card(card,start,target,duration = 0.2):
     $CardDummy.visible = true
     display_card($CardDummy, card["name"])
     refresh_gui()
     var tween = create_tween()
-    tween.tween_property($CardDummy, "global_position", target.global_position, 0.2).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
-    await get_tree().create_timer(0.2).timeout 
+    tween.tween_property($CardDummy, "global_position", target.global_position, duration).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
+    await get_tree().create_timer(duration).timeout 
     $CardDummy.visible = false
     refresh_gui()
         
@@ -440,7 +440,7 @@ func buy_card(node: Node):
             if node == decks[deck]["node"]:
                 decks[deck]["cards"].erase(card)  
                 refresh_gui()
-                fly_card(card, node, $OffscreenBottom)
+                await fly_card(card, node, $OffscreenBottom, 0.3)
                 decks["Discarded"]["cards"].append(card)  
         game.buys -= 1
         refresh_gui()
@@ -637,7 +637,7 @@ func draw_cards(number_of_cards : int):
 func trash_card(deck):
     var card = top_card(deck)
     decks["Trash"]["cards"].append(card)
-    fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
+    await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
     game.cards_to_select -= 1
@@ -649,7 +649,7 @@ func trash_card(deck):
 func replace_card(deck):
     var card = top_card(deck)
     decks["Discarded"]["cards"].append(card)
-    fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
+    await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
     await get_tree().create_timer(0.3).timeout
@@ -680,7 +680,7 @@ func upgrade_card(deck):
 func discard(deck):
     var card = top_card(deck)
     decks["Discarded"]["cards"].append(card)
-    fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
+    await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
     game.cards_to_select -= 1
