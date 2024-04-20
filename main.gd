@@ -433,15 +433,14 @@ func fly_card(card,start,target,duration = 0.2):
         
 func buy_card(node: Node):
     var card = top_card(node)
-
     if game.money >= card["cost_money"]:
-        game.money -= card["cost_money"]
         for deck in decks:
             if node == decks[deck]["node"]:
                 decks[deck]["cards"].erase(card)  
                 refresh_gui()
                 await fly_card(card, node, $OffscreenBottom, 0.3)
                 decks["Discarded"]["cards"].append(card)  
+        game.money -= card["cost_money"]
         game.buys -= 1
         refresh_gui()
 
@@ -612,6 +611,8 @@ func take_card(node):
     for deck in decks:
         if node == decks[deck]["node"]:
             var card = decks[deck]["cards"].pop_front()
+            refresh_gui()
+            await fly_card(card, node, $OffscreenBottom, 0.3)
             decks["Discarded"]["cards"].append(card)
             game.cards_to_select -= 1
             if game.cards_to_select == 0:
@@ -622,6 +623,8 @@ func take_card(node):
 func take_money2():
     if decks["Money2"]["cards"].size() > 0:
         var card = decks["Money2"]["cards"].pop_front()
+        refresh_gui()
+        await fly_card(card, $SlotsResources/CardMoney2, $OffscreenBottom, 0.3)
         decks["Discarded"]["cards"].append(card)
         finish_current_action()
     
