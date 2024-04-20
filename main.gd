@@ -601,8 +601,12 @@ func upgrade_money():
             if card["type"] == "Money1":
                 decks["Trash"]["cards"].append(card)
                 decks["PlayerHand"]["cards"].erase(card)
+                refresh_gui()
+                await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
                 break
         var money2_card = decks["Money2"]["cards"].pop_front()  # Take the top "Money2" card
+        refresh_gui()
+        await fly_card(money2_card, $SlotsResources/CardMoney2, find_slot_for_card(money2_card,player_hand), 0.3)
         decks["PlayerHand"]["cards"].append(money2_card)  # Add "Money2" card to discarded pile
         refresh_gui()  # Update the game state to reflect these changes
 
@@ -640,9 +644,9 @@ func draw_cards(number_of_cards : int):
 func trash_card(deck):
     var card = top_card(deck)
     decks["Trash"]["cards"].append(card)
-    await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
+    await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     game.cards_to_select -= 1
     if game.cards_to_select == 0:
         finish_current_action()
@@ -652,8 +656,8 @@ func trash_card(deck):
 func replace_card(deck):
     var card = top_card(deck)
     decks["Discarded"]["cards"].append(card)
-    await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
+    await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     refresh_gui()
     await get_tree().create_timer(0.3).timeout
     game.cards_to_select -= 1
@@ -683,9 +687,9 @@ func upgrade_card(deck):
 func discard(deck):
     var card = top_card(deck)
     decks["Discarded"]["cards"].append(card)
-    await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     decks["PlayerHand"]["cards"].erase(card)
     refresh_gui()
+    await fly_card(card, find_slot_for_card(card, player_hand), $OffscreenBottom)
     game.cards_to_select -= 1
     if game.cards_to_select == 0:
         post_action()
