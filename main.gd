@@ -38,20 +38,6 @@ var gui_status = null
 var steps = Game.steps
 var phases = Game.phases
 
-var hints = {
-    steps.NONE: ["", ""],
-    steps.CHOOSE_ACTION_CARD: ["Play your action cards","I'm done"],
-    steps.PLAY_RESOURCES: ["Play your resource cards", "Play resources"],
-    steps.BUY_CARDS: ["Pick cards to buy", "I'm done buying"],
-    steps.TRASH: ["Pick cards to trash", "I'm done"],
-    steps.TAKE: ["Take card up to 4/5", "Done"],
-    steps.DOUBLE_ACTION: ["Pick action to play twice." ,"Done"],
-    steps.REPLACE: ["Pick cards to replace", "Done replacing"],
-    steps.UPGRADE_CARD: ["Pick card to upgrade", "Done"],
-    steps.DISCARD: ["Pick card to discard", "Done discarding"],
-    steps.VICTORY: ["Victory! Rome is now a republic!", "Play Next Level"]
-}
-
 var cost_icons = {
     "cost_money": "\uf51e",
 }
@@ -851,6 +837,20 @@ func refresh_history():
         
     
 func refresh_hint():
+    var hints = {
+        steps.NONE: ["", ""],
+        steps.CHOOSE_ACTION_CARD: ["Play your action cards","I'm done"],
+        steps.PLAY_RESOURCES: ["Play your resource cards", "Play resources"],
+        steps.BUY_CARDS: ["Pick cards to buy", "I'm done buying"],
+        steps.TRASH: ["Pick cards to trash", "I'm done"],
+        steps.TAKE: ["Take card up to 4/5", "Done"],
+        steps.DOUBLE_ACTION: ["Pick action to play twice." ,"Done"],
+        steps.REPLACE: ["Pick cards to replace", "Done replacing"],
+        steps.UPGRADE_CARD: ["Pick card to upgrade", "Done"],
+        steps.DISCARD: ["Pick card to discard", "Done discarding"],
+        steps.VICTORY: ["Victory! Rome is now a republic!", "Play Next Level"]
+    }
+    
     var gui_hint = get_node("GuiHint")  # This gets the Control node named GuiHint
     var hint_text = hints[game.current_step][0]
     if game.current_step == steps.CHOOSE_ACTION_CARD:
@@ -866,7 +866,10 @@ func refresh_hint():
     if hints.has(game.current_step) and Game.current_step != Game.steps.NONE:
         gui_hint.get_node("Hint").text = "[center]%s[/center]" % hint_text  # Update the text of the Hint RTLabel
         gui_hint.get_node("BtnHints").text = hints[game.current_step][1]
-        gui_hint.visible = true  # Make sure the GuiHint and all its children are visible
+        if not gui_hint.visible:
+            gui_hint.visible = true
+            var tween = create_tween()
+            tween.tween_property(gui_hint, "global_position",gui_hint.global_position,0.3).from(gui_hint.global_position + Vector2(-500,0))
     else:
         gui_hint.visible = false  # Hide the GuiHint node, which also hides all its children
 
