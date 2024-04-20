@@ -864,12 +864,23 @@ func refresh_hint():
     if game.current_step == steps.REPLACE:
         hint_text = "Pick up to %d cards to replace" % game.cards_to_select
     if hints.has(game.current_step) and Game.current_step != Game.steps.NONE:
-        gui_hint.get_node("Hint").text = "[center]%s[/center]" % hint_text  # Update the text of the Hint RTLabel
-        gui_hint.get_node("BtnHints").text = hints[game.current_step][1]
+        var new_text = "[center]%s[/center]" % hint_text
+        var hint_changed = false
+        if gui_hint.get_node("Hint").text != new_text:
+            gui_hint.get_node("Hint").text = new_text  
+            gui_hint.get_node("BtnHints").text = hints[game.current_step][1]
+            hint_changed = true
         if not gui_hint.visible:
             gui_hint.visible = true
             var tween = create_tween()
             tween.tween_property(gui_hint, "global_position",gui_hint.global_position,0.3).from(gui_hint.global_position + Vector2(-500,0))
+        else:
+            if hint_changed:
+                var tween = create_tween()
+                var delay = 0.3
+                gui_hint.pivot_offset = gui_hint.size / 2
+                tween.tween_property(gui_hint, "scale", Vector2(1.5, 1.5), delay/2).set_ease(Tween.EASE_IN)
+                tween.tween_property(gui_hint, "scale", Vector2(1, 1), delay/2).set_ease(Tween.EASE_OUT)
     else:
         gui_hint.visible = false  # Hide the GuiHint node, which also hides all its children
 
