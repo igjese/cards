@@ -863,7 +863,7 @@ func refresh_hint():
         hint_text = "Take any card up to cost %d" % game.max_cost
     if game.current_step == steps.REPLACE:
         hint_text = "Pick up to %d cards to replace" % game.cards_to_select
-    if hints.has(game.current_step):
+    if hints.has(game.current_step) and Game.current_step != Game.steps.NONE:
         gui_hint.get_node("Hint").text = "[center]%s[/center]" % hint_text  # Update the text of the Hint RTLabel
         gui_hint.get_node("BtnHints").text = hints[game.current_step][1]
         gui_hint.visible = true  # Make sure the GuiHint and all its children are visible
