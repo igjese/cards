@@ -954,7 +954,7 @@ func refresh_cards(card_nodes: Array, deck_name: String):
 func glow_valid_actions():
     for card_slot in player_hand:  
         card_slot["node"].get_node("View/Glow").visible = false  
-    if game.current_step == steps.CHOOSE_ACTION_CARD:
+    if game.current_step in [steps.CHOOSE_ACTION_CARD, steps.DOUBLE_ACTION]:
         for card_slot in player_hand:  
             if card_slot["card"]:
                 if is_actioncard(card_slot["card"]):
