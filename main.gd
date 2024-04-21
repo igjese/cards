@@ -66,7 +66,7 @@ var zoomed_card = false
     
 var game = Game
 
-var challenge_glow = false
+var hint_refreshing = false
 
 
 # INIT #########################
@@ -902,11 +902,15 @@ func refresh_hint():
             tween.tween_property(gui_hint, "global_position",gui_hint.global_position,0.3).from(gui_hint.global_position + Vector2(-500,0))
         else:
             if hint_changed:
-                var tween = create_tween()
-                var delay = 0.3
-                gui_hint.pivot_offset = gui_hint.size / 2
-                tween.tween_property(gui_hint, "scale", Vector2(1.5, 1.5), delay/2).set_ease(Tween.EASE_IN)
-                tween.tween_property(gui_hint, "scale", Vector2(1, 1), delay/2).set_ease(Tween.EASE_OUT)
+                if not hint_refreshing:
+                    hint_refreshing = true
+                    var tween = create_tween()
+                    var delay = 0.3
+                    gui_hint.pivot_offset = gui_hint.size / 2
+                    tween.tween_property(gui_hint, "scale", Vector2(1.5, 1.5), delay/2).set_ease(Tween.EASE_IN)
+                    tween.tween_property(gui_hint, "scale", Vector2(1, 1), delay/2).set_ease(Tween.EASE_OUT)
+                    await get_tree().create_timer(delay).timeout
+                hint_refreshing = false
     else:
         gui_hint.visible = false  # Hide the GuiHint node, which also hides all its children
 
