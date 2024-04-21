@@ -4,6 +4,8 @@ var cards_raw = []
 var cards_by_name = {}
 var single_card_deck_qty = 5
 
+var change_challenge = false
+
 var card_back = preload("res://cards/back.png")
 
 var decks = {
@@ -491,6 +493,7 @@ func clean_up():
             decks["History"]["node"].get_node("View/Back").visible = true
         fly_card(challenge, decks["History"]["node"],$OffscreenLeft,0.3)
         await get_tree().create_timer(0.3).timeout
+        change_challenge = true
     else:
         # Challenge failed, trash top card from PlayerDeck as punishment
         if decks["PlayerDeck"]["cards"].size() <= 0:
@@ -517,7 +520,9 @@ func set_up():
     game.turn += 1
     game.challenge_overcome = false
     $Laurel.visible = false
-    $CardHistory.flip_card()
+    if change_challenge:
+        $CardHistory.flip_card()
+        change_challenge = false
     $SoundTurn.play()
     await get_tree().create_timer(0.5).timeout
     refresh_all()
