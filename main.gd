@@ -973,8 +973,14 @@ func glow_valid_buys():
                 if is_card_buyable(decks[card_slot]["node"]) and card["cost_money"] <= game.money:
                     decks[card_slot]["node"].get_node("View/Glow").modulate = Color(0,1,0,1)
                     decks[card_slot]["node"].get_node("View/Glow").visible = true
-
-
+    if game.current_step == steps.TAKE:
+        for card_slot in decks:
+            if decks[card_slot]["node"] and decks[card_slot]["cards"].size() > 0:
+                var card = top_card(decks[card_slot]["node"])
+                if is_card_buyable(decks[card_slot]["node"]) and card["cost_money"] <= game.max_cost:
+                    decks[card_slot]["node"].get_node("View/Glow").modulate = Color(0,1,0,1)
+                    decks[card_slot]["node"].get_node("View/Glow").visible = true
+                    
 func count_card_occurrences(cards: Array) -> Dictionary:
     var card_counts = {}
     for card in cards:
