@@ -495,6 +495,13 @@ func clean_up():
         await get_tree().create_timer(0.3).timeout
         change_challenge = true
     else:
+        $SoundBreakGlass.play()
+        var tween = create_tween()
+        var delay = 0.4
+        $CardHistory.pivot_offset = $CardHistory.size / 2
+        tween.tween_property($CardHistory, "scale", Vector2(1.5, 1.5), delay/2).set_ease(Tween.EASE_IN)
+        tween.tween_property($CardHistory, "scale", Vector2(1, 1), delay/2).set_ease(Tween.EASE_OUT)
+        await get_tree().create_timer(delay).timeout
         # Challenge failed, trash top card from PlayerDeck as punishment
         if decks["PlayerDeck"]["cards"].size() <= 0:
             reshuffle_discarded_into_deck()
