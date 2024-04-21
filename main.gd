@@ -141,7 +141,7 @@ func start_intro():
     
     $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
     $GuiIntro.challenge_card_fade = $GuiIntro.fades.FADEIN
-    await get_tree().create_timer(3).timeout
+    await get_tree().create_timer(3.5).timeout
     
     $GuiIntro/IntroStartGame.visible = true
     $SoundClang.play()
@@ -428,7 +428,7 @@ func find_slot_for_card(card, deck):
     
 func fly_card_to_table(card, start):
     var target = find_slot_for_card(card,table_cards)
-    await fly_card(card,start,target)
+    await fly_card(card,start,target,0.25)
 
 
 func fly_card(card,start,target,duration=0.2):
@@ -539,7 +539,7 @@ func set_up():
     
 func update_money_and_army(money, army):
         if money != 0:
-            await get_tree().create_timer(0.3).timeout 
+            await get_tree().create_timer(0.25).timeout 
             if money > 0:
                 $SoundCoin.play()
             if money < 0:
@@ -551,7 +551,7 @@ func update_money_and_army(money, army):
             tween.tween_property($GuiStatus/Money, "scale", Vector2(1, 1), delay/2).set_ease(Tween.EASE_OUT)
             game.money += money
         if army != 0:
-            await get_tree().create_timer(0.3).timeout 
+            await get_tree().create_timer(0.25).timeout 
             if army > 0:
                 $SoundCoin.play()
             if army < 0:
