@@ -421,15 +421,22 @@ func fly_card_to_table(card, start):
     await fly_card(card,start,target)
 
 
-func fly_card(card,start,target,duration = 0.2):
-    $CardDummy.visible = true
-    display_card($CardDummy, card["name"])
+func fly_card(card,start,target,duration=0.2):
+    #var cardInstance = $CardDummy
+    
+    var cardInstance = preload("res://Card.tscn").instantiate()  # Create a new Card instance
+    add_child(cardInstance)  # Add to the scene tree
+
+    cardInstance.visible = true
+    display_card(cardInstance, card["name"])
     refresh_gui()
     var tween = create_tween()
-    tween.tween_property($CardDummy, "global_position", target.global_position, duration).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
+    tween.tween_property(cardInstance, "global_position", target.global_position, duration).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
     await get_tree().create_timer(duration).timeout 
-    $CardDummy.visible = false
+    cardInstance.visible = false
     refresh_gui()
+    
+    cardInstance.queue_free()
         
 func buy_card(node: Node):
     var card = top_card(node)
@@ -454,10 +461,15 @@ func finish_buys():
 func clean_up():
     while decks["PlayerHand"]["cards"].size() > 0:
         var card = decks["PlayerHand"]["cards"].pop_front()
+        fly_card(card,find_slot_for_card(card,player_hand),$OffscreenBottom,0.3)
         decks["Discarded"]["cards"].append(card)
     while decks["CardsOnTable"]["cards"].size() > 0:
         var card = decks["CardsOnTable"]["cards"].pop_front()
+        fly_card(card,find_slot_for_card(card,table_cards),$OffscreenBottom,0.4)
         decks["Discarded"]["cards"].append(card)
+    $SoundSwoop.play()
+    refresh_gui()
+    await get_tree().create_timer(0.6).timeout
     for slot in player_hand:
         slot["card"] = null
         slot["qty"] = 0
