@@ -376,6 +376,9 @@ func post_action():
     if game.current_phase == phases.HISTORY:
         game.current_phase = phases.ACTIONS
         game.current_step = steps.CHOOSE_ACTION_CARD
+    if game.current_step == steps.CHOOSE_ACTION_CARD:
+        if no_action_cards_in_hand():
+            finish_actions()
     refresh_gui()
     
     
@@ -697,6 +700,8 @@ func finish_current_action():
     if game.current_phase == phases.HISTORY:
         game.current_phase = phases.ACTIONS
     game.current_step = steps.CHOOSE_ACTION_CARD
+    if no_action_cards_in_hand():
+        finish_actions()
     refresh_gui()
 
 
@@ -797,8 +802,10 @@ func check_challenge():
         
         
 func check_step():
+    if double_action:
+        return
     if game.current_step == steps.CHOOSE_ACTION_CARD:
-        if game.actions <= 0 or no_action_cards_in_hand():
+        if game.actions <= 0:
             finish_actions()
     if game.current_step == steps.BUY_CARDS:
         if game.buys <= 0:
