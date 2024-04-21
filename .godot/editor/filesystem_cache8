@@ -1,22 +1,22 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713693742
-card.gd::GDScript::-1::1713442530::0::1::::<>Panel<>::
-card.tscn::PackedScene::528414477263538463::1713693741::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://visuals/frame4.png<>uid://c2crqvwp2kqvd::::res://fonts/Font Awesome 6 Free-Solid-900.otf<>uid://8lcklr3vdfsn::::res://visuals/glow-white.png<>res://Glow.gd<>uid://cgq3ipk642y22::::res://cards/back.png
+::res://::1713704671
+card.gd::GDScript::-1::1713704434::0::1::::<>Panel<>::
+card.tscn::PackedScene::528414477263538463::1713704670::0::1::::<><>::res://card.gd<>uid://dvvs8bvvmd5rm::::res://cards/default.png<>uid://bkhg7vxs4yqsd::::res://visuals/frame4.png<>uid://c2crqvwp2kqvd::::res://fonts/Font Awesome 6 Free-Solid-900.otf<>uid://8lcklr3vdfsn::::res://visuals/glow-white.png<>res://Glow.gd<>uid://cgq3ipk642y22::::res://cards/back.png
 cards.csv::::-1::1713347193::1709642895::1::::<><>::
-default_env.tres::Environment::3535254983394503347::1713693742::0::1::::<><>::
+default_env.tres::Environment::3535254983394503347::1713704671::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1712959487::0::1::::<><>::
 Game.gd::GDScript::-1::1713475212::0::1::::<>Node<>::
 Glow.gd::GDScript::-1::1712995351::0::1::::<>Sprite2D<>::
 GuiIntro.gd::GDScript::-1::1713395088::0::1::::<>Control<>::
 history.md::TextFile::-1::1713193330::0::1::::<><>::
-main.gd::GDScript::-1::1713693741::0::1::::<>Node2D<>::
-main.tscn::PackedScene::1961131028682194198::1713693742::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://visuals/karte-720.png<>res://GuiIntro.gd<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>uid://8lcklr3vdfsn::::res://visuals/glow-white.png<>res://Glow.gd<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://visuals/big-frame.png<>uid://qv27o858jm7s::::res://sounds/take.wav<>uid://d1gtqtvq6aq4i::::res://sounds/take_short.wav<>uid://cs6h2tb325o41::::res://sounds/clang.wav<>uid://dfmjifvts571j::::res://visuals/laurel.png<>uid://bxu2mnd7rdggp::::res://sounds/turn.mp3<>uid://4wdsn50dfq3q::::res://sounds/place.mp3<>uid://cvdv3uin5i70r::::res://sounds/deal.wav<>uid://cfr1yfeulwwhh::::res://sounds/deal_soft.mp3<>uid://1bp5l2jbikv8::::res://sounds/audio_deal_randomizer.tres<>uid://dwoy1fx5uf0vj::::res://sounds/hit.wav<>uid://1kp8r0y65bil::::res://sounds/coin.wav<>uid://bqhax6s4vy5el::::res://sounds/punch.wav<>uid://b2fdtwedu3706::::res://sounds/success.wav
+main.gd::GDScript::-1::1713704670::0::1::::<>Node2D<>::
+main.tscn::PackedScene::1961131028682194198::1713704671::0::1::::<><>::uid://hr756cx0syfv::::res://card.tscn<>res://main.gd<>uid://cdv4cpp1h28qf::::res://visuals/karte-720.png<>res://GuiIntro.gd<>uid://d3l55qqyb7lpb::::res://cards/circus_maximus.png<>uid://8lcklr3vdfsn::::res://visuals/glow-white.png<>res://Glow.gd<>uid://cej4t3y57b8qp::::res://cards/vestal_virgins.png<>uid://cwtm5tf51j8bj::::res://visuals/big-frame.png<>uid://qv27o858jm7s::::res://sounds/take.wav<>uid://d1gtqtvq6aq4i::::res://sounds/take_short.wav<>uid://cs6h2tb325o41::::res://sounds/clang.wav<>uid://dfmjifvts571j::::res://visuals/laurel.png<>uid://bxu2mnd7rdggp::::res://sounds/turn.mp3<>uid://4wdsn50dfq3q::::res://sounds/place.mp3<>uid://cvdv3uin5i70r::::res://sounds/deal.wav<>uid://cfr1yfeulwwhh::::res://sounds/deal_soft.mp3<>uid://1bp5l2jbikv8::::res://sounds/audio_deal_randomizer.tres<>uid://dwoy1fx5uf0vj::::res://sounds/hit.wav<>uid://1kp8r0y65bil::::res://sounds/coin.wav<>uid://bqhax6s4vy5el::::res://sounds/punch.wav<>uid://b2fdtwedu3706::::res://sounds/success.wav<>uid://c6m32h5yy3h6l::::res://sounds/swoop_cards.wav
 README.md::TextFile::-1::1713125651::0::1::::<><>::
 README_old.md::TextFile::-1::1711716754::0::1::::<><>::
-::res://cards/::1713387517
+::res://cards/::1713707094
 aes_rude.png::CompressedTexture2D::8428654054505454976::1711734212::1711734339::1::::<><>::
 agriculture.png::CompressedTexture2D::6492133400693691499::1711810691::1711830288::1::::<><>::
-back.png::CompressedTexture2D::5228719640174691097::1713382846::1713387517::1::::<><>::
+back.png::CompressedTexture2D::5228719640174691097::1713707066::1713707098::1::::<><>::
 background.png::CompressedTexture2D::8284803030150241183::1711736333::1711736841::1::::<><>::
 barter_goods.png::CompressedTexture2D::5115838234803208479::1711734481::1711734595::1::::<><>::
 centuria.png::CompressedTexture2D::9196911178116787808::1711734256::1711734339::1::::<><>::

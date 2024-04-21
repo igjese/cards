@@ -314,7 +314,7 @@ func get_slot_for_type(card_type):
 
 
 func new_turn():
-    set_up()
+    await set_up()
     await deal_hand()
     play_challenge()
     refresh_gui()
@@ -514,6 +514,9 @@ func set_up():
     game.turn += 1
     game.challenge_overcome = false
     $Laurel.visible = false
+    $CardHistory.flip_card()
+    $SoundTurn.play()
+    await get_tree().create_timer(0.5).timeout
     refresh_all()
     
     

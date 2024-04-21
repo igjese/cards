@@ -30,15 +30,13 @@ func set_visual(card_name: String) -> void:
     else:
         print("Failed to load image %s, using default instead." % image_path)
         
-func flip_card(duration = 0.5):  
+func flip_card(duration = 0.5):
+    self.pivot_offset = self.size/2
     var tween = create_tween()
     tween.tween_property(self, "scale", Vector2(1.5, 1.5), duration / 3)
-    tween.parallel().tween_property(self, "position", Vector2(self.position.x-37,self.position.y-37), duration / 3)
     tween.tween_property(self, "scale", Vector2(0, 1.5), duration / 3)
-    tween.parallel().tween_property(self, "position", Vector2(self.position.x+75,self.position.y-37), duration / 3)
     tween.tween_callback(_hide_back_and_reveal_card)
     tween.tween_property(self, "scale", Vector2(1, 1), duration / 3)
-    tween.parallel().tween_property(self, "position", self.position, duration / 3)
 
 func _hide_back_and_reveal_card():
     $View/Back.hide() 
