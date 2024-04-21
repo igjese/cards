@@ -21,7 +21,11 @@ func _ready():
     $IntroYourHand.modulate.a = 0
     $IntroChallengeCard.modulate.a = 0
     $IntroStartGame.visible = false
-
+    $ResourceBorder.modulate.a = 0
+    $ActionsBorder.modulate.a = 0
+    $HandBorder.modulate.a = 0
+    $ChallengeBorder.modulate.a = 0
+    
 
 func _process(delta):
     if intro_fade == fades.FADEOUT:
@@ -32,13 +36,18 @@ func _process(delta):
         main_fade = fade_in($IntroMain, main_fade, -delta * fade_speed)
     if resource_cards_fade == fades.FADEIN:
         resource_cards_fade = fade_in($IntroResourceCards, resource_cards_fade, delta * fade_speed)
+        fade_in($ResourceBorder, fades.FADEIN, delta * fade_speed)
     if action_cards_fade == fades.FADEIN:
         action_cards_fade = fade_in($IntroActionCards, action_cards_fade, delta * fade_speed)
+        fade_in($ActionsBorder, fades.FADEIN, delta * fade_speed)
     if your_hand_fade == fades.FADEIN:
         your_hand_fade = fade_in($IntroYourHand, your_hand_fade, delta * fade_speed)
+        fade_in($HandBorder, fades.FADEIN, delta * fade_speed)
     if challenge_card_fade == fades.FADEIN:
         challenge_card_fade = fade_in($IntroChallengeCard, challenge_card_fade, delta * fade_speed)
-            
+        fade_in($ChallengeBorder, fades.FADEIN, delta * fade_speed)
+        
+        
 func fade_in(node, fade_state, ammount):
     node.modulate.a += ammount
     if node.modulate.a >= 1:

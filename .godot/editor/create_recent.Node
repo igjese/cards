@@ -1,3 +1,4 @@
+Panel
 Sprite2D
 Node2D
 Control
@@ -9,6 +10,5 @@ ColorRect
 LineEdit
 Line2D
 Label
-Panel
 TextureRect
 Button
