@@ -203,6 +203,17 @@ offset_right = 342.0
 offset_bottom = 678.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ygiaj")
 
+[node name="IntroRightClick" type="RichTextLabel" parent="GuiIntro"]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 815.0
+offset_right = 1440.0
+offset_bottom = 885.0
+theme_override_colors/default_color = Color(0.929412, 0.941176, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 39
+bbcode_enabled = true
+text = "[center]...Right click any card to see its effects[/center]"
+
 [node name="IntroStartGame" type="Control" parent="GuiIntro"]
 anchors_preset = 0
 offset_left = 1040.0

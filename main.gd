@@ -109,7 +109,7 @@ func start_intro():
     $GuiIntro/IntroMain.bbcode_text = "[center]Buy resources[/center]"
     $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     refresh_all()
-    await get_tree().create_timer(0.3).timeout 
+    await get_tree().create_timer(0.5).timeout 
     await deal_resources()
     
     $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
@@ -119,6 +119,7 @@ func start_intro():
     $GuiIntro/IntroMain.bbcode_text = "[center]Buy action cards[/center]"
     $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     await deal_actions()
+    await get_tree().create_timer(0.5).timeout 
 
     $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
     $GuiIntro.action_cards_fade = $GuiIntro.fades.FADEIN
@@ -136,14 +137,18 @@ func start_intro():
     $GuiIntro/IntroMain.bbcode_text = "[center]Overcome challenges[/center]"
     $GuiIntro.main_fade = $GuiIntro.fades.FADEIN
     await prepare_history()
+    await get_tree().create_timer(0.5).timeout
     
     $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
     $GuiIntro.challenge_card_fade = $GuiIntro.fades.FADEIN
-    await get_tree().create_timer(2.5).timeout
+    await get_tree().create_timer(2).timeout
+    
+    $GuiIntro.rightclick_fade = $GuiIntro.fades.FADEIN
+    await get_tree().create_timer(4).timeout
     
     $GuiIntro/IntroStartGame.visible = true
     $SoundClang.play()
-    await get_tree().create_timer(0.5).timeout
+    await get_tree().create_timer(1.5).timeout
     refresh_all()
     
     

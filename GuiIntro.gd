@@ -3,7 +3,7 @@ extends Control
 var phases = Game.phases
 var steps = Game.steps
 
-var fade_speed = 0.5  # Speed of the fade (in alpha units per second)
+var fade_speed = 0.4  # Speed of the fade (in alpha units per second)
 
 enum fades {HIDDEN, FADEIN, VISIBLE, FADEOUT}
 
@@ -13,6 +13,7 @@ var resource_cards_fade = fades.HIDDEN
 var action_cards_fade = fades.HIDDEN
 var your_hand_fade = fades.HIDDEN
 var challenge_card_fade = fades.HIDDEN
+var rightclick_fade = fades.HIDDEN
 
 func _ready():
     $IntroMain.modulate.a = 0
@@ -25,6 +26,7 @@ func _ready():
     $ActionsBorder.modulate.a = 0
     $HandBorder.modulate.a = 0
     $ChallengeBorder.modulate.a = 0
+    $IntroRightClick.modulate.a = 0
     
 
 func _process(delta):
@@ -46,6 +48,8 @@ func _process(delta):
     if challenge_card_fade == fades.FADEIN:
         challenge_card_fade = fade_in($IntroChallengeCard, challenge_card_fade, delta * fade_speed)
         fade_in($ChallengeBorder, fades.FADEIN, delta * fade_speed)
+    if rightclick_fade == fades.FADEIN:
+        fade_in($IntroRightClick, fades.FADEIN, delta * fade_speed)
         
         
 func fade_in(node, fade_state, ammount):
