@@ -484,6 +484,10 @@ func clean_up():
     if game.money >= 0 and game.army >= 0:
         decks["Trash"]["cards"].append(challenge)
         decks["History"]["cards"].pop_front()
+        if decks["History"]["cards"].size() > 0:
+            decks["History"]["node"].get_node("View/Back").visible = true
+        fly_card(challenge, decks["History"]["node"],$OffscreenLeft,0.3)
+        await get_tree().create_timer(0.3).timeout
     else:
         # Challenge failed, trash top card from PlayerDeck as punishment
         if decks["PlayerDeck"]["cards"].size() <= 0:
