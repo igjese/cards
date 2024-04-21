@@ -66,6 +66,8 @@ var zoomed_card = false
     
 var game = Game
 
+var challenge_glow = false
+
 
 # INIT #########################
 
@@ -721,6 +723,7 @@ func init():
     assign_decks_to_nodes()
     assign_gui_nodes()
     create_card_sprites()
+    $CardHistory/View/Glow.modulate = Color(1,0,0,1)
     
     
 func create_card_sprites():
@@ -780,7 +783,6 @@ func refresh_gui():
 func check_challenge():
     var glow = decks["History"]["node"].get_node("View/Glow")
     if game.money < 0 or game.army < 0:
-        glow.modulate = Color(1,0,0,1)
         glow.visible = true  
         $Laurel.visible = false
     else:
