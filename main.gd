@@ -399,6 +399,7 @@ func play_resources():
         await update_money_and_army(card["effect_money"], card["effect_army"])
 
     game.current_step = steps.BUY_CARDS
+    check_step() 
     refresh_gui()
 
 
@@ -559,10 +560,14 @@ func play_action_card(card):
             decks["PlayerHand"]["cards"].erase(card)
             await fly_card_to_table(card, start)
             put_card_on_table(card)
+            game.buys += card["extra_buys"]
+            game.actions += card["extra_actions"]
             refresh_gui()
+        else:
+            game.buys += card["extra_buys"]
+            game.actions += card["extra_actions"]
         await update_money_and_army(card["effect_money"], card["effect_army"])
-        game.buys += card["extra_buys"]
-        game.actions += card["extra_actions"]
+        
         if card["draw"] > 0:
             await draw_cards(card["draw"])
         if card["trash"] > 0:
@@ -570,7 +575,7 @@ func play_action_card(card):
             game.cards_to_select = card["trash"]
             more_input = true
         if card["take_money2"] > 0:
-            take_money2()
+            await take_money2()
         if card["take_4"] > 0:
             game.current_step = steps.TAKE
             game.cards_to_select = 1
