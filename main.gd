@@ -141,10 +141,7 @@ func start_intro():
     
     $GuiIntro.main_fade = $GuiIntro.fades.FADEOUT
     $GuiIntro.challenge_card_fade = $GuiIntro.fades.FADEIN
-    await get_tree().create_timer(2).timeout
-    
-    $GuiIntro.rightclick_fade = $GuiIntro.fades.FADEIN
-    await get_tree().create_timer(4).timeout
+    await get_tree().create_timer(3).timeout
     
     $GuiIntro/IntroStartGame.visible = true
     $SoundClang.play()

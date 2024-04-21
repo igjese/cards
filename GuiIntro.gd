@@ -13,7 +13,6 @@ var resource_cards_fade = fades.HIDDEN
 var action_cards_fade = fades.HIDDEN
 var your_hand_fade = fades.HIDDEN
 var challenge_card_fade = fades.HIDDEN
-var rightclick_fade = fades.HIDDEN
 
 func _ready():
     $IntroMain.modulate.a = 0
@@ -48,7 +47,6 @@ func _process(delta):
     if challenge_card_fade == fades.FADEIN:
         challenge_card_fade = fade_in($IntroChallengeCard, challenge_card_fade, delta * fade_speed)
         fade_in($ChallengeBorder, fades.FADEIN, delta * fade_speed)
-    if rightclick_fade == fades.FADEIN:
         fade_in($IntroRightClick, fades.FADEIN, delta * fade_speed)
         
         
