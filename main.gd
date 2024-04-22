@@ -2,9 +2,6 @@ extends Node2D
 
 var cards_raw = []
 var cards_by_name = {}
-var single_card_deck_qty = 5
-
-var change_challenge = false
 
 var card_back = preload("res://cards/back.png")
 
@@ -37,6 +34,7 @@ var table_cards = []
 var gui_main = null
 var gui_status = null
 
+var game = Game
 var steps = Game.steps
 var phases = Game.phases
 
@@ -44,28 +42,10 @@ var double_action = null
 var double_action2 = false
 
 var zoomed_card = false
-    
-var game = Game
-
+var change_challenge = false
 var hint_refreshing = false
 
-
-# INIT #########################
-
-func _ready():
-    init()
-    print_scene_tree(get_tree().get_root())
-    new_game()
-
-
 # GAME LOGIC ###################
-
-func new_game():
-    start_intro()
-    #prepare_decks()
-    game.turn = 0
-    #new_turn()
-    
     
 func start_playing():
     game.current_phase = phases.SETUP
@@ -75,7 +55,6 @@ func start_playing():
     game.army = 0
     game.actions = 1
     game.buys = 1
-    game.turn += 1
     game.challenge_overcome = false
     refresh_all()
     game.current_phase = phases.HISTORY
@@ -237,34 +216,6 @@ func deal_actions():
     
     for i in range(10):
         await deal_five(decks["Action" + str(i+1)], selected_actions[i])
-
-
-func refresh_actions():
-    get_node("SlotsActions").visible = true
-    for i in range(10):
-        var slot = "Action" + str(i+1)
-        var node = get_node("SlotsActions/Card" + slot)
-        var qty = decks[slot]["cards"].size()
-        if qty > 0:
-            node.get_node("View").visible = true
-            display_card_with_qty(node, decks[slot]["cards"][0]["name"], qty)
-        else:
-            node.get_node("View").visible = false
-    
-    
-
-    
-    
-func refresh_resources():
-    get_node("SlotsResources").visible = true
-    for slot in ["Money1", "Money2", "Army1", "Army2"]:
-        var node = get_slot_for_type(slot)
-        var qty = decks[slot]["cards"].size()
-        if qty > 0:
-            node.get_node("View").visible = true
-            display_card_with_qty(node, decks[slot]["cards"][0]["name"], qty)
-        else:
-            node.get_node("View").visible = false
     
         
 func deal_resources():
@@ -279,21 +230,6 @@ func deal_five(slot, card):
         slot["cards"].append(card)
         await get_tree().create_timer(0.25).timeout # Wait for 100ms 
         refresh_all()
-    
-
-func get_slot_for_type(card_type):
-    match card_type:
-        "Money1":
-            return $SlotsResources/CardMoney1  # Example path, adjust accordingly
-        "Money2":
-            return $SlotsResources/CardMoney2
-        "Army1": 
-            return $SlotsResources/CardArmy1 
-        "Army2":
-            return $SlotsResources/CardArmy2
-        _:
-            print("Unexpected card type: ", card_type)
-            return null 
 
 
 func new_turn():
@@ -387,7 +323,6 @@ func play_resources():
         await update_money_and_army(card["effect_money"], card["effect_army"])
 
     game.current_step = steps.BUY_CARDS
-    check_step() 
     refresh_gui()
 
 
@@ -403,29 +338,7 @@ func find_slot_for_card(card, deck):
     if not start:
         start = free_slots[0]
     return start
-    
-    
-func fly_card_to_table(card, start):
-    var target = find_slot_for_card(card,table_cards)
-    await fly_card(card,start,target,0.25)
 
-
-func fly_card(card,start,target,duration=0.2):
-    #var cardInstance = $CardDummy
-    
-    var cardInstance = preload("res://Card.tscn").instantiate()  # Create a new Card instance
-    add_child(cardInstance)  # Add to the scene tree
-
-    cardInstance.visible = true
-    display_card(cardInstance, card["name"])
-    refresh_gui()
-    var tween = create_tween()
-    tween.tween_property(cardInstance, "global_position", target.global_position, duration).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
-    await get_tree().create_timer(duration).timeout 
-    cardInstance.visible = false
-    refresh_gui()
-    
-    cardInstance.queue_free()
         
 func buy_card(node: Node):
     var card = top_card(node)
@@ -483,7 +396,7 @@ func clean_up():
         tween.tween_property($CardHistory, "scale", Vector2(1.5, 1.5), delay/2).set_ease(Tween.EASE_IN)
         tween.tween_property($CardHistory, "scale", Vector2(1, 1), delay/2).set_ease(Tween.EASE_OUT)
         await get_tree().create_timer(delay).timeout
-        # Challenge failed, trash top card from PlayerDeck as punishment
+
         if decks["PlayerDeck"]["cards"].size() <= 0:
             reshuffle_discarded_into_deck()
         var card_to_trash = decks["PlayerDeck"]["cards"].pop_front()  # Take the top card from the player's deck
@@ -505,7 +418,6 @@ func set_up():
     game.army = 0
     game.actions = 1
     game.buys = 1
-    game.turn += 1
     game.challenge_overcome = false
     $Laurel.visible = false
     if change_challenge:
@@ -557,6 +469,7 @@ func test_challenge():
             await get_tree().create_timer(0.6).timeout 
             $Laurel.modulate.a = 1
         
+
 func play_action_card(card):
     var more_input = false
     if game.actions > 0 or game.current_phase == phases.HISTORY:
@@ -718,27 +631,40 @@ func discard(deck):
     if game.cards_to_select == 0:
         post_action()
     refresh_gui()
-    
-    
-# FUNCTIONS  ###################
 
-func init():
-    load_card_definitions_from_csv()
-    load_history_texts_from_md()
-    assign_decks_to_nodes()
-    assign_gui_nodes()
-    create_card_sprites()
-    $CardHistory/View/Glow.modulate = Color(1,0,0,1)
-    
-    
-func create_card_sprites():
-    for i in range(12): # Assuming you want a dozen cards
-        var card = Sprite2D.new()
-        card.texture = card_back
-        card.scale = Vector2(0.25, 0.25)  
-        $OffscreenLeft.add_child(card)
-    
-var flight_speed = 500.0
+
+func check_step():
+    if double_action:
+        return
+    if game.current_step == steps.CHOOSE_ACTION_CARD:
+        if game.actions <= 0:
+            finish_actions()
+    if game.current_step == steps.BUY_CARDS:
+        if game.buys <= 0:
+            finish_buys()
+
+
+# EFFECTS ######################
+
+func fly_card_to_table(card, start):
+    var target = find_slot_for_card(card,table_cards)
+    await fly_card(card,start,target,0.25)
+
+
+func fly_card(card,start,target,duration=0.2):
+    var cardInstance = preload("res://Card.tscn").instantiate()  # Create a new Card instance
+    add_child(cardInstance)  # Add to the scene tree
+
+    cardInstance.visible = true
+    display_card(cardInstance, card["name"])
+    refresh_gui()
+    var tween = create_tween()
+    tween.tween_property(cardInstance, "global_position", target.global_position, duration).from(start.global_position).set_ease(Tween.EASE_IN_OUT)
+    await get_tree().create_timer(duration).timeout 
+    cardInstance.visible = false
+    refresh_gui()
+    cardInstance.queue_free()
+
 
 func _process(_delta):
     for card in $OffscreenLeft.get_children():
@@ -753,27 +679,39 @@ func start_card_flights():
     for card in $OffscreenLeft.get_children():
         card.set_meta("target_position", $DeckHistory.global_position + Vector2(75,75))  
         await get_tree().create_timer(0.05).timeout  # Wait for the delay
+    
 
+# REFRESH  ###################
+
+func refresh_actions():
+    get_node("SlotsActions").visible = true
+    for i in range(10):
+        var slot = "Action" + str(i+1)
+        var node = get_node("SlotsActions/Card" + slot)
+        var qty = decks[slot]["cards"].size()
+        if qty > 0:
+            node.get_node("View").visible = true
+            display_card_with_qty(node, decks[slot]["cards"][0]["name"], qty)
+        else:
+            node.get_node("View").visible = false
     
-func assign_gui_nodes():
-    gui_main = get_node("GuiMain")
-    gui_status = get_node("GuiStatus")
+    
+func refresh_resources():
+    get_node("SlotsResources").visible = true
+    for slot in ["Money1", "Money2", "Army1", "Army2"]:
+        var node = get_slot_for_type(slot)
+        var qty = decks[slot]["cards"].size()
+        if qty > 0:
+            node.get_node("View").visible = true
+            display_card_with_qty(node, decks[slot]["cards"][0]["name"], qty)
+        else:
+            node.get_node("View").visible = false
 
 
-func prepare_decks():
-    empty_current_decks()
-    assign_cards_to_decks()
-    
-    
-func empty_current_decks():
-    for deck in decks:
-        decks[deck]["cards"].clear()
-    
-    
 func refresh_gui():   
     check_step() 
-    for deck in decks:
-        refresh_deck(deck)
+    refresh_resources()
+    refresh_actions()
     refresh_cards(player_hand, "PlayerHand")
     $SlotsTable.visible = true
     refresh_cards(table_cards, "CardsOnTable")
@@ -782,35 +720,16 @@ func refresh_gui():
         refresh_hint()
         refresh_history()
         refresh_zoom()
-        check_challenge()
+        refresh_challenge_state()
     
     
-func check_challenge():
+func refresh_challenge_state():
     var glow = decks["History"]["node"].get_node("View/Glow")
     if game.money < 0 or game.army < 0:
         glow.visible = true  
         $Laurel.visible = false
     else:
         glow.visible = false  
-        
-        
-func check_step():
-    if double_action:
-        return
-    if game.current_step == steps.CHOOSE_ACTION_CARD:
-        if game.actions <= 0:
-            finish_actions()
-    if game.current_step == steps.BUY_CARDS:
-        if game.buys <= 0:
-            finish_buys()
-    
-    
-func no_action_cards_in_hand():
-    for card in decks["PlayerHand"]["cards"]:
-        if card:
-            if card["type"] == "Action":
-                return false
-    return true
         
     
 func refresh_zoom():
@@ -929,13 +848,12 @@ func refresh_status():
     var countPlayerDeck = decks["PlayerDeck"]["cards"].size()
     var countDiscarded = decks["Discarded"]["cards"].size()
     var countTrash = decks["Trash"]["cards"].size()
-    var status = "Turn %d | Money %d - Army %d | Actions %d - Buys %d | Deck %d - Discarded %d - Trash %d" % [game.turn, game.money, game.army, game.actions, game.buys, countPlayerDeck, countDiscarded, countTrash]
+    var status = "Money %d - Army %d | Actions %d - Buys %d | Deck %d - Discarded %d - Trash %d" % [game.money, game.army, game.actions, game.buys, countPlayerDeck, countDiscarded, countTrash]
     gui_status.get_node("Status").set_text(status)
     
     
 func refresh_cards(card_nodes: Array, deck_name: String):
     var card_counts = count_card_occurrences(decks[deck_name]["cards"])
-    #if decks["PlayerHand"]["cards"].size() > 0: breakpoint
     for node_info in card_nodes:
         var card = node_info["card"] 
         if card:
@@ -980,40 +898,6 @@ func glow_valid_buys():
                 if is_card_buyable(decks[card_slot]["node"]) and card["cost_money"] <= game.max_cost:
                     decks[card_slot]["node"].get_node("View/Glow").modulate = Color(0,1,0,1)
                     decks[card_slot]["node"].get_node("View/Glow").visible = true
-                    
-func count_card_occurrences(cards: Array) -> Dictionary:
-    var card_counts = {}
-    for card in cards:
-        if card:
-            var card_name = card["name"]
-            if card_name in card_counts:
-                card_counts[card_name] += 1
-            else:
-                card_counts[card_name] = 1
-    return card_counts
-
-    
-func refresh_deck(deck_name):
-    var node = decks[deck_name]["node"]
-    var deck = decks[deck_name]["cards"]
-    if node:
-        if deck.size() > 0:
-            var card = deck[0]
-            display_card_with_qty(node, card["name"],deck.size())
-        else:
-            node.get_node("View").visible = false
-            
-    
-func assign_decks_to_nodes():
-    decks["History"]["node"] = get_node("CardHistory")
-    for deck in ["Money1","Money2","Army1","Army2"]:
-        decks[deck]["node"] = get_node("SlotsResources/Card" + deck)
-    for deck in ["Action1","Action2","Action3","Action4","Action5","Action6","Action7","Action8","Action9","Action10"]:
-        decks[deck]["node"] = get_node("SlotsActions/Card" + deck)
-    for i in range(14):
-        player_hand.append({"card": null, "qty": 0, "node": get_node("SlotsHand/CardHand%d" % (i+1))})
-    for i in range(10):
-        table_cards.append({"card": null, "qty": 0, "node": get_node("SlotsTable/CardTable%d" % (i+1))})
 
 
 func display_card_with_qty(node: Node, card_name: String, qty: int):
@@ -1027,8 +911,6 @@ func display_card_with_qty(node: Node, card_name: String, qty: int):
     node.get_node("View").visible = true
 
     
-# Assumes cards_by_name is a dictionary where keys are card names
-# and values are dictionaries containing the card's data.
 func display_card(card: Control, card_name: String) -> void:
     if not cards_by_name.has(card_name):
         print("Card name not found: ", card_name)
@@ -1044,6 +926,32 @@ func display_card(card: Control, card_name: String) -> void:
     else:
         card.get_node("View/CardCost2").visible = true
     
+
+# INIT ###################
+
+func _ready():
+    load_card_definitions_from_csv()
+    load_history_texts_from_md()
+    assign_decks_to_nodes()
+    assign_gui_nodes()
+    create_card_sprites()
+    $CardHistory/View/Glow.modulate = Color(1,0,0,1)
+    print_scene_tree(get_tree().get_root())
+    start_intro()
+    
+    
+func create_card_sprites():
+    for i in range(12): # Assuming you want a dozen cards
+        var card = Sprite2D.new()
+        card.texture = card_back
+        card.scale = Vector2(0.25, 0.25)  
+        $OffscreenLeft.add_child(card)
+
+
+func assign_gui_nodes():
+    gui_main = get_node("GuiMain")
+    gui_status = get_node("GuiStatus")
+
 
 func load_card_definitions_from_csv():
     var path = "res://cards.csv"
@@ -1117,7 +1025,7 @@ func assign_cards_to_decks():
         if deck_key == "Army1":
             army1 = card
         if deck_key in ["Money1","Money2","Army1","Army2"]:
-            for i in range(single_card_deck_qty):
+            for i in range(5):
                 decks[deck_key]["cards"].append(card)
         elif deck_key == "History":
             decks[deck_key]["cards"].append(card)
@@ -1141,7 +1049,7 @@ func assign_cards_to_decks():
     selected_actions.sort_custom(sort_cards_by_cost)
     
     for i in range(10):
-        for j in range(single_card_deck_qty):
+        for j in range(5):
             decks["Action" + str(i+1)]["cards"].append(selected_actions[i])
         
     for i in range(7):
@@ -1149,10 +1057,9 @@ func assign_cards_to_decks():
     for i in range(3):
         decks["PlayerDeck"]["cards"].append(army1)
     decks["PlayerDeck"]["cards"].shuffle()
-    
-    for deck_name in decks:
-        print_deck_cards(deck_name, decks[deck_name])
         
+
+# CHEATS ######################
         
 func cheat_give_card(card_name):
     var card = cards_by_name[card_name]
@@ -1162,8 +1069,61 @@ func cheat_give_card(card_name):
         game.current_step = steps.CHOOSE_ACTION_CARD
     else:
         print("Card not found ", card_name)
+
+
+func toggle_cheat_console():
+    get_node("GuiCheats").visible = not get_node("GuiCheats").visible
+    if get_node("GuiCheats").visible:
+            get_node("GuiCheats/LineEdit").grab_focus() 
+            
         
 # UTILS #######################
+
+func get_slot_for_type(card_type):
+    match card_type:
+        "Money1":
+            return $SlotsResources/CardMoney1  
+        "Money2":
+            return $SlotsResources/CardMoney2
+        "Army1": 
+            return $SlotsResources/CardArmy1 
+        "Army2":
+            return $SlotsResources/CardArmy2
+        _:
+            print("Unexpected card type: ", card_type)
+            return null 
+
+
+func count_card_occurrences(cards: Array) -> Dictionary:
+    var card_counts = {}
+    for card in cards:
+        if card:
+            var card_name = card["name"]
+            if card_name in card_counts:
+                card_counts[card_name] += 1
+            else:
+                card_counts[card_name] = 1
+    return card_counts
+            
+    
+func assign_decks_to_nodes():
+    decks["History"]["node"] = get_node("CardHistory")
+    for deck in ["Money1","Money2","Army1","Army2"]:
+        decks[deck]["node"] = get_node("SlotsResources/Card" + deck)
+    for deck in ["Action1","Action2","Action3","Action4","Action5","Action6","Action7","Action8","Action9","Action10"]:
+        decks[deck]["node"] = get_node("SlotsActions/Card" + deck)
+    for i in range(14):
+        player_hand.append({"card": null, "qty": 0, "node": get_node("SlotsHand/CardHand%d" % (i+1))})
+    for i in range(10):
+        table_cards.append({"card": null, "qty": 0, "node": get_node("SlotsTable/CardTable%d" % (i+1))})
+
+func no_action_cards_in_hand():
+    for card in decks["PlayerHand"]["cards"]:
+        if card:
+            if card["type"] == "Action":
+                return false
+    return true
+
 
 func has_money1_in_hand() -> bool:
     for card in decks["PlayerHand"]["cards"]:
@@ -1213,13 +1173,7 @@ func is_card_buyable(node: Node) -> bool:
     
     
 func sort_cards_by_cost(a, b):
-    return a["cost_money"] < b["cost_money"]  # Ascending order
-    
-    
-func toggle_cheat_console():
-    get_node("GuiCheats").visible = not get_node("GuiCheats").visible
-    if get_node("GuiCheats").visible:
-            get_node("GuiCheats/LineEdit").grab_focus()  
+    return a["cost_money"] < b["cost_money"]  # Ascending order 
             
             
 func print_scene_tree(node: Node, indent: int = 0):
@@ -1243,7 +1197,7 @@ func _on_btn_exit_pressed():
 
 
 func _on_btn_new_game_pressed():
-    new_game() # Replace with function body.
+    start_intro() # Replace with function body.
     
     
 func on_deck_clicked(node):
@@ -1252,51 +1206,42 @@ func on_deck_clicked(node):
     refresh_all()
     match game.current_step:
         steps.CHOOSE_ACTION_CARD:
-            # valid: action card, in player's hand
             if is_actioncard(card) and is_playerhand(node): 
                 play_action_card(card)
         steps.BUY_CARDS:
-            # valid: card in buyable decks and costing less than money available
             var cost = card["cost_money"]
             if is_card_buyable(node) and cost <= game.money and game.buys > 0:
                 buy_card(node)
         steps.TRASH:
-            # valid: card is in player's hand and more cards can be selected
             if is_playerhand(node) and game.cards_to_select > 0:
                 trash_card(node)
                 if game.cards_to_select == 0:
                     post_action()
         steps.TAKE:
-            # valid: card is buyable and costing less than max_cost
             var cost = card["cost_money"]
             if is_card_buyable(node) and cost <= game.max_cost and game.cards_to_select > 0:
                 take_card(node)
                 post_action()
         steps.DOUBLE_ACTION:
-            # valid: action card, in player's hand
             if is_actioncard(card) and is_playerhand(node): 
                 double_action = card
                 game.current_step = steps.CHOOSE_ACTION_CARD
                 play_action_card(card)
         steps.REPLACE:
-            # valid: card is in player's hand and more cards can be selected
             if is_playerhand(node) and game.cards_to_select > 0:
                 replace_card(node)
                 if game.cards_to_select == 0:
                     post_action()
         steps.UPGRADE_CARD:
-            # valid: card is in player's hand and more cards can be selected
             if is_playerhand(node) and game.cards_to_select > 0:
                 upgrade_card(node)
         steps.DISCARD:
-            # valid: card is in player's hand and more cards can be selected
             if is_playerhand(node) and game.cards_to_select > 0:
                 discard(node)     
                 
                 
 func on_deck_right_clicked(node):
-    var card : Dictionary = top_card(node)
-    game.showcase_card = card
+    game.showcase_card = top_card(node)
     zoomed_card = true
     refresh_all()
 
