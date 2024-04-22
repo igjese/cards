@@ -40,27 +40,6 @@ var gui_status = null
 var steps = Game.steps
 var phases = Game.phases
 
-var cost_icons = {
-    "cost_money": "\uf51e",
-}
-        
-var effect_icons = {
-    "effect_money": "\uf51e",
-    "effect_army": "Army: ",
-    "discard": "Disc\\ard: ",
-    "trash": "Tr\\ash: ",
-    "extra_buys": "Buy: ",
-    "draw": "Draw: ",
-    "extra_actions": "Actions: ",
-    "replace": "Replace: ",
-    "upgrade_2": "Upgra\\de: +2#",
-    "double_action": "Double Action#",
-    "take_4": "Take: \uf51e4#",
-    "take_money2": "Take Aes Rude#",
-    "take_5": "Take: \uf51e5#",
-    "upgrade_money": "Upgra\\de \uf51e#",
-}
-
 var double_action = null
 var double_action2 = false
 
@@ -1056,32 +1035,14 @@ func display_card(card: Control, card_name: String) -> void:
         return
         
     var card_data = cards_by_name[card_name]
-    
-    var cost_text = str(card_data["cost_money"]) if card_data["type"] in ["Action","Money1","Money2","Army1","Army2"] else "-"
-    
-    var effect_text = ""
-    for effect in effect_icons:
-        if card_data[effect] != 0:
-            effect_text = "%s%s%s\n" % [effect_text, effect_icons[effect], str(card_data[effect])]
-    effect_text = effect_text.split("#")[0]
             
     card.set_title(card_data.name)
-    card.set_effect("")
-    card.set_cost(cost_text)
     card.set_visual(card_name)
     
     if card_data["type"] in ["History","Victory1","Victory2","Victory3"]:
         card.get_node("View/CardCost2").visible = false
     else:
         card.get_node("View/CardCost2").visible = true
-    
-    
-func cost_text(cost, value):
-    return cost_icons[cost] + str(value) + " "
-    
-
-func effect_text(effect, value):
-    return effect_icons[effect] + str(value) + "\n"
     
 
 func load_card_definitions_from_csv():
