@@ -45,23 +45,8 @@ var zoomed_card = false
 var change_challenge = false
 var hint_refreshing = false
 
-# GAME LOGIC ###################
-    
-func start_playing():
-    game.current_phase = phases.SETUP
-    game.current_step = steps.NONE
-    double_action = null
-    game.money = 0
-    game.army = 0
-    game.actions = 1
-    game.buys = 1
-    game.challenge_overcome = false
-    refresh_all()
-    game.current_phase = phases.HISTORY
-    game.showcase_card = top_card(decks["History"]["node"])
-    play_challenge()
-    refresh_all()
-    
+# INTRO #####################
+
 func start_intro():
     game.current_phase = phases.INTRO
     $GuiIntro/IntroMain.bbcode_text = "[center]Buy resources[/center]"
@@ -106,7 +91,7 @@ func start_intro():
     await get_tree().create_timer(1.5).timeout
     refresh_all()
     
-    
+
 func prepare_history():
     var victory_cards = []
     for card in cards_raw:
@@ -145,62 +130,8 @@ func prepare_hand():
                 decks["PlayerDeck"]["cards"].append(card)
     decks["PlayerDeck"]["cards"].shuffle()
     await deal_hand()
-    
-    
-func deal_hand():
-    if decks["PlayerDeck"]["cards"].size() < 5:
-        reshuffle_discarded_into_deck()
 
-    while decks["PlayerHand"]["cards"].size() < 5:
-        var card = decks["PlayerDeck"]["cards"].pop_front()
-        await draw_card(card)
-        refresh_all()
-        
-func draw_card(card):
-    $SoundTake.pitch_scale = randf_range(0.95, 1.05)
-    $SoundTake.play()
-    var slot = find_slot_for_card(card, player_hand)
-    await fly_card(card,$OffscreenBottomLeft, slot)
-    put_card_into_hand(card)
-    refresh_gui()
-    await get_tree().create_timer(0.3).timeout 
-    
-    
-func refresh_all():
-    if game.current_phase == phases.INTRO:
-        get_node("SlotsTable").visible = false
-        get_node("GuiHint").visible = false
-        get_node("GuiMain").visible = false
-        get_node("GuiStatus").visible = false
-        
-        $GuiIntro.refresh_intro()
-        refresh_resources()
-        refresh_actions()
-        refresh_cards(player_hand, "PlayerHand")
-        refresh_challenges()
-    else:
-        get_node("GuiIntro").visible = false
-        get_node("GuiMain").visible = true
-        get_node("GuiStatus").visible = true
-        refresh_gui()
-    
-func refresh_challenges():
-    $Laurel.visible = false
-    var node = decks["History"]["node"]
-    if game.current_step not in [steps.INTRO1, steps.INTRO2, steps.INTRO3]:
-        var deck = decks["History"]["cards"]
-        if deck.size() > 0:
-            var card = deck[0]
-            display_card_with_qty(node, card["name"],deck.size())
-            node.get_node("View/Glow").modulate = Color(1,0,0,1)
-            node.get_node("View/Glow").visible = true  
-            node.get_node("View").visible = true
-        else:
-            node.get_node("View").visible = false
-    else:
-        node.get_node("View").visible = false
 
-    
 func deal_actions():
     var all_actions = []
     for card in cards_raw:
@@ -223,6 +154,7 @@ func deal_resources():
         if card["type"] in ["Army1","Money1","Army2","Money2"]:
             await deal_five(decks[card["type"]],card)
                 
+
 func deal_five(slot, card):
     await get_tree().create_timer(0.25).timeout # Wait for 100ms 
     $SoundDeal5.play()
@@ -230,6 +162,43 @@ func deal_five(slot, card):
         slot["cards"].append(card)
         await get_tree().create_timer(0.25).timeout # Wait for 100ms 
         refresh_all()
+    
+
+# GAMEPLAY ###################
+    
+func start_playing():
+    game.current_phase = phases.SETUP
+    game.current_step = steps.NONE
+    double_action = null
+    game.money = 0
+    game.army = 0
+    game.actions = 1
+    game.buys = 1
+    game.challenge_overcome = false
+    refresh_all()
+    game.current_phase = phases.HISTORY
+    game.showcase_card = top_card(decks["History"]["node"])
+    play_challenge()
+    refresh_all()
+    
+    
+func deal_hand():
+    if decks["PlayerDeck"]["cards"].size() < 5:
+        reshuffle_discarded_into_deck()
+
+    while decks["PlayerHand"]["cards"].size() < 5:
+        var card = decks["PlayerDeck"]["cards"].pop_front()
+        await draw_card(card)
+        refresh_all()
+        
+func draw_card(card):
+    $SoundTake.pitch_scale = randf_range(0.95, 1.05)
+    $SoundTake.play()
+    var slot = find_slot_for_card(card, player_hand)
+    await fly_card(card,$OffscreenBottomLeft, slot)
+    put_card_into_hand(card)
+    refresh_gui()
+    await get_tree().create_timer(0.3).timeout 
 
 
 func new_turn():
@@ -275,12 +244,9 @@ func put_card_on_table(card):
     
 
 func reshuffle_discarded_into_deck():
-    # Move all cards from the discarded pile back to the player's deck
     while decks["Discarded"]["cards"].size() > 0:
         var card = decks["Discarded"]["cards"].pop_front()
         decks["PlayerDeck"]["cards"].append(card)
-    
-    # Shuffle the player's deck to randomize the order of cards
     decks["PlayerDeck"]["cards"].shuffle()
     
     
@@ -683,6 +649,41 @@ func start_card_flights():
 
 # REFRESH  ###################
 
+func refresh_all():
+    if game.current_phase == phases.INTRO:
+        get_node("SlotsTable").visible = false
+        get_node("GuiHint").visible = false
+        get_node("GuiMain").visible = false
+        get_node("GuiStatus").visible = false
+        
+        $GuiIntro.refresh_intro()
+        refresh_resources()
+        refresh_actions()
+        refresh_cards(player_hand, "PlayerHand")
+        refresh_challenges()
+    else:
+        get_node("GuiIntro").visible = false
+        get_node("GuiMain").visible = true
+        get_node("GuiStatus").visible = true
+        refresh_gui()
+    
+
+func refresh_challenges():
+    $Laurel.visible = false
+    var node = decks["History"]["node"]
+    if game.current_step not in [steps.INTRO1, steps.INTRO2, steps.INTRO3]:
+        var deck = decks["History"]["cards"]
+        if deck.size() > 0:
+            var card = deck[0]
+            display_card_with_qty(node, card["name"],deck.size())
+            node.get_node("View/Glow").modulate = Color(1,0,0,1)
+            node.get_node("View/Glow").visible = true  
+            node.get_node("View").visible = true
+        else:
+            node.get_node("View").visible = false
+    else:
+        node.get_node("View").visible = false
+
 func refresh_actions():
     get_node("SlotsActions").visible = true
     for i in range(10):
@@ -939,7 +940,7 @@ func _ready():
     print_scene_tree(get_tree().get_root())
     start_intro()
     
-    
+
 func create_card_sprites():
     for i in range(12): # Assuming you want a dozen cards
         var card = Sprite2D.new()
