@@ -3,11 +3,9 @@
 ## Goal
 Goal is to create Solitaire Deck Building game that educates the player about Roman era. If successful, I can continue doing this into my retirement.
 
-- Gameplay: Aims to play like Dominion, but single player. 
-- Educational aspect: Each new game can highlight a single card (e.g. Julius Caesar, or Roman Legions) and provide interesting but accurate historical information. (intro screen, player needs to click "continue" to proceed)
-- Solo games, examples
-    - Gate: https://www.thegamecrafter.com/games/gate1
-    - Friday: https://boardgamegeek.com/boardgame/43570/friday
+- Gameplay: Aims to play like Dominion, but single player.
+- Examples: Slay the Spire, Balatro
+- Historical flavor: Interesting but accurate historical information
 
 ## Implementation
 Cheapest possible, since the whole idea is to do this solo.
