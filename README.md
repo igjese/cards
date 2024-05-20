@@ -59,10 +59,10 @@ Encounter types:
 Each battle and some events have cards that need to be destroyed to win.
 
 Example cards:
-    - **"Army Provisions"**: Requires 2 Money to overcome.
-    - **"Building Materials"**: Requires 3 Money.
-    - **"Civil Unrest"**: Requires 1 Army units.
-    - **"Military Escort"**: Requires 2 Army units.
+- **"Army Provisions"**: Requires 2 Money to overcome.
+- **"Building Materials"**: Requires 3 Money.
+- **"Civil Unrest"**: Requires 1 Army units.
+- **"Military Escort"**: Requires 2 Army units.
 
 ### Prayers Mechanic
 Cost:
