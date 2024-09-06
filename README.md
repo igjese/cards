@@ -13,6 +13,9 @@
 - **Player Choices**: When a player chooses to spend **Fortune**, it's deducted from their Fortune total. Playing Army or Money cards results in those cards going to the **discard pile** (unless they use an Action card, which preserves the resource).
 - **Carry-Over Mechanic**: If a card is **discarded**, it remains in the discard pile and can return to the player’s deck when reshuffled. **Trashed cards** are permanently removed from the game.
 - **Visual Layout**: Each encounter has a **single visual** that stays consistent through multiple steps to reduce complexity.
+> - **Each encounter type** (Event, Battle, Treasure, Shop, Rest) has a unique **icon** representing it
+> - The player can choose the **next encounter** from a map, similar to the approach used in "Slay the Spire."
+> - **After completing an encounter**, the encounter's **icon** is replaced on the map with a **smaller version** of the encounter's **main visual** (to mark it as completed).
 
 
 ## Goal
