@@ -1,5 +1,20 @@
 # "Chronicles: Rise of Rome" - Game Design Document
 
+## Discussion Sep-6 2024
+
+- **Fortune** is a carry-over resource, represented in Roman numerals on the top dashboard, and persists between encounters.
+- Each **encounter** consists of multiple steps, with each step presenting a short historical snippet (2-3 sentences).
+- A step can either be a **battle** (resolved through cards) or offer **options** (choices based on Army, Money, or Fortune).
+- The **deck**, **hand**, and **discarded pile** carry over between encounters, allowing for long-term resource management.
+- Under certain circumstances (such as **failure** or specific options), a card can be **permanently trashed**, removing it from the deck permanently.
+- **Encounter Steps** can be resolved either by playing cards from the deck or choosing between different options.
+- **Army** and **Money cards** are played directly or replaced with **Action cards** that generate resources without losing the card.
+- **Rewards** for completing steps can include Fortune, new cards, or other benefits.
+- **Player Choices**: When a player chooses to spend **Fortune**, it's deducted from their Fortune total. Playing Army or Money cards results in those cards going to the **discard pile** (unless they use an Action card, which preserves the resource).
+- **Carry-Over Mechanic**: If a card is **discarded**, it remains in the discard pile and can return to the player’s deck when reshuffled. **Trashed cards** are permanently removed from the game.
+- **Visual Layout**: Each encounter has a **single visual** that stays consistent through multiple steps to reduce complexity.
+
+
 ## Goal
 Goal is to create Solitaire Deck Building game that educates the player about Roman era. If successful, I can continue doing this into my retirement.
 
