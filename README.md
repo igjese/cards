@@ -1,6 +1,34 @@
 # "Chronicles: Rise of Rome" - Game Design Document
 
-## Sep-7 2024
+### Battle Mechanics Sep-7 2024
+
+- **Player Starts** with 5 cards in hand and 3 actions per turn (due to 3 enemy tribes).
+- **Player Turn**:
+  - **Play up to 3 actions**:
+    - **Army cards**: Reduce an enemy tribe's **Battle Strength** by 1 per card.
+    - **2 Money cards (1 action)**:
+      - **Bribe**: Lowers an enemy tribe's **Battle Strength** by 1.
+      - **Build Defenses**: Blocks 1 **Fortune loss** from enemy attacks for 2 turns.
+    - **Action cards**: Provide tactical effects, such as drawing extra cards, negating enemy reinforcements, or boosting Army/Money effects.
+  - **Spend 1 Fortune** to draw an extra card or take an additional action.
+
+- **Enemy Turn**:
+  - First battle is against 3 tribes
+  - Each tribe randomly performs one of two actions:
+    - **Attack Fortune**: Reduces the player's **Fortune** by 1.
+    - **Call Reinforcements**: Increases the tribe's **Battle Strength** by 1.
+  - **Later enemies** can also perform:
+    - **Reduce Actions**: Lowers the player's available actions next turn by 1.
+    - **Force Discard**: Randomly discards 1 card from the player's hand.
+
+- **Card Draw**: At the start of each turn, the player **draws 3 cards**.
+
+- **End Condition**:
+  - **Victory**: Reduce all enemy tribes' **Battle Strength to 0**.
+  - **Failure**: The player's **Fortune reaches 0** or they run out of viable resources to act.
+
+
+## Encounters Sep-7 2024
 
 - **Card Draw**: At the start of each encounter, the player draws enough cards to have 5 in hand (e.g., if 3 cards remain, 2 more are drawn).
 - **Encounter Steps**: Most encounters consist of multiple steps, each offering different options that require resources (Army, Money, or Fortune).
@@ -8,9 +36,9 @@
   1. **Pre-Battle**: Preparation with choices or actions.
   2. **Battle**: Core battle mechanics (separate from other encounters).
   3. **Post-Battle**: Aftermath with rewards or consequences.
+- **Origins** encounter is the game starting screen (when player clicks "Play"), resolution opens the map
 
-
-## Sep-6 2024
+## Gameplay Sep-6 2024
 
 - **Fortune** is a carry-over resource, represented in Roman numerals on the top dashboard, and persists between encounters.
 - Each **encounter** consists of multiple steps, with each step presenting a short historical snippet (2-3 sentences).
