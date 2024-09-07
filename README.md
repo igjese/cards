@@ -1,6 +1,16 @@
 # "Chronicles: Rise of Rome" - Game Design Document
 
-## Discussion Sep-6 2024
+## Sep-7 2024
+
+- **Card Draw**: At the start of each encounter, the player draws enough cards to have 5 in hand (e.g., if 3 cards remain, 2 more are drawn).
+- **Encounter Steps**: Most encounters consist of multiple steps, each offering different options that require resources (Army, Money, or Fortune).
+- **Battle Encounters**: Battle encounters follow a 3-step structure:
+  1. **Pre-Battle**: Preparation with choices or actions.
+  2. **Battle**: Core battle mechanics (separate from other encounters).
+  3. **Post-Battle**: Aftermath with rewards or consequences.
+
+
+## Sep-6 2024
 
 - **Fortune** is a carry-over resource, represented in Roman numerals on the top dashboard, and persists between encounters.
 - Each **encounter** consists of multiple steps, with each step presenting a short historical snippet (2-3 sentences).
