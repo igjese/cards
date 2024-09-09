@@ -1,5 +1,38 @@
 # "Chronicles: Rise of Rome" - Game Design Document
 
+### Implementation Sep-9 2024
+
+- Fortune counter/badge on map screen and encounter screen
+- Encounter: player's hand, deck, discard pile 
+- Encounter: player's hand "expands/shrinks" based on number of cards
+- Encounter: Deck browsing, discard pile browsing
+- Map: visuals instead of icons for resolved encounters
+- Browsing hand, deck, discard pile from the Map screen (maybe it could make sense to have them on the bottom at all times, but they expand/minimize when on-hovered)
+- offering options 
+- data model for options for each encounter
+- choosing options (including animations)
+- playing a card from hand (including animations)
+- playing a card from deck, trashing a card (incl.anim.)
+- drawing a card, reshuffling the deck (incl.anim.)
+- discarding a card (incl.anim.)
+- data model for turns, hand, deck, discard pile, trash pile, fortune, available actions
+- data model for cards (specify what player can do with them)
+- data model for encounters (steps, options, actions, and outcomes)
+- Data model for enemies (visual, strength indicators, attack types).
+- player battle moves (attack enemy, bribe enemy, defend fortune)
+- enemy battle moves (attack fortune, reinforce, reduce player actions, force discard)
+- AI rules for computer turn in battle
+- state machine for battle
+- encounter victory / failure
+- tutorial / onboarding / hand-holding
+- fortune balancing
+
+TODO:
+- implement action cards => which actions ?!?
+- encounter system with steps
+- event system with options and outcomes
+- battle system
+
 ### Battle Mechanics Sep-7 2024
 
 - **Player Starts** with 5 cards in hand and 3 actions per turn (due to 3 enemy tribes).
