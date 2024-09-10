@@ -1,5 +1,31 @@
 # "Chronicles: Rise of Rome" - Game Design Document
 
+## Battle representation Sep-10 2024
+
+### Enemy Representation and Mechanics
+
+- **Player and Enemy Representation**: 
+  - Player is represented by a **single Roman figure**.
+  - Enemies (e.g., Caenina, Crustumerium, Antemnae) are represented by **tribal figurines**.
+  - **Next action** is shown above each enemy (e.g., attack Fortune, call reinforcements).
+
+- **Dragging Cards**:
+  - **Army Cards**: Dragging an Army card to an enemy immediately reduces its **Battle Strength**.
+  - **Money Cards**: Bribing an enemy requires **2 Money cards**. 
+    - Dragging the first Money card to an enemy shows a **gold icon** above their head, indicating they can be bribed with one more Money card.
+    - Once the second Money card is dragged, the bribe succeeds, and the enemy’s Battle Strength decreases by 1.
+  - **Defending Fortune**: Dragging 2 Money cards to the player shields Fortune for 1 turn. A **shield icon** appears on the player figure after the second card.
+
+- **On-Hover Instructions**:
+  - **Enemy Tooltip**: Displays enemy **Battle Strength**, **next action**, and **what can be done** to them (e.g., “Bribe with 1 more Money card”).
+  - **Player Tooltip**: Displays **Fortune shield status**, remaining actions, and what actions the player can take (e.g., "Drag Money to shield Fortune").
+
+### Visual Cues:
+- **Gold Icon**: Appears above an enemy when the first Money card is played, indicating the enemy can be bribed.
+- **Shield Icon**: Appears on the player after shielding Fortune with 2 Money cards.
+- **Tooltips**: Ensure that the player's actions and enemy states are clearly explained on hover.
+
+
 ## Implementation Sep-10 2024
 
 ### Action Cards (Prototype)
