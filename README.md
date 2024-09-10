@@ -1,6 +1,46 @@
 # "Chronicles: Rise of Rome" - Game Design Document
 
-### Implementation Sep-9 2024
+## Implementation Sep-10 2024
+
+### Action Cards (Prototype)
+
+The following Action cards will be used in the prototype. They provide **Army value**, **Money value**, **extra actions**, or **card draw** to offer strategic variety during encounters and battles.
+
+- **Roman Phalanx**: Provides 2 Army value.  
+- **Grain Harvest**: Provides 2 Money value.  
+- **Patrician Clans**: Provides 1 Army value and gains 1 extra action.  
+- **Plebs**: Draw 2 cards and gain 1 extra action.  
+- **Regional Trade**: Provides 1 Money value and draws 1 card.
+   
+### Battle System (Prototype)
+
+The **Battle System** involves tactical decisions during encounters with enemy forces. Both player and enemy actions are turn-based.
+
+#### Player Actions:
+- **Army Cards**: Used to attack enemies and reduce their Battle Strength.
+- **Money Cards**: Used to bribe enemies or build defenses to protect Fortune.
+- **Action Cards**: Provide tactical bonuses such as drawing extra cards or gaining extra actions.
+- **Extra Actions**: Some cards allow the player to perform additional actions in a single turn.
+- **Card Draw**: Cards like "Council of Elders" allow the player to refresh their hand and increase available options.
+
+#### Enemy Actions:
+- **Enemy Types**: Enemies can attack Fortune, call reinforcements (increase their Battle Strength), or reduce player actions. 
+- **AI Behavior**: Enemies perform one action per turn, selected randomly from their abilities.
+
+#### Turn Structure:
+- Each battle turn consists of the player performing up to 3 actions, followed by the enemy's action. Battles continue until all enemies' Battle Strength is reduced to 0 or the player’s Fortune reaches 0.
+
+#### Next Turn Mechanics:
+- After both player and enemy have taken their actions, a new turn begins:
+  - **Player draws cards** from the deck to maintain a full hand (e.g., up to 5 cards).
+  - **Actions reset**: Players regain their available actions for the new turn (e.g., 3 actions).
+  - The **state machine** transitions into the next phase, ensuring smooth handoffs between player and enemy turns.
+
+#### Victory/Failure Conditions:
+- **Victory**: All enemy forces' Battle Strength reaches 0.
+- **Failure**: The player's Fortune reaches 0 or the player runs out of viable resources to act.
+
+## Implementation Sep-9 2024
 
 - Fortune counter/badge on map screen and encounter screen
 - Encounter: player's hand, deck, discard pile 
