@@ -20,10 +20,13 @@
   - **Enemy Tooltip**: Displays enemy **Battle Strength**, **next action**, and **what can be done** to them (e.g., “Bribe with 1 more Money card”).
   - **Player Tooltip**: Displays **Fortune shield status**, remaining actions, and what actions the player can take (e.g., "Drag Money to shield Fortune").
 
-### Visual Cues:
+### Visual and Animation Cues:
 - **Gold Icon**: Appears above an enemy when the first Money card is played, indicating the enemy can be bribed.
 - **Shield Icon**: Appears on the player after shielding Fortune with 2 Money cards.
 - **Tooltips**: Ensure that the player's actions and enemy states are clearly explained on hover.
+- **Enemy Attack Animation**: When an enemy attacks, the figure **swells** or **pulses**, with an attack effect (e.g., a red line or icon hitting the Fortune counter or the shield if it's active).
+- **Reinforcement Animation**: When an enemy calls reinforcements, the figure **glows** or **swells slightly**, with their strength number increasing.
+
 
 
 ## Implementation Sep-10 2024
