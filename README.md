@@ -55,7 +55,7 @@ Choices (Rewards):
 - Prepare for the challenges of founding a new city. (Pick 1 Action card)
 
 ### Step 4: Founding Rome
-_As Romulus and Remus search for the ideal location, both claim divine signs for their preference. In a tragic dispute, Remus is killed, and Romulus founds the city on the Palatine Hill._
+_As Romulus and Remus search for the ideal location, both claim divine signs for their preference. In a tragic dispute, Remus is killed, and Romulus founds the city of Rome on the Palatine Hill._
 
 Choices (random 2 out of 3):  
 - Bless the city and ensure its prosperity. (-1 Fortune)  
