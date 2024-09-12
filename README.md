@@ -2,6 +2,32 @@
 
 ## Summarized design discussion Sep-12 2024
 
+### Overall Gameplay
+
+- Player goes through series of encounters of different types: Event, Battle, Reward, Shop, Rest.
+- Main carry-over resource is Fortune. Also, player carries over his deck to next encounter.
+- Player chooses next encounter from the map, like in Slay the Spire
+- Encounters consist of "steps", each step presenting a short historical snippet (2-3 sentences).
+
+### Map Representation
+- Future encounters are represented by an icon of their type.
+- Resolved encounters are represented by a thumbnail of their main visual.
+
+### First Prototype
+- First prototype has three "fixed" encounters:
+1. Origins (Event) - this is the first gameplay screen
+2. Founding of Rome (Event) 
+3. Sabine Women (Battle) - against three tribe i.e. 3 enemies
+
+### Encounter Mechanics
+
+- Events consists of multiple steps, each offering different choices to progress (requiring randomly two of: Fortune, army, money) and final option to chose a reward (extra Fortune or an action card)
+- Battle encounters follow a 3-step structure:
+  1. Preparation: Choices requiring resources.
+  2. Battle: Core battle mechanics (separate from other encounters).
+  3. Reward: Choice of extra Fortune or random action card.
+- Each encounter has a single main visual that stays consistent through multiple steps to reduce complexity.
+
 ### Player and Enemy Representation
 - Player is represented by a **single Roman figure**.
 - Enemies (e.g., Caenina, Crustumerium, Antemnae) are represented by **tribal figurines**.
@@ -17,6 +43,9 @@
 - **Defend**: 2 Money cards are required to create a shield for player's Fortune.
   - A **shield icon** appears after the second card.
   - **Shields last until broken** by an enemy attack, and **shields can be stacked** for additional protection.
+- **Spend Fortune** to draw an extra card or take an additional action.
+- When a player chooses to spend **Fortune**, it's deducted from their Fortune total.
+- Playing a card moves it to the **discard pile**
 
 ### Enemy Actions:
 - **Attack**: Reduces the player's **Fortune** by 1 or breaks 1 shield if present.
@@ -37,19 +66,12 @@
   - **Plebs**: Draw 2 cards and gain 1 extra action.  
   - **Regional Trade**: Provides 1 Money value and draws 1 card.    
 
-#### Turn Mechanics:
-- Each battle turn consists of the player performing up to 3 actions, followed by enemy actions (single action per enemy).
+### Battle Mechanics:
+- Player Starts with 5 cards in hand and 3 actions per turn.
+- Each battle turn consists of the player performing actions, followed by enemy actions (single action per enemy).
+- After both player and enemy have taken their actions, a new turn begins
+- Player draws 3 cards at the start of each turn.
 - Battles continue until all enemies' Battle Strength is reduced to 0 (**Victory**) or the player’s Fortune reaches 0 (**Failure**)
-- After both player and enemy have taken their actions, a new turn begins:
-  - **Player draws 3 cards** at the start of each turn.
-
-### Gameplay Mechanics
-
-- **Fortune** is a carry-over resource, represented in Roman numerals on the top dashboard, and persists between encounters.
-- Each **encounter** consists of multiple steps, with each step presenting a short historical snippet (2-3 sentences).
-- The **deck**, **hand**, and **discard pile** carry over between encounters, allowing for long-term resource management.
-- **Trashed cards** are permanently removed from the game.
-
 
 ## Implementation Sep-9 2024
 
@@ -83,62 +105,7 @@ TODO:
 - encounter system with steps
 - event system with options and outcomes
 - battle system
-
-### Battle Mechanics Sep-7 2024
-
-- **Player Starts** with 5 cards in hand and 3 actions per turn (due to 3 enemy tribes).
-- **Player Turn**:
-  - **Play up to 3 actions**:
-    - **Army cards**: Reduce an enemy tribe's **Battle Strength** by 1 per card.
-    - **2 Money cards (1 action)**:
-      - **Bribe**: Lowers an enemy tribe's **Battle Strength** by 1.
-      - **Build Defenses**: Blocks 1 **Fortune loss** from enemy attacks for 2 turns.
-    - **Action cards**: Provide tactical effects, such as drawing extra cards, negating enemy reinforcements, or boosting Army/Money effects.
-  - **Spend 1 Fortune** to draw an extra card or take an additional action.
-
-- **Enemy Turn**:
-  - First battle is against 3 tribes
-  - Each tribe randomly performs one of two actions:
-    - **Attack Fortune**: Reduces the player's **Fortune** by 1.
-    - **Call Reinforcements**: Increases the tribe's **Battle Strength** by 1.
-  - **Later enemies** can also perform:
-    - **Reduce Actions**: Lowers the player's available actions next turn by 1.
-    - **Force Discard**: Randomly discards 1 card from the player's hand.
-
-- **Card Draw**: At the start of each turn, the player **draws 3 cards**.
-
-- **End Condition**:
-  - **Victory**: Reduce all enemy tribes' **Battle Strength to 0**.
-  - **Failure**: The player's **Fortune reaches 0** or they run out of viable resources to act.
-
-
-## Encounters Sep-7 2024
-
-- **Card Draw**: At the start of each encounter, the player draws enough cards to have 5 in hand (e.g., if 3 cards remain, 2 more are drawn).
-- **Encounter Steps**: Most encounters consist of multiple steps, each offering different options that require resources (Army, Money, or Fortune).
-- **Battle Encounters**: Battle encounters follow a 3-step structure:
-  1. **Pre-Battle**: Preparation with choices or actions.
-  2. **Battle**: Core battle mechanics (separate from other encounters).
-  3. **Post-Battle**: Aftermath with rewards or consequences.
-- **Origins** encounter is the game starting screen (when player clicks "Play"), resolution opens the map
-
-## Gameplay Sep-6 2024
-
-- **Fortune** is a carry-over resource, represented in Roman numerals on the top dashboard, and persists between encounters.
-- Each **encounter** consists of multiple steps, with each step presenting a short historical snippet (2-3 sentences).
-- A step can either be a **battle** (resolved through cards) or offer **options** (choices based on Army, Money, or Fortune).
-- The **deck**, **hand**, and **discarded pile** carry over between encounters, allowing for long-term resource management.
-- Under certain circumstances (such as **failure** or specific options), a card can be **permanently trashed**, removing it from the deck permanently.
-- **Encounter Steps** can be resolved either by playing cards from the deck or choosing between different options.
-- **Army** and **Money cards** are played directly or replaced with **Action cards** that generate resources without losing the card.
-- **Rewards** for completing steps can include Fortune, new cards, or other benefits.
-- **Player Choices**: When a player chooses to spend **Fortune**, it's deducted from their Fortune total. Playing Army or Money cards results in those cards going to the **discard pile** (unless they use an Action card, which preserves the resource).
-- **Carry-Over Mechanic**: If a card is **discarded**, it remains in the discard pile and can return to the player’s deck when reshuffled. **Trashed cards** are permanently removed from the game.
-- **Visual Layout**: Each encounter has a **single visual** that stays consistent through multiple steps to reduce complexity.- **Each encounter type** (Event, Battle, Treasure, Shop, Rest) has a unique **icon** representing it
-- The player can choose the **next encounter** from a map, similar to the approach used in "Slay the Spire."
-- **After completing an encounter**, the encounter's **icon** is replaced on the map with a **smaller version** of the encounter's **main visual** (to mark it as completed).
-
-
+  
 ## Goal
 Goal is to create Solitaire Deck Building game that educates the player about Roman era. If successful, I can continue doing this into my retirement.
 
