@@ -1,6 +1,40 @@
 # "Chronicles: Rise of Rome" - Game Design Document
 
-## Summarized design discussion Sep-12 2024
+## First Prototype Sep-12 2024
+- First prototype has three "fixed" encounters:
+1. Origins (Event) - this is the first gameplay screen
+2. Founding of Rome (Event) 
+3. Sabine Women (Battle) - against three tribes i.e. against 3 enemies
+   
+### 1. Origins
+
+#### Step 1: Leaving Troy
+
+_After ten years of relentless siege, Troy has finally fallen to the Greek invaders and the city lies in ruins. With the remnants of your people gathering for flight, your ancestors must decide what to take with them._
+
+**Options**:  
+- **Gather the bravest of Troy's surviving warriors**, you know you'll need them to establish and defend your new home. (+1 Army card)  
+- **Take what you can of Troy's treasury**, hoping this wealth will secure alliances and resources in the lands ahead. (+1 Money card)
+
+#### Step 2: Settling in Lazio
+
+_After weeks of perilous journey across treacherous seas, your supplies are nearly depleted. You finally reach the shores of Lazio, a land rich in resources, but the local tribes view you with suspicion._
+
+**Options** (2 random choices out of 3):  
+- **Use Fortune** to gain the favor of the local tribes through diplomacy and divine signs. (-1 Fortune)  
+- **Use Army** to show strength and intimidate the locals into allowing your people to settle. (-1 Army card)  
+- **Use Money** to bribe the local leaders and secure an agreement to settle. (-1 Money card)
+
+#### Step 3: Founding Alba Longa
+
+_And thus, the Trojan hero Aeneas founded Lavinium, where his dynasty flourished. Generations later, under joint rule with neighboring tribes, Alba Longa was established—a Latin center of power for centuries to come._
+
+**Options**:  
+- **Secure the favor of the gods** to ensure your dynasty's prosperity and divine protection. (+1 Fortune)  
+- **Strengthen military and political foundations** to prepare for the challenges ahead. (Receive 1 low-level action card)
+
+
+## Summarized Prototype Notes Sep-12 2024
 
 ### Overall Gameplay
 
@@ -12,12 +46,6 @@
 ### Map Representation
 - Future encounters are represented by an icon of their type.
 - Resolved encounters are represented by a thumbnail of their main visual.
-
-### First Prototype
-- First prototype has three "fixed" encounters:
-1. Origins (Event) - this is the first gameplay screen
-2. Founding of Rome (Event) 
-3. Sabine Women (Battle) - against three tribes i.e. against 3 enemies
 
 ### Encounter Mechanics
 
