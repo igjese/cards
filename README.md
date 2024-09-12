@@ -12,8 +12,8 @@
 _After ten years of relentless siege, Troy has finally fallen to the Greek invaders and the city lies in ruins. With the remnants of your people gathering for flight, your ancestors must decide what to take with them._
 
 Choices:  
-- Gather the bravest of Troy's surviving warriors, you know you'll need them to establish and defend your new home. (+1 Army card)  
-- Take what you can of Troy's treasury, hoping this wealth will secure alliances and resources in the lands ahead. (+1 Money card)
+- Gather the bravest of Troy's surviving warriors, you'll need them to establish your new home. (+1 Army card)  
+- Take what you can of Troy's treasury, hoping it will secure alliances in the lands ahead. (+1 Money card)
   
 #### Step 2: Settling in Lazio
 _After weeks of perilous journey across treacherous seas, your supplies are nearly depleted. You finally reach the shores of Lazio, a land rich in resources, but the local tribes view you with suspicion._
