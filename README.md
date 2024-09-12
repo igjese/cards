@@ -2,74 +2,46 @@
 
 ## Summarized design discussion Sep-12 2024
 
-### Enemy Representation and Mechanics
+### Player and Enemy Representation
+- Player is represented by a **single Roman figure**.
+- Enemies (e.g., Caenina, Crustumerium, Antemnae) are represented by **tribal figurines**.
+- **Next action** is shown above each enemy (e.g., attack Fortune, call reinforcements).
+- **Enemy Tooltip**: Displays enemy **Battle Strength**, **next action**, and **what can be done** to them (e.g., “Bribe with 1 more Money card”).
+- **Player Tooltip**: Displays **Fortune shield status**, remaining actions, and what actions the player can take (e.g., "Drag Money to shield Fortune").
+ 
+### Player Actions:
+- **Attack**: Dragging an Army card to an enemy reduces its **Battle Strength** by Army value of the card.
+- **Bribe**: Bribing an enemy requires **2 Money cards**. 
+  - Dragging the first Money card to an enemy shows a **gold icon** above their head, indicating they can be bribed with one more Money card.
+  - Once the second Money card is dragged, the bribe succeeds, and the enemy’s Battle Strength decreases by 1.
+- **Defend**: 2 Money cards are required to create a shield for player's Fortune.
+  - A **shield icon** appears after the second card.
+  - **Shields last until broken** by an enemy attack, and **shields can be stacked** for additional protection.
 
-- **Player and Enemy Representation**: 
-  - Player is represented by a **single Roman figure**.
-  - Enemies (e.g., Caenina, Crustumerium, Antemnae) are represented by **tribal figurines**.
-  - **Next action** is shown above each enemy (e.g., attack Fortune, call reinforcements).
-
-- **Dragging Cards**:
-  - **Army Cards**: Dragging an Army card to an enemy reduces its **Battle Strength** by 1.
-  - **Money Cards**: Bribing an enemy requires **2 Money cards**. 
-    - Dragging the first Money card to an enemy shows a **gold icon** above their head, indicating they can be bribed with one more Money card.
-    - Once the second Money card is dragged, the bribe succeeds, and the enemy’s Battle Strength decreases by 1.
-  - **Defending Fortune**: Dragging 2 Money cards to the player shields Fortune. A **shield icon** appears after the second card. **Shields last until broken** by an enemy attack, and **shields can be stacked** for additional protection.
-
-- **On-Hover Instructions**:
-  - **Enemy Tooltip**: Displays enemy **Battle Strength**, **next action**, and **what can be done** to them (e.g., “Bribe with 1 more Money card”).
-  - **Player Tooltip**: Displays **Fortune shield status**, remaining actions, and what actions the player can take (e.g., "Drag Money to shield Fortune").
-
-### Visual and Animation Cues:
-- **Gold Icon**: Appears above an enemy when the first Money card is played, indicating the enemy can be bribed.
-- **Shield Icon**: Appears on the player after shielding Fortune with 2 Money cards.
-- **Tooltips**: Ensure that the player's actions and enemy states are clearly explained on hover.
-- **Enemy Attack Animation**: When an enemy attacks, the figure **swells** or **pulses**, with an attack effect (e.g., a red line or icon hitting the Fortune counter or the shield if it's active).
-- **Reinforcement Animation**: When an enemy calls reinforcements, the figure **glows** or **swells slightly**, with their strength number increasing.
-
-### Action Cards (Prototype)
-
-The following Action cards will be used in the prototype. They provide **Army value**, **Money value**, **extra actions**, or **card draw** to offer strategic variety during encounters and battles.
-
-- **Roman Phalanx**: Provides 2 Army value.  
-- **Grain Harvest**: Provides 2 Money value.  
-- **Patrician Clans**: Provides 1 Army value and gains 1 extra action.  
-- **Plebs**: Draw 2 cards and gain 1 extra action.  
-- **Regional Trade**: Provides 1 Money value and draws 1 card.
-
-### Battle System (Prototype)
-
-The **Battle System** involves tactical decisions during encounters with enemy forces. Both player and enemy actions are turn-based.
-
-##### Player Actions:
-- **Army Cards**: Used to attack enemies and reduce their Battle Strength.
-- **Money Cards**: Used to bribe enemies or build defenses to protect Fortune.  
-  - **Shields** last until they are broken, and **multiple shields** can be stacked for extra protection.
-- **Action Cards**: Provide tactical bonuses such as drawing extra cards or gaining extra actions.
-- **Playing 1 card costs 1 action**, regardless of the type of card.
-- **Card Draw**: Cards like "Plebs" allow the player to draw extra cards and increase available options.
-
-##### Enemy Actions:
-- **Enemy Types (First Battle)**:  
-  - **Attack Fortune**: Reduces the player's **Fortune** by 1.
-  - **Call Reinforcements**: Increases the tribe's **Battle Strength** by 1.
-- **Enemy Types (Later Battles)**:  
+### Enemy Actions:
+- **Attack**: Reduces the player's **Fortune** by 1 or breaks 1 shield if present.
+  - When an enemy attacks, the figure **swells** or **pulses**, with an attack effect (e.g., a red line or icon hitting the Fortune counter or the shield if it's active).
+- **Reinforce**: Increases the tribe's **Battle Strength** by 1.
+  - When an enemy calls reinforcements, the figure **glows** or **swells slightly**, with their strength number increasing.
+- Other attack types to be used by later enemies:
   - **Reduce Actions**: Lowers the player's available actions next turn by 1.
   - **Force Discard**: Randomly discards 1 card from the player's hand.
 
-#### Turn Structure:
-- Each battle turn consists of the player performing up to 3 actions, followed by the enemy's action. Battles continue until all enemies' Battle Strength is reduced to 0 or the player’s Fortune reaches 0.
-- **Fixed 3 card draw per turn** at the beginning of each player turn.
+### Cards:
+- **Army Cards**: Used to attack enemies and reduce their Battle Strength.
+- **Money Cards**: Used to bribe enemies or build defenses to protect Fortune. 
+- **Action Cards**: Provide normal resources (money, army) and tactical bonuses such as drawing extra cards or gaining extra actions.
+  - **Roman Phalanx**: Provides 2 Army value.  
+  - **Grain Harvest**: Provides 2 Money value.  
+  - **Patrician Clans**: Provides 1 Army value and gains 1 extra action.  
+  - **Plebs**: Draw 2 cards and gain 1 extra action.  
+  - **Regional Trade**: Provides 1 Money value and draws 1 card.    
 
-#### Next Turn Mechanics:
+#### Turn Mechanics:
+- Each battle turn consists of the player performing up to 3 actions, followed by enemy actions (single action per enemy).
+- Battles continue until all enemies' Battle Strength is reduced to 0 (**Victory**) or the player’s Fortune reaches 0 (**Failure**)
 - After both player and enemy have taken their actions, a new turn begins:
   - **Player draws 3 cards** at the start of each turn.
-  - **Actions reset**: Players regain their available actions for the new turn (e.g., 3 actions).
-  - The **state machine** transitions into the next phase, ensuring smooth handoffs between player and enemy turns.
-
-#### Victory/Failure Conditions:
-- **Victory**: All enemy forces' Battle Strength reaches 0.
-- **Failure**: The player's Fortune reaches 0 or the player runs out of viable resources to act.
 
 ### Gameplay Mechanics
 
@@ -77,8 +49,7 @@ The **Battle System** involves tactical decisions during encounters with enemy f
 - Each **encounter** consists of multiple steps, with each step presenting a short historical snippet (2-3 sentences).
 - The **deck**, **hand**, and **discard pile** carry over between encounters, allowing for long-term resource management.
 - **Trashed cards** are permanently removed from the game.
-- **Card Draw**: The player draws a **fixed 3 cards per turn** during combat, maintaining strategic flow.
-- **Player Choices**: Army and Money cards are played directly, and **Action cards** generate effects like extra actions, card draws, or resource bonuses.
+
 
 ## Implementation Sep-9 2024
 
