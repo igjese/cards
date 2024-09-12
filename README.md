@@ -33,7 +33,7 @@ Choices:
 ### 2.Founding of Rome
 
 #### Step 1: Romulus and Remus in Danger
-_The throne of Alba Longa was treacherously taken by their great-uncle, Amulius. His niece, Rhea Silvia, was forced into priesthood, and her twins, Romulus and Remus, were left to die by the Tiber River._
+_The throne of Alba Longa was treacherously taken by Amulius. He forced his niece, Rhea Silvia, into priesthood, and her twins, Romulus and Remus, were left to die by the Tiber River._
 
 Choices:  
 - The Gods send a she-wolf to nurture the twins until found by shepherds. (-1 Fortune)  
