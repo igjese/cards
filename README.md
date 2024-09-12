@@ -58,7 +58,7 @@ Choices (Rewards):
 _As Romulus and Remus search for the ideal location, both claim divine signs for their preference. In a tragic dispute, Remus is killed, and Romulus founds the city of Rome on the Palatine Hill._
 
 Choices (random 2 out of 3):  
-- Bless the city and ensure its prosperity. (-1 Fortune)  
+- Seek divine approval to ensure its prosperity. (-1 Fortune)  
 - Protect the city's borders and secure its foundations. (Discard 1 Army card)  
 - Build houses to attract more settlers. (Discard 1 Money card)
 
