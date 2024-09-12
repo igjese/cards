@@ -17,7 +17,7 @@
 - First prototype has three "fixed" encounters:
 1. Origins (Event) - this is the first gameplay screen
 2. Founding of Rome (Event) 
-3. Sabine Women (Battle) - against three tribe i.e. 3 enemies
+3. Sabine Women (Battle) - against three tribes i.e. against 3 enemies
 
 ### Encounter Mechanics
 
