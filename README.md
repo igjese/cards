@@ -21,7 +21,7 @@ _After weeks of perilous journey across treacherous seas, your supplies are near
 Choices:  (random 2 out of 3):  
 - Gain the favor of the local tribes through diplomacy and divine signs. (-1 Fortune)  
 - Show strength and intimidate the locals into allowing your people to settle. (Discard 1 Army card)  
-- Bribe the local leaders and secure an agreement to settle. (Discard 1 Money card)
+- Bribe the local leaders and secure an alliance. (Discard 1 Money card)
 
 #### Step 3: Founding Alba Longa
 _And thus, the Trojan hero Aeneas founded Lavinium, where his dynasty flourished. Generations later, under joint rule with neighboring tribes, Alba Longa was established—a Latin center of power for centuries to come._
