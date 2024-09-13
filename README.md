@@ -30,7 +30,11 @@ Choices:
 - Secure the favor of the gods to ensure your dynasty's prosperity and divine protection. (+1 Fortune)  
 - Strengthen military and political foundations to prepare for the challenges ahead. (Pick 1 Action card)
 
-### 2.Founding of Rome
+### 2. Sabine Women
+
+TBD
+
+### 3.Founding of Rome
 
 #### Step 1: Romulus and Remus in Danger
 _The throne of Alba Longa was treacherously taken by Amulius. He forced his niece, Rhea Silvia, into priesthood, and her twins, Romulus and Remus, were left to die by the Tiber River._
