@@ -15,8 +15,8 @@ Choices:
 - Gather the bravest of Troy's surviving warriors, you'll need them to establish your new home. (+1 Army card)  
 - Take what you can of Troy's treasury, hoping it will secure alliances in the lands ahead. (+1 Money card)
   
-#### Step 2: Settling in Lazio
-_After weeks of perilous journey across treacherous seas, your supplies are nearly depleted. You finally reach the shores of Lazio, a land rich in resources, but the local tribes view you with suspicion._
+#### Step 2: Settling in Latium
+_After weeks of perilous journey across treacherous seas, your supplies are nearly depleted. You finally reach the shores of Latium, a land rich in resources, but the local tribes view you with suspicion._
 
 Choices:  (random 2 out of 3):  
 - Gain the favor of the local tribes through diplomacy and divine signs. (-1 Fortune)  
