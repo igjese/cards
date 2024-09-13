@@ -62,7 +62,7 @@ Choices (random 2 out of 3):
 - Protect the city's borders and secure its foundations. (Discard 1 Army card)  
 - Build houses to attract more settlers. (Discard 1 Money card)
 
-### 2. Sabine Women
+### 3. Sabine Women
 
 #### Step 1: The Festival and Abduction
 _A new settlement of Rome primarily attracted men seeking a fresh start, but neighboring peoples refused to marry their daughters to them. So Romulus devised a plan: Romans would invite the tribes to a festival, and at a prearranged signal, seize their women._
