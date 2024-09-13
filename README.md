@@ -32,7 +32,26 @@ Choices:
 
 ### 2. Sabine Women
 
-TBD
+#### Step 1: The Festival and Abduction
+_A new settlement of Rome primarily attracted men seeking a fresh start, but neighboring peoples refused to marry their daughters to them. So Romulus devised a plan: Romans would invite the tribes to a festival, and at a prearranged signal, seize their women._
+
+Choices (random 2 out of 3):  
+- Prepare for quick coordination during the battle. (+1 action until end of the battle)  
+- Ensure readiness for the conflict. (Draw 1 extra card)  
+- Plan how to absorb the enemy’s first attack. (Start the battle with 1 shield on Fortune)
+
+### Step 2: The Battle Against Three Tribes
+_The abduction was successful as planned, but it angered the region, and the Sabines are preparing a joint offensive. However, the infuriated tribes of Caenina, Crustumerium, and Antemnae launched their own raids against Rome without waiting for the Sabines, and you must defeat them quickly._
+
+Battle: 
+- Player must defeat each of the three attackers (victory) or they will destroy player's fortune (game over)
+
+### Step 3: The Peace Brokered by the Sabine Women
+_The Sabines finally launched a fierce assault, led by King Titus Tatius, nearly capturing the city. Yet the Sabine women unexpectedly threw themselves between the armies, pleading that their fathers and husbands not be lost on the same day._
+
+Choices (Rewards):  
+- Accept the will of the Gods and establish joint rule over the city. (+1 Fortune)  
+- Embrace political alliances formed through this union. (Pick 1 Action card)
 
 ### 3.Founding of Rome
 
