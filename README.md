@@ -85,6 +85,9 @@
     - **Resource balancing:** Ensure that Money and Army resources are fairly distributed and useful at different stages of the game.
     - **Action balancing:** Review and adjust the number of actions per turn, draw mechanics, and overall card economy.
 
+## Data Model Sep-15 2024
+
+![Data model](data-model.png)
 
 ## First Prototype Sep-12 2024
 - First prototype has three "fixed" encounters:
