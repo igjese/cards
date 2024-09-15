@@ -1,5 +1,91 @@
 # "Chronicles: Rise of Rome" - Game Design Document
 
+## Godot Implementation To-Do List (Updated Sep-15 2024)
+
+### Prerequisite Setup (Core Systems)
+1. **Data Models:**
+   - **Data model for cards:** Specify what the player can do with each card (Money, Army, Action cards, etc.).
+   - **Data model for hand, deck, discard pile, trash pile, fortune, actions:** A comprehensive system that manages the player’s resources and actions.
+   - **Data model for encounters:** Define steps, options, actions, and outcomes for each encounter type (Event, Battle, Reward, Shop, Rest).
+   - **Data model for enemies:** Define enemy visuals, strength indicators, next action, and attack types.
+   - **Data model for options and outcomes:** Required for encounter choices and branching actions.
+
+2. **State Machine:**
+   - **State machine for battle:** Core battle system logic, with turns and transitions between player/enemy moves.
+   - **State machine for encounters:** Manage transitions between steps, actions, and outcomes within encounters.
+
+3. **Map Screen:**
+   - **Fortune counter/badge on map screen:** Display player’s fortune in a prominent place on the map screen.
+   - **Player movement on map:** Clicking next node on the map to progress through encounters.
+   - **Visuals instead of icons for resolved encounters:** Update icons with thumbnails or other visuals once encounters are resolved.
+   - **Map screen: Deck, hand, discard pile browsing:** Option to view the player’s hand, deck, and discard pile while on the map screen, with expand/minimize on hover.
+
+---
+
+### Encounter Systems (Core Gameplay)
+4. **Encounter Screen Setup:**
+   - **Fortune counter/badge on encounter screen:** Display player's current fortune during encounters.
+   - **Player's hand, deck, discard pile display on encounter screen:** Player can see the hand, deck, and discard piles during the encounter.
+   - **Hand expansion/shrink based on number of cards:** Visual cue for the player's hand that adjusts depending on how many cards are in play.
+   - **Deck browsing, discard pile browsing on encounter screen:** Allow the player to browse the deck and discard piles during encounters.
+
+5. **Encounter Steps System:**
+   - **Encounter system with steps:** Allow for progression within encounters using defined steps (e.g., text and visuals with options at each step).
+   - **Event system with options and outcomes:** Allow the player to make choices and receive outcomes based on these decisions (e.g., “spend Fortune” or “discard cards”).
+   - **Offering options to player:** Set up UI for offering choices at each encounter step.
+   - **Choosing options (including animations):** Handle animations for selecting options.
+
+---
+
+### Card Systems (Interactivity)
+6. **Card Actions & Animations:**
+   - **Data model for playing cards:** Specify actions related to card playing (e.g., attack, bribe, defend).
+   - **Playing a card from hand (including animations):** Implement the action of playing a card, with corresponding animations.
+   - **Playing a card from deck or trashing a card (incl. animations):** Implement the action of drawing a card from the deck or trashing a card, including animations.
+   - **Drawing a card, reshuffling the deck (incl. animations):** Implement the card draw mechanics, reshuffle the deck when necessary.
+   - **Discarding a card (incl. animations):** Implement discarding cards from hand, along with animations.
+
+7. **Action Cards:**
+   - **Implement action cards:** Decide on specific action card effects (e.g., draw more cards, gain extra actions, bonus Army or Money).
+   - **Specify which actions are tied to each card type:** Finalize what action cards do (e.g., “Roman Phalanx” for Army, “Grain Harvest” for Money, etc.).
+
+---
+
+### Battle Systems (Combat Mechanisms)
+8. **Battle System:**
+   - **Player battle moves:** Implement attack (Army card), bribe (Money card), defend Fortune (Money cards).
+   - **Enemy battle moves:** Implement enemy attack Fortune, reinforce, reduce player actions, force discard.
+   - **AI rules for computer turn in battle:** Define how enemies act during their turn.
+   - **Encounter victory / failure:** Handle win/loss conditions based on reducing enemy strength to 0 or losing all Fortune.
+
+9. **Battle System UI & Feedback:**
+   - **Next enemy action display:** Show what the next enemy action will be (e.g., attack Fortune, call reinforcements).
+   - **Enemy tooltip:** Display enemy stats, Battle Strength, and what actions the player can take against them.
+   - **Player tooltip:** Display Fortune shield status, remaining actions, and player options.
+
+---
+
+### Secondary Systems (UX Enhancements & Balance)
+10. **Map Screen Enhancements:**
+    - **Map screen: Deck, hand, discard pile visible at all times:** Allow access to these resources at the bottom of the map screen, with expand/minimize on hover.
+
+11. **Encounter Transitions and Animations:**
+    - **Step transitions within encounters:** Implement smooth transitions between steps during encounters (e.g., historical text fades into choice options).
+    - **Animations for encounter steps and outcomes:** Add animations when a choice is made (e.g., Fortune counter updates, cards played).
+
+12. **Tutorial / Onboarding:**
+    - **Basic tutorial:** Implement hand-holding or tutorial mode for new players to learn the mechanics.
+    - **Onboarding system:** Guide players through their first event, battle, and resource management.
+
+---
+
+### Balancing and Final Systems
+13. **Balancing:**
+    - **Fortune balancing:** Ensure Fortune use (both as a health system and resource) is balanced, and players aren’t overly punished for spending it.
+    - **Resource balancing:** Ensure that Money and Army resources are fairly distributed and useful at different stages of the game.
+    - **Action balancing:** Review and adjust the number of actions per turn, draw mechanics, and overall card economy.
+
+
 ## First Prototype Sep-12 2024
 - First prototype has three "fixed" encounters:
 1. Origins (Event) - this is the first gameplay screen
@@ -152,38 +238,6 @@ Choices (Rewards):
 - Player draws 3 cards at the start of each turn.
 - Battles continue until all enemies' Battle Strength is reduced to 0 (**Victory**) or the player’s Fortune reaches 0 (**Failure**)
 
-## Implementation Sep-9 2024
-
-- Fortune counter/badge on map screen and encounter screen
-- Encounter: player's hand, deck, discard pile 
-- Encounter: player's hand "expands/shrinks" based on number of cards
-- Encounter: Deck browsing, discard pile browsing
-- Map: visuals instead of icons for resolved encounters
-- Browsing hand, deck, discard pile from the Map screen (maybe it could make sense to have them on the bottom at all times, but they expand/minimize when on-hovered)
-- offering options 
-- data model for options for each encounter
-- choosing options (including animations)
-- playing a card from hand (including animations)
-- playing a card from deck, trashing a card (incl.anim.)
-- drawing a card, reshuffling the deck (incl.anim.)
-- discarding a card (incl.anim.)
-- data model for turns, hand, deck, discard pile, trash pile, fortune, available actions
-- data model for cards (specify what player can do with them)
-- data model for encounters (steps, options, actions, and outcomes)
-- Data model for enemies (visual, strength indicators, attack types).
-- player battle moves (attack enemy, bribe enemy, defend fortune)
-- enemy battle moves (attack fortune, reinforce, reduce player actions, force discard)
-- AI rules for computer turn in battle
-- state machine for battle
-- encounter victory / failure
-- tutorial / onboarding / hand-holding
-- fortune balancing
-
-TODO:
-- implement action cards => which actions ?!?
-- encounter system with steps
-- event system with options and outcomes
-- battle system
   
 ## Goal
 Goal is to create Solitaire Deck Building game that educates the player about Roman era. If successful, I can continue doing this into my retirement.
